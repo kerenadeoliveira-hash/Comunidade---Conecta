@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar — BMC</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body {
+            background-color: #f0f7f0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .caixa {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        h1 {
+            text-align: center;
+            color: #2c6e49;
+            margin-bottom: 25px;
+        }
+        .grupo {
+            margin-bottom: 18px;
+        }
+        label {
+            display: block;
+            margin-bottom: 6px;
+            color: #333;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        input:focus {
+            outline: none;
+            border-color: #2c6e49;
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #2c6e49;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #245a3d;
+        }
+        .link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .link a {
+            color: #2c6e49;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="caixa">
+        <h1>🔒 Entrar</h1>
+        
+        <form>
+            <div class="grupo">
+                <label>E-mail</label>
+                <input type="email" placeholder="seu@email.com" required>
+            </div>
+
+            <div class="grupo">
+                <label>Senha</label>
+                <input type="password" placeholder="Sua senha" required>
+            </div>
+
+            <button type="submit">ENTRAR ✅</button>
+        </form>
+
+        <div class="link">
+            Não tem conta? <a href="cadastro.html">Cadastre-se</a>
+        </div>
+    </div>
+</body>
+</html>
