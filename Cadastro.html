@@ -85,7 +85,7 @@
 
             <div class="grupo">
                 <label>E-mail</label>
-                <input type="email" placeholder="seu@email.com" required>
+                <input type="email" id="novoemail"placeholder="seu@email.com" required>
             </div>
 
             <div class="grupo">
@@ -95,15 +95,36 @@
 
             <div class="grupo">
                 <label>Senha</label>
-                <input type="password" placeholder="Crie uma senha" required>
+                <input type="password" id=novaSenha" placeholder="Crie uma senha" required>
             </div>
 
-            <button type="submit">CADASTRAR ✅</button>
+            <button type="submit" onclick="fazerCadastro()">CADASTRAR ✅</button>
         </form>
 
         <div class="link">
             Já tem conta? <a href="login.html">Entrar</a>
         </div>
     </div>
+    <script>
+function fazerCadastro(){
+  const email = document.getElementById("novoEmail").value.trim();
+  const senha = document.getElementById("novaSenha").value;
+  let listaUsuarios = JSON.parse(localStorage.getItem("listaUsuarios")) || [];
+
+  if(!email || !senha){
+    alert("⚠️ Preencha o e‑mail e a senha!");
+    return;
+  }
+  const jaExiste = listaUsuarios.some(u => u.email === email);
+  if(jaExiste){
+    alert("⚠️ Esse e‑mail já está cadastrado!");
+    return;
+  }
+  listaUsuarios.push({ email: email, senha: senha });
+  localStorage.setItem("listaUsuarios", JSON.stringify(listaUsuarios));
+  alert("✅ Cadastro feito! Agora você pode fazer login.");
+  window.location.href = "login.html";
+}
+</script>
 </body>
 </html>
