@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF‑8">
+<title>Editar Perfil</title>
+</head>
+<body>
+<h1>Editar meus dados</h1>
+
+<form>
+  <p>
+    <label>Nome completo:</label><br>
+    <input type="text" id="campoNome">
+  </p>
+  <p>
+    <label>Telefone:</label><br>
+    <input type="text" id="campoTelefone">
+  </p>
+  <button type="button" onclick="salvarAlteracoes()">Salvar</button>
+</form>
+
+<br>
+<a href="perfil.html">Voltar ao Perfil</a>
+
+<script>
+const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
+
+if (!usuarioLogado) {
+  alert("Você precisa fazer login primeiro!");
+  window.location.href = "login.html";
+} else {
+  // Preenche os campos com os dados que já existem
+  document.getElementById("campoNome").value = usuarioLogado.nome || "";
+  document.getElementById("campoTelefone").value = usuarioLogado.telefone || "";
+}
+
+function salvarAlteracoes() {
+  const novoNome = document.getElementById("campoNome").value;
+  const novoTelefone = document.getElementById("campoTelefone").value;
+
+  // Atualiza o usuário que está logado no navegador
+  usuarioLogado.nome = novoNome;
+  usuarioLogado.telefone = novoTelefone;
+  localStorage.setItem("usuarioLogado", JSON.stringify(usuarioLogado));
+
+  alert("Dados atualizados!");
+  window.location.href = "perfil.html";
+}
+</script>
+</body>
+</html>
