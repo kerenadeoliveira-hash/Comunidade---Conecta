@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF‑8">
+  <title>Meu Perfil</title>
+</head>
+<body>
+  <h1>Meu Perfil</h1>
+  <div id="dadosPerfil"></div>
+  <br>
+  <button onclick="sairDaConta()">Sair</button>
+
+  <script>
+    const usuario = JSON.parse(localStorage.getItem("usuarioLogado"));
+
+    if (!usuario) {
+      alert("Você precisa fazer login primeiro!");
+      window.location.href = "login.html";
+    } else {
+      const caixa = document.getElementById("dadosPerfil");
+      caixa.innerHTML = `
+        <p><strong>Nome:</strong> ${usuario.nome}</p>
+        <p><strong>E‑mail:</strong> ${usuario.email}</p>
+        <p><strong>Telefone:</strong> ${usuario.telefone}</p> `;
+    }
+
+    function sairDaConta() {
+      localStorage.removeItem("usuarioLogado");
+      alert("Você saiu da conta!");
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
