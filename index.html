@@ -152,7 +152,27 @@ header {
             <br>
             <p><strong>Todos juntos fazemos mais!</strong> Este projeto é feito para e com os moradores do nosso bairro.</p>
         </section>
-
+<h2>📢 Próximos eventos</h2>
+<div id="lista‑eventos"></div>
+<script>
+async function carregarEventos(){
+  const res=await fetch("eventos.csv");
+  const txt=await res.text();
+  const linhas=txt.split("\n");
+  let html="";
+  for(let i=1;i<linhas.length;i++){
+    const c=linhas[i].split(",");
+    html+=`<div style="padding:10px;border:1px solid #bbb;margin:8px 0;">
+    <h3>${c[0]}</h3>
+    <p>Data:${c[1]} ${c[2]}</p>
+    <p>Local:${c[3]}</p>
+    <p>${c[4]}</p>
+    </div>`;
+  }
+  document.querySelector("#lista‑eventos").innerHTML=html;
+}
+carregarEventos();
+</script>
         <h3 style="margin-bottom: 1rem; color: #333;">📌 O que você procura?</h3>
         <section class="grade">
             <a href="servicos.html" class="caixa">
