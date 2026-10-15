@@ -88,12 +88,27 @@
                 <input type="password" placeholder="Sua senha" required>
             </div>
 
-            <button type="submit">ENTRAR ✅</button>
+            <button type="submit" onclick="verificarLogin()">ENTRAR✅</button>
         </form>
 
         <div class="link">
             Não tem conta? <a href="cadastro.html">Cadastre-se</a>
         </div>
     </div>
+    <script>
+function verificarLogin(){
+  const email = document.getElementById("campoEmail").value.trim();
+  const senha = document.getElementById("campoSenha").value;
+  const listaUsuarios = JSON.parse(localStorage.getItem("listaUsuarios")) || [];
+  const usuarioValido = listaUsuarios.find(u => u.email === email && u.senha === senha);
+
+  if(usuarioValido){
+    alert("✅ Acesso liberado! Bem‑vindo ao Comunidade‑Conecta.");
+    window.location.href = "index.html";
+  }else{
+    alert("❌ E‑mail ou senha não cadastrados ou incorretos!");
+  }
+}
+</script>
 </body>
 </html>
