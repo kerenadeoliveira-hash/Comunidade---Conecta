@@ -104,6 +104,7 @@ function verificarLogin(){
 
   if(usuarioValido){
     alert("✅ Acesso liberado! Bem‑vindo ao Comunidade‑Conecta.");
+      localStorage.setItem("usuarioLogado", JSON.stringify(usuarioValido));
     window.location.href = "index.html";
   }else{
     alert("❌ E‑mail ou senha não cadastrados ou incorretos!");
