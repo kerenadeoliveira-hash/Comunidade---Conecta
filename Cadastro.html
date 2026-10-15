@@ -80,7 +80,7 @@
     <form onsubmit="return false;">
             <div class="grupo">
                 <label>Nome completo</label>
-                <input type="text" placeholder="Seu nome" required>
+                <input type="text" id="nomeCompleto"placeholder="Seu nome" required>
             </div>
 
             <div class="grupo">
@@ -90,7 +90,7 @@
 
             <div class="grupo">
                 <label>Telefone</label>
-                <input type="tel" placeholder="(00) 00000-0000">
+                <input type="tel" id="telefoneUsuario"placeholder="(00) 00000-0000">
             </div>
 
             <div class="grupo">
@@ -109,6 +109,8 @@
 function fazerCadastro(){
   const email = document.getElementById("novoEmail").value.trim();
   const senha = document.getElementById("novaSenha").value;
+    const nome = document.getElementById("nomeCompleto").value.trim();
+const telefone = document.getElementById("telefoneUsuario").value.trim();
   let listaUsuarios = JSON.parse(localStorage.getItem("listaUsuarios")) || [];
 
   if(!email || !senha){
@@ -120,7 +122,7 @@ function fazerCadastro(){
     alert("⚠️ Esse e‑mail já está cadastrado!");
     return;
   }
-  listaUsuarios.push({ email: email, senha: senha });
+  listaUsuarios.push({ email: email, senha: senha,nome: nome, telefone:telefone });
   localStorage.setItem("listaUsuarios", JSON.stringify(listaUsuarios));
   alert("✅ Cadastro feito! Agora você pode fazer login.");
   window.location.href = "login.html";
