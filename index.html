@@ -140,9 +140,10 @@ header {
         <a href="servicos.html">Serviços</a>
         <a href="eventos.html">Eventos</a>
         <a id="linkPerfil"href="perfil.html">Meu Perfil</a>
+        <a id="linkSair"href="#">Sair</a>
         <a href="ajuda.html">Solicitar Ajuda</a>
-        <a href="login.html"> Entrar</a>
-        <a href ="Cadastro.html">Cadastrar-se<a/>35
+        <a id="linkEntrar"href="login.html"> Entrar</a>
+        <a id="linkCadastrar"href ="Cadastro.html">Cadastrar-se<a/>
     </nav>
 
     <!-- Conteúdo -->
@@ -221,10 +222,23 @@ carregarEventos();
             <script>
 const usuario = localStorage.getItem("usuarioLogado");
 const linkPerfil = document.getElementById("linkPerfil");
+const linkEntrar = document.getElementById("linkEntrar");
+const linkCadastrar = document.getElementById("linkCadastrar");
+const linkSair = document.getElementById("linkSair");
 
 if (!usuario) {
   linkPerfil.style.display = "none";
+  linkSair.style.display = "none";
+} else {
+  linkEntrar.style.display = "none";
+  linkCadastrar.style.display = "none";
 }
+
+linkSair.onclick = function() {
+  localStorage.removeItem("usuarioLogado");
+  alert("Você saiu da conta!");
+  window.location.href = "index.html";
+};
 </script>
 </body>
 </html>
