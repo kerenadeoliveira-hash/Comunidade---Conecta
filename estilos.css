@@ -129,8 +129,14 @@ footer {
   text-decoration: none;
 }
 .botao-entrar {
-  border: 1px solid #c0cce0;
-  color: #ffffff;
+  border: 1px solid #224499;
+  background-color: #ffffff;
+  color: #224499;
+}
+
+.botao-entrar:hover {
+  background-color: #e8edf8;
+  color: #112266;
 }
 .botao-cadastrar {
   background-color: #1a2c42;
