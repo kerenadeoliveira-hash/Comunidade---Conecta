@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt‑BR">
+<head>
+<meta charset="UTF‑8">
+<meta name="viewport" content="width=device‑width, initial‑scale=1.0">
+<title>Avisos da Comunidade — Comunidade Conecta</title>
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<header>
+<img src="logomarca.png" alt="Logo Bem‑Estar da Minha Comunidade">
+<h1>Bem‑Estar da Minha Comunidade</h1>
+<p>Conectando pessoas e serviços do nosso bairro</p>
+</header>
+
+<nav>
+<a href="index.html">Início</a>
+<a id="linkPerfil" href="perfil.html">Meu Perfil</a>
+<a href="servicos.html">Serviços</a>
+<a href="eventos.html">Eventos</a>
+<a href="ajuda.html">Solicitar Ajuda</a>
+<a id="linkSair" href="#">Sair</a>
+<a id="linkEntrar" href="login.html">Entrar</a>
+<a id="linkCadastrar" href="Cadastro.html">Cadastrar‑se</a>
+</nav>
+
+<main>
+<h2>📢 Avisos da Comunidade</h2>
+<section class="aviso">
+<h3>Coleta seletiva no bairro</h3>
+<p>Próxima coleta: quinta‑feira, às 8 horas. Deixe os materiais separados na porta.</p>
+</section>
+<section class="aviso">
+<h3>Reunião de moradores</h3>
+<p>Sábado, às 14 horas, na praça principal. Vamos conversar sobre segurança e limpeza.</p>
+</section>
+</main>
+
+<footer>
+<p>Comunidade Conecta – Bem‑Estar da Minha Comunidade © 2026</p>
+<p>Feito com 💛 para o nosso bairro</p>
+</footer>
+
+<script>
+const usuario = localStorage.getItem("usuarioLogado");
+const linkPerfil = document.getElementById("linkPerfil");
+const linkSair = document.getElementById("linkSair");
+const linkEntrar = document.getElementById("linkEntrar");
+const linkCadastrar = document.getElementById("linkCadastrar");
+
+if (!usuario) {
+  linkPerfil.style.display = "none";
+  linkSair.style.display = "none";
+} else {
+  linkEntrar.style.display = "none";
+  linkCadastrar.style.display = "none";
+}
+
+linkSair.onclick = function() {
+  localStorage.removeItem("usuarioLogado");
+  alert("Você saiu da conta!");
+  window.location.href = "index.html";
+};
+</script>
+</body>
+</html>
