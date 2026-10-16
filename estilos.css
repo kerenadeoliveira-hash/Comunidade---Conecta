@@ -79,3 +79,9 @@ footer {
   background‑color: #1a2c42;
   color: #ffffff;
 }
+footer {
+  background-color: #1a2c42;
+  color: #ffffff;
+  padding: 16px;
+  text-align: center;
+}
