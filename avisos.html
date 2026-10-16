@@ -13,16 +13,18 @@
     <img src="logo-bmc.png" alt="Logomarca BMC" class="logo">
     <span>BMC</span>
   </div>
-  <nav>
+  <nav class="navegacao-principal">
     <a href="index.html">Início</a>
     <a href="perfil.html">Meu Perfil</a>
     <a href="servicos.html">Serviços</a>
     <a href="eventos.html">Eventos</a>
     <a href="avisos.html">Avisos</a>
     <a href="ajuda.html">Solicitar Ajuda</a>
-    <a href="login.html">Entrar</a>
-    <a href="Cadastro.html">Cadastrar‑se</a>
-    <a href="#">Sair</a>
+  <div class="links-acesso">
+  <a href="login.html" class="botao-acesso botao-entrar" id="botaoEntrar">Entrar</a>
+  <a href="cadastro.html" class="botao-acesso botao-cadastrar" id="botaoCadastrar">Cadastrar‑se</a>
+  <a href="#" class="botao-acesso botao-sair" id="botaoSair" style="display: none;">Sair</a>
+</div>
   </nav>
 </header>
 <main>
@@ -67,5 +69,22 @@ linkSair.onclick = function() {
   <p>Comunidade Conecta — Bem‑Estar da Minha Comunidade © 2026</p>
   <p>Feito com 💛 para o nosso bairro</p>
 </footer>
+  <script>
+const usuarioLogado = localStorage.getItem("usuarioLogado");
+const botaoEntrar = document.getElementById("botaoEntrar");
+const botaoCadastrar = document.getElementById("botaoCadastrar");
+const botaoSair = document.getElementById("botaoSair");
+
+if (usuarioLogado) {
+  botaoEntrar.style.display = "none";
+  botaoCadastrar.style.display = "none";
+  botaoSair.style.display = "block";
+}
+
+botaoSair.addEventListener("click", function() {
+  localStorage.removeItem("usuarioLogado");
+  window.location.href = "index.html";
+});
+</script>
 </body>
 </html>
