@@ -139,10 +139,10 @@ header {
         <a href="index.html">Início</a>
         <a href="servicos.html">Serviços</a>
         <a href="eventos.html">Eventos</a>
-        <a href="perfil.html">Meu Perfil</a>
+        <a id="linkPerfil"href="perfil.html">Meu Perfil</a>
         <a href="ajuda.html">Solicitar Ajuda</a>
         <a href="login.html"> Entrar</a>
-        <a href ="Cadastro.html">Cadastrar-se<a/>
+        <a href ="Cadastro.html">Cadastrar-se<a/>35
     </nav>
 
     <!-- Conteúdo -->
@@ -218,7 +218,14 @@ carregarEventos();
         <p>Comunidade Conecta — Bem-Estar da Minha Comunidade © 2026</p>
         <p>Feito com 💛 para o nosso bairro</p>
     </footer>
+            <script>
+const usuario = localStorage.getItem("usuarioLogado");
+const linkPerfil = document.getElementById("linkPerfil");
 
+if (!usuario) {
+  linkPerfil.style.display = "none";
+}
+</script>
 </body>
 </html>
             
