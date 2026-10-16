@@ -15,3 +15,51 @@ header img {
   display: block;
   margin: 0 auto;
 }
+/* Cabeçalho escuro‑azulado estilo profissional */
+header {
+  background‑color: #1a2c42;
+  padding: 14px 22px;
+  display: flex;
+  align‑items: center;
+  justify‑content: space‑between;
+}
+
+.logo‑bmc {
+  display: flex;
+  align‑items: center;
+  gap: 10px;
+}
+header {
+  background-color: #1a2c42;
+  padding: 14px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo‑bmc img {
+  height: 46px;
+  width: 46px;
+  border‑radius: 50%;
+  object‑fit: contain;
+}
+
+.logo‑bmc span {
+  font‑size: 23px;
+  font‑weight: bold;
+  color: #ffffff;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: #e8f0f8;
+  text‑decoration: none;
+  font‑size: 16px;
+}
+
+nav a:hover {
+  color: #72c2e8;
+}
