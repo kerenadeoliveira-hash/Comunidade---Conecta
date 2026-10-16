@@ -75,6 +75,27 @@
       <link rel="stylesheet"href="estilos.css">
 </head>
 <body>
+    <header>
+  <div class="logo-bmc">
+    <img src="logo-bmc.png" alt="Logomarca BMC" class="logo">
+    <span>BMC</span>
+  </div>
+  <nav class="navegacao-principal">
+    <div class="links-menu">
+      <a href="index.html">Início</a>
+      <a href="perfil.html">Meu Perfil</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="eventos.html">Eventos</a>
+      <a href="avisos.html">Avisos</a>
+      <a href="ajuda.html">Solicitar Ajuda</a>
+    </div>
+    <div class="links-acesso">
+      <a href="login.html" class="botao-acesso botao-entrar" id="botaoEntrar">Entrar</a>
+      <a href="cadastro.html" class="botao-acesso botao-cadastrar" id="botaoCadastrar">Cadastrar‑se</a>
+      <a href="#" class="botao-acesso botao-sair" id="botaoSair" style="display: none;">Sair</a>
+    </div>
+  </nav>
+</header>
     <div class="caixa">
         <h1>✨ Criar Conta</h1>
         
@@ -128,6 +149,23 @@ const telefone = document.getElementById("telefoneUsuario").value.trim();
   alert("✅ Cadastro feito! Agora você pode fazer login.");
   window.location.href = "login.html";
 }
+        </script>
+    <script>
+const usuarioLogado = localStorage.getItem("usuarioLogado");
+const botaoEntrar = document.getElementById("botaoEntrar");
+const botaoCadastrar = document.getElementById("botaoCadastrar");
+const botaoSair = document.getElementById("botaoSair");
+
+if (usuarioLogado) {
+  botaoEntrar.style.display = "none";
+  botaoCadastrar.style.display = "none";
+  botaoSair.style.display = "block";
+}
+
+botaoSair.addEventListener("click", function() {
+  localStorage.removeItem("usuarioLogado");
+  window.location.href = "index.html";
+});
 </script>
 </body>
 </html>
