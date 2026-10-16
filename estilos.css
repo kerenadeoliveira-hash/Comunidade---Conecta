@@ -119,6 +119,27 @@ footer {
   display: flex;
   gap: 16px;
 }
+.links-acesso {
+  display: flex;
+  gap: 12px;
+}
+.botao-acesso {
+  padding: 9px 18px;
+  border-radius: 22px;
+  text-decoration: none;
+}
+.botao-entrar {
+  border: 1px solid #c0cce0;
+  color: #ffffff;
+}
+.botao-cadastrar {
+  background-color: #1a2c42;
+  color: #ffffff;
+}
+.botao-sair {
+  background-color: #d94848;
+  color: #ffffff;
+}
 .navegacao-principal a {
   padding: 8px 10px;
   text-decoration: none;
