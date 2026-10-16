@@ -144,8 +144,9 @@ header {
     <a href="ajuda.html">Solicitar Ajuda</a>
   </div>
   <div class="links-acesso">
-    <a href="login.html">Entrar</a>
-    <a href="cadastro.html">Cadastrar‑se</a>
+  <a href="login.html" class="botao-acesso botao-entrar" id="botaoEntrar">Entrar</a>
+  <a href="cadastro.html" class="botao-acesso botao-cadastrar" id="botaoCadastrar">Cadastrar‑se</a>
+  <a href="#" class="botao-acesso botao-sair" id="botaoSair" style="display: none;">Sair</a>
   </div>
 </nav>
     </header>
@@ -217,28 +218,22 @@ carregarEventos();
 <section class="aviso">
     <h3>🔔 Aviso importante</h3>
     </main>
+  <script>
+const usuarioLogado = localStorage.getItem("usuarioLogado");
+const botaoEntrar = document.getElementById("botaoEntrar");
+const botaoCadastrar = document.getElementById("botaoCadastrar");
+const botaoSair = document.getElementById("botaoSair");
 
-
-            <script>
-const usuario = localStorage.getItem("usuarioLogado");
-const linkPerfil = document.getElementById("linkPerfil");
-const linkEntrar = document.getElementById("linkEntrar");
-const linkCadastrar = document.getElementById("linkCadastrar");
-const linkSair = document.getElementById("linkSair");
-
-if (!usuario) {
-  linkPerfil.style.display = "none";
-  linkSair.style.display = "none";
-} else {
-  linkEntrar.style.display = "none";
-  linkCadastrar.style.display = "none";
+if (usuarioLogado) {
+  botaoEntrar.style.display = "none";
+  botaoCadastrar.style.display = "none";
+  botaoSair.style.display = "block";
 }
 
-linkSair.onclick = function() {
+botaoSair.addEventListener("click", function() {
   localStorage.removeItem("usuarioLogado");
-  alert("Você saiu da conta!");
   window.location.href = "index.html";
-};
+});
 </script>
     <footer>
   <p>Comunidade Conecta — Bem‑Estar da Minha Comunidade © 2026</p>
