@@ -68,3 +68,10 @@ nav a:hover {
   height: 46px;
   object‑fit: contain;
 }
+header nav {
+  background-color: #ffffff;
+}
+
+header nav a {
+  color: #1a2c42;
+}
