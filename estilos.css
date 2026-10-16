@@ -104,3 +104,22 @@ footer {
   padding: 8px 10px;
   text-decoration: none;
 }
+.navegacao-principal {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+}
+.links-menu {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+.links-acesso {
+  display: flex;
+  gap: 16px;
+}
+.navegacao-principal a {
+  padding: 8px 10px;
+  text-decoration: none;
+}
