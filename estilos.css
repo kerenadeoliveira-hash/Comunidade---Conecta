@@ -220,6 +220,27 @@ header {
   margin: 0;
   color: #1a304a;
 }
+.login‑centro {
+  max‑width: 420px;
+  margin: 45px auto;
+  padding: 28px;
+}
+.login‑centro input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 16px;
+  border: 1px solid #ccd6dd;
+  border‑radius: 6px;
+}
+.login‑centro button {
+  width: 100%;
+  padding: 12px;
+  background‑color: #288b46;
+  color: white;
+  border: none;
+  border‑radius: 6px;
+  font‑size: 17px;
+}
 .cabecalho-titulo p {
   margin: 8px 0 0;
   color: #333;
