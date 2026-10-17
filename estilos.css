@@ -249,6 +249,23 @@ header {
 .logo-bmc img {
   height: 42px;
 }
+.logo-bmc {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.logo-bmc img {
+  height: 42px;
+  object-fit: contain;
+}
+header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 16px;
+}
 .cabecalho-titulo p {
   margin: 8px 0 0;
   color: #333;
