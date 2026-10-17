@@ -207,6 +207,9 @@
 </footer>
   <script>
 const usuarioLogado = localStorage.getItem("usuarioLogado");
+    if (!localStorage.getItem("usuarioLogado")) {
+  window.location.href = "login.html";
+}
 const botaoEntrar = document.getElementById("botaoEntrar");
 const botaoCadastrar = document.getElementById("botaoCadastrar");
 const botaoSair = document.getElementById("botaoSair");
