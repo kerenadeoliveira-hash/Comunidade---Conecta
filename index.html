@@ -162,6 +162,10 @@ header {
 <h2>📢 Próximos eventos</h2>
 <div id="lista‑eventos"></div>
 <script>
+    let logado = localStorage.getItem("usuarioLogado");
+if (!logado) {
+  window.location.href = "login.html";
+}
 async function carregarEventos(){
   const res=await fetch("eventos.csv");
   const txt=await res.text();
@@ -179,6 +183,10 @@ async function carregarEventos(){
   document.querySelector("#lista‑eventos").innerHTML=html;
 }
 carregarEventos();
+    function sair() {
+  localStorage.removeItem("usuarioLogado");
+  window.location.href = "login.html";
+}
 </script>
         <h3 style="margin-bottom: 1rem; color: #333;">📌 O que você procura?</h3>
         <section class="grade">
