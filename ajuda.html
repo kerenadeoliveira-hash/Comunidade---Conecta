@@ -222,6 +222,16 @@ botaoSair.addEventListener("click", function() {
   window.location.href = "index.html";
 });
 </script>
+    <script>
+const formAjuda = document.querySelector('.formulario');
+if(formAjuda){
+  formAjuda.addEventListener('submit', function () {
+    setTimeout(function () {
+      window.location.href = "agradecimento-ajuda.html";
+    }, 900);
+  });
+}
+</script>
 
 </body>
 </html>
