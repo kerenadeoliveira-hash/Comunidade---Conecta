@@ -146,13 +146,22 @@
                 "Preciso de alguém para me levar até o posto de saúde na terça-feira pela manhã. Moro sozinha e não tenho como ir. Agradeço muito!"
             </div>
             
-            <form class="formulario">
+            <form class="formulario" action="COLOQUE-AQUI-O-LINK-DO-FORMSPREE" method="POST">
                 <input type="text" placeholder="Seu nome ou como prefere ser chamado">
                 <input type="text" placeholder="Seu bairro ou referência">
                 <textarea rows="4" placeholder="Descreva o que você precisa..."></textarea>
                 <input type="text" placeholder="Telefone ou contato para te encontrarem">
-                <button type="button">📤 Enviar Pedido de Ajuda</button>
+                <button type="submit">📤 Enviar Pedido de Ajuda</button>
             </form>
+            <script>
+const formAjuda = document.querySelector('.formulario');
+formAjuda.addEventListener('submit', function (e) {
+ e.preventDefault();
+    setTimeout(() => {
+    alert("Obrigado por enviar!\n\n📞 Contatos úteis do bairro:\n• Posto de saúde: ligue 156\n• Restaurante Popular: ver página Serviços\n• Apoio social: CRAS local");
+  }, 800);
+});
+</script>
         </div>
 
         <!-- Oferecer Ajuda -->
