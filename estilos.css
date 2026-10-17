@@ -232,14 +232,15 @@ header {
   border: 1px solid #ccd6dd;
   border‑radius: 6px;
 }
-.login‑centro button {
+.login-centro button {
   width: 100%;
   padding: 12px;
-  background‑color: #288b46;
-  color: white;
+  background-color: #288b46 !important;
+  color: #ffffff !important;
   border: none;
-  border‑radius: 6px;
-  font‑size: 17px;
+  border-radius: 6px;
+  font-size: 17px;
+  opacity: 1 !important;
 }
 .logo-bmc {
   display: flex;
@@ -249,17 +250,7 @@ header {
 .logo-bmc img {
   height: 42px;
 }
-.logo-bmc {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 20px;
-  font-weight: 600;
-}
-.logo-bmc img {
-  height: 42px;
-  object-fit: contain;
-}
+
 header {
   display: flex;
   align-items: center;
