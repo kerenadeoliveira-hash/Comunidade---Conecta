@@ -116,7 +116,9 @@
         <p>Feito com 💛 para o nosso bairro</p>
     </footer>
     <script>
-const usuarioLogado = localStorage.getItem("usuarioLogado");
+if (!localStorage.getItem("usuarioLogado")) {
+  window.location.href = "login.html";
+}const usuarioLogado = localStorage.getItem("usuarioLogado");
 const botaoEntrar = document.getElementById("botaoEntrar");
 const botaoCadastrar = document.getElementById("botaoCadastrar");
 const botaoSair = document.getElementById("botaoSair");
