@@ -241,6 +241,14 @@ header {
   border‑radius: 6px;
   font‑size: 17px;
 }
+.logo-bmc {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.logo-bmc img {
+  height: 42px;
+}
 .cabecalho-titulo p {
   margin: 8px 0 0;
   color: #333;
