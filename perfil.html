@@ -6,6 +6,10 @@
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
+  <div class="cabecalho-titulo">
+  <h2>Comunidade Conecta — Bem‑Estar da Minha Comunidade © 2026</h2>
+  <p>Feito para o nosso bairro</p>
+</div>
 <!-- Cabeçalho -->
 <header>
   <div class="logo-bmc">
@@ -25,14 +29,14 @@
   <a href="#" class="botao-acesso botao-sair" id="botaoSair" style="display: none;">Sair</a>
 </div>
 </header>
-</nav>
+<div class="caixa">
   <h1>Meu Perfil</h1>
   <div id="dadosPerfil"></div>
   <br>
   <button onclick="sairDaConta()">Sair</button>
   <br>
 <a href="editar-perfil.html">Editar meus dados</a>
-
+</div>
   <script>
     const usuario = JSON.parse(localStorage.getItem("usuarioLogado"));
 
