@@ -1,158 +1,64 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt‑BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entrar — BMC</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-        body {
-            background-color: #f0f7f0;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-        .caixa {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            width: 100%;
-            max-width: 400px;
-        }
-        h1 {
-            text-align: center;
-            color: #2c6e49;
-            margin-bottom: 25px;
-        }
-        .grupo {
-            margin-bottom: 18px;
-        }
-        label {
-            display: block;
-            margin-bottom: 6px;
-            color: #333;
-            font-weight: bold;
-        }
-        input {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-size: 16px;
-        }
-        input:focus {
-            outline: none;
-            border-color: #2c6e49;
-        }
-        button {
-            width: 100%;
-            padding: 14px;
-            background-color: #2c6e49;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-        button:hover {
-            background-color: #245a3d;
-        }
-        .link {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .link a {
-            color: #2c6e49;
-            text-decoration: none;
-            font-weight: bold;
-        }
-    </style>
-      <link rel="stylesheet"href="estilos.css">
+  <meta charset="UTF‑8">
+  <meta name="viewport" content="width=device‑width, initial‑scale=1.0">
+  <title>Entrar — Comunidade Conecta</title>
+  <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-    <header>
-  <div class="logo-bmc">
-    <img src="logo-bmc.png" alt="Logomarca BMC" class="logo">
-    <span>BMC</span>
+  <div class="cabecalho‑titulo">
+    <h2>Associação Comunidade Conecta — Projeto Bem‑Estar da Minha Comunidade © 2027</h2>
+    <p>Feito para o nosso bairro</p>
   </div>
-  <nav class="navegacao-principal">
-    <div class="links-menu">
+
+  <header>
+    <div class="logo‑bmc">
+      <img src="logo‑bmc.png" alt="Logomarca BMC">
+      <span>BMC</span>
+    </div>
+    <nav class="navegacao‑principal">
       <a href="index.html">Início</a>
-      <a href="perfil.html">Meu Perfil</a>
       <a href="servicos.html">Serviços</a>
       <a href="eventos.html">Eventos</a>
       <a href="avisos.html">Avisos</a>
       <a href="ajuda.html">Solicitar Ajuda</a>
+      <div class="links‑acesso">
+        <a href="login.html" class="botao‑acesso botao‑entrar">Entrar</a>
+        <a href="cadastro.html" class="botao‑acesso botao‑cadastrar">Cadastrar‑se</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="caixa login‑centro">
+      <h2>🔒 Entrar</h2>
+      <div>
+        <label>E‑mail</label>
+        <input type="email" id="emailLogin">
+      </div>
+      <div>
+        <label>Senha</label>
+        <input type="password" id="senhaLogin">
+      </div>
+      <button onclick="fazerLogin()">ENTRAR ✔</button>
+      <p>Não tem conta? <a href="cadastro.html">Cadastre‑se</a></p>
     </div>
-    <div class="links-acesso">
-      <a href="login.html" class="botao-acesso botao-entrar" id="botaoEntrar">Entrar</a>
-      <a href="cadastro.html" class="botao-acesso botao-cadastrar" id="botaoCadastrar">Cadastrar‑se</a>
-      <a href="#" class="botao-acesso botao-sair" id="botaoSair" style="display: none;">Sair</a>
-    </div>
-  </nav>
-</header>
-    <div class="caixa">
-        <h1>🔒 Entrar</h1>
-        
-        <form>
-            <div class="grupo">
-                <label>E-mail</label>
-                <input type="email"id="campoEmail" placeholder="seu@email.com" required>
-            </div>
+  </main>
 
-            <div class="grupo">
-                <label>Senha</label>
-                <input type="password"id="campoSenha" placeholder="Sua senha" required>
-            </div>
-
-            <button type="submit" onclick="verificarLogin()">ENTRAR✅</button>
-        </form>
-
-        <div class="link">
-            Não tem conta? <a href="cadastro.html">Cadastre-se</a>
-        </div>
-    </div>
-    <script>
-function verificarLogin(){
-  const email = document.getElementById("campoEmail").value.trim();
-  const senha = document.getElementById("campoSenha").value;
-  const listaUsuarios = JSON.parse(localStorage.getItem("listaUsuarios")) || [];
-  const usuarioValido = listaUsuarios.find(u => u.email === email && u.senha === senha);
-
-  if(usuarioValido){
-    alert("✅ Acesso liberado! Bem‑vindo ao Comunidade‑Conecta.");
-      localStorage.setItem("usuarioLogado", JSON.stringify(usuarioValido));
-    window.location.href = "index.html";
+<script>
+function fazerLogin(){
+  const email = document.getElementById("emailLogin").value;
+  const senha = document.getElementById("senhaLogin").value;
+  const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+  const usuarioEncontrado = usuarios.find(u => u.email === email && u.senha === senha);
+  if(usuarioEncontrado){
+    localStorage.setItem("usuarioLogado", JSON.stringify(usuarioEncontrado));
+    window.location.href = "perfil.html";
   }else{
-    alert("❌ E‑mail ou senha não cadastrados ou incorretos!");
+    alert("E‑mail ou senha incorretos");
   }
 }
-</script>
-    <footer>
-  <p> Somos Associação Comunidade Conecta — do Projeto Bem‑Estar da Minha Comunidade © 2026</p>
-  <p>Feito com 💛 para o nosso bairro</p>
-</footer>
-    <script>
-const usuarioLogado = localStorage.getItem("usuarioLogado");
-const botaoEntrar = document.getElementById("botaoEntrar");
-const botaoCadastrar = document.getElementById("botaoCadastrar");
-const botaoSair = document.getElementById("botaoSair");
-
-if (usuarioLogado) {
-  botaoEntrar.style.display = "none";
-  botaoCadastrar.style.display = "none";
-  botaoSair.style.display = "block";
-}
-
-botaoSair.addEventListener("click", function() {
-  localStorage.removeItem("usuarioLogado");
-  window.location.href = "index.html";
-});
 </script>
 </body>
 </html>
