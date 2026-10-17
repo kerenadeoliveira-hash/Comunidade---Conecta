@@ -196,6 +196,9 @@ header {
   background-color: #1a304a;
   padding: 12px 20px;
   z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .navegacao-principal {
   display: flex;
@@ -250,7 +253,6 @@ header {
 .logo-bmc img {
   height: 42px;
 }
-
 header {
   display: flex;
   align-items: center;
