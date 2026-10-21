@@ -256,15 +256,28 @@ botaoSair.addEventListener("click", function() {
 </footer>
 <div id="painelServicos" style="position:fixed; top:0; left:-280px; width:260px; height:100%; background:#f8f8f8; border-right:1px solid #ccc; transition:left 0.3s; padding-top:60px;">
   <div style="padding:0 16px;">
-    <p><strong>Saúde e Cuidados ▼</strong></p>
-    <p><strong>Alimentação e Abrigo ▼</strong></p>
-    <p><strong>Abrigo e Acolhimento ▼</strong></p>
-    <p><strong>Transporte e Mobilidade ▼</strong></p>
-    <p><strong>Atendimento e Filas na Saúde ▼</strong></p>
-    <p><strong>Limpeza e Cuidado com Nosso Bairro ▼</strong></p>
-    <p><strong>Alertas do Bairro ▼</strong></p>
-    <p><strong>Ajuda Mútua ▼</strong></p>
-    <p><strong>Para Todos ▼</strong></p>
+    <p onclick="abrirGrupo('grupoSaude')">🏥 <strong>Saúde e Cuidados ▼</strong></p>
+      <div id="grupoSaude" style="display:none; padding‑left:20px;">
+  <p>Posto de Saúde 1</p>
+  <p>Posto de Saúde 2</p>
+</div>
+    <p onclick="abrirGrupo('grupoAlimentacao')">🍲 <strong>Alimentação e Abrigo ▼</strong></p>
+      <div id="grupoAlimentacao" style="display:none; padding‑left:20px;">
+  <p>Restaurante Popular</p>
+</div>
+    <p onclick="abrirGrupo('grupoAbrigo')">🏠 <strong>Abrigo e Acolhimento ▼</strong></p>
+      <div id="grupoAbrigo" style="display:none; padding‑left:20px;">
+  <p>Casa de Acolhimento</p>
+</div>
+    <p onclick="abrirGrupo('grupoTransporte')">🚌 <strong>Transporte e Mobilidade ▼</strong></p>
+      <div id="grupoTransporte" style="display:none; padding‑left:20px;">
+  <p>Linhas de Ônibus do Bairro</p>
+</div>
+    <p>⚕ <strong>Atendimento e Filas na Saúde ▼</strong></p>
+     <p>🧹<strong>Limpeza e Cuidado com Nosso Bairro ▼</strong></p>
+    <p>⚠️ <strong>Alertas do Bairro ▼</strong></p>
+    <p>🤝 <strong>Ajuda Mútua ▼</strong></p>
+    <p>ℹ <strong>Para Todos ▼</strong></p>
   </div>
 </div>
 
@@ -275,6 +288,12 @@ btnServ.addEventListener("click", ()=>{
   if(painel.style.left === "0px") painel.style.left = "-280px";
   else painel.style.left = "0px";
 });
-</script></body>
+    function abrirGrupo(idGrupo){
+  const el = document.getElementById(idGrupo);
+  if(el.style.display === "none") el.style.display = "block";
+  else el.style.display = "none";
+}
+</script>
+</body>
 </html>
             
