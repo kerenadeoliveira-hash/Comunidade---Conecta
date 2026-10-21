@@ -186,12 +186,13 @@ async function carregarEventos(){
   let html="";
   for(let i=1;i<linhas.length;i++){
     const c=linhas[i].split(",");
-    html+=`<div style="padding:10px;border:1px solid #bbb;margin:8px 0;">
-    <h3>${c[0]}</h3>
-    <p>Data:${c[1]} ${c[2]}</p>
-    <p>Local:${c[3]}</p>
-    <p>${c[4]}</p>
-    </div>`;
+ html+=`<div style="padding:10px;border:1px solid #ddd;border‑radius:8px;margin‑bottom:12px;">
+<img src="${c[5]}" style="width:100%;height:160px;object‑fit:cover;border‑radius:6px;margin‑bottom:8px;">
+<h3>${c[0]}</h3>
+<p>Data:${c[1]} ${c[2]}</p>
+<p>Local:${c[3]}</p>
+<p>${c[4]}</p>
+</div>`;
   }
   document.querySelector("#lista‑eventos").innerHTML=html;
 }
