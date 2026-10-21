@@ -137,7 +137,10 @@ header {
 <nav class="navegacao-principal">
   <div class="links-menu">
     <a href="index.html">Início</a>
-    <a href="perfil.html">Meu Perfil</a>
+    <a href="perfil.html" style="display:inline‑block; text‑align:center;">
+  <div style="font‑size:28px;">👤</div>
+  <div>Meu Perfil</div>
+<button id="btnMenuServicos" style="background:none; border:none; font‑size:22px; cursor:pointer;">☰</button>   
     <a href="servicos.html">Serviços</a>
     <a href="eventos.html">Eventos</a>
     <a href="avisos.html">Avisos</a>
@@ -251,6 +254,27 @@ botaoSair.addEventListener("click", function() {
   <p>Comunidade Conecta — Bem‑Estar da Minha Comunidade © 2026</p>
   <p>Feito com 💛 para o nosso bairro</p>
 </footer>
-</body>
+<div id="painelServicos" style="position:fixed; top:0; left:-280px; width:260px; height:100%; background:#f8f8f8; border-right:1px solid #ccc; transition:left 0.3s; padding-top:60px;">
+  <div style="padding:0 16px;">
+    <p><strong>Saúde e Cuidados ▼</strong></p>
+    <p><strong>Alimentação e Abrigo ▼</strong></p>
+    <p><strong>Abrigo e Acolhimento ▼</strong></p>
+    <p><strong>Transporte e Mobilidade ▼</strong></p>
+    <p><strong>Atendimento e Filas na Saúde ▼</strong></p>
+    <p><strong>Limpeza e Cuidado com Nosso Bairro ▼</strong></p>
+    <p><strong>Alertas do Bairro ▼</strong></p>
+    <p><strong>Ajuda Mútua ▼</strong></p>
+    <p><strong>Para Todos ▼</strong></p>
+  </div>
+</div>
+
+<script>
+const btnServ = document.getElementById("btnMenuServicos");
+const painel = document.getElementById("painelServicos");
+btnServ.addEventListener("click", ()=>{
+  if(painel.style.left === "0px") painel.style.left = "-280px";
+  else painel.style.left = "0px";
+});
+</script></body>
 </html>
             
