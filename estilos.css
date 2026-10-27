@@ -1117,7 +1117,27 @@ nav {
 .lado-direito a {
   text-decoration: none;
 }
+.links-centro {
+  display: flex;
+  gap: 20px; /* era 30, diminui pra 20 */
+  margin: 0 auto;
+  white-space: nowrap; /* isso impede de quebrar linha */
+}
 
+.lado-direito {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* era 20, diminui pra 15 */
+  margin-right: 20px;
+  white-space: nowrap;
+}
+.navegacao-principal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 20px;
+}
 
 
 
