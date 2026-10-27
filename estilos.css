@@ -921,7 +921,55 @@ nav span {
 .menu-hamburguer:hover .menu-conteudo {
     display: block;
 }
+/* ===== BOTÃO SERVIÇOS AO LADO DO LOGO ===== */
+.menu-servicos {
+    position: relative;
+    display: inline-block;
+    margin-left: 15px;  /* ← Ajusta a distância entre BMC e o botão */
+}
 
+.botao-servicos {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px 10px;
+    color: white;  /* ← As três barrinhas ficam brancas */
+}
+
+/* ===== A ABA QUE ABRE — FUNDO AZUL ESCURO, LETRAS BRANCAS ===== */
+.lista-servicos {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #0a2342;  /* ← AZUL ESCURO no fundo da aba */
+    min-width: 260px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    border-radius: 0 0 6px 6px;
+    z-index: 9999;
+}
+
+/* Abre a lista quando passa o mouse */
+.menu-servicos:hover .lista-servicos {
+    display: block;
+}
+
+/* Os itens dentro da aba */
+.lista-servicos a {
+    display: block;
+    padding: 12px 20px;
+    color: white;  /* ← LETRAS BRANCAS */
+    text-decoration: none;
+    font-size: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Efeito ao passar o mouse em cima de cada nome */
+.lista-servicos a:hover {
+    background-color: #14407a;  /* ← Azul um pouquinho mais claro ao passar o mouse */
+    color: white;
+}
 
 
 
