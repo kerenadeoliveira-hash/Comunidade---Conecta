@@ -47,9 +47,11 @@
         <input type="email" id="emailCadastro">
       </div>
       <div>
-        <label>Senha</label>
-        <input type="password" id="senhaCadastro">
-      </div>
+    <div class="senha-container">
+  <label>Senha:</label>
+  <input type="password" id="senhaCadastro" placeholder="Crie sua senha">
+  <span id="icone-olho" onclick="mostrarSenhaCadastro()">👁️</span>
+</div>
       <button onclick="fazerCadastro()">CADASTRAR‑SE ✔</button>
       <p>Já tem conta? <a href="login.html">Entre aqui</a></p>
     </div>
@@ -76,6 +78,10 @@ function fazerCadastro(){
   localStorage.setItem("usuarios", JSON.stringify(usuarios));
   localStorage.setItem("usuarioLogado", JSON.stringify(novoUsuario));
   window.location.href = "perfil.html";
+}
+function mostrarSenhaCadastro() {
+  const campo = document.getElementById('senhaCadastro');
+  campo.type = campo.type === 'password' ? 'text' : 'password';
 }
 </script>
 </body>
