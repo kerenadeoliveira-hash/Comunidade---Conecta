@@ -397,6 +397,7 @@ background:#ffffff;
   transform: translateY(-50%);
   cursor: pointer;
   font-size: 18px;
+  background-image: url("aqui-o-nome-da-sua-imagem.jpg");
   user-select: none;
   line-height: 1;
 }
