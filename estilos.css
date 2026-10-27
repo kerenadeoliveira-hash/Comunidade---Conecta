@@ -615,6 +615,22 @@ header {
 nav {
     margin-left: 0; /* tira qualquer margem que esteja empurrando o menu para longe */
 }
+.proximos-eventos {
+    width: 100%;
+    padding: 40px 60px;
+}
+
+.proximos-eventos h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.cartao-evento img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
 /* Faz TODAS as imagens dos eventos ocuparem a largura toda */
 .cartao-evento img,
 .proximos-eventos img {
