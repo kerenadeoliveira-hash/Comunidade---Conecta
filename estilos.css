@@ -567,4 +567,40 @@ background:#ffffff;
     height: auto;
     display: block;
 }
+.banner-principal {
+    width: 100%;
+    min-height: 500px;
+    background: url("banner.png") no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    padding-left: 60px;
+    position: relative;
+}
+
+.banner-principal::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
+}
+
+.texto-sobre-imagem {
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+
+.texto-sobre-imagem h1 {
+    font-size: 48px;
+    margin: 0 0 15px 0;
+}
+
+.texto-sobre-imagem p {
+    font-size: 20px;
+    margin: 0;
+}
 
