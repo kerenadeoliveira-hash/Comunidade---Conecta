@@ -59,16 +59,28 @@ function mostrarSenha() {
     </div>
   </main>
 <script>
-function fazerLogin(){
-  const email = document.getElementById("emailLogin").value;
-  const senha = document.getElementById("senhaLogin").value;
-  const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+function mostrarSenha() {
+  const campo = document.getElementById('senhalogin');
+  campo.type = campo.type === 'password' ? 'text' : 'password';
+}
+
+function fazerLogin() {
+  const email = document.getElementById('emaillogin').value;
+  const senha = document.getElementById('senhalogin').value;
+  const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
+  
+  if (!email || !senha) {
+    alert("Preencha todos os campos");
+    return;
+  }
+  
   const usuarioEncontrado = usuarios.find(u => u.email === email && u.senha === senha);
-  if(usuarioEncontrado){
-    localStorage.setItem("usuarioLogado", JSON.stringify(usuarioEncontrado));
+  
+  if (usuarioEncontrado) {
+    localStorage.setItem('usuarioLogado', JSON.stringify(usuarioEncontrado));
     window.location.href = "perfil.html";
-  }else{
-    alert("E‑mail ou senha incorretos");
+  } else {
+    alert("E-mail ou senha incorretos");
   }
 }
 </script>
