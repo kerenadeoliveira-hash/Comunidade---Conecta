@@ -1138,6 +1138,31 @@ nav {
   width: 100%;
   padding: 0 20px;
 }
+.item-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.icone-menu {
+  font-size: 24px;
+  margin-bottom: 2px;
+}
+
+.links-centro {
+  display: flex;
+  gap: 35px;
+  margin: 0 auto;
+}
+
+.lado-direito {
+  display: flex;
+  align-items: center;
+  gap: 25px; /* espaço pequeno entre Meu Perfil e Sair */
+  margin-right: 20px;
+}
 
 
 
