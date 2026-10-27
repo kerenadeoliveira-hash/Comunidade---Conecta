@@ -832,6 +832,52 @@ nav span {
     display: flex;
     align-items: center;
 }
+/* ===== MENU SUSPENSO SERVIÇOS ===== */
+.menu-servicos-container {
+    position: relative;
+    display: inline-block;
+}
+
+.submenu-servicos {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    min-width: 220px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-radius: 0 0 8px 8px;
+    z-index: 1000;
+    margin-top: 5px;
+    padding: 10px 0;
+}
+
+.submenu-servicos strong {
+    display: block;
+    padding: 12px 20px 5px 20px;
+    color: #20634f;
+    font-size: 15px;
+    border-bottom: 1px solid #eee;
+    margin-top: 5px;
+}
+
+.submenu-servicos a {
+    display: block;
+    padding: 8px 20px 8px 30px;
+    text-decoration: none;
+    color: #444;
+    font-size: 14px;
+}
+
+.submenu-servicos a:hover {
+    background: #f0f7f4;
+    color: #20634f;
+}
+
+.menu-servicos-container:hover .submenu-servicos {
+    display: block;
+}
 
 
 
