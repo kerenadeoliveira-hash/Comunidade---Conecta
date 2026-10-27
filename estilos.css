@@ -1177,6 +1177,11 @@ nav {
 .item-menu:hover {
   color: #2c5282; /* um pouco mais claro quando passar o mouse */
 }
-
+/* Esconde os textos que aparecem errado sobre a imagem do banner */
+.banner-principal .item-menu,
+.banner-principal .links-centro,
+.banner-principal > div:has(.item-menu) {
+  display: none !important;
+}
 
 
