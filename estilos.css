@@ -546,6 +546,12 @@ background:#ffffff;
   .cartao-evento img {
   height: 350px; /* antes era 250px — agora tá MAIOR! ✅ */
 }
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
   user-select: none;
   line-height: 1;
 }
