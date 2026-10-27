@@ -1074,6 +1074,12 @@ nav span {
     background-color: #14407a;
     color: white;
 }
+<div class="logo">
+  <img src="logo-bmc.png" alt="Logomarca BMC">
+  <span>BMC</span>
+</div>
+
+<!-- Depois vem a navegação: Início | Meu Perfil | Solicitar Ajuda | Oferecer Ajuda -->
 
 
 
