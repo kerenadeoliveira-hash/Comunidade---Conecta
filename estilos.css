@@ -1163,6 +1163,20 @@ nav {
   gap: 25px; /* espaço pequeno entre Meu Perfil e Sair */
   margin-right: 20px;
 }
+.item-menu {
+  color: azul-claro-ou-outra-cor;
+  text-align: center;
+  text-decoration: none;
+}
+.item-menu {
+  color: #1a365d; /* azul escuro */
+  text-align: center;
+  text-decoration: none;
+}
+
+.item-menu:hover {
+  color: #2c5282; /* um pouco mais claro quando passar o mouse */
+}
 
 
 
