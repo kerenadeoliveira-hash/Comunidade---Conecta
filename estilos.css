@@ -543,6 +543,9 @@ background:#ffffff;
   .banner-principal img {
   height: 400px;
 }
+  .cartao-evento img {
+  height: 350px; /* antes era 250px — agora tá MAIOR! ✅ */
+}
   user-select: none;
   line-height: 1;
 }
