@@ -639,8 +639,202 @@ nav {
     object-fit: cover;
     display: block;
 }
-
 /* Espaçamento entre os cartões dos eventos */
 .cartao-evento {
     margin-bottom: 40px;
 }
+/* ===== IMAGEM JOGOS E COMUNIDADE ===== */
+.jogos-comunidade img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.jogos-comunidade {
+    padding: 40px 60px;
+}
+
+.jogos-comunidade h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.jogos-comunidade p {
+    font-size: 16px;
+    color: #555;
+    margin-top: 15px;
+    max-width: 800px;
+}
+/* ===== CARTÃO DE EVENTO — sem margem nas laterais ===== */
+.cartao-evento {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 40px 0;
+    padding: 0;
+}
+
+.cartao-evento img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+.cartao-evento h3,
+.cartao-evento p {
+    padding: 0 20px;
+    margin: 10px 0;
+}
+
+.proximos-eventos,
+.eventos-realizados {
+    padding: 0;
+    margin: 0;
+}
+
+.proximos-eventos h2,
+.eventos-realizados h2 {
+    padding: 20px 20px 0 20px;
+    margin: 0;
+}
+/* ===== PRÓXIMOS EVENTOS — sem margem lateral ===== */
+.proximos-eventos {
+    padding: 40px 0;
+    margin: 0;
+}
+
+.proximos-eventos h2 {
+    padding: 0 20px 20px 20px;
+    margin: 0;
+}
+
+/* ===== EVENTOS REALIZADOS — sem margem lateral ===== */
+.eventos-realizados {
+    padding: 40px 0;
+    margin: 0;
+}
+
+.eventos-realizados h2 {
+    padding: 0 20px 20px 20px;
+    margin: 0;
+}
+
+/* ===== CARTÃO DE EVENTO — foto de ponta a ponta ===== */
+.cartao-evento {
+    width: 100%;
+    margin: 0 0 40px 0;
+    padding: 0;
+}
+
+.cartao-evento img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.cartao-evento h3,
+.cartao-evento p {
+    padding: 10px 20px;
+    margin: 0;
+}
+
+/* ===== GALERIA DE FOTOS — sem margem lateral ===== */
+.galeria-fotos {
+    padding: 40px 0;
+    margin: 0;
+}
+
+.galeria-fotos h2 {
+    padding: 0 20px 20px 20px;
+    margin: 0;
+}
+
+.grade-fotos {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.grade-fotos img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* ===== JOGOS E COMUNIDADE — sem margem lateral ===== */
+.jogos-comunidade {
+    padding: 40px 0;
+    margin: 0;
+}
+
+.jogos-comunidade h2 {
+    padding: 0 20px 15px 20px;
+    margin: 0;
+}
+
+.jogos-comunidade img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.jogos-comunidade p {
+    padding: 15px 20px;
+    margin: 0;
+}
+/* ===== CABEÇALHO E NAVEGAÇÃO ===== */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* ===== ITENS DO MENU ===== */
+nav a,
+nav span {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+    height: 60px;
+    line-height: 60px;
+}
+
+/* ===== BOTÃO SAIR ===== */
+.botao-sair,
+.sair-btn {
+    padding: 8px 20px;
+    font-size: 15px;
+    height: auto;
+    line-height: normal;
+    border-radius: 25px;
+    margin-left: 20px;
+}
+
+/* ===== ÁREA DIREITA DO CABEÇALHO ===== */
+.area-direita {
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+
+
