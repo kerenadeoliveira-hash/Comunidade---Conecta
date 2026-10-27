@@ -43,14 +43,21 @@
         <input type="email" id="emailLogin">
       </div>
       <div>
-        <label>Senha</label>
-        <input type="password" id="senhaLogin">
-      </div>
+        <!-- Campo da senha -->
+<div class="senha-container">
+  <input type="password" id="senhalogin" placeholder="Digite sua senha">
+  <span id="icone-olho" onclick="mostrarSenha()">👁️</span>
+</div>
+<script>
+function mostrarSenha() {
+  const campo = document.getElementById('senhalogin');
+  campo.type = campo.type === 'password' ? 'text' : 'password';
+}
+</script>
       <button onclick="fazerLogin()">ENTRAR ✔</button>
       <p>Não tem conta? <a href="cadastro.html">Cadastre‑se</a></p>
     </div>
   </main>
-
 <script>
 function fazerLogin(){
   const email = document.getElementById("emailLogin").value;
