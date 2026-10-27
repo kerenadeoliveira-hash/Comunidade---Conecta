@@ -378,4 +378,26 @@ background:#ffffff;
   font-size: 18px;
   user-select: none;
 }
+.senha-container {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.senha-container input {
+  width: 100%;
+  padding: 10px 40px 10px 12px;
+  box-sizing: border-box;
+}
+
+#icone-olho {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  user-select: none;
+  line-height: 1;
+}
 
