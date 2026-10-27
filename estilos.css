@@ -603,4 +603,28 @@ background:#ffffff;
     font-size: 20px;
     margin: 0;
 }
+header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px; /* controla o espaço entre a logo e o menu */
+    padding: 0;
+    margin: 0;
+}
 
+nav {
+    margin-left: 0; /* tira qualquer margem que esteja empurrando o menu para longe */
+}
+/* Faz TODAS as imagens dos eventos ocuparem a largura toda */
+.cartao-evento img,
+.proximos-eventos img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Espaçamento entre os cartões dos eventos */
+.cartao-evento {
+    margin-bottom: 40px;
+}
