@@ -540,6 +540,9 @@ background:#ffffff;
   object-fit: cover;
   border-radius: 6px;
 }
+  .banner-principal img {
+  height: 400px;
+}
   user-select: none;
   line-height: 1;
 }
