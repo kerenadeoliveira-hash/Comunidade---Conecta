@@ -1183,5 +1183,13 @@ nav {
 .banner-principal > div:has(.item-menu) {
   display: none !important;
 }
+/* Esconde qualquer texto do menu que apareça fora da barra branca */
+.banner-principal .item-menu,
+.banner-principal .links-centro,
+.banner-principal > div:has(.item-menu),
+section.banner-principal .links-centro,
+body > .links-centro:not(nav .links-centro) {
+  display: none !important;
+}
 
 
