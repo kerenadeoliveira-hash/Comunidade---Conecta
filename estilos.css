@@ -1214,4 +1214,14 @@ body > .links-centro:not(nav .links-centro) {
   display:flex;
   align-items:center;
 }
+.lado-direito {
+  display: flex;
+  align-items: center;
+  gap:10px;
+}
+.item-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
