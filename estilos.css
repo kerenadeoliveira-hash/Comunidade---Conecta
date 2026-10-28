@@ -1593,3 +1593,27 @@ img {
 .grade-fotos img:hover {
   transform: scale(1.03);
 }
+  /* Corrige galeria de fotos */
+.galeria-fotos {
+  margin-top: 40px;
+  padding: 20px;
+}
+
+.galeria-fotos h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.grade-fotos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.grade-fotos img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+}
