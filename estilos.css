@@ -1234,3 +1234,21 @@ body > .links-centro:not(nav .links-centro) {
   flex-direction: column !important;
   align-items: center !important;
 }
+.navegacao-principal {
+  position: relative !important;
+  z-index: 10 !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  background: #ffffff !important;
+  padding:12px 25px !important;
+}
+.item-menu {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  margin: 0 !important;
+}
+.icone-menu {
+  margin-bottom: 3px !important;
+}
