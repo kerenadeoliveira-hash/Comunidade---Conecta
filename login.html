@@ -40,7 +40,7 @@
       <h2>🔒 Entrar</h2>
       <div>
         <label>E‑mail</label>
-        <input type="email" id="emailLogin">
+        <input type="email" id="emaillogin">
       </div>
       <div>
         <!-- Campo da senha -->
@@ -63,7 +63,6 @@ function mostrarSenha() {
   const campo = document.getElementById('senhalogin');
   campo.type = campo.type === 'password' ? 'text' : 'password';
 }
-
 function fazerLogin() {
   const email = document.getElementById('emaillogin').value.trim();
   const senha = document.getElementById('senhalogin').value;
@@ -77,11 +76,12 @@ function fazerLogin() {
   const usuarioEncontrado = usuarios.find(u => u.email === email && u.senha === senha);
   if (usuarioEncontrado) {
     localStorage.setItem('usuarioLogado', JSON.stringify(usuarioEncontrado));
-    window.location.href = "perfil.html";
+    alert("Login realizado com sucesso!");
+    window.location.href = "index.html";
   } else {
-    alert("E-mail ou senha incorretos");
+    alert("E‑mail ou senha incorretos / conta não cadastrada");
   }
 }
 </script>
 </body>
-</html>
+</html>vv
