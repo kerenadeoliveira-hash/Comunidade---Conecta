@@ -415,20 +415,21 @@ background:#ffffff;
 .texto-banner {
   position: absolute;
   top: 50%;
-  left: 40px;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%); /* ← ESSE É O SEGREDO PARA O CENTRO PERFEITO! */
   color: white;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+  text-align: center; /* ← faz as linhas ficarem centralizadas uma sobre a outra */
 }
-
 .texto-banner h1 {
   font-size: 42px;
   margin: 0 0 10px 0;
+  color: white; /* ← confirma que NÃO fica preto! */
 }
-
 .texto-banner p {
   font-size: 22px;
   margin: 0;
+  color: white; /* ← também confirma a cor */
 }
 
 /* --- BOAS-VINDAS --- */
