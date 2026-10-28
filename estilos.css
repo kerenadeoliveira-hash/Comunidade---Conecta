@@ -1252,3 +1252,13 @@ body > .links-centro:not(nav .links-centro) {
 .icone-menu {
   margin-bottom: 3px !important;
 }
+@media (min-width: 768px) {
+  .menu-icone {
+    display: none; /* no computador ele some (o que você quer!) */
+  }
+}
+@media (max-width: 767px) {
+  .menu-icone {
+    display: block; /* no celular ele CONTINUA aparecendo e abre o menu! 🎉 */
+  }
+}
