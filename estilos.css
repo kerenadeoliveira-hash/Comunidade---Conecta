@@ -1658,6 +1658,27 @@ img {
 .banner-principal {
   position: relative;
 }
+  /* Faz o banner ser a "referência" de posição */
+.banner-principal {
+  position: relative;
+  width: 100%;
+}
+
+/* Botão dos três traços no canto superior esquerdo da imagem */
+.menu-icone {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 22px;
+  width: 44px;
+  height: 44px;
+  border-radius: 4px;
+  cursor: pointer;
+}
   height: 180px;
   object-fit: cover;
   border-radius: 4px;
