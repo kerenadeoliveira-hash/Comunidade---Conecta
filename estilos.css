@@ -1638,6 +1638,26 @@ img {
 
 .grade-fotos img {
   width: 100%;
+  /* Posiciona o botão de menu em cima da imagem do banner */
+.menu-icone {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  font-size: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Garante que o banner seja o ponto de referência */
+.banner-principal {
+  position: relative;
+}
   height: 180px;
   object-fit: cover;
   border-radius: 4px;
