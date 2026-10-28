@@ -1263,3 +1263,15 @@ body > .links-centro:not(nav .links-centro) {
     display: block; /* no celular ele CONTINUA aparecendo e abre o menu! 🎉 */
   }
 }
+.navegacao-principal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+}
+.links-menu {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 25px; /* pode aumentar esse número para afastar mais os links um do outro */
+}
