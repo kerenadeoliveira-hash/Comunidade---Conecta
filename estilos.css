@@ -1470,3 +1470,60 @@ img {
   height: 100%;
   background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
 }
+  /* 1. Regra GERAL para imagens normais (NÃO quebra o site) */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 2. Banner PRINCIPAL (versão para quando é DIV com background — atenção: se for <img> é outro!) */
+.banner-principal {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  padding-left: 60px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* 3. Se o banner for uma TAG <img> (não background): */
+.banner-principal img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* 4. Cartões / evento / criança — TODOS mesma caixa 16:9 */
+.cartao-evento, .cartao-crianca, .cartao-jogo {
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+.cartao-evento img, .cartao-crianca img, .cartao-jogo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* 5. Camada escura do banner — DEIXE ESSE (não apague!) */
+.banner-principal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
+}
