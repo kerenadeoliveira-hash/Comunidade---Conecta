@@ -1275,3 +1275,29 @@ body > .links-centro:not(nav .links-centro) {
   justify-content: center;
   gap: 25px; /* pode aumentar esse número para afastar mais os links um do outro */
 }
+.links-menu {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 35px; /* AUMENTE de 16px para 30‑40px — isso abre o espaço entre Início / Solicitar Ajuda etc.! */
+}
+.links-menu {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  margin-left: 60px; /* teste: 40, 60, 80px — só um pouquinho para lá! */
+}
+.navegacao-principal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+}
+.links-menu {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  margin-left: 50px;
+}
