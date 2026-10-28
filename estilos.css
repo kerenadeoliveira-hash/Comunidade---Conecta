@@ -1705,3 +1705,21 @@ img {
   object-fit: cover;
   border-radius: 4px;
 }
+  .banner-principal {
+  position: relative;
+}
+
+.menu-icone {
+  position: absolute;
+  top: 20px;
+  left: 15px;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 22px;
+  width: 44px;
+  height: 44px;
+  border-radius: 4px;
+  cursor: pointer;
+}
