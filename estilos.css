@@ -1301,3 +1301,24 @@ body > .links-centro:not(nav .links-centro) {
   gap: 35px;
   margin-left: 50px;
 }
+.texto-banner {
+  text-align: center; /* ← isso faz cada linha ficar no meio da caixa */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); /* ← esse é o segredo para ficar EXATAMENTE no centro da imagem! */
+  width: 85%;
+}
+.banner-principal {
+  position: relative;
+  min-height: 550px;
+}
+.banner-principal {
+  position: relative;
+  min-height: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
