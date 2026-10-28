@@ -1679,6 +1679,28 @@ img {
   border-radius: 4px;
   cursor: pointer;
 }
+  /* Botão de menu no banner */
+.menu-icone {
+  position: absolute;
+  top: 265px;
+  left: 15px;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  font-size: 22px;
+  width: 44px;
+  height: 44px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Garante que o banner é o ponto de referência */
+.banner-principal {
+  position: relative;
+  width: 100%;
+}
+  
   height: 180px;
   object-fit: cover;
   border-radius: 4px;
