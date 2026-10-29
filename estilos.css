@@ -182,9 +182,15 @@ header {
   border-radius: 12px;
 }
 /* Deixa o texto BMC branco */
+.logo-bmc{
+display: flex;
+  align-items: center;
+  gap: 8px;
+}
 .logo-bmc span {
   color: #ffffff;
   font-weight: bold;
+  font-size:18px;
 }
 /* Menu horizontal no topo nas páginas internas */
 header {
