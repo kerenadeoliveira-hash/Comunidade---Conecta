@@ -4,20 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bem-Estar da Minha Comunidade</title>
-    <style> 
-        .logo-topo {
-            width: 80px;
-            position: absolute;
-            top: 12px;
-            left: 12px;
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: Arial, sans-serif; 
         }
-
-        header {
-            position: relative;
-            padding-left: 100px;
-        }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
         
         body { 
             background-color: #f0f7f0; 
@@ -25,37 +18,215 @@
             line-height: 1.6;
         }
         
-        /* Cabeçalho */
+        /* ===== CABEÇALHO BRANCO ===== */
         header {
-            background-color: #2c6e49;
-            color: white;
-            padding: 2rem;
-            text-align: center;
+            background-color: #ffffff;
+            padding: 0.9rem 1.2rem;
+            border-bottom: 2px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
         
-        header h1 { 
-            margin-bottom: 0.5rem; 
-            font-size: 2rem;
+        /* Logomarca bem encostada à esquerda */
+        .logo-bmc {
+            flex-shrink: 0;
+            margin-left: 0;
         }
-        
-        /* Menu de Navegação */
-        nav {
-            background-color: #40916c;
-            padding: 1rem;
-            text-align: center;
+
+        .logo-bmc .logo {
+            height: 50px;
+            width: auto;
         }
-        
-        nav a {
-            color: white;
+
+        /* Menu central — espaços iguais entre os itens */
+        .menu-central {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .menu-central a {
+            color: #1a365d;
             text-decoration: none;
-            margin: 0 1rem;
             font-weight: bold;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
-        
-        nav a:hover { text-decoration: underline; }
-        
-        /* Conteúdo Principal */
+
+        .menu-central a:hover {
+            text-decoration: underline;
+            color: #2c5290;
+        }
+
+        /* Lado direito: Ícone Perfil + Sair */
+        .menu-direito {
+            display: flex;
+            gap: 1.8rem;
+            align-items: center;
+            flex-shrink: 0;
+            margin-right: 0.5rem;
+        }
+
+        /* Ícone do Perfil com dica ao passar o mouse */
+        .icone-perfil {
+            font-size: 1.4rem;
+            color: #1a365d;
+            cursor: pointer;
+            position: relative;
+        }
+
+        /* Mensagem que aparece ao passar o mouse */
+        .icone-perfil:hover::after {
+            content: "Meu Perfil";
+            position: absolute;
+            bottom: -28px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1a365d;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            z-index: 100;
+        }
+
+        .sair-link {
+            color: #d32f2f;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .sair-link:hover {
+            text-decoration: underline;
+            color: #b71c1c;
+        }
+
+        /* ===== CARROSSEL DE BANNERS ===== */
+        .carrossel {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        /* Botão dos 3 traços no banner */
+        .botao-tracos {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(255,255,255,0.95);
+            border: none;
+            padding: 0.5rem 0.8rem;
+            font-size: 1.2rem;
+            border-radius: 4px;
+            cursor: pointer;
+            z-index: 20;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .slides {
+            display: flex;
+            width: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .slide {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+        }
+
+        .texto-slide {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            background: rgba(0,0,0,0.5);
+            padding: 1.5rem 2rem;
+            border-radius: 8px;
+            width: 80%;
+        }
+
+        .texto-slide h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pontos {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .ponto {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+        }
+
+        .ponto-ativo {
+            background: white;
+        }
+
+        /* ===== PAINEL DE SERVIÇOS LATERAL ===== */
+        #painelServicos {
+            position: fixed; 
+            top: 0; 
+            left: -300px; 
+            width: 280px; 
+            height: 100%; 
+            background: #f8f8f8; 
+            border-right: 1px solid #ccc; 
+            transition: left 0.3s ease; 
+            padding-top: 70px;
+            z-index: 100;
+            overflow-y: auto;
+        }
+
+        #painelServicos.aberto {
+            left: 0;
+        }
+
+        #painelServicos div {
+            padding: 0 20px 20px;
+        }
+
+        #painelServicos h3 {
+            color: #1a365d;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        #painelServicos a {
+            display: block;
+            padding: 0.6rem 0;
+            color: #333;
+            text-decoration: none;
+            font-size: 0.95rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        #painelServicos a:hover {
+            background: #e8e8e8;
+            padding-left: 5px;
+        }
+
+        /* ===== CONTEÚDO PRINCIPAL ===== */
         main {
             max-width: 900px;            
             margin: 2rem auto;
@@ -71,12 +242,87 @@
         }
         
         .boas-vindas h2 {
-            color: #2c6e49;
+            color: #1a365d;
             margin-bottom: 1rem;
             font-size: 1.8rem;
         }
+
+        .aviso {
+            background: #fff9e8;
+            border-left: 5px solid #ff9f1c;
+            padding: 1.2rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+        }
         
-        /* Grade de Acesso Rápido */
+        .aviso h3 {
+            color: #856404;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ===== PRÓXIMOS EVENTOS ===== */
+        .proximos-eventos {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .proximos-eventos h2 {
+            color: #1a365d;
+            margin-bottom: 1.5rem;
+        }
+
+        .grade-eventos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .cartao-evento {
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #fafafa;
+        }
+
+        .cartao-evento img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .cartao-evento h3 {
+            padding: 1rem 1rem 0.5rem;
+            color: #1a365d;
+        }
+
+        .cartao-evento p {
+            padding: 0.3rem 1rem;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        /* ===== JOGOS E COMUNIDADE ===== */
+        .jogos-comunidade {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .jogos-comunidade img {
+            max-width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        /* ===== GRADE DE ACESSO ===== */
         .grade {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -98,67 +344,50 @@
         .caixa:hover { transform: translateY(-5px); }
         
         .caixa h3 { 
-            color: #2c6e49; 
+            color: #1a365d; 
             margin-bottom: 0.5rem;
             font-size: 1.2rem;
         }
-        
-        /* Aviso */
-        .aviso {
-            background: #fff3cd;
-            border-left: 5px solid #ffc107;
-            padding: 1.2rem;
-            border-radius: 6px;
-            margin-bottom: 2rem;
-        }
-        
-        .aviso h3 {
-            color: #856404;
-            margin-bottom: 0.5rem;
-        }
-        
-        /* Rodapé */
+
+        /* ===== RODAPÉ ===== */
         footer {
-            background: #2c6e49;
+            background: #1a365d;
             color: white;
             text-align: center;
             padding: 1.5rem;
             margin-top: 2rem;
         }
     </style>
-    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
-    <!-- Cabeçalho -->
+    <!-- ===== CABEÇALHO ===== -->
     <header>
+        <!-- Logomarca encostada à esquerda -->
         <div class="logo-bmc">
             <img src="logo-bmc.png" alt="Logomarca BMC" class="logo">
-            <span>BMC</span>
         </div>
-        <nav class="navegacao-principal">
-            <!-- Lado ESQUERDO -->
-            <div class="menu-esquerda">
-                <a href="index.html" class="item-barra">Início</a>
-                <a href="ajuda.html" class="item-barra">Solicitar Ajuda</a>
-                <a href="oferecer-ajuda.html" class="item-barra">Oferecer Ajuda</a>
-                <a href="eventos.html" class="item-barra">Eventos</a>
-            </div>
 
-            <!-- Lado DIREITO -->
-            <div class="lado-direito">
-                <a href="perfil.html" class="item-menu" title="Meu Perfil">
-                    <div class="icone-menu">👤</div>
-                </a>
-                <a href="#" id="botaoSair">Sair</a>
-            </div>
+        <!-- Menu central com espaços iguais -->
+        <nav class="menu-central">
+            <a href="index.html">Início</a>
+            <a href="ajuda.html">Solicitar Ajuda</a>
+            <a href="oferecer-ajuda.html">Oferecer Ajuda</a>
+            <a href="eventos.html">Eventos</a>
         </nav>
-        <a href="login.html" class="botao-acesso botao-entrar" id="botaoEntrar">Entrar</a>
-        <a href="cadastro.html" class="botao-acesso botao-cadastrar" id="botaoCadastrar">Cadastrar-se</a>
+
+        <!-- Lado direito: Ícone Perfil + Sair -->
+        <div class="menu-direito">
+            <a href="perfil.html" class="icone-perfil" title="Meu Perfil">👤</a>
+            <a href="#" class="sair-link" id="botaoSair">Sair</a>
+        </div>
     </header>
 
-    <!-- 🖼️ CARROSSEL DE BANNERS (Desliza como slide automaticamente) -->
+    <!-- ===== 🖼️ CARROSSEL DE BANNERS ===== -->
     <section class="carrossel">
+        <!-- 3 traços que abre a lista de serviços -->
+        <button class="botao-tracos" id="btnMenuServicos">☰</button>
+        
         <div class="slides">
             <div class="slide">
                 <img src="banner.png" alt="Bem-Estar da Minha Comunidade">
@@ -167,15 +396,13 @@
                     <p>Espaço de união e bem-estar para todos</p>
                 </div>
             </div>
-
             <div class="slide">
                 <img src="banner-2.png" alt="Comunidade">
                 <div class="texto-slide">
-                    <h1>Atividades para a Comunidade</h1>
-                    <p>Feiras, oficinas, jogos, shows e momentos juntos</p>
+                    <h1>Nossa Comunidade</h1>
+                    <p>Feiras, oficinas, jogos e momentos juntos</p>
                 </div>
             </div>
-
             <div class="slide">
                 <img src="banner-3.png" alt="Ajuda Mútua">
                 <div class="texto-slide">
@@ -184,7 +411,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div class="pontos">
             <span class="ponto ponto-ativo"></span>
             <span class="ponto"></span>
@@ -192,84 +419,15 @@
         </div>
     </section>
 
-    <!-- Conteúdo Principal -->
-    <main>
-        <!-- 👋 MENSAGEM DE BOAS-VINDAS -->
-        <section class="boas-vindas">
-            <h2>Bem-vindo!</h2>
-            <p>Espaço de bem-estar da comunidade. Participe dos nossos eventos e venha fazer parte dessa história com a gente!</p>
-        </section>
-
-        <!-- 📅 SEÇÃO DE PRÓXIMOS EVENTOS (Recuperada do seu primeiro bloco) -->
-        <section class="proximos-eventos">
-            <h2>Próximos Eventos</h2>
-            <div class="cartao-evento">
-                <img src="evento.png" alt="Imagem do Evento">
-                <h3>Atividades Especiais</h3>
-                <p>Confira nossa programação de encontros e feiras locais.</p>
-            </div>
-        </section>
-
-        <!-- 📸 GALERIA DE FOTOS EM LINHA (Recuperada do seu primeiro bloco) -->
-        <section class="galeria-eventos">
-            <h3>Galeria de Eventos</h3>
-            <div class="fotos-linha">
-                <img src="foto1.jpg" alt="Foto 1">
-                <img src="foto2.jpg" alt="Foto 2">
-                <img src="foto3.jpg" alt="Foto 3">
-            </div>
-        </section>
-    </main>
-
-    <!-- ☰ BOTÃO DO MENU HAMBURGUER COM TODOS OS 9 SERVIÇOS -->
-    <div class="botao-servicos-no-banner">
-        <button class="botao-tracos" id="botaoMenu">☰</button>
-        <div class="lista-servicos">
-            <a href="servicos.html#saude">Saúde e Cuidados</a>
-            <a href="servicos.html#postos-saude">Postos de Saúde e Vacinação</a>
-            <a href="servicos.html#remedios-gratuitos">Remédios Gratuitos</a>
-            <a href="servicos.html#emergencia">Emergência</a>
-            <a href="servicos.html#alimentacao-gratis">Alimentação Gratuita</a>
-            <a href="servicos.html#alimentacao-acessivel">Alimentação com Preço Acessível</a>
-            <a href="servicos.html#abrigo">Abrigo e Acolhimento</a>
-            <a href="servicos.html#transporte">Transporte e Mobilidade</a>
-            <a href="servicos.html#filas-saude">Atendimento e Filas na Saúde</a>
-        </div>
-    </div>
-
-    <!-- Rodapé -->
-    <footer>
-        <p>&copy; 2026 Bem-Estar da Minha Comunidade. Todos os direitos reservados.</p>
-    </footer>
-
-    <!-- ⚡ SCRIPT DO CARROSSEL (Faz as imagens passarem sozinhas) -->
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const slides = document.querySelector('.slides');
-        const pontos = document.querySelectorAll('.ponto');
-        let slideAtual = 0;
-        const total = 3;
-
-        function irParaSlide(n) {
-            slideAtual = n;
-            slides.style.transform = `translateX(-${n * (100 / total)}%)`;
-            pontos.forEach((p, i) => {
-                p.classList.remove('ponto-ativo');
-                if (i === n) p.classList.add('ponto-ativo');
-            });
-        }
-
-        function proximoSlide() {
-            irParaSlide((slideAtual + 1) % total);
-        }
-
-        irParaSlide(0);
-        setInterval(proximoSlide, 5000);
-        pontos.forEach((p, i) => {
-            p.addEventListener('click', () => irParaSlide(i));
-        });
-    });
-    </script>
-
-</body>
-</html>
+    <!-- ===== 📋 PAINEL DE SERVIÇOS LATERAL — Abre ao clicar nos 3 traços ===== -->
+    <div id="painelServicos">
+        <div>
+            <h3>🏥 Saúde e Bem-Estar</h3>
+            <a href="servicos.html#saude">💉 Postos de Saúde e Vacinação</a>
+            <a href="servicos.html#remedios-gratuitos">💊 Remédios Gratuitos</a>
+            <a href="servicos.html#emergencia">🚨 Emergência</a>
+            
+            <h3>🍽️ Alimentação</h3>
+            <a href="servicos.html#alimentacao-gratis">🥬 Feira Comunitária de Alimentos</a>
+            <a href="servicos.html#alimentacao-acessivel">🛒 Alimentação com Preço Acessível</a>
+            <a href="servicos.html#restaurante">🍽️...
