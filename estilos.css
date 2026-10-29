@@ -1232,7 +1232,7 @@ body > .links-centro:not(nav .links-centro) {
 }
 @media (min-width: 768px) {
   .menu-icone {
-    display: none; /* no computador ele some (o que você quer!) */
+    display: flex; /* no computador ele some (o que você quer!) */
   }
 }
 @media (max-width: 767px) {
