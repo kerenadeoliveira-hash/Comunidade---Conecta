@@ -4,6 +4,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bem-Estar da Minha Comunidade</title>
+    <style> 
+        .logo-topo {
+            width: 80px;
+            position: absolute;
+            top: 12px;
+            left: 12px;
+        }
+
+        header {
+            position: relative;
+            padding-left: 100px;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        
+        body { 
+            background-color: #f0f7f0; 
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Cabeçalho */
+        header {
+            background-color: #2c6e49;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        header h1 { 
+            margin-bottom: 0.5rem; 
+            font-size: 2rem;
+        }
+        
+        /* Menu de Navegação */
+        nav {
+            background-color: #40916c;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        nav a:hover { text-decoration: underline; }
+        
+        /* Conteúdo Principal */
+        main {
+            max-width: 900px;            
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .boas-vindas {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .boas-vindas h2 {
+            color: #2c6e49;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        
+        /* Grade de Acesso Rápido */
+        .grade {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .caixa {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .caixa:hover { transform: translateY(-5px); }
+        
+        .caixa h3 { 
+            color: #2c6e49; 
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        /* Aviso */
+        .aviso {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 1.2rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+        }
+        
+        .aviso h3 {
+            color: #856404;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Rodapé */
+        footer {
+            background: #2c6e49;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+    </style>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
@@ -14,25 +136,8 @@
             <img src="logo-bmc.png" alt="Logomarca BMC" class="logo">
             <span>BMC</span>
         </div>
-        
         <nav class="navegacao-principal">
-            <!-- ☰ Botão de Serviços com a sua lista completa de 9 itens -->
-            <div class="botao-servicos-no-banner">
-                <button class="botao-tracos" id="botaoMenu">☰</button>
-                <div class="lista-servicos">
-                    <a href="servicos.html#saude">Saúde e Cuidados</a>
-                    <a href="servicos.html#postos-saude">Postos de Saúde e Vacinação</a>
-                    <a href="servicos.html#remedios-gratuitos">Remédios Gratuitos</a>
-                    <a href="servicos.html#emergencia">Emergência</a>
-                    <a href="servicos.html#alimentacao-gratis">Alimentação Gratuita</a>
-                    <a href="servicos.html#alimentacao-acessivel">Alimentação com Preço Acessível</a>
-                    <a href="servicos.html#abrigo">Abrigo e Acolhimento</a>
-                    <a href="servicos.html#transporte">Transporte e Mobilidade</a>
-                    <a href="servicos.html#filas-saude">Atendimento e Filas na Saúde</a>
-                </div>
-            </div>
-
-            <!-- Lado ESQUERDO: os textos sem os ícones antigos -->
+            <!-- Lado ESQUERDO -->
             <div class="menu-esquerda">
                 <a href="index.html" class="item-barra">Início</a>
                 <a href="ajuda.html" class="item-barra">Solicitar Ajuda</a>
@@ -40,20 +145,20 @@
                 <a href="eventos.html" class="item-barra">Eventos</a>
             </div>
 
-            <!-- Lado DIREITO: Meu Perfil + Sair + Botões de Entrada -->
+            <!-- Lado DIREITO -->
             <div class="lado-direito">
                 <a href="perfil.html" class="item-menu" title="Meu Perfil">
                     <div class="icone-menu">👤</div>
                 </a>
-                <a href="login.html" class="botao-acesso botao-entrar" id="botaoEntrar">Entrar</a>
-                <a href="cadastro.html" class="botao-acesso botao-cadastrar" id="botaoCadastrar">Cadastrar-se</a>
-                <a href="#" class="botao-acesso botao-sair" id="botaoSair" style="display: none;">Sair</a>
+                <a href="#" id="botaoSair">Sair</a>
             </div>
         </nav>
+        <a href="login.html" class="botao-acesso botao-entrar" id="botaoEntrar">Entrar</a>
+        <a href="cadastro.html" class="botao-acesso botao-cadastrar" id="botaoCadastrar">Cadastrar-se</a>
     </header>
 
-    <!-- 🖼️ CARROSSEL DE BANNERS (Apenas um bloco, ajustado e sem duplicações) -->
-    <section class="banner-principal">
+    <!-- 🖼️ CARROSSEL DE BANNERS (Desliza como slide automaticamente) -->
+    <section class="carrossel">
         <div class="slides">
             <div class="slide">
                 <img src="banner.png" alt="Bem-Estar da Minha Comunidade">
@@ -87,20 +192,57 @@
         </div>
     </section>
 
-    <!-- 👋 MENSAGEM DE BOAS-VINDAS -->
+    <!-- Conteúdo Principal -->
     <main>
+        <!-- 👋 MENSAGEM DE BOAS-VINDAS -->
         <section class="boas-vindas">
             <h2>Bem-vindo!</h2>
             <p>Espaço de bem-estar da comunidade. Participe dos nossos eventos e venha fazer parte dessa história com a gente!</p>
         </section>
+
+        <!-- 📅 SEÇÃO DE PRÓXIMOS EVENTOS (Recuperada do seu primeiro bloco) -->
+        <section class="proximos-eventos">
+            <h2>Próximos Eventos</h2>
+            <div class="cartao-evento">
+                <img src="evento.png" alt="Imagem do Evento">
+                <h3>Atividades Especiais</h3>
+                <p>Confira nossa programação de encontros e feiras locais.</p>
+            </div>
+        </section>
+
+        <!-- 📸 GALERIA DE FOTOS EM LINHA (Recuperada do seu primeiro bloco) -->
+        <section class="galeria-eventos">
+            <h3>Galeria de Eventos</h3>
+            <div class="fotos-linha">
+                <img src="foto1.jpg" alt="Foto 1">
+                <img src="foto2.jpg" alt="Foto 2">
+                <img src="foto3.jpg" alt="Foto 3">
+            </div>
+        </section>
     </main>
+
+    <!-- ☰ BOTÃO DO MENU HAMBURGUER COM TODOS OS 9 SERVIÇOS -->
+    <div class="botao-servicos-no-banner">
+        <button class="botao-tracos" id="botaoMenu">☰</button>
+        <div class="lista-servicos">
+            <a href="servicos.html#saude">Saúde e Cuidados</a>
+            <a href="servicos.html#postos-saude">Postos de Saúde e Vacinação</a>
+            <a href="servicos.html#remedios-gratuitos">Remédios Gratuitos</a>
+            <a href="servicos.html#emergencia">Emergência</a>
+            <a href="servicos.html#alimentacao-gratis">Alimentação Gratuita</a>
+            <a href="servicos.html#alimentacao-acessivel">Alimentação com Preço Acessível</a>
+            <a href="servicos.html#abrigo">Abrigo e Acolhimento</a>
+            <a href="servicos.html#transporte">Transporte e Mobilidade</a>
+            <a href="servicos.html#filas-saude">Atendimento e Filas na Saúde</a>
+        </div>
+    </div>
 
     <!-- Rodapé -->
     <footer>
         <p>&copy; 2026 Bem-Estar da Minha Comunidade. Todos os direitos reservados.</p>
     </footer>
 
-    <!-- ⚡ SCRIPT DO CARROSSEL -->
+    <!-- ⚡ SCRIPT DO CARROSSEL (Faz as imagens passarem sozinhas) -->
     <script>
     document.addEventListener('DOMContentLoaded', () => {
         const slides = document.querySelector('.slides');
@@ -110,7 +252,7 @@
 
         function irParaSlide(n) {
             slideAtual = n;
-            slides.style.transform = `translateX(-${n * 100}%)`;
+            slides.style.transform = `translateX(-${n * (100 / total)}%)`;
             pontos.forEach((p, i) => {
                 p.classList.remove('ponto-ativo');
                 if (i === n) p.classList.add('ponto-ativo');
