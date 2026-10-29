@@ -417,10 +417,18 @@ const slides = document.querySelectorAll('.slide');
 const pontos = document.querySelectorAll('.ponto');
 
 function mostrarSlide(indice) {
-  slides.forEach(s => s.classList.remove('ativo'));
-  pontos.forEach(p => p.classList.remove('ativo'));
-  slides[indice].classList.add('ativo');
-  pontos[indice].classList.add('ativo');
+  slides.forEach((slide, i) => {
+    slide.classList.remove('slide-ativo');
+    if (i === indice) {
+      slide.classList.add('slide-ativo');
+    }
+  });
+  pontos.forEach((ponto, i) => {
+    ponto.classList.remove('ativo');
+    if (i === indice) {
+      ponto.classList.add('ativo');
+    }
+  });
 }
 
 function proximoSlide() {
@@ -430,9 +438,9 @@ function proximoSlide() {
 
 setInterval(proximoSlide, 5000);
 
-pontos.forEach((ponto, i) => {
+pontos.forEach((ponto, indice) => {
   ponto.addEventListener('click', () => {
-    slideAtual = i;
+    slideAtual = indice;
     mostrarSlide(slideAtual);
   });
 });
