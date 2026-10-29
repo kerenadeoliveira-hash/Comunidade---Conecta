@@ -2140,3 +2140,21 @@ section, main, .conteudo {
 .ponto-ativo {
   background: #2d5a3d;
 }
+  /* Garantindo que nenhuma imagem fique no fundo da página */
+body {
+  background-image: none !important;
+  background-color: #ffffff !important;
+}
+
+/* Garantindo que o carrossel fique só no topo */
+.carrossel {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Garantindo que todo conteúdo tenha fundo branco e fique na frente */
+.próximos-eventos, .grade-eventos, .servicos, main, section, div {
+  position: relative !important;
+  z-index: 2 !important;
+  background-color: #ffffff !important;
+}
