@@ -163,6 +163,72 @@
         <div class="botao-servicos-no-banner">
             <button class="botao-tracos" id="botaoMenu">☰</button>
         </div>
+        <!-- 📋 MENU DE SERVIÇOS -->
+<div id="menuServicos" class="menu-servicos" style="display: none;">
+  <h3>Nossos Serviços</h3>
+  <ul>
+    <!-- 🏥 SAÚDE E CUIDADOS -->
+    <li class="menu-categoria">
+      <span class="titulo-categoria" onclick="toggleSubmenu('saude')">🏥 Saúde e Cuidados ▼</span>
+      <ul id="saude" class="submenu">
+        <li><a href="postos-saude.html">Postos de Saúde e Vacinação — ver mapa e horários</a></li>
+        <li><a href="remedios-gratuitos.html">Remédios Gratuitos — locais e documentos</a></li>
+        <li><a href="emergencia.html">Emergência — quando ir: Posto, UPA ou Hospital · 192</a></li>
+      </ul>
+    </li>
+
+    <!-- 🍽️ ALIMENTAÇÃO E ABRIGO -->
+    <li class="menu-categoria">
+      <span class="titulo-categoria" onclick="toggleSubmenu('alimentacao')">🍽️ Alimentação e Abrigo ▼</span>
+      <ul id="alimentacao" class="submenu">
+        <li><a href="comida-gratuita.html">Comida Gratuita — Restaurante Popular, CRAS, Igrejas · ver mapa</a></li>
+        <li><a href="abrigo.html">Abrigo e Acolhimento — 24h, CRAS · ligue 156</a></li>
+      </ul>
+    </li>
+
+    <!-- 🚌 TRANSPORTE -->
+    <li class="menu-categoria">
+      <span class="titulo-categoria" onclick="toggleSubmenu('transporte')">🚌 Transporte e Mobilidade ▼</span>
+      <ul id="transporte" class="submenu">
+        <li><a href="onibus.html">Ônibus — horários, pontos próximos, SPTrans</a></li>
+      </ul>
+    </li>
+
+    <!-- 🧹 LIMPEZA DO BAIRRO -->
+    <li class="menu-categoria">
+      <span class="titulo-categoria" onclick="toggleSubmenu('limpeza')">🧹 Limpeza do Bairro ▼</span>
+      <ul id="limpeza" class="submenu">
+        <li><a href="coleta-lixo.html">Coleta de Lixo — dias, pontos de descarte · Prefeitura 156</a></li>
+      </ul>
+    </li>
+
+    <!-- ⚠️ ALERTAS E PROTEÇÃO -->
+    <li class="menu-categoria">
+      <span class="titulo-categoria" onclick="toggleSubmenu('alertas')">⚠️ Alertas e Proteção ▼</span>
+      <ul id="alertas" class="submenu">
+        <li><a href="alertas-bairro.html">Alertas do Bairro — chuva, vento, calor</a></li>
+        <li><a href="telefones-uteis.html">📞 Telefones: SAMU 192 · Bombeiros 193 · Polícia 190 · CRAS</a></li>
+      </ul>
+    </li>
+
+    <!-- 🤝 AJUDA MÚTUA -->
+    <li class="menu-categoria">
+      <span class="titulo-categoria" onclick="toggleSubmenu('ajuda')">🤝 Ajuda Mútua ▼</span>
+      <ul id="ajuda" class="submenu">
+        <li><a href="ajuda-mutua.html">Pedir ou Oferecer Ajuda — médico, remédio, compras, cuidados</a></li>
+      </ul>
+    </li>
+
+    <!-- ℹ️ PARA TODOS -->
+    <li class="menu-categoria">
+      <span class="titulo-categoria" onclick="toggleSubmenu('todos')">ℹ️ Para Todos ▼</span>
+      <ul id="todos" class="submenu">
+        <li><a href="guia-novos.html">Guia para Quem Chegou — onde é tudo, quem procurar</a></li>
+        <li><a href="cartao-sus.html">Cartão SUS e Consultas — RG, CPF, comprovante de residência</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
         <div class="slides">
             <div class="slide">
                 <img src="banner.png" alt="Bem-Estar da Minha Comunidade">
@@ -230,8 +296,25 @@
         });
     });
     </script>
+    <script>
+// Abre e fecha o painel de serviços
+document.getElementById('botaoMenu').addEventListener('click', function(e) {
+  e.stopPropagation();
+  const painel = document.getElementById('painelServicos');
+  painel.style.left = (painel.style.left === '-260px') ? '0' : '-260px';
+});
+
+// Fecha o painel se clicar fora dele
+document.addEventListener('click', function(e) {
+  const painel = document.getElementById('painelServicos');
+  const botao = document.getElementById('botaoMenu');
+  if (!painel.contains(e.target) && e.target !== botao) {
+    painel.style.left = '-260px';
+  }
+});
+</script>
     <!-- Painel Lateral Oculto / Lista de Serviços (Acionado pelo ☰ do Carrossel) -->
-    <div id="painelServicos" style="position: fixed; top: 0; left: -280px; width: 260px; height: 100%; background: #f8f8f8; border-right: 1px solid #ccc; transition: left 0.3s; padding: 60px 16px 20px 16px; z-index: 1000; box-shadow: 2px 0 5px rgba(0,0,0,0.2); overflow-y: auto;">
+   <div id="painelServicos" style="position: fixed; top: 0; left: -260px; width: 260px; height: 100%; background: #f8f8f8; border-right: 1px solid #ddd; transition: left 0.3s ease; z-index: 999;">
         <div class="lista-servicos" style="display: flex; flex-direction: column; gap: 0.8rem;">
             <a href="servicos.html#saude" style="text-decoration: none; color: #333; font-weight: bold;">🏥 Saúde e Cuidados</a>
             <a href="servicos.html#postos-saude" style="text-decoration: none; color: #333; font-weight: bold;">🏥 Postos de Saúde e Vacinação</a>
@@ -360,7 +443,7 @@
             btnMenu.addEventListener("click", (e) => {
                 e.stopPropagation();
                 if (painel.style.left === "0px") {
-                    painel.style.left = "-280px";
+                    painel.style.left = "-260px";
                 } else {
                     painel.style.left = "0px";
                 }
@@ -369,7 +452,7 @@
             // Fecha se clicar fora do painel
             document.addEventListener("click", (e) => {
                 if (painel.style.left === "0px" && !painel.contains(e.target) && e.target !== btnMenu) {
-                    painel.style.left = "-280px";
+                    painel.style.left = "-260px";
                 }
             });
         }
