@@ -199,8 +199,36 @@ header {
   <h2>Bem-vindo!</h2>
   <p>Espaço de bem-estar da comunidade. Participe dos nossos eventos e venha fazer parte dessa história com a gente!</p>
 </section>
+<!-- ⚡ SCRIPT DO CARROSSEL -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const slides = document.querySelector('.slides');
+  const pontos = document.querySelectorAll('.ponto');
+  let slideAtual = 0;
+  const total = 3;
 
-<!-- 📅 PRÓXIMOS EVENTOS -->
+  function irParaSlide(n) {
+    slideAtual = n;
+    slides.style.transform = `translateX(-${n * (100 / total)}%)`;
+    pontos.forEach((p, i) => {
+      p.classList.remove('ponto-ativo');
+      if (i === n) p.classList.add('ponto-ativo');
+    });
+  }
+
+  function proximoSlide() {
+    irParaSlide((slideAtual + 1) % total);
+  }
+
+  irParaSlide(0);
+  setInterval(proximoSlide, 5000);
+  pontos.forEach((p, i) => {
+    p.addEventListener('click', () => irParaSlide(i));
+  });
+});
+</script>
+</div>
+ <!-- 📅 PRÓXIMOS EVENTOS -->
 <section class="proximos-eventos">
   <h2>Próximos Eventos</h2>
   
@@ -251,35 +279,6 @@ header {
   </div>
 </section>
 
-<!-- ⚡ SCRIPT DO CARROSSEL -->
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const slides = document.querySelector('.slides');
-  const pontos = document.querySelectorAll('.ponto');
-  let slideAtual = 0;
-  const total = 3;
-
-  function irParaSlide(n) {
-    slideAtual = n;
-    slides.style.transform = `translateX(-${n * (100 / total)}%)`;
-    pontos.forEach((p, i) => {
-      p.classList.remove('ponto-ativo');
-      if (i === n) p.classList.add('ponto-ativo');
-    });
-  }
-
-  function proximoSlide() {
-    irParaSlide((slideAtual + 1) % total);
-  }
-
-  irParaSlide(0);
-  setInterval(proximoSlide, 5000);
-  pontos.forEach((p, i) => {
-    p.addEventListener('click', () => irParaSlide(i));
-  });
-});
-</script>
-</div>
 </body>
 </header>
  
