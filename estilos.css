@@ -1738,3 +1738,30 @@ img {
     border-radius: 8px;
     cursor: pointer;
 }
+.banner-principal {
+  position: relative; /* ESSE É O SEGREDO PRINCIPAL — sem ele, o menu segue a página inteira! */
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+  .botao-tracos { /* ou o nome que você tem: .menu-hamburguer */
+  position: absolute;
+  top: 3%; /* 🟢 Usamos PORCENTAGEM (não só pixel!) para ele ficar na proporção do topo do banner */
+  left: 3%; /* 🟢 Porcentagem na esquerda — assim ele não vai diretamente para a logo quando o banner crescer */
+  z-index: 10; /* 🟢 Para ficar SEMPRE por cima da imagem do banner */
+  width: 35px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.botao-tracos span {
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 2px;
+}
