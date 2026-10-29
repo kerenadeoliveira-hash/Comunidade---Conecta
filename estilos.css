@@ -1181,7 +1181,7 @@ body > .links-centro:not(nav .links-centro) {
 }
 .navegacao-principal {
   display: flex;
-  justify-content: space-between; /* ← ESSE É O SEGREDO: empurra um grupo para esquerda e outro para DIREITA! */
+  justify-content: space-between; 
   align-items: center;
   background: #ffffff;
   padding:12px 25px;
@@ -1257,7 +1257,7 @@ body > .links-centro:not(nav .links-centro) {
   flex: 1;
   display: flex;
   justify-content: center;
-  gap: 35px; /* AUMENTE de 16px para 30‑40px — isso abre o espaço entre Início / Solicitar Ajuda etc.! */
+  gap: 35px; 
 }
 .links-menu {
   flex: 1;
@@ -1317,14 +1317,23 @@ img {
   display: block;
 }
 
-/* 2️⃣ BANNER PRINCIPAL JUNTADO (para ir de esquerda à direita + position relative) */
-.banner-principal {
-  position: relative;
-  width: 100%;
-  min-height: 520px;
-  overflow: hidden;
-  margin: 0;
+/* Tamanho reduzido e ajustado para Notebooks/Computadores */
+.banner-principal { 
+  position: relative; 
+  width: 100%; 
+  min-height: 380px; /* Reduzido de 520px para 380px (fica excelente em notebooks) */
+  overflow: hidden; 
+  margin: 0; 
   padding: 0;
+}
+
+/* Ajuste proporcional para Celulares */
+@media (max-width: 768px) {
+  .banner-principal {
+    min-height: 250px; /* Altura menor para não ocupar a tela toda do celular */
+  }
+}
+
 }
 
 /* 3️⃣ IMAGEM DO BANNER (preenche todo o banner) */
@@ -1412,9 +1421,6 @@ img {
   text-align: center;
   width: 90%;
 }
-/* APAGUE esse se tiver no seu CSS: .banner-principal::before { background: rgba(0,0,0,0.6); } — esse é o que deixa tudo escuro! */
-.cartao-evento img, .cartao-crianca img, .cartao-jogo img {
-/* 1. Regra GERAL para imagens normais (NÃO quebra o site) */
 img {
   max-width: 100%;
   height: auto;
