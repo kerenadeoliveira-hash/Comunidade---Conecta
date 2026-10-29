@@ -1723,3 +1723,18 @@ img {
   border-radius: 4px;
   cursor: pointer;
 }
+  /* Botão de menu — FIXO no canto, não mexe com a imagem */
+.menu-icone {
+    position: fixed;  /* Fica parado no canto da tela */
+    top: 20px;        /* Distância do topo */
+    left: 20px;       /* Distância da esquerda */
+    z-index: 9999;    /* Fica sempre por cima de tudo */
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    font-size: 24px;
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    cursor: pointer;
+}
