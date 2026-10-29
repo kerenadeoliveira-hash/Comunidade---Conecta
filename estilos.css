@@ -1799,3 +1799,24 @@ img {
   justify-content: space-around;  /* ← Distribui o espaço IGUAL entre os links */
   padding: 12px 30px;
 }
+.barra-navegacao {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Logo à esquerda + o bloco do menu vai para o lado direito */
+  padding: 0 30px;
+  width: 100%;
+  background: white;
+}
+
+.menu-links {
+  display: flex;
+  gap: 35px; /* 🟢 AUMENTA esse número para afastar as palavras (ex: 45px se quiser mais espaço) */
+  align-items: center;
+  margin-right: 40px; /* 🟢 Esse empurra o menu um pouquinho mais para o centro (não colar totalmente na borda direita!) */
+}
+
+.menu-links a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #222;
+}
