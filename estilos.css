@@ -2051,6 +2051,17 @@ img {
   width: 300%;
   transition: transform 0.6s ease;
 }
+  .carrossel {
+  position: relative;
+  z-index: 1;
+}
+
+section, main, .conteudo {
+  position: relative;
+  z-index: 2;
+  background: #ffffff;
+  padding: 1px 20px;
+}
 
 .slide {
   width: 33.333%;
