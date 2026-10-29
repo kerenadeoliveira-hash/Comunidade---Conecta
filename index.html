@@ -18,7 +18,7 @@
             line-height: 1.6;
         }
         
-        /* ===== CABEÇALHO BRANCO ===== */
+        /* ===== CABEÇALHO — BRANCO, LETRAS AZUL ESCURO ===== */
         header {
             background-color: #ffffff;
             padding: 0.9rem 1.2rem;
@@ -31,7 +31,6 @@
         /* Logomarca bem encostada à esquerda */
         .logo-bmc {
             flex-shrink: 0;
-            margin-left: 0;
         }
 
         .logo-bmc .logo {
@@ -39,7 +38,7 @@
             width: auto;
         }
 
-        /* Menu central — espaços iguais entre os itens */
+        /* Menu central — espaços iguais, tudo na mesma linha */
         .menu-central {
             display: flex;
             gap: 2.5rem;
@@ -64,10 +63,9 @@
             gap: 1.8rem;
             align-items: center;
             flex-shrink: 0;
-            margin-right: 0.5rem;
         }
 
-        /* Ícone do Perfil com dica ao passar o mouse */
+        /* Ícone do Perfil — mostra "Meu Perfil" ao passar o mouse */
         .icone-perfil {
             font-size: 1.4rem;
             color: #1a365d;
@@ -75,7 +73,6 @@
             position: relative;
         }
 
-        /* Mensagem que aparece ao passar o mouse */
         .icone-perfil:hover::after {
             content: "Meu Perfil";
             position: absolute;
@@ -103,14 +100,14 @@
             color: #b71c1c;
         }
 
-        /* ===== CARROSSEL DE BANNERS ===== */
+        /* ===== CARROSSEL DE BANNERS — da DIREITA para a ESQUERDA ===== */
         .carrossel {
             position: relative;
             overflow: hidden;
             margin-bottom: 2rem;
         }
 
-        /* Botão dos 3 traços no banner */
+        /* Botão dos 3 traços no canto esquerdo do banner */
         .botao-tracos {
             position: absolute;
             top: 15px;
@@ -260,7 +257,6 @@
             margin-bottom: 0.5rem;
         }
 
-        /* ===== PRÓXIMOS EVENTOS ===== */
         .proximos-eventos {
             background: white;
             padding: 2rem;
@@ -304,7 +300,6 @@
             font-size: 0.95rem;
         }
 
-        /* ===== JOGOS E COMUNIDADE ===== */
         .jogos-comunidade {
             background: white;
             padding: 2rem;
@@ -322,7 +317,6 @@
             margin: 1rem 0;
         }
 
-        /* ===== GRADE DE ACESSO ===== */
         .grade {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -349,7 +343,6 @@
             font-size: 1.2rem;
         }
 
-        /* ===== RODAPÉ ===== */
         footer {
             background: #1a365d;
             color: white;
@@ -363,12 +356,10 @@
 
     <!-- ===== CABEÇALHO ===== -->
     <header>
-        <!-- Logomarca encostada à esquerda -->
         <div class="logo-bmc">
             <img src="logo-bmc.png" alt="Logomarca BMC" class="logo">
         </div>
 
-        <!-- Menu central com espaços iguais -->
         <nav class="menu-central">
             <a href="index.html">Início</a>
             <a href="ajuda.html">Solicitar Ajuda</a>
@@ -376,19 +367,18 @@
             <a href="eventos.html">Eventos</a>
         </nav>
 
-        <!-- Lado direito: Ícone Perfil + Sair -->
         <div class="menu-direito">
             <a href="perfil.html" class="icone-perfil" title="Meu Perfil">👤</a>
             <a href="#" class="sair-link" id="botaoSair">Sair</a>
         </div>
     </header>
 
-    <!-- ===== 🖼️ CARROSSEL DE BANNERS ===== -->
+    <!-- ===== CARROSSEL DE BANNERS ===== -->
     <section class="carrossel">
-        <!-- 3 traços que abre a lista de serviços -->
         <button class="botao-tracos" id="btnMenuServicos">☰</button>
         
         <div class="slides">
+            <!-- Slide 1 -->
             <div class="slide">
                 <img src="banner.png" alt="Bem-Estar da Minha Comunidade">
                 <div class="texto-slide">
@@ -396,6 +386,7 @@
                     <p>Espaço de união e bem-estar para todos</p>
                 </div>
             </div>
+            <!-- Slide 2 -->
             <div class="slide">
                 <img src="banner-2.png" alt="Comunidade">
                 <div class="texto-slide">
@@ -403,6 +394,7 @@
                     <p>Feiras, oficinas, jogos e momentos juntos</p>
                 </div>
             </div>
+            <!-- Slide 3 -->
             <div class="slide">
                 <img src="banner-3.png" alt="Ajuda Mútua">
                 <div class="texto-slide">
@@ -419,7 +411,7 @@
         </div>
     </section>
 
-    <!-- ===== 📋 PAINEL DE SERVIÇOS LATERAL — Abre ao clicar nos 3 traços ===== -->
+    <!-- ===== PAINEL DE SERVIÇOS LATERAL ===== -->
     <div id="painelServicos">
         <div>
             <h3>🏥 Saúde e Bem-Estar</h3>
@@ -428,6 +420,77 @@
             <a href="servicos.html#emergencia">🚨 Emergência</a>
             
             <h3>🍽️ Alimentação</h3>
-            <a href="servicos.html#alimentacao-gratis">🥬 Feira Comunitária de Alimentos</a>
-            <a href="servicos.html#alimentacao-acessivel">🛒 Alimentação com Preço Acessível</a>
-            <a href="servicos.html#restaurante">🍽️...
+            <a href="servicos.html#feira">🥬 Feira Comunitária de Alimentos</a>
+            <a href="servicos.html#acessivel">🛒 Alimentação com Preço Acessível</a>
+            <a href="servicos.html#restaurante">🍽️ Restaurante Comunitário</a>
+            
+            <h3>🏠 Apoio e Acolhimento</h3>
+            <a href="servicos.html#abrigo">🏠 Abrigo e Acolhimento</a>
+            <a href="servicos.html#transporte">🚌 Transporte e Mobilidade</a>
+            
+            <h3>📋 Informações Úteis</h3>
+            <a href="servicos.html#filas">📋 Atendimento e Horários</a>
+            <a href="servicos.html#bairro">🧹 Cuidados com o Bairro</a>
+            <a href="servicos.html#alertas">📢 Avisos e Alertas Comunitários</a>
+            <a href="servicos.html#ajuda-mutua">🤝 Como Participar e Ajudar</a>
+        </div>
+    </div>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main>
+        <section class="boas-vindas">
+            <h2>Bem-vindo(a)! 💛</h2>
+            <p>Este é o nosso espaço comunitário! Aqui você encontra serviços locais, acompanha eventos do bairro e pode pedir ou oferecer ajuda ao próximo.</p>
+            <br>
+            <p><strong>Todos juntos fazemos mais!</strong> Este projeto é feito para e com os moradores do nosso bairro.</p>
+        </section>
+
+        <div class="aviso">
+            <h3>🔔 Fique de Olho!</h3>
+            <p>Novos eventos sempre chegando — confira abaixo e na página de Eventos.</p>
+        </div>
+
+        <section class="proximos-eventos">
+            <h2>📢 Próximos Eventos</h2>
+            <div class="grade-eventos">
+                <div class="cartao-evento">
+                    <img src="feira-comunitaria.jpg" alt="Feira Comunitária">
+                    <h3>Feira Comunitária</h3>
+                    <p>15 de Novembro – 9h às 17h</p>
+                    <p>Espaço Comunitário</p>
+                </div>
+                <div class="cartao-evento">
+                    <img src="imagem-festa-bairro.jpg" alt="Festa do Bairro">
+                    <h3>Festa do Bairro</h3>
+                    <p>30 de Novembro – 16h</p>
+                    <p>Praça Principal</p>
+                </div>
+                <div class="cartao-evento">
+                    <img src="foto-evento-1.jpg" alt="Oficina Comunitária">
+                    <h3>Oficina Comunitária</h3>
+                    <p>5 de Dezembro – 14h</p>
+                    <p>Centro Comunitário</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="jogos-comunidade">
+            <h2>🎮 Jogos e Comunidade GP</h2>
+            <img src="imagem-jogo-comunidade.jpg" alt="Jogos Comunitários do bairro">
+            <p>Momento de diversão, integração e conexão através dos jogos!</p>
+        </section>
+
+        <h3 style="margin-bottom: 1rem; color: #333;">📌 O que você procura?</h3>
+        <section class="grade">
+            <a href="servicos.html" class="caixa">
+                <h3>🛠️ Serviços</h3>
+                <p>Onde encontrar o que precisa</p>
+            </a>
+            <a href="eventos.html" class="caixa">
+                <h3>📢 Eventos</h3>
+                <p>O que vai acontecer no bairro</p>
+            </a>
+            <a href="ajuda.html" class="caixa">
+                <h3>🤝 Solicitar Ajuda</h3>
+                <p>Peça ou ofereça ajuda</p>
+            </
