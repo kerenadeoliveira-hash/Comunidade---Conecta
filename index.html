@@ -159,6 +159,33 @@ header {
   </div>
 </nav>
     </header>
+ <!-- CARROSSEL DE IMAGENS -->
+<div class="carrossel">
+  <div class="slides">
+    
+    <!-- Imagem 1 -->
+    <div class="slide-ativo">
+      <img src="banner.png" alt="Bem-Estar da Minha Comunidade">
+    </div>
+    
+    <!-- Imagem 2 -->
+    <div class="slide">
+      <img src="banner-2.png" alt="Comunidade">
+    </div>
+    
+    <!-- Imagem 3 -->
+    <div class="slide">
+      <img src="banner-3.png" alt="Juntos somos mais fortes">
+    </div>
+    
+  </div>
+  
+  <div class="pontos">
+    <span class="ponto ativo" data-indice="0"></span>
+    <span class="ponto" data-indice="1"></span>
+    <span class="ponto" data-indice="2"></span>
+  </div>
+</div>
      <!-- BANNER PRINCIPAL -->
 <section class="banner-principal">
   <img src="banner.png" alt="Bem-estar da Minha Comunidade">
@@ -384,6 +411,31 @@ btnServ.addEventListener("click", ()=>{
   if(el.style.display === "none") el.style.display = "block";
   else el.style.display = "none";
 }
+<script>
+let slideAtual = 0;
+const slides = document.querySelectorAll('.slide');
+const pontos = document.querySelectorAll('.ponto');
+
+function mostrarSlide(indice) {
+  slides.forEach(s => s.classList.remove('ativo'));
+  pontos.forEach(p => p.classList.remove('ativo'));
+  slides[indice].classList.add('ativo');
+  pontos[indice].classList.add('ativo');
+}
+
+function proximoSlide() {
+  slideAtual = (slideAtual + 1) % slides.length;
+  mostrarSlide(slideAtual);
+}
+
+setInterval(proximoSlide, 5000);
+
+pontos.forEach((ponto, i) => {
+  ponto.addEventListener('click', () => {
+    slideAtual = i;
+    mostrarSlide(slideAtual);
+  });
+});
 </script>
 </body>
 </html>
