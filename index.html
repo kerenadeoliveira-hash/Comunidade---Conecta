@@ -5,331 +5,617 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bem-Estar da Minha Comunidade</title>
     <style> 
-        /* Reset inicial */
+        .logo-topo {
+            width: 80px;
+            position: absolute;
+            top: 12px;
+            left: 12px;
+        }
+        header {
+            position: relative;
+            padding-left: 100px;
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
         
         body { 
             background-color: #f0f7f0; 
             color: #333;
             line-height: 1.6;
-            overflow-x: hidden;
         }
         
-        /* ==========================================================================
-           ESTILO INSPIRADO NO 99: Cabeçalho fixo e transparente sobre o banner
-           ========================================================================== */
+        /* Cabeçalho */
         header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(44, 110, 73, 0.95);
+            background-color: #2c6e49;
             color: white;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .logo-bmc {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .logo-bmc img { 
-            width: 40px; 
-            height: 40px; 
-            object-fit: contain;
-        }
-        
-        .logo-bmc span { 
-            font-weight: bold; 
-            font-size: 1.4rem; 
-        }
-
-        /* Menu de Navegação */
-        nav.navegacao-principal {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-        
-        .menu-esquerda {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .menu-esquerda a, .lado-direito a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1rem;
-            transition: opacity 0.2s;
-        }
-        
-        .menu-esquerda a:hover, .lado-direito a:hover { 
-            text-decoration: underline; 
-            opacity: 0.9;
-        }
-
-        /* Elementos de Acesso do Lado Direito */
-        .lado-direito {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .icone-menu {
-            font-size: 1.2rem;
-            background: rgba(255,255,255,0.2);
-            padding: 6px 10px;
-            border-radius: 50%;
-        }
-
-        .botao-acesso {
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            text-decoration: none;
-        }
-
-        .botao-cadastrar {
-            background-color: white;
-            color: #2c6e49 !important;
-        }
-
-        /* ==========================================================================
-           ESTILO INSPIRADO NO 99: Menu suspenso (Gaveta de Serviços)
-           ========================================================================== */
-        .botao-servicos-no-banner { 
-            position: relative; 
-        }
-        
-        .botao-tracos {
-            background: #40916c;
-            color: white;
-            border: none;
-            padding: 8px 14px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 1.1rem;
-            font-weight: bold;
-        }
-        
-        .lista-servicos {
-            display: none;
-            position: absolute;
-            top: 45px;
-            left: 0;
-            background: white;
-            min-width: 280px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            border-radius: 8px;
-            z-index: 2000;
-        }
-        
-        .lista-servicos.ativo { 
-            display: block; 
-        }
-        
-        .lista-servicos a {
-            display: block;
-            color: #333 !important;
-            padding: 12px 16px;
-            border-bottom: 1px solid #eee;
-            margin: 0 !important;
-            font-weight: normal;
-        }
-        
-        .lista-servicos a:hover { 
-            background: #f0f7f0; 
-            color: #2c6e49 !important;
-        }
-        
-        /* ==========================================================================
-           ESTILO INSPIRADO NO 99: Carrossel em Tela Cheia (O Mapa de Fundo)
-           ========================================================================== */
-        .carrossel {
-            position: relative;
-            height: 100vh;
-            width: 100vw;
-            overflow: hidden;
-            background-color: #000;
-        }
-        
-        .slides { 
-            display: flex; 
-            width: 300%; 
-            height: 100%; 
-            transition: transform 0.6s ease-in-out; 
-        }
-        
-        .slide { 
-            width: 100vw; 
-            height: 100%; 
-            position: relative; 
-        }
-        
-        .slide img { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
-            filter: brightness(0.6); /* Escurece o fundo para destacar o texto branco */
-        }
-        
-        /* Textos centrais grandes sobre o banner */
-        .texto-slide {
-            position: absolute;
-            top: 45%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            padding: 2rem;
             text-align: center;
-            color: white;
-            width: 90%;
-            max-width: 800px;
         }
         
-        .texto-slide h1 { 
-            font-size: 3rem; 
+        header h1 { 
             margin-bottom: 0.5rem; 
-            text-shadow: 0 2px 10px rgba(0,0,0,0.6); 
+            font-size: 2rem;
         }
         
-        .texto-slide p { 
-            font-size: 1.4rem; 
-            text-shadow: 0 2px 10px rgba(0,0,0,0.6); 
-        }
-
-        /* Indicadores de página do carrossel */
-        .pontos {
-            position: absolute;
-            bottom: 260px; /* Sobe os pontos para não colidirem com o card inferior */
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
+        /* Menu de Navegação */
+        nav {
+            background-color: #40916c;
+            padding: 1rem;
+            text-align: center;
         }
         
-        .ponto { 
-            width: 12px; 
-            height: 12px; 
-            background: rgba(255,255,255,0.4); 
-            display: inline-block; 
-            margin: 0 6px; 
-            border-radius: 50%; 
-            cursor: pointer; 
-            transition: background 0.3s;
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+            font-size: 1.1rem;
         }
         
-        .ponto-ativo { 
-            background: white; 
-        }
+        nav a:hover { text-decoration: underline; }
         
-        /* ==========================================================================
-           ESTILO INSPIRADO NO 99: Painel Inferior de Chamada Flutuante
-           ========================================================================= */
+        /* Conteúdo Principal */
         main {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90%;
-            max-width: 580px;
-            z-index: 500;
+            max-width: 900px;            
+            margin: 2rem auto;
+            padding: 0 1rem;
         }
         
         .boas-vindas {
             background: white;
             padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
         }
         
         .boas-vindas h2 {
             color: #2c6e49;
-            margin-bottom: 0.5rem;
-            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
         }
         
-        .boas-vindas p {
-            font-size: 1rem;
-            color: #555;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Botões lado a lado estilo corrida/serviço */
-        .botoes-aplicativo {
-            display: flex;
-            gap: 12px;
+        /* Grade de Acesso Rápido */
+        .grade {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
         }
         
-        .btn-app {
-            flex: 1;
-            padding: 14px;
-            border-radius: 12px;
+        .caixa {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 1.05rem;
-            text-align: center;
-            transition: transform 0.1s;
+            color: inherit;
         }
         
-        .btn-app:active {
-            transform: scale(0.98);
+        .caixa:hover { transform: translateY(-5px); }
+        
+        .caixa h3 { 
+            color: #2c6e49; 
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
         }
         
-        .btn-solicitar { 
-            background: #2c6e49; 
-            color: white; 
+        /* Aviso */
+        .aviso {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 1.2rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
         }
         
-        .btn-oferecer { 
-            background: #e0f2fe; 
-            color: #0369a1; 
+        .aviso h3 {
+            color: #856404;
+            margin-bottom: 0.5rem;
         }
         
-        /* Rodapé embutido no fundo invisível */
+        /* Rodapé */
         footer {
-            position: absolute;
-            bottom: 5px;
-            width: 100%;
+            background: #2c6e49;
+            color: white;
             text-align: center;
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.4);
-            z-index: 5;
-            pointer-events: none;
+            padding: 1.5rem;
+            margin-top: 2rem;
         }
     </style>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
-    <!-- Cabeçalho Fixo (Top Bar do App) -->
+    <!-- Cabeçalho -->
     <header>
         <div class="logo-bmc">
             <img src="logo-bmc.png" alt="Logomarca BMC" class="logo">
             <span>BMC</span>
         </div>
-        
         <nav class="navegacao-principal">
-            <!-- Botão ☰ de Serviços -->
-            <div class="botao-servicos-no-banner">
-                <button class="botao-tracos" id="botaoMenu">☰ Serviços</button>
-                <div class="lista-servicos" id="menuServicos">
-                    <a href="servicos.html#saude">Saúde e Cuidados</a>
-                    <a href="servicos.html#postos-saude">Postos de Saúde e Vacinação</a>
-                    <a href="servicos.html#remedios-gratuitos">Remédios Gratuitos</a>
-                    <a href="servicos.html#emergencia">Emergência</a>
-                    <a href="servicos.html#alimentacao-gratis">Alimentação Gratuita</a>
-                    <a href="servicos.html#alimentacao-acessivel">Alimentação com Preço Acessível</a>
-                    <a href="servicos.html#abrigo">Abrigo e Acolhimento</a>
-                    <a href="servicos.html#transporte">Transporte e Mobilidade</a>
-                    <a href="servicos.html#filas-saude">Atendimento e Filas na Saúde</a>
+            <!-- ☰ O botão de três linhas FICA AQUI, onde já está — NÃO MEXA NELE! -->
+            <!-- 📍 Esses aqui ficam todos no meio, alinhados em linha reta -->
+            <!-- Lado ESQUERDO: os textos sem os ícones antigos -->
+            <div class="menu-esquerda">
+                <a href="index.html" class="item-barra">Início</a>
+                <a href="ajuda.html" class="item-barra">Solicitar Ajuda</a>
+                <a href="oferecer-ajuda.html" class="item-barra">Oferecer Ajuda</a>
+                <a href="eventos.html" class="item-barra">Eventos</a>
+            </div>
+
+            <!-- Lado DIREITO: Meu Perfil + Sair UM AO LADO DO OUTRO -->
+            <div class="lado-direito">
+                <a href="perfil.html" class="item-menu" title="Meu Perfil">
+                    <div class="icone-menu">👤</div>
+                </a>
+                <a href="login.html" class="botao-acesso botao-entrar" id="botaoEntrar">Entrar</a>
+                <a href="cadastro.html" class="botao-acesso botao-cadastrar" id="botaoCadastrar">Cadastrar‑se</a>
+                <a href="#" class="botao-acesso botao-sair" id="botaoSair" style="display: none;">Sair</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 🖼️ CARROSSEL DE BANNERS -->
+    <section class="carrossel">
+        <!-- O botão ☰ vai AQUI — em cima da imagem, canto superior esquerdo -->
+        <div class="botao-servicos-no-banner">
+            <button class="botao-tracos" id="botaoMenu">☰</button>
+        </div>
+        <div class="slides">
+            <div class="slide">
+                <img src="banner.png" alt="Bem-Estar da Minha Comunidade">
+                <div class="texto-slide">
+                    <h1>Bem-Estar da Minha Comunidade</h1>
+                    <p>Espaço de união e bem-estar para todos</p>
                 </div>
             </div>
 
-            <!-- Links do Menu Central -->
+            <div class="slide">
+                <img src="banner-2.png" alt="Comunidade">
+                <div class="texto-slide">
+                    <h1>Atividades para a Comunidade</h1>
+                    <p>Feiras, oficinas, jogos, shows e momentos juntos</p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="banner-3.png" alt="Ajuda Mútua">
+                <div class="texto-slide">
+                    <h1>Ajuda entre Nós</h1>
+                    <p>Juntos construímos uma comunidade melhor</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="pontos">
+            <span class="ponto ponto-ativo"></span>
+            <span class="ponto"></span>
+            <span class="ponto"></span>
+        </div>
+    </section>
+
+    <!-- 👋 MENSAGEM DE BOAS-VINDAS -->
+    <section class="boas-vindas">
+        <h2>Bem-vindo!</h2>
+        <p>Espaço de bem-estar da comunidade. Participe dos nossos eventos e venha fazer parte dessa história com a gente!</p>
+    </section>
+
+    <!-- ⚡ SCRIPT DO CARROSSEL -->
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const slides = document.querySelector('.slides');
+        const pontos = document.querySelectorAll('.ponto');
+        let slideAtual = 0;
+        const total = 3;
+
+        function irParaSlide(n) {
+            slideAtual = n;
+            if(slides) slides.style.transform = `translateX(-${n * (100 / total)}%)`;
+            pontos.forEach((p, i) => {
+                p.classList.remove('ponto-ativo');
+                if (i === n) p.classList.add('ponto-ativo');
+            });
+        }
+
+        function proximoSlide() {
+            irParaSlide((slideAtual + 1) % total);
+        }
+
+        irParaSlide(0);
+        setInterval(proximoSlide, 5000);
+        pontos.forEach((p, i) => {
+            p.addEventListener('click', () => irParaSlide(i));
+        });
+    });
+    </script>
+    <!-- Painel Lateral Oculto / Lista de Serviços (Acionado pelo ☰ do Carrossel) -->
+    <div id="painelServicos" style="position: fixed; top: 0; left: -280px; width: 260px; height: 100%; background: #f8f8f8; border-right: 1px solid #ccc; transition: left 0.3s; padding: 60px 16px 20px 16px; z-index: 1000; box-shadow: 2px 0 5px rgba(0,0,0,0.2); overflow-y: auto;">
+        <div class="lista-servicos" style="display: flex; flex-direction: column; gap: 0.8rem;">
+            <a href="servicos.html#saude" style="text-decoration: none; color: #333; font-weight: bold;">🏥 Saúde e Cuidados</a>
+            <a href="servicos.html#postos-saude" style="text-decoration: none; color: #333; font-weight: bold;">🏥 Postos de Saúde e Vacinação</a>
+            <a href="servicos.html#remedios-gratuitos" style="text-decoration: none; color: #333; font-weight: bold;">💊 Remédios Gratuitos</a>
+            <a href="servicos.html#emergencia" style="text-decoration: none; color: #333; font-weight: bold;">🚨 Emergência</a>
+            <a href="servicos.html#alimentacao-gratis" style="text-decoration: none; color: #333; font-weight: bold;">🍽️ Alimentação Gratuita</a>
+            <a href="servicos.html#alimentacao-acessivel" style="text-decoration: none; color: #333; font-weight: bold;">🍽️ Alimentação com Preço Acessível</a>
+            <a href="servicos.html#abrigo" style="text-decoration: none; color: #333; font-weight: bold;">🏠 Abrigo e Acolhimento</a>
+            <a href="servicos.html#transporte" style="text-decoration: none; color: #333; font-weight: bold;">🚌 Transporte e Mobilidade</a>
+            <a href="servicos.html#filas-saude" style="text-decoration: none; color: #333; font-weight: bold;">📋 Atendimento e Filas na Saúde</a>
+            <a href="servicos.html#limpeza" style="text-decoration: none; color: #333; font-weight: bold;">📏 Limpeza e Cuidado com o Bairro</a>
+            <a href="servicos.html#alertas" style="text-decoration: none; color: #333; font-weight: bold;">⚠️ Alertas do Bairro</a>
+            <a href="servicos.html#ajuda-mutua" style="text-decoration: none; color: #333; font-weight: bold;">🤝 Ajuda Mútua</a>
+            <a href="servicos.html#para-todos" style="text-decoration: none; color: #333; font-weight: bold;">🔰 Para Todos — Novos Moradores</a>
+        </div>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <!-- PRÓXIMOS EVENTOS FIXOS -->
+        <section class="proximos-eventos" style="margin-bottom: 2rem;">
+            <h2 style="color: #2c6e49; margin-bottom: 1rem;">Próximos Eventos</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                <div class="cartao-evento" style="background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+                    <img src="imagem-show-banda.jpg" alt="Show da Banda Comunidade" style="width: 100%; height: 150px; object-fit: cover; border-radius: 6px; margin-bottom: 0.5rem;">
+                    <h3 style="color: #2c6e49; font-size: 1.2rem;">Show da Banda Comunidade</h3>
+                    <p>📅 Data: 25/11/2026 — 19h30</p>
+                    <p>📍 Local: Praça Central</p>
+                </div>
+
+                <div class="cartao-evento" style="background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+                    <img src="evento-crianças.jpg" alt="Dia de Diversão das Crianças" style="width: 100%; height: 150px; object-fit: cover; border-radius: 6px; margin-bottom: 0.5rem;">
+                    <h3 style="color: #2c6e49; font-size: 1.2rem;">🎉 Dia de Diversão das Crianças</h3>
+                    <p>📅 Data: 12/10/2026 — 14h00</p>
+                    <p>📍 Local: Quadra da Comunidade</p>
+                    <p>🎈 Brincadeiras, jogos e muita alegria!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- JOGOS E COMUNIDADE GP -->
+        <section class="jogos-comunidade" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 2rem; text-align: center;">
+            <h2 style="color: #2c6e49; margin-bottom: 1rem;">Jogos e Comunidade GP</h2>
+            <img src="imagem-jogo-comunidade.jpg" alt="Jogos Comunitários do bairro" style="max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 1rem;">
+            <p>Momento de diversão, integração e conexão através dos jogos!</p>
+        </section>
+
+        <!-- 🔔 AVISO DE EVENTOS NOVOS -->
+        <div style="background: #fff3cd; border-left: 5px solid #ff9f1c; padding: 1.2rem; border-radius: 8px; margin-bottom: 2rem;">
+            <h3 style="color: #856404; margin-bottom: 0.5rem;">🔔 AVISO IMPORTANTE</h3>
+            <p style="font-size: 1.05rem;">Fique de olho! Sempre que tiver <strong>festa, reunião ou evento novo</strong>, colocamos aqui primeiro!</p>
+            <p style="margin-top: 0.5rem;">👉 Vá em <a href="eventos.html" style="color: #2c6e49; font-weight: bold;">Eventos</a> para ver tudo que vai acontecer!</p>
+        </div>
+
+        <!-- EVENTOS DINÂMICOS (CSV) -->
+        <section class="secao-eventos-dinamicos" style="margin-bottom: 2rem;">
+            <h2 style="color: #2c6e49; margin-bottom: 1rem;">📢 Eventos da Comunidade (Arquivo)</h2>
+            <div id="lista-eventos"></div>
+        </section>
+
+        <!-- GRADE O QUE VOCÊ PROCURA -->
+        <h3 style="margin-bottom: 1rem; color: #333;">📌 O que você procura?</h3>
+        <section class="grade">
+            <a href="servicos.html" class="caixa">
+                <h3>🛠️ Serviços</h3>
+                <p>Onde encontrar o que precisa</p>
+            </a>
+            <a href="eventos.html" class="caixa">
+                <h3>📢 Eventos</h3>
+                <p>O que vai acontecer no bairro</p>
+            </a>
+            <a href="ajuda.html" class="caixa">
+                <h3>🤝 Solicitar Ajuda</h3>
+                <p>Peça ou ofereça ajuda</p>
+            </a>
+            <a href="servicos.html" class="caixa">
+                <h3>🚨 Emergência</h3>
+                <p>Contatos importantes</p>
+            </a>
+        </section>
+
+        <!-- AVISO DE CONSTRUÇÃO -->
+        <section class="aviso">
+            <h3>📢 Aviso importante</h3>
+            <p>O projeto está em construção. Novas funcionalidades serão adicionadas em breve! Participe dando sua opinião e ajudando a construir o nosso espaço.</p>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer style="background: #2c6e49; color: white; text-align: center; padding: 1.5rem; margin-top: 2rem;">
+        <p>Comunidade Conecta — Bem‑Estar da Minha Comunidade © 2026</p>
+        <p>Feito com 💛 para o nosso bairro</p>
+    </footer>
+
+    <!-- SCRIPT DE GERENCIAMENTO DE CONTEÚDO, MENU E LOGOUT -->
+    <script>
+        // 1. Controle de Autenticação / Login
+        const logado = localStorage.getItem("usuarioLogado");
+        if (!logado) {
+            window.location.href = "login.html";
+        }
+
+        const botaoEntrar = document.getElementById("botaoEntrar");
+        const botaoCadastrar = document.getElementById("botaoCadastrar");
+        const botaoSair = document.getElementById("botaoSair");
+
+        if (logado) {
+            if(botaoEntrar) botaoEntrar.style.display = "none";
+            if(botaoCadastrar) botaoCadastrar.style.display = "none";
+            if(botaoSair) botaoSair.style.display = "block";
+        }
+
+        if(botaoSair) {
+            botaoSair.addEventListener("click", function(e) {
+                e.preventDefault();
+                localStorage.removeItem("usuarioLogado");
+                window.location.href = "index.html";
+            });
+        }
+
+        // 2. Acionador do Menu Hamburguer (Abre e fecha a lista de serviços)
+        const btnMenu = document.getElementById("botaoMenu");
+        const painel = document.getElementById("painelServicos");
+
+        if(btnMenu && painel) {
+            btnMenu.addEventListener("click", (e) => {
+                e.stopPropagation();
+                if (painel.style.left === "0px") {
+                    painel.style.left = "-280px";
+                } else {
+                    painel.style.left = "0px";
+                }
+            });
+
+            // Fecha se clicar fora do painel
+            document.addEventListener("click", (e) => {
+                if (painel.style.left === "0px" && !painel.contains(e.target) && e.target !== btnMenu) {
+                    painel.style.left = "-280px";
+                }
+            });
+        }
+
+        // 3. Carregamento Dinâmico de Eventos (Correção do arquivo CSV)
+        async function carregarEventos(){
+            try {
+                const res = await fetch("eventos.csv");
+                if(!res.ok) return;
+                const txt = await res.text();
+                
+                // Correção vital: Criando o array quebrando o texto por quebras de linha
+                const linhas = txt.split("\n"); 
+                let html = "";
+                
+                for(let i = 1; i < linhas.length; i++){
+                    if(linhas[i].trim() === "") continue;
+                    const c = linhas[i].split(",");
+                    if(c.length < 5) continue;
+                    
+                    html += `
+                    <div style="padding:10px;border:1px solid #ddd;border-radius:8px;margin-bottom:12px;background:white;">
+                        <div style="width:100%;height:160px;overflow:hidden;border-radius:6px;margin-bottom:8px;display:flex;align-items:center;justify-content:center;background:#f5f5f5;">
+                            <img src="${c[5] ? c[5].trim() : ''}" style="max-width:100%;max-height:160px;object-fit:contain;">
+                        </div>
+                        <h3>${c[0]}</h3>
+                        <p><strong>Data:</strong> ${c[1]} ${c[2]}</p>
+                        <p><strong>Local:</strong> ${c[3]}</p>
+                        <p>${c[4]}</p>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-Estar da Minha Comunidade</title>
+    <style> 
+        .logo-topo {
+            width: 80px;
+            position: absolute;
+            top: 12px;
+            left: 12px;
+        }
+        header {
+            position: relative;
+            padding-left: 100px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        
+        body { 
+            background-color: #f0f7f0; 
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Cabeçalho */
+        header {
+            background-color: #2c6e49;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        header h1 { 
+            margin-bottom: 0.5rem; 
+            font-size: 2rem;
+        }
+        
+        /* Menu de Navegação */
+        nav {
+            background-color: #40916c;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        nav a:hover { text-decoration: underline; }
+        
+        /* Conteúdo Principal */
+        main {
+            max-width: 900px;            
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .boas-vindas {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .boas-vindas h2 {
+            color: #2c6e49;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        
+        /* Grade de Acesso Rápido */
+        .grade {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .caixa {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .caixa:hover { transform: translateY(-5px); }
+        
+        .caixa h3 { 
+            color: #2c6e49; 
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        /* Aviso */
+        .aviso {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 1.2rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+        }
+        
+        .aviso h3 {
+            color: #856404;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Rodapé */
+        footer {
+            background: #2c6e49;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+    </style>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <!-- Painel Lateral Oculto / Lista de Serviços (Acionado pelo ☰ do Carrossel) -->
+    <div id="painelServicos" style="position: fixed; top: 0; left: -280px; width: 260px; height: 100%; background: #f8f8f8; border-right: 1px solid #ccc; transition: left 0.3s; padding: 60px 16px 20px 16px; z-index: 1000; box-shadow: 2px 0 5px rgba(0,0,0,0.2); overflow-y: auto;">
+        <div style="padding:0 16px;">
+            <p><a href="servicos.html#saude" style="text-decoration: none; color: #333; font-weight: bold;">🏥 Saúde e Cuidados</a></p>
+            <p><a href="servicos.html#alimentacao" style="text-decoration: none; color: #333; font-weight: bold;">🍽️ Alimentação e Abrigo</a></p>
+            <p><a href="servicos.html#abrigo" style="text-decoration: none; color: #333; font-weight: bold;">🏠 Abrigo e Acolhimento</a></p>
+            <p><a href="servicos.html#transporte" style="text-decoration: none; color: #333; font-weight: bold;">🚌 Transporte e Mobilidade</a></p>
+            <p><strong>Atendimento e Filas na Saúde ▼</strong></p>
+            <p>📏 <strong>Limpeza e Cuidado com Nosso Bairro ▼</strong></p>
+            <p>⚠️ <strong>Alertas do Bairro ▼</strong></p>
+            <p>🤝 <strong>Ajuda Mútua ▼</strong></p>
+        </div>
+    </div>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo-bmc">
+            <img src="logo-bmc.png" alt="Logomarca BMC" class="logo">
+            <span>BMC</span>
+        </div>
+        <nav class="navegacao-principal">
             <div class="menu-esquerda">
                 <a href="index.html" class="item-barra">Início</a>
+                <a href="ajuda.html" class="item-barra">Solicitar Ajuda</a>
+                <a href="oferecer-ajuda.html" class="item-barra">Oferecer Ajuda</a>
+                <a href="eventos.html" class="item-barra">Eventos</a>
+            </div>
+            <div class="lado-direito">
+                <a href="perfil.html" class="item-menu" title="Meu Perfil">
+                    <div class="icone-menu">👤</div>
+                </a>
+                <a href="login.html" class="botao-acesso botao-entrar" id="botaoEntrar">Entrar</a>
+                <a href="cadastro.html" class="botao-acesso botao-cadastrar" id="botaoCadastrar">Cadastrar‑se</a>
+                <a href="#" class="botao-acesso botao-sair" id="botaoSair" style="display: none;">Sair</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 🖼️ CARROSSEL DE BANNERS -->
+    <section class="carrossel" style="position: relative; width: 100%; overflow: hidden; height: 350px; background: #000;">
+        <div class="botao-servicos-no-banner">
+            <button class="botao-tracos" id="botaoMenu" style="background: none; border: none; color: white; font-size: 1.8rem; cursor: pointer; position: absolute; top: 15px; left: 15px; z-index: 1010;">☰</button>
+        </div>
+        <div class="slides" style="display: flex; width: 300%; height: 100%; transition: transform 0.5s ease-in-out;">
+            <div class="slide" style="width: 33.333%; height: 100%; position: relative;">
+                <img src="banner.png" alt="Bem-Estar da Minha Comunidade" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.7;">
+                <div class="texto-slide" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center; width: 80%;">
+                    <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem;">Bem-Estar da Minha Comunidade</h1>
+                    <p style="font-size: 1.2rem;">Espaço de união e bem-estar para todos</p>
+                </div>
+            </div>
+            <div class="slide" style="width: 33.333%; height: 100%; position: relative;">
+                <img src="banner-2.png" alt="Comunidade" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.7;">
+                <div class="texto-slide" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center; width: 80%;">
+                    <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem;">Atividades para a Comunidade</h1>
+                    <p style="font-size: 1.2rem;">Feiras, oficinas, jogos, shows e momentos juntos</p>
+                </div>
+            </div>
+            <div class="slide" style="width: 33.333%; height: 100%; position: relative;">
+                <img src="banner-3.png" alt="Ajuda Mútua" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.7;">
+                <div class="texto-slide" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center; width: 80%;">
+                    <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem;">Ajuda entre Nós</h1>
+                    <p style="font-size: 1.2rem;">Juntos construímos uma comunidade melhor</p>
+                </div>
+            </div>
+        </div>
+        <div class="pontos" style="position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px;">
+            <span class="ponto ponto-ativo" style="width: 12px; height: 12px; background: rgba(255,255,255,0.5); border-radius: 50%; cursor: pointer;"></span>
+            <span class="ponto" style="width: 12px; height: 12px; background: rgba(255,255,255,0.5); border-radius: 50%; cursor: pointer;"></span>
+            <span class="ponto" style="width: 12px; height: 12px; background: rgba(255,255,255,0.5); border-radius: 50%; cursor: pointer;"></span>
+        </div>
+    </section>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <!-- 👋 MENSAGEM DE BOAS-VINDAS -->
+        <section class="boas-vindas">
+            <h2>Bem-vindo(a)! 💛</h2>
+            <p>Este é o nosso espaço comunitário! Aqui você encontra serviços locais, acompanha eventos do bairro e pode pedir ou oferecer ajuda ao próximo.</p>
+            <br>
+            <p><strong>Todos juntos fazemos mais!</strong> Este projeto é feito para e com os moradores do nosso bairro.</p>
+        </section>
+
+        <!-- PRÓXIMOS EVENTOS FIXOS -->
+        <section class="proximos-eventos" style="margin-bottom: 2rem;">
+            <h2 style="color: #2c6e49; margin-bottom: 1rem;">Próximos Eventos</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                <div class="cartao-evento" style="background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+                    <img src="imagem-show-banda.jpg" alt="Show da Banda Comunidade" style="width: 100%; height: 150px; object-fit: cover; border-radius: 6px; margin-bottom: 0.5rem;">
+                    <h3 style="color: #2c6e49; font-size: 1.2rem;">Show da Banda Comunidade</h3>
