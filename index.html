@@ -159,26 +159,25 @@ header {
   </div>
 </nav>
     </header>
-<!-- CARROSSEL DE IMAGENS COMPLETO (já com os seus nomes!) -->
-<div class="carrossel">
+<!-- 🖼️ CARROSSEL DE BANNERS -->
+<section class="carrossel">
   <div class="slides">
-    <!-- Imagem 1 -->
     <div class="slide">
       <img src="banner.png" alt="Bem-Estar da Minha Comunidade">
       <div class="texto-slide">
-        <h1>Bem‑Estar da Minha Comunidade</h1>
-        <p>Espaço de união e bem‑estar para todos</p>
+        <h1>Bem-Estar da Minha Comunidade</h1>
+        <p>Espaço de união e bem-estar para todos</p>
       </div>
     </div>
-    <!-- Imagem 2 -->
+
     <div class="slide">
       <img src="banner-2.png" alt="Comunidade">
       <div class="texto-slide">
         <h1>Atividades para a Comunidade</h1>
-        <p>Yoga, oficinas e momentos juntos</p>
+        <p>Feiras, oficinas, jogos, shows e momentos juntos</p>
       </div>
     </div>
-    <!-- Imagem 3 (esse que estava faltando na sua foto!) -->
+
     <div class="slide">
       <img src="banner-3.png" alt="Ajuda Mútua">
       <div class="texto-slide">
@@ -187,29 +186,195 @@ header {
       </div>
     </div>
   </div>
-  <!-- 🟢 OS 3 PONTINHOS (os "três traços" que aparecem embaixo!) -->
-  <div class="pontos">
-    <span class="ponto-ativo"></span>
-    <span class="ponto"></span>
-    <span class="ponto"></span>
-  </div>
-</div>
-     <!-- BANNER PRINCIPAL -->
-<section class="banner-principal">
-  <img src="banner.png" alt="Bem-estar da Minha Comunidade">
 
-  <!-- ✅ COLE A LINHA AQUI -->
-  <button class="menu-icone" id="botaoMenu">☰</button>
- <div class="texto-sobre-imagem">
-    ...
+  <div class="pontos">
+    <span class="ponto ponto-ativo"></span>
+    <span class="ponto"></span>
+    <span class="ponto"></span>
   </div>
 </section>
- <!--O TEXTO VAI POR CIMA, CENTRALIZADO-->
- <div class="texto- sobre-imagem">
-  <h1>Bem-estar da Minha Comunidade</h1>
-  <p>Espaço de bem-estar da comunidade.Participe dos nossos eventos e venha fazer parte dessa históri com agente!</p>
-  <p>Juntos fazemos nossa comunidade mais feliz.</p>
- </div>
+
+<!-- 👋 MENSAGEM DE BOAS-VINDAS -->
+<section class="boas-vindas">
+  <h2>Bem-vindo!</h2>
+  <p>Espaço de bem-estar da comunidade. Participe dos nossos eventos e venha fazer parte dessa história com a gente!</p>
+</section>
+
+<!-- 📅 PRÓXIMOS EVENTOS -->
+<section class="proximos-eventos">
+  <h2>Próximos Eventos</h2>
+  
+  <div class="grade-eventos">
+    
+    <div class="cartao-evento">
+      <img src="feira-comunitaria.jpg" alt="Feira Comunitária">
+      <h3>Feira Comunitária</h3>
+      <p>15 de Novembro — 9h às 17h</p>
+      <p>Espaço Comunitário</p>
+    </div>
+
+    <div class="cartao-evento">
+      <img src="evento-crianças.jpg" alt="Atividades para Crianças">
+      <h3>Atividades para Crianças</h3>
+      <p>20 de Novembro — 14h às 16h</p>
+      <p>Praça Comunitária</p>
+    </div>
+
+    <div class="cartao-evento">
+      <img src="imagem-show-banda.jpg" alt="Show de Banda">
+      <h3>Show da Banda</h3>
+      <p>22 de Novembro — 19h</p>
+      <p>Salão Comunitário</p>
+    </div>
+
+    <div class="cartao-evento">
+      <img src="imagem-jogo-comunidade.jpg" alt="Jogo Comunitário">
+      <h3>Jogo Comunitário</h3>
+      <p>25 de Novembro — 10h</p>
+      <p>Quadra da Comunidade</p>
+    </div>
+
+    <div class="cartao-evento">
+      <img src="imagem-festa-bairro.jpg" alt="Festa do Bairro">
+      <h3>Festa do Bairro</h3>
+      <p>30 de Novembro — 16h</p>
+      <p>Praça Principal</p>
+    </div>
+
+    <div class="cartao-evento">
+      <img src="foto-evento-1.jpg" alt="Oficina Comunitária">
+      <h3>Oficina Comunitária</h3>
+      <p>5 de Dezembro — 14h</p>
+      <p>Centro Comunitário</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ⚡ SCRIPT DO CARROSSEL -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const slides = document.querySelector('.slides');
+  const pontos = document.querySelectorAll('.ponto');
+  let slideAtual = 0;
+  const total = 3;
+
+  function irParaSlide(n) {
+    slideAtual = n;
+    slides.style.transform = `translateX(-${n * (100 / total)}%)`;
+    pontos.forEach((p, i) => {
+      p.classList.remove('ponto-ativo');
+      if (i === n) p.classList.add('ponto-ativo');
+    });
+  }
+
+  function proximoSlide() {
+    irParaSlide((slideAtual + 1) % total);
+  }
+
+  irParaSlide(0);
+  setInterval(proximoSlide, 5000);
+  pontos.forEach((p, i) => {
+    p.addEventListener('click', () => irParaSlide(i));
+  });
+});
+</script>
+</div>
+</body>
+</header>
+ 
+  <button class="menu-icone" id="botaoMenu">☰</button>
+ <div class="texto-sobre-imagem">
+   <!-- 🖼️ CARROSSEL DE BANNERS -->
+<section class="carrossel">
+  <div class="slides">
+    <div class="slide">
+      <img src="banner.png" alt="Bem-Estar da Minha Comunidade">
+      <div class="texto-slide">
+        <h1>Bem-Estar da Minha Comunidade</h1>
+        <p>Espaço de união e bem-estar para todos</p>
+      </div>
+    </div>
+
+    <div class="slide">
+      <img src="banner-2.png" alt="Comunidade">
+      <div class="texto-slide">
+        <h1>Atividades para a Comunidade</h1>
+        <p>Feiras, oficinas, jogos, shows e momentos juntos</p>
+      </div>
+    </div>
+
+    <div class="slide">
+      <img src="banner-3.png" alt="Ajuda Mútua">
+      <div class="texto-slide">
+        <h1>Ajuda entre Nós</h1>
+        <p>Juntos construímos uma comunidade melhor</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pontos">
+    <span class="ponto ponto-ativo"></span>
+    <span class="ponto"></span>
+    <span class="ponto"></span>
+  </div>
+</section>
+
+<!-- 👋 MENSAGEM DE BOAS-VINDAS -->
+<section class="boas-vindas">
+  <h2>Bem-vindo!</h2>
+  <p>Espaço de bem-estar da comunidade. Participe dos nossos eventos e venha fazer parte dessa história com a gente!</p>
+</section>
+
+<!-- 📅 PRÓXIMOS EVENTOS -->
+<section class="proximos-eventos">
+  <h2>Próximos Eventos</h2>
+  
+  <div class="grade-eventos">
+    
+    <div class="cartao-evento">
+      <img src="feira-comunitaria.jpg" alt="Feira Comunitária">
+      <h3>Feira Comunitária</h3>
+      <p>15 de Novembro — 9h às 17h</p>
+      <p>Espaço Comunitário</p>
+    </div>
+
+    <div class="cartao-evento">
+      <img src="evento-crianças.jpg" alt="Atividades para Crianças">
+      <h3>Atividades para Crianças</h3>
+      <p>20 de Novembro — 14h às 16h</p>
+      <p>Praça Comunitária</p>
+    </div>
+
+    <div class="cartao-evento">
+      <img src="imagem-show-banda.jpg" alt="Show de Banda">
+      <h3>Show da Banda</h3>
+      <p>22 de Novembro — 19h</p>
+      <p>Salão Comunitário</p>
+    </div>
+
+    <div class="cartao-evento">
+      <img src="imagem-jogo-comunidade.jpg" alt="Jogo Comunitário">
+      <h3>Jogo Comunitário</h3>
+      <p>25 de Novembro — 10h</p>
+      <p>Quadra da Comunidade</p>
+    </div>
+
+    <div class="cartao-evento">
+      <img src="imagem-festa-bairro.jpg" alt="Festa do Bairro">
+      <h3>Festa do Bairro</h3>
+      <p>30 de Novembro — 16h</p>
+      <p>Praça Principal</p>
+    </div>
+
+    <div class="cartao-evento">
+      <img src="foto-evento-1.jpg" alt="Oficina Comunitária">
+      <h3>Oficina Comunitária</h3>
+      <p>5 de Dezembro — 14h</p>
+      <p>Centro Comunitário</p>
+    </div>
+
+  </div>
 </section>
   <!-- O botão ☰ vai AQUI — em cima da imagem, canto superior esquerdo -->
   <div class="botao-servicos-no-banner">
