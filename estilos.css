@@ -2059,7 +2059,8 @@ img {
 
 .slide img {
   width: 100%;
-  height: auto;
+  height: 400px;
+  object-fit: cover;
   display: block;
 }
 
@@ -2077,4 +2078,41 @@ img {
 
 .ponto-ativo {
   background: #333;
+}
+.carrossel {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+.slides {
+  display: flex;
+  width: 300%;
+  transition: transform 0.6s ease;
+}
+.slide {
+  width: 33.333%;
+  position: relative;
+  flex-shrink: 0;
+}
+.slide img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+.pontos {
+  text-align: center;
+  padding: 15px 0;
+}
+.ponto {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ccc;
+  margin: 0 6px;
+  cursor: pointer;
+}
+.ponto-ativo {
+  background: #2d5a3d;
 }
