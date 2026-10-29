@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bem-Estar da Minha Comunidade</title>
+    <title>Bem-Estar da Minha Comunidade - BMC</title>
     <style>
+        /* ==========================================================================
+           1. ESTILOS GERAIS & CORES (Inspirado na identidade do BMC com fluxo do 99)
+           ========================================================================== */
         * {
             margin: 0;
             padding: 0;
@@ -13,144 +16,189 @@
         }
 
         body {
-            background-color: #f8f9fa;
-            color: #333;
-            line-height: 1.6;
+            background-color: #f4f7f5;
+            color: #2b2b2b;
+            overflow-x: hidden;
         }
 
-        /* ===== CABEÇALHO ===== */
+        /* ==========================================================================
+           2. CABEÇALHO FLUTUANTE (Igual ao topo limpo de apps de corrida)
+           ========================================================================== */
         header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            padding: 0.8rem 1.5rem;
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            height: 70px;
-            border-bottom: 1px solid #e0e0e0;
+            align-items: center;
         }
 
-        .faixa-azul {
-            background-color: #1a365d;
-            height: 100%;
+        .logo-bmc {
             display: flex;
             align-items: center;
-            padding: 0 25px;
-            gap: 12px;
+            gap: 10px;
         }
 
-        .faixa-azul img {
-            height: 45px;
-            width: auto;
+        .logo-bmc img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
         }
 
-        .faixa-azul span {
-            color: white;
-            font-size: 1.3rem;
-            font-weight: bold;
+        .logo-bmc span {
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: #2c6e49;
             letter-spacing: 1px;
         }
 
-        .barra-branca {
-            background-color: #ffffff;
-            height: 100%;
-            flex: 1;
+        /* Menu de Navegação */
+        .navegacao-principal {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            padding: 0 40px;
+            gap: 1.5rem;
         }
 
-        .menu-central {
+        .menu-esquerda {
             display: flex;
-            gap: 3.5rem;
+            gap: 1.2rem;
         }
 
-        .menu-central a {
-            color: #1a365d;
+        .menu-esquerda a {
+            color: #4a5568;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: color 0.2s;
         }
 
-        .menu-central a:hover {
-            color: #2c5290;
-            text-decoration: underline;
+        .menu-esquerda a:hover {
+            color: #2c6e49;
         }
 
-        .menu-direito {
+        /* Lado Direito (Perfil e Botões) */
+        .lado-direito {
             display: flex;
             align-items: center;
-            gap: 2rem;
+            gap: 1rem;
         }
 
-        .icone-perfil {
-            font-size: 1.4rem;
-            color: #1a365d;
+        .icone-menu {
+            font-size: 1.3rem;
+            background: #e2e8f0;
+            padding: 8px;
+            border-radius: 50%;
             cursor: pointer;
-            position: relative;
         }
 
-        .icone-perfil:hover::after {
-            content: "Meu Perfil";
-            position: absolute;
-            bottom: -30px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #1a365d;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            white-space: nowrap;
-            z-index: 100;
-        }
-
-        .sair-link {
-            color: #d32f2f;
+        .botao-acesso {
             text-decoration: none;
-            font-weight: 600;
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.2s;
         }
 
-        .sair-link:hover {
-            color: #b71c1c;
-            text-decoration: underline;
+        .botao-entrar {
+            color: #2c6e49;
+            background: transparent;
         }
 
-        /* ===== CARROSSEL DE BANNERS ===== */
-        .carrossel {
+        .botao-cadastrar {
+            background-color: #2c6e49;
+            color: white;
+            box-shadow: 0 4px 6px rgba(44, 110, 73, 0.2);
+        }
+
+        .botao-cadastrar:hover {
+            background-color: #205035;
+        }
+
+        /* ==========================================================================
+           3. ESTRUTURA DO MENU ☰ FLUTUANTE (Inspirado no Menu Lateral do 99)
+           ========================================================================== */
+        .botao-servicos-no-banner {
             position: relative;
-            width: 100%;
-            height: 380px;
-            overflow: hidden;
         }
 
         .botao-tracos {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background: rgba(255,255,255,0.9);
+            background: #2c6e49;
+            color: white;
             border: none;
-            padding: 10px 14px;
             font-size: 1.2rem;
-            border-radius: 4px;
+            padding: 10px 14px;
+            border-radius: 12px;
             cursor: pointer;
-            z-index: 10;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            transition: background 0.2s;
         }
 
         .botao-tracos:hover {
-            background: #ffffff;
+            background: #205035;
+        }
+
+        /* Lista de Serviços (Abre como o menu do app) */
+        .lista-servicos {
+            display: none;
+            position: absolute;
+            top: 55px;
+            left: 0;
+            background: white;
+            min-width: 280px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            border-radius: 16px;
+            overflow: hidden;
+            z-index: 2000;
+            border: 1px solid #e2e8f0;
+        }
+
+        .lista-servicos.ativo {
+            display: block;
+        }
+
+        .lista-servicos a {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.2rem;
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid #f7fafc;
+            transition: background 0.2s;
+        }
+
+        .lista-servicos a:hover {
+            background-color: #f0f7f0;
+            color: #2c6e49;
+        }
+
+        /* ==========================================================================
+           4. TELA CHEIA / CARROSSEL (O "Mapa" de fundo do app)
+           ========================================================================== */
+        .banner-principal {
+            position: relative;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            background-color: #000;
         }
 
         .slides {
             display: flex;
             width: 300%;
             height: 100%;
-            transform: translateX(0);
-            transition: transform 0.6s ease-in-out;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
         .slide {
-            width: 33.333%;
+            width: 100vw;
             height: 100%;
             position: relative;
         }
@@ -159,89 +207,152 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            filter: brightness(0.65); /* Escurece o fundo para destacar letras brancas */
         }
 
+        /* Texto sobre o Banner - Centralizado e Imponente */
         .texto-slide {
             position: absolute;
-            top: 50%;
+            top: 40%;
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
             color: white;
-            z-index: 2;
             width: 90%;
+            max-width: 800px;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.5);
         }
 
         .texto-slide h1 {
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
         }
 
         .texto-slide p {
-            font-size: 1.2rem;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            font-size: 1.3rem;
+            font-weight: 400;
+            opacity: 0.95;
         }
 
+        /* Pontos de Navegação do Carrossel */
         .pontos {
             position: absolute;
-            bottom: 25px;
+            bottom: 180px; /* Sobe para não bater com a caixa de baixo */
             left: 50%;
             transform: translateX(-50%);
             display: flex;
-            gap: 12px;
-            z-index: 3;
+            gap: 10px;
+            z-index: 10;
         }
 
         .ponto {
-            width: 14px;
-            height: 14px;
+            width: 10px;
+            height: 10px;
+            background: rgba(255,255,255,0.4);
             border-radius: 50%;
-            background: rgba(255,255,255,0.5);
             cursor: pointer;
-            border: none;
+            transition: all 0.3s;
         }
 
-        .ponto.ativo {
+        .ponto-ativo {
             background: white;
+            width: 25px;
+            border-radius: 10px;
         }
 
-        /* ===== PAINEL DE SERVIÇOS LATERAL ===== */
-        #overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.4);
-            z-index: 999;
-            display: none;
-        }
-
-        #overlay.visivel {
-            display: block;
-        }
-
-        #painelServicos {
-            position: fixed;
-            top: 0;
-            left: -320px;
-            width: 300px;
-            height: 100vh;
-            background: #ffffff;
-            border-right: 1px solid #ddd;
-            transition: left 0.3s ease;
-            z-index: 1000;
-            overflow-y: auto;
-            padding-top: 80px;
-        }
-
-        #painelServicos.aberto {
-            left: 0;
-        }
-
-        #painelServicos .fechar {
+        /* ==========================================================================
+           5. CAIXA FLUTUANTE DE SOLICITAÇÃO (Inspirado no "Para onde vamos?" do 99)
+           ========================================================================== */
+        .boas-vindas {
             position: absolute;
-            top: 20px;
-            right: 20px;
-            background: none;...
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 600px;
+            background: white;
+            padding: 1.8rem;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            z-index: 100;
+            text-align: center;
+        }
+
+        .boas-vindas h2 {
+            color: #2c6e49;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .boas-vindas p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 1.2rem;
+        }
+
+        /* Botões de Ação Direta do App */
+        .botoes-acao-rapida {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-acao {
+            flex: 1;
+            padding: 1rem;
+            border-radius: 16px;
+            border: none;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-acao:active {
+            transform: scale(0.98);
+        }
+
+        .btn-preciso {
+            background: #2c6e49;
+            color: white;
+        }
+
+        .btn-posso {
+            background: #e0f2fe;
+            color: #0369a1;
+        }
+
+        /* Rodapé Minimalista oculto no fundo */
+        footer {
+            position: absolute;
+            bottom: 5px;
+            width: 100%;
+            text-align: center;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.5);
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        /* ==========================================================================
+           6. RESPONSIVIDADE (Ajustes para Celular)
+           ========================================================================== */
+        @media (max-width: 768px) {
+            .menu-esquerda {
+                display: none; /* Esconde links soltos no celular para virar app limpo */
+            }
+            .texto-slide h1 {
+                font-size: 2rem;
+            }
+            .texto-slide p {
+                font-size: 1rem;
+            }
+            header {
+                padding: 0.6rem 1rem;
+            }
+            .botao-acesso {
+                padding: 0.5rem 1rem;
