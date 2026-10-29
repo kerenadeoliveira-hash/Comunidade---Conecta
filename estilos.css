@@ -1786,3 +1786,10 @@ img {
   border-radius: 8px;
   cursor: pointer;
 }
+.navegacao-principal {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 40px;  /* ← Aumenta ou diminui pra ajustar */
+  padding: 12px 40px;
+}
