@@ -1828,6 +1828,19 @@ img {
   position: relative;
   width: 100%;
   overflow: hidden;
+  margin-bottom: 40px;
+  z-index: 1;
+}
+
+body {
+  background: #ffffff;
+  margin: 0;
+}
+
+.conteudo-pagina, main, section {
+  position: relative;
+  z-index: 2;
+  background: #ffffff;
 }
 
 .slide {
