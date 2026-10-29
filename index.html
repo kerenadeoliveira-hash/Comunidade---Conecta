@@ -161,9 +161,9 @@ header {
     </header>
 <!-- CARROSSEL DE IMAGENS COMPLETO (já com os seus nomes!) -->
 <div class="carrossel">
-  <div class="slides" id="slidesCarrossel">
+  <div class="slides">
     <!-- Imagem 1 -->
-    <div class="slide slide-ativo">
+    <div class="slide">
       <img src="banner.png" alt="Bem-Estar da Minha Comunidade">
       <div class="texto-slide">
         <h1>Bem‑Estar da Minha Comunidade</h1>
@@ -188,8 +188,8 @@ header {
     </div>
   </div>
   <!-- 🟢 OS 3 PONTINHOS (os "três traços" que aparecem embaixo!) -->
-  <div class="pontinhos" id="pontinhosCarrossel">
-    <span class="ponto ativo"></span>
+  <div class="pontos">
+    <span class="ponto-ativo"></span>
     <span class="ponto"></span>
     <span class="ponto"></span>
   </div>
@@ -420,35 +420,30 @@ btnServ.addEventListener("click", ()=>{
 }
 // CARROSSEL AUTOMÁTICO
 document.addEventListener('DOMContentLoaded', () => {
-  const slides = document.getElementById('slidesCarrossel');
+  const slides = document.querySelector('.slides');
   const pontos = document.querySelectorAll('.ponto');
-  let indice = 0;
+  let slideAtual = 0;
   const total = 3;
 
-  function atualizarCarrossel() {
-    slides.style.transform = `translateX(-${indice * (100 / total)}%)`;
+  function irParaSlide(n) {
+    slideAtual = n;
+    slides.style.transform = `translateX(-${n * (100 / total)}%)`;
     pontos.forEach((p, i) => {
-      p.classList.remove('ativo');
-      if (i === indice) p.classList.add('ativo');
+      p.classList.remove('ponto-ativo');
+      if (i === n) p.classList.add('ponto-ativo');
     });
   }
 
-  function proximo() {
-    indice = (indice + 1) % total;
-    atualizarCarrossel();
+  function proximoSlide() {
+    irParaSlide((slideAtual + 1) % total);
   }
 
-  // 🟢 AQUI: 4000 = 4 segundos para passar automaticamente
-  setInterval(proximo, 4000);
-
-  // Clicar nos pontinhos também funciona
-  pontos.forEach((ponto, i) => {
-    ponto.addEventListener('click', () => {
-      indice = i;
-      atualizarCarrossel();
-    });
+  irParaSlide(0);
+  setInterval(proximoSlide, 5000);
+  pontos.forEach((p, i) => {
+    p.addEventListener('click', () => irParaSlide(i));
   });
- atualizarCarrossel();
+});
  });
 </body>
 </html>
