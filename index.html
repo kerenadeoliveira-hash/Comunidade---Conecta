@@ -1,472 +1,133 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bem-Estar da Minha Comunidade</title>
-    <style> .logo‑topo {
-  width: 80px;
-  position: absolute;
-  top: 12px;
-  left: 12px;
-}
-
-header {
-  position: relative;
-  padding-left: 100px;
-}
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-        
-        body { 
-            background-color: #f0f7f0; 
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        /* Cabeçalho */
-        header {
-            background-color: #2c6e49;
-            color: white;
-            padding: 2rem;
-            text-align: center;
-        }
-        
-        header h1 { 
-            margin-bottom: 0.5rem; 
-            font-size: 2rem;
-        }
-        
-        /* Menu de Navegação */
-        nav {
-            background-color: #40916c;
-            padding: 1rem;
-            text-align: center;
-        }
-        
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 1rem;
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-        
-        nav a:hover { text-decoration: underline; }
-        
-        /* Conteúdo Principal */
-        main {
-            max-width: 900px;            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        
-        .boas-vindas {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-        }
-        
-        .boas-vindas h2 {
-            color: #2c6e49;
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-        }
-        
-        /* Grade de Acesso Rápido */
-        .grade {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        
-        .caixa {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        .caixa:hover { transform: translateY(-5px); }
-        
-        .caixa h3 { 
-            color: #2c6e49; 
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-        
-        /* Aviso */
-        .aviso {
-            background: #fff3cd;
-            border-left: 5px solid #ffc107;
-            padding: 1.2rem;
-            border-radius: 6px;
-            margin-bottom: 2rem;
-        }
-        
-        .aviso h3 {
-            color: #856404;
-            margin-bottom: 0.5rem;
-        }
-        
-        /* Rodapé */
-        footer {
-            background: #2c6e49;
-            color: white;
-            text-align: center;
-            padding: 1.5rem;
-            margin-top: 2rem;
-        }
-    </style>
-    <link rel="stylesheet"href="estilos.css">
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
     <!-- Cabeçalho -->
     <header>
-<div class="logo‑bmc">
-  <img src="logo-bmc.png" alt="Logomarca BMC"class="logo">
-  <span>BMC</span>
-</div>
-<nav class="navegacao-principal">
-  <!-- ☰ O botão de três linhas FICA AQUI, onde já está — NÃO MEXA NELE! -->
-<!-- 📍 Esses aqui ficam todos no meio, alinhados em linha reta -->
-<!-- Lado ESQUERDO: os textos sem os ícones antigos -->
-<div class="menu-esquerda">
-  <a href="index.html" class="item-barra">Início</a>
-  <a href="ajuda.html" class="item-barra">Solicitar Ajuda</a>
-  <a href="oferecer-ajuda.html" class="item-barra">Oferecer Ajuda</a>
-  <a href="eventos.html" class="item-barra">Eventos</a>
-</div>
+        <div class="logo-bmc">
+            <img src="logo-bmc.png" alt="Logomarca BMC" class="logo">
+            <span>BMC</span>
+        </div>
+        
+        <nav class="navegacao-principal">
+            <!-- ☰ Botão de Serviços com a sua lista completa de 9 itens -->
+            <div class="botao-servicos-no-banner">
+                <button class="botao-tracos" id="botaoMenu">☰</button>
+                <div class="lista-servicos">
+                    <a href="servicos.html#saude">Saúde e Cuidados</a>
+                    <a href="servicos.html#postos-saude">Postos de Saúde e Vacinação</a>
+                    <a href="servicos.html#remedios-gratuitos">Remédios Gratuitos</a>
+                    <a href="servicos.html#emergencia">Emergência</a>
+                    <a href="servicos.html#alimentacao-gratis">Alimentação Gratuita</a>
+                    <a href="servicos.html#alimentacao-acessivel">Alimentação com Preço Acessível</a>
+                    <a href="servicos.html#abrigo">Abrigo e Acolhimento</a>
+                    <a href="servicos.html#transporte">Transporte e Mobilidade</a>
+                    <a href="servicos.html#filas-saude">Atendimento e Filas na Saúde</a>
+                </div>
+            </div>
 
-<!-- Lado DIREITO: Meu Perfil + Sair UM AO LADO DO OUTRO (exatamente o que queríamos!) -->
+            <!-- Lado ESQUERDO: os textos sem os ícones antigos -->
+            <div class="menu-esquerda">
+                <a href="index.html" class="item-barra">Início</a>
+                <a href="ajuda.html" class="item-barra">Solicitar Ajuda</a>
+                <a href="oferecer-ajuda.html" class="item-barra">Oferecer Ajuda</a>
+                <a href="eventos.html" class="item-barra">Eventos</a>
+            </div>
 
-<div class="lado-direito">
-  <a href="perfil.html" class="item-menu"title="Meu Perfil">
-    <div class="icone-menu">👤</div>
-  </a>
-  <a href="#" id="botaoSair">Sair</a>
-</div>
-</nav>
-  <a href="login.html" class="botao-acesso botao-entrar" id="botaoEntrar">Entrar</a>
-  <a href="cadastro.html" class="botao-acesso botao-cadastrar" id="botaoCadastrar">Cadastrar‑se</a>
-  <a href="#" class="botao-acesso botao-sair" id="botaoSair" style="display: none;">Sair</a>
-  </div>
-</nav>
+            <!-- Lado DIREITO: Meu Perfil + Sair + Botões de Entrada -->
+            <div class="lado-direito">
+                <a href="perfil.html" class="item-menu" title="Meu Perfil">
+                    <div class="icone-menu">👤</div>
+                </a>
+                <a href="login.html" class="botao-acesso botao-entrar" id="botaoEntrar">Entrar</a>
+                <a href="cadastro.html" class="botao-acesso botao-cadastrar" id="botaoCadastrar">Cadastrar-se</a>
+                <a href="#" class="botao-acesso botao-sair" id="botaoSair" style="display: none;">Sair</a>
+            </div>
+        </nav>
     </header>
-<!-- 🖼️ CARROSSEL DE BANNERS -->
-<section class="carrossel">
-  <div class="slides">
-    <div class="slide">
-      <img src="banner.png" alt="Bem-Estar da Minha Comunidade">
-      <div class="texto-slide">
-        <h1>Bem-Estar da Minha Comunidade</h1>
-        <p>Espaço de união e bem-estar para todos</p>
-      </div>
-    </div>
 
-    <div class="slide">
-      <img src="banner-2.png" alt="Comunidade">
-      <div class="texto-slide">
-        <h1>Atividades para a Comunidade</h1>
-        <p>Feiras, oficinas, jogos, shows e momentos juntos</p>
-      </div>
-    </div>
+    <!-- 🖼️ CARROSSEL DE BANNERS (Apenas um bloco, ajustado e sem duplicações) -->
+    <section class="banner-principal">
+        <div class="slides">
+            <div class="slide">
+                <img src="banner.png" alt="Bem-Estar da Minha Comunidade">
+                <div class="texto-slide">
+                    <h1>Bem-Estar da Minha Comunidade</h1>
+                    <p>Espaço de união e bem-estar para todos</p>
+                </div>
+            </div>
 
-    <div class="slide">
-      <img src="banner-3.png" alt="Ajuda Mútua">
-      <div class="texto-slide">
-        <h1>Ajuda entre Nós</h1>
-        <p>Juntos construímos uma comunidade melhor</p>
-      </div>
-    </div>
-  </div>
+            <div class="slide">
+                <img src="banner-2.png" alt="Comunidade">
+                <div class="texto-slide">
+                    <h1>Atividades para a Comunidade</h1>
+                    <p>Feiras, oficinas, jogos, shows e momentos juntos</p>
+                </div>
+            </div>
 
-  <div class="pontos">
-    <span class="ponto ponto-ativo"></span>
-    <span class="ponto"></span>
-    <span class="ponto"></span>
-  </div>
-</section>
-
-<!-- 👋 MENSAGEM DE BOAS-VINDAS -->
-<section class="boas-vindas">
-  <h2>Bem-vindo!</h2>
-  <p>Espaço de bem-estar da comunidade. Participe dos nossos eventos e venha fazer parte dessa história com a gente!</p>
-</section>
-<!-- ⚡ SCRIPT DO CARROSSEL -->
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const slides = document.querySelector('.slides');
-  const pontos = document.querySelectorAll('.ponto');
-  let slideAtual = 0;
-  const total = 3;
-
-  function irParaSlide(n) {
-    slideAtual = n;
-    slides.style.transform = `translateX(-${n * (100 / total)}%)`;
-    pontos.forEach((p, i) => {
-      p.classList.remove('ponto-ativo');
-      if (i === n) p.classList.add('ponto-ativo');
-    });
-  }
-
-  function proximoSlide() {
-    irParaSlide((slideAtual + 1) % total);
-  }
-
-  irParaSlide(0);
-  setInterval(proximoSlide, 5000);
-  pontos.forEach((p, i) => {
-    p.addEventListener('click', () => irParaSlide(i));
-  });
-});
-</script>
-</div>
-
-</body>
-</header>
- 
-  <button class="menu-icone" id="botaoMenu">☰</button>
- <div class="texto-sobre-imagem">
-   <!-- 🖼️ CARROSSEL DE BANNERS -->
-<section class="carrossel">
-  <div class="slides">
-    <div class="slide">
-      <img src="banner.png" alt="Bem-Estar da Minha Comunidade">
-      <div class="texto-slide">
-        <h1>Bem-Estar da Minha Comunidade</h1>
-        <p>Espaço de união e bem-estar para todos</p>
-      </div>
-    </div>
-
-    <div class="slide">
-      <img src="banner-2.png" alt="Comunidade">
-      <div class="texto-slide">
-        <h1>Atividades para a Comunidade</h1>
-        <p>Feiras, oficinas, jogos, shows e momentos juntos</p>
-      </div>
-    </div>
-
-    <div class="slide">
-      <img src="banner-3.png" alt="Ajuda Mútua">
-      <div class="texto-slide">
-        <h1>Ajuda entre Nós</h1>
-        <p>Juntos construímos uma comunidade melhor</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="pontos">
-    <span class="ponto ponto-ativo"></span>
-    <span class="ponto"></span>
-    <span class="ponto"></span>
-  </div>
-</section>
-</div>
-</section>
-  <!-- O botão ☰ vai AQUI — em cima da imagem, canto superior esquerdo -->
-  <div class="botao-servicos-no-banner">
-   <button class="botao-tracos">☰</button>
-    <div class="lista-servicos">
-      <a href="servicos.html#saude">Saúde e Cuidados</a>
-      <a href="servicos.html#postos-saude">Postos de Saúde e Vacinação</a>
-      <a href="servicos.html#remedios-gratuitos">Remédios Gratuitos</a>
-      <a href="servicos.html#emergencia">Emergência</a>
-      <a href="servicos.html#alimentacao-gratis">Alimentação Gratuita</a>
-      <a href="servicos.html#alimentacao-acessivel">Alimentação com Preço Acessível</a>
-      <a href="servicos.html#abrigo">Abrigo e Acolhimento</a>
-      <a href="servicos.html#transporte">Transporte e Mobilidade</a>
-      <a href="servicos.html#filas-saude">Atendimento e Filas na Saúde</a>
-      <a href="servicos.html#limpeza">Limpeza e Cuidado com o Bairro</a>
-      <a href="servicos.html#alertas">Alertas do Bairro</a>
-      <a href="servicos.html#ajuda-mutua">Ajuda Mútua</a>
-      <a href="servicos.html#para-todos">Para Todos — Novos Moradores</a>
-  </div>
-</section>
-<!-- PRÓXIMOS EVENTOS -->
-<section class="proximos-eventos">
-  <h2>Próximos Eventos</h2>
-  
-  <div class="cartao-evento">
-    <img src="imagem-show-banda.jpg" alt="Show da Banda Comunidade">
-    <h3>Show da Banda Comunidade</h3>
-    <p>📅 Data: 25/11/2026 — 19h30</p>
-    <p>📍 Local: Praça Central</p>
-  </div>
-
-  <div class="cartao-evento">
-    <img src="evento-crianças.jpg" alt="Dia de Diversão das Crianças">
-    <h3>🎉 Dia de Diversão das Crianças</h3>
-    <p>📅 Data: 12/10/2026 — 14h00</p>
-    <p>📍 Local: Quadra da Comunidade</p>
-    <p>🎈 Brincadeiras, jogos e muita alegria!</p>
-  </div>
-</section>
-<!-- JOGOS E COMUNIDADE GP -->
-<section class="jogos-comunidade">
-  <h2>Jogos e Comunidade GP</h2>
-  <img src="imagem-jogo-comunidade.jpg" alt="Jogos Comunitários do bairro">
-  <p>Momento de diversão, integração e conexão através dos jogos!</p>
-</section>
- <!-- Conteúdo -->
-    <main>
-        <section class="boas-vindas">
-            <h2>Bem-vindo(a)! 💛</h2>
-            <p>Este é o nosso espaço comunitário! Aqui você encontra serviços locais, acompanha eventos do bairro e pode pedir ou oferecer ajuda ao próximo.</p>
-            <br>
-            <p><strong>Todos juntos fazemos mais!</strong> Este projeto é feito para e com os moradores do nosso bairro.</p>
-        </section>
-<h2>📢 Próximos eventos</h2>
-<div id="lista‑eventos"></div>
-<script>
-    let logado = localStorage.getItem("usuarioLogado");
-if (!logado) {
-  window.location.href = "login.html";
-}
-async function carregarEventos(){
-  const res=await fetch("eventos.csv");
-  const txt=await res.text();
-  let html="";
-  for(let i=1;i<linhas.length;i++){
-    const c=linhas[i].split(",");
-html+=`<div style="padding:10px;border:1px solid #ddd;border-radius:8px;margin-bottom:12px;">
-  <div style="width:100%;height:160px;overflow:hidden;border-radius:6px;margin-bottom:8px;display:flex;align-items:center;justify-content:center;background:#f5f5f5;">
-    <img src="${c[5]}" style="max-width:100%;max-height:160px;object-fit:contain;">
-  </div>
-  <h3>${c[0]}</h3>
-  <p>Data:${c[1]} ${c[2]}</p>
-  <p>Local:${c[3]}</p>
-  <p>${c[4]}</p>
-</div>`;
-  }
-  document.querySelector("#lista‑eventos").innerHTML=html;
-}
-carregarEventos();
-    function sair() {
-  localStorage.removeItem("usuarioLogado");
-  window.location.href = "login.html";
-}
-</script>
-        <h3 style="margin-bottom: 1rem; color: #333;">📌 O que você procura?</h3>
-        <section class="grade">
-            <a href="servicos.html" class="caixa">
-                <h3>🛠️ Serviços</h3>
-                <p>Onde encontrar o que precisa</p>
-            </a>
-            
-            <a href="eventos.html" class="caixa">
-                <h3>📢 Eventos</h3>
-                <p>O que vai acontecer no bairro</p>
-            </a>
-            
-            <a href="ajuda.html" class="caixa">
-                <h3>🤝 Solicitar Ajuda</h3>
-                <p>Peça ou ofereça ajuda</p>
-            </a>
-            
-            <a href="servicos.html" class="caixa">
-                <h3>🚨 Emergência</h3>
-                <p>Contatos importantes</p>
-            </a>
-        </section>
-
-        <section class="aviso">
-            <h3>📢 Aviso importante</h3>
-            <p>O projeto está em construção. Novas funcionalidades serão adicionadas em breve! Participe dando sua opinião e ajudando a construir o nosso espaço.</p>
-        </section>
-    </section>
-
-        <!-- 🔔 AVISO DE EVENTOS NOVOS -->
-        <div style="background: #fff3cd; border-left: 5px solid #ff9f1c; padding: 1.2rem; border-radius: 8px; margin-bottom: 2rem;">
-            <h3 style="color: #856404; margin-bottom: 0.5rem;">🔔 AVISO IMPORTANTE</h3>
-            <p style="font-size: 1.05rem;">Fique de olho! Sempre que tiver <strong>festa, reunião ou evento novo</strong>, colocamos aqui primeiro!</p>
-            <p style="margin-top: 0.5rem;">👉 Vá em <a href="eventos.html" style="color: #2c6e49; font-weight: bold;">Eventos</a> para ver tudo que vai acontecer!</p>
+            <div class="slide">
+                <img src="banner-3.png" alt="Ajuda Mútua">
+                <div class="texto-slide">
+                    <h1>Ajuda entre Nós</h1>
+                    <p>Juntos construímos uma comunidade melhor</p>
+                </div>
+            </div>
         </div>
 
-<section class="aviso">
-    <h3>🔔 Aviso importante</h3>
+        <div class="pontos">
+            <span class="ponto ponto-ativo"></span>
+            <span class="ponto"></span>
+            <span class="ponto"></span>
+        </div>
+    </section>
+
+    <!-- 👋 MENSAGEM DE BOAS-VINDAS -->
+    <main>
+        <section class="boas-vindas">
+            <h2>Bem-vindo!</h2>
+            <p>Espaço de bem-estar da comunidade. Participe dos nossos eventos e venha fazer parte dessa história com a gente!</p>
+        </section>
     </main>
-  <script>
-const usuarioLogado = localStorage.getItem("usuarioLogado");
-      if (!localStorage.getItem("usuarioLogado")) {
-  window.location.href = "login.html";
-}
-const botaoEntrar = document.getElementById("botaoEntrar");
-const botaoCadastrar = document.getElementById("botaoCadastrar");
-const botaoSair = document.getElementById("botaoSair");
 
-if (usuarioLogado) {
-  botaoEntrar.style.display = "none";
-  botaoCadastrar.style.display = "none";
-  botaoSair.style.display = "block";
-}
-
-botaoSair.addEventListener("click", function() {
-  localStorage.removeItem("usuarioLogado");
-  window.location.href = "index.html";
-});
-</script>
+    <!-- Rodapé -->
     <footer>
-  <p>Comunidade Conecta — Bem‑Estar da Minha Comunidade © 2026</p>
-  <p>Feito com 💛 para o nosso bairro</p>
-</footer>
-<div id="painelServicos" style="position:fixed; top:0; left:-280px; width:260px; height:100%; background:#f8f8f8; border-right:1px solid #ccc; transition:left 0.3s; padding-top:60px;">
-  <div style="padding:0 16px;">
-   <p><a href="servicos.html#saude">🏥 Saúde e Cuidados</a></p>
-<p><a href="servicos.html#alimentacao">🍽️ Alimentação e Abrigo</a></p>
-<p><a href="servicos.html#abrigo">🏠 Abrigo e Acolhimento</a></p>
-<p><a href="servicos.html#transporte">🚌 Transporte e Mobilidade</a></p>
-<p><strong>Atendimento e Filas na Saúde ▼</strong></p>
-<p>📏 <strong>Limpeza e Cuidado com Nosso Bairro ▼</strong></p>
-<p>⚠️ <strong>Alertas do Bairro ▼</strong></p>
-<p>🤝 <strong>Ajuda Mútua ▼</strong></p>
-</div>
+        <p>&copy; 2026 Bem-Estar da Minha Comunidade. Todos os direitos reservados.</p>
+    </footer>
 
-<script>
-const btnServ = document.getElementById("btnMenuServicos");
-const painel = document.getElementById("painelServicos");
-btnServ.addEventListener("click", ()=>{
-  if(painel.style.left === "0px") painel.style.left = "-280px";
-  else painel.style.left = "0px";
-});
-    function abrirGrupo(idGrupo){
-  const el = document.getElementById(idGrupo);
-  if(el.style.display === "none") el.style.display = "block";
-  else el.style.display = "none";
-}
-// CARROSSEL AUTOMÁTICO
-document.addEventListener('DOMContentLoaded', () => {
-  const slides = document.querySelector('.slides');
-  const pontos = document.querySelectorAll('.ponto');
-  let slideAtual = 0;
-  const total = 3;
+    <!-- ⚡ SCRIPT DO CARROSSEL -->
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const slides = document.querySelector('.slides');
+        const pontos = document.querySelectorAll('.ponto');
+        let slideAtual = 0;
+        const total = 3;
 
-  function irParaSlide(n) {
-    slideAtual = n;
-    slides.style.transform = `translateX(-${n * (100 / total)}%)`;
-    pontos.forEach((p, i) => {
-      p.classList.remove('ponto-ativo');
-      if (i === n) p.classList.add('ponto-ativo');
+        function irParaSlide(n) {
+            slideAtual = n;
+            slides.style.transform = `translateX(-${n * 100}%)`;
+            pontos.forEach((p, i) => {
+                p.classList.remove('ponto-ativo');
+                if (i === n) p.classList.add('ponto-ativo');
+            });
+        }
+
+        function proximoSlide() {
+            irParaSlide((slideAtual + 1) % total);
+        }
+
+        irParaSlide(0);
+        setInterval(proximoSlide, 5000);
+        pontos.forEach((p, i) => {
+            p.addEventListener('click', () => irParaSlide(i));
+        });
     });
-  }
+    </script>
 
-  function proximoSlide() {
-    irParaSlide((slideAtual + 1) % total);
-  }
-
-  irParaSlide(0);
-  setInterval(proximoSlide, 5000);
-  pontos.forEach((p, i) => {
-    p.addEventListener('click', () => irParaSlide(i));
-  });
-});
- });
 </body>
 </html>
-            
