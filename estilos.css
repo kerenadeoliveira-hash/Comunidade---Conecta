@@ -1820,3 +1820,6 @@ img {
   font-size: 1rem;
   color: #222;
 }
+  .menu-icone {
+    display: none !important;
+  }
