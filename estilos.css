@@ -1793,3 +1793,9 @@ img {
   gap: 40px;  /* ← Aumenta ou diminui pra ajustar */
   padding: 12px 40px;
 }
+.navegacao-principal {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;  /* ← Distribui o espaço IGUAL entre os links */
+  padding: 12px 30px;
+}
