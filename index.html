@@ -418,40 +418,38 @@ btnServ.addEventListener("click", ()=>{
   if(el.style.display === "none") el.style.display = "block";
   else el.style.display = "none";
 }
-<script>
-let slideAtual = 0;
-const slides = document.querySelectorAll('.slide');
-const pontos = document.querySelectorAll('.ponto');
+// CARROSSEL AUTOMÁTICO
+document.addEventListener('DOMContentLoaded', () => {
+  const slides = document.getElementById('slidesCarrossel');
+  const pontos = document.querySelectorAll('.ponto');
+  let indice = 0;
+  const total = 3;
 
-function mostrarSlide(indice) {
-  slides.forEach((slide, i) => {
-    slide.classList.remove('slide-ativo');
-    if (i === indice) {
-      slide.classList.add('slide-ativo');
-    }
-  });
+  function atualizarCarrossel() {
+    slides.style.transform = `translateX(-${indice * (100 / total)}%)`;
+    pontos.forEach((p, i) => {
+      p.classList.remove('ativo');
+      if (i === indice) p.classList.add('ativo');
+    });
+  }
+
+  function proximo() {
+    indice = (indice + 1) % total;
+    atualizarCarrossel();
+  }
+
+  // 🟢 AQUI: 4000 = 4 segundos para passar automaticamente
+  setInterval(proximo, 4000);
+
+  // Clicar nos pontinhos também funciona
   pontos.forEach((ponto, i) => {
-    ponto.classList.remove('ativo');
-    if (i === indice) {
-      ponto.classList.add('ativo');
-    }
+    ponto.addEventListener('click', () => {
+      indice = i;
+      atualizarCarrossel();
+    });
   });
-}
-
-function proximoSlide() {
-  slideAtual = (slideAtual + 1) % slides.length;
-  mostrarSlide(slideAtual);
-}
-
-setInterval(proximoSlide, 5000);
-
-pontos.forEach((ponto, indice) => {
-  ponto.addEventListener('click', () => {
-    slideAtual = indice;
-    mostrarSlide(slideAtual);
-  });
-});
-</script>
+ atualizarCarrossel();
+ });
 </body>
 </html>
             
