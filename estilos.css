@@ -1765,3 +1765,24 @@ img {
   background-color: #ffffff;
   border-radius: 2px;
 }
+/* Faz o banner ser a "âncora" do botão */
+.banner-principal {
+  position: relative;
+  width: 100%;
+}
+
+/* Botão dos três traços — fixo no canto da imagem */
+.menu-icone {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  font-size: 24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  cursor: pointer;
+}
