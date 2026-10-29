@@ -1917,6 +1917,130 @@ img {
   cursor: pointer;
   transition: background-color 0.3s;
 }
+  /* CARROSSEL AUTOMÁTICO - PARA O SEU PROJETO */
+.carrossel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  transition: transform 0.8s ease-in-out;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.texto-slide {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  text-align: center;
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* 🟢 OS PONTINHOS EMBAIXO */
+.pontinhos {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.ponto {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.ponto.ativo {
+  background: #ffffff;
+}
+  /* CARROSSEL AUTOMÁTICO - PARA O SEU PROJETO */
+.carrossel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  transition: transform 0.8s ease-in-out;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.texto-slide {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  text-align: center;
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* 🟢 OS PONTINHOS EMBAIXO */
+.pontinhos {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.ponto {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.ponto.ativo {
+  background: #ffffff;
+}
 
 .ponto.ativo {
   background-color: #ffffff;
