@@ -62,7 +62,7 @@ nav a:hover {
   object‑fit: contain;
 }
 header nav {
-  background-color: #ffffff;
+  background-color: 3transparent;
 }
 
 header nav a {
@@ -166,11 +166,6 @@ header {
 .logo-bmc span {
 color: #ffffff;
   font-weight: bold;
-}
-.logo-bmc span {
-  color: #ffffff;
-  font-weight: bold;
-  font-size:18px;
 }
 /* Menu horizontal no topo nas páginas internas */
 header {
@@ -385,6 +380,7 @@ header {
 .banner-principal {
   position: relative;
   width: 100%;
+  z-index: 1;
 }
 
 .banner-principal img {
@@ -536,6 +532,7 @@ header {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
+  z-index: 1;
   overflow: hidden;
   margin: 0;
   padding: 0;
@@ -543,14 +540,6 @@ header {
   align-items: center;
   padding-left: 60px;
 }
-.banner-principal img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}
-
 .banner-principal img {
   width: 100%;
   height: 100%;
@@ -991,13 +980,9 @@ nav span {
     background-color: #14407a;
     color: white;
 }
-
-/* Garante que o banner seja relativo */
 .banner-principal {
     position: relative;
-}
-.banner-principal {
-    position: relative;
+  z-index: 1;
 }
 
 .botao-servicos-no-banner {
@@ -1168,7 +1153,7 @@ body > .links-centro:not(nav .links-centro) {
   display: flex;
   justify-content: space-between; 
   align-items: center;
-  background: #ffffff;
+  background: #transparent;
   padding:12px 25px;
 }
 .item-barra {
@@ -1269,6 +1254,7 @@ body > .links-centro:not(nav .links-centro) {
 .banner-principal {
   position: relative;
   min-height: 550px;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1306,6 +1292,7 @@ img {
 .banner-principal { 
   position: relative; 
   width: 100%; 
+  z-index: 1;
   min-height: 380px; /* Reduzido de 520px para 380px (fica excelente em notebooks) */
   overflow: hidden; 
   margin: 0; 
@@ -1370,6 +1357,7 @@ img {
   position: relative;
   width: 100%;
   aspect-ratio: 16/ 9;
+  z-index: 1;
   overflow: hidden;
   margin: 0;
   padding: 0;
@@ -1474,6 +1462,7 @@ img {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
+  z-index: 1;
   overflow: hidden;
   margin: 0;
   padding: 0;
@@ -1524,6 +1513,7 @@ img {
   position: relative;
   width: 100%;
   height: 400px;
+  z-index: 1;
   overflow: hidden;
 }
 
@@ -1645,15 +1635,11 @@ img {
   border-radius: 4px;
   cursor: pointer;
 }
-
-/* Garante que o banner seja o ponto de referência */
-.banner-principal {
-  position: relative;
-}
   /* Faz o banner ser a "referência" de posição */
 .banner-principal {
   position: relative;
   width: 100%;
+  z-index: 1;
 }
 
 /* Botão dos três traços no canto superior esquerdo da imagem */
@@ -1686,20 +1672,11 @@ img {
   border-radius: 4px;
   cursor: pointer;
 }
-
-/* Garante que o banner é o ponto de referência */
-.banner-principal {
-  position: relative;
-  width: 100%;
-}
-  
   height: 180px;
   object-fit: cover;
   border-radius: 4px;
 }
-  .banner-principal {
-  position: relative;
-}
+ 
 
 .menu-icone {
   position: absolute;
@@ -1761,6 +1738,7 @@ img {
 .banner-principal {
   position: relative;
   width: 100%;
+  z-index: 1;
 }
 
 /* Botão dos três traços — fixo no canto da imagem */
