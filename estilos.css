@@ -2244,3 +2244,46 @@ nav a:hover, nav .menu-item:hover {
   gap: 20px;
   padding: 20px 0;
 }
+/* ===== MENU SUSPENSO — IGUAL AO 99FOOD ===== */
+
+/* Esconde a lista por padrão */
+.menu-dropdown {
+    display: none !important;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    min-width: 260px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 8px 0;
+    z-index: 999;
+    margin-top: 4px;
+}
+
+/* Mostra a lista só quando passa o mouse */
+.menu-item:hover .menu-dropdown {
+    display: block !important;
+}
+
+/* Cada item dentro da caixinha */
+.menu-dropdown a {
+    display: block;
+    padding: 14px 20px;
+    color: #333333;
+    text-decoration: none;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* Cor quando passa o mouse em cima de um item */
+.menu-dropdown a:hover {
+    background: #f5f5f5;
+    color: #000000;
+}
+
+/* Garante que o botão principal fique correto */
+.menu-item {
+    position: relative;
+    display: inline-block;
+}
