@@ -2226,6 +2226,20 @@ nav a:hover, nav .menu-item:hover {
 .item-menu:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
+  .logo-bmc {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* espaçamento entre logo e texto */
+    text-decoration: none;
+    color: white;
+    padding-left: 10px; /* um pouquinho de espaço na esquerda */
+}
+
+.logo-bmc img {
+    height: 42px;
+    width: auto;
+    object-fit: contain;
+}
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   padding: 20px 0;
