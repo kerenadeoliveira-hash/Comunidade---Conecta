@@ -17,7 +17,7 @@ header img {
 }
 /* Cabeçalho escuro‑azulado estilo profissional */
 header {
-  background‑color: #1a2c42;
+  background‑color: #0D2C54;;
   padding: 14px 22px;
   display: flex;
   align‑items: center;
@@ -460,13 +460,13 @@ header {
 .cartao-evento h3 {
   padding: 15px 20px 5px;
   font-size: 22px;
-  color: #2d2d2d;
+  color: #ffffff;
 }
 
 .cartao-evento p {
   padding: 5px 20px 15px;
   font-size: 16px;
-  color: #555;
+  color: #ffffff;
 }
 
 /* --- JOGOS E COMUNIDADE GP --- */
@@ -655,6 +655,7 @@ nav {
 .cartao-evento p {
     padding: 0 20px;
     margin: 10px 0;
+  color: #ffffff;
 }
 
 .proximos-eventos,
@@ -708,6 +709,7 @@ nav {
 .cartao-evento p {
     padding: 10px 20px;
     margin: 0;
+  color:# ffffff;
 }
 
 /* ===== GALERIA DE FOTOS — sem margem lateral ===== */
@@ -813,7 +815,7 @@ nav span {
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    background: white;
+    background: #0D2C54;
     min-width: 220px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     border-radius: 0 0 8px 8px;
@@ -825,9 +827,9 @@ nav span {
 .submenu-servicos strong {
     display: block;
     padding: 12px 20px 5px 20px;
-    color: #20634f;
+    color: #ffffff;
     font-size: 15px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
     margin-top: 5px;
 }
 
@@ -835,13 +837,13 @@ nav span {
     display: block;
     padding: 8px 20px 8px 30px;
     text-decoration: none;
-    color: #444;
+    color: #ffffff;
     font-size: 14px;
 }
 
 .submenu-servicos a:hover {
-    background: #f0f7f4;
-    color: #20634f;
+    background: rgba(255,255,255,0.15);
+    color: #ffffff;
 }
 
 .menu-servicos-container:hover .submenu-servicos {
@@ -858,7 +860,7 @@ nav span {
     font-size: 24px;
     cursor: pointer;
     padding: 5px 10px;
-    color: #333;
+    color: #ffffff;
 }
 
 .menu-conteudo {
@@ -866,7 +868,7 @@ nav span {
     position: absolute;
     top: 100%;
     left: 0;
-    background: white;
+    background: #0D2C54;
     min-width: 260px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.15);
     border-radius: 0 0 6px 6px;
@@ -876,15 +878,15 @@ nav span {
 .menu-conteudo a {
     display: block;
     padding: 12px 20px;
-    color: #333;
+    color: #ffffff;
     text-decoration: none;
     font-size: 15px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
 }
 
 .menu-conteudo a:hover {
-    background: #0D2C54;
-    color: #20634f;
+    background:rgba(255,255,255,0.15);
+    color: #ffffff;
 }
 
 .menu-hamburguer:hover .menu-conteudo {
@@ -1537,7 +1539,7 @@ img {
 
 /* ===== CARÃO DE EVENTOS ===== */
 .cartao-evento {
-  background: white;
+  background: #0D2C54;
   border-radius: 8px;
   padding: 15px;
   margin: 15px 0;
