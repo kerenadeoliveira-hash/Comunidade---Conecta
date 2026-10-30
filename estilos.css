@@ -2132,6 +2132,51 @@ body {
 }
 .grade-eventos {
   display: grid;
+  header, nav {
+  background-color: #0b3d91; /* azul escuro bonito */
+  padding: 15px 30px;
+  border-radius: 16px;
+  margin: 10px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+  nav a, nav .menu-item {
+  background-color: #ffffff;
+  color: #0b3d91;
+  padding: 10px 24px;
+  margin: 0 8px;
+  border-radius: 30px;
+  border: 2px solid #0b3d91;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+nav a:hover, nav .menu-item:hover {
+  background-color: #0b3d91;
+  color: #ffffff;
+}
+  .botao-entrar {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+.botao-cadastrar {
+  background-color: #ffffff;
+  color: #0b3d91;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+  margin-left: 10px;
+}
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   padding: 20px 0;
