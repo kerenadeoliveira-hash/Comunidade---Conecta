@@ -2287,3 +2287,39 @@ nav a:hover, nav .menu-item:hover {
     position: relative;
     display: inline-block;
 }
+/* ===== MENU SUSPENSO — FORÇAR ESTILO ===== */
+.menu-dropdown {
+    display: none !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    background: #ffffff !important;
+    min-width: 260px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+    border-radius: 8px !important;
+    padding: 8px 0 !important;
+    z-index: 9999 !important;
+    margin-top: 4px !important;
+}
+
+.menu-item:hover .menu-dropdown {
+    display: block !important;
+}
+
+.menu-dropdown a {
+    display: block !important;
+    padding: 14px 20px !important;
+    color: #000000 !important;
+    text-decoration: none !important;
+    font-size: 15px !important;
+}
+
+.menu-dropdown a:hover {
+    background: #f5f5f5 !important;
+    color: #000000 !important;
+}
+
+.menu-item {
+    position: relative !important;
+    display: inline-block !important;
+}
