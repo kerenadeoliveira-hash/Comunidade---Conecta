@@ -2177,6 +2177,55 @@ nav a:hover, nav .menu-item:hover {
   font-weight: 600;
   margin-left: 10px;
 }
+  /* Barra de navegação principal */
+.navegacao-principal {
+  background-color: #0b3d91;
+  padding: 18px 30px;
+  border-radius: 16px;
+  margin: 10px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Itens do menu: Início, Solicitar Ajuda, etc. */
+.item-barra {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #0b3d91;
+  padding: 10px 24px;
+  margin: 0 8px;
+  border-radius: 30px;
+  border: 2px solid #0b3d91;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.item-barra:hover {
+  background-color: #0b3d91;
+  color: #ffffff;
+}
+
+/* Lado direito (Perfil, botões) */
+.lado-direito {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.item-menu {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.item-menu:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   padding: 20px 0;
