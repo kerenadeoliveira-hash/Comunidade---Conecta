@@ -2415,3 +2415,56 @@ nav a:hover, nav .menu-item:hover {
     position: relative !important;
     display: inline-block !important;
 }
+/* === BARRA DE NAVEGAÇÃO — TUDO NA MESMA LINHA === */
+.menu-principal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Cada item que tem submenu */
+.item-com-submenu {
+  position: relative;
+}
+
+/* Botões da barra principal */
+.item-nav, .botao-nav {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+/* Caixinha que abre embaixo */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  min-width: 220px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  padding: 10px 0;
+  z-index: 999;
+}
+
+/* Mostra a caixinha quando passa o mouse */
+.item-com-submenu:hover .submenu {
+  display: block;
+}
+
+/* Links dentro da caixinha */
+.submenu a {
+  display: block;
+  padding: 12px 20px;
+  color: #333;
+  text-decoration: none;
+}
+
+.submenu a:hover {
+  background: #f5f5f5;
+}
