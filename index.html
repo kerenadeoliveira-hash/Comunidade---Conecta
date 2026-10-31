@@ -362,8 +362,24 @@
         <li style="margin-bottom: 18px;"><a href="quem-somos.html" style="text-decoration: none; color: #1a3c7d; font-weight: 500; font-size: 16px;">Quem Somos Nós</a></li>
         <li style="margin-bottom: 18px;"><a href="servicos.html" style="text-decoration: none; color: #1a3c7d; font-weight: 500; font-size: 16px;">Nossos Serviços</a></li>
         <li style="margin-bottom: 18px;"><a href="eventos.html" style="text-decoration: none; color: #1a3c7d; font-weight: 500; font-size: 16px;">Eventos da Comunidade</a></li>
-        <li><a href="contato.html" style="text-decoration: none; color: #1a3c7d; font-weight: 500; font-size: 16px;">Fale Conosco</a>...
-        <!-- Título da Página -->
+        <li><a href="contato.html" style="text-decoration: none; color: #1a3c7d; font-weight: 500; font-size: 16px;">Fale Conosco</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<script>
+const botao = document.getElementById('botaoMenu');
+const menu = document.getElementById('menuLateral');
+
+botao.addEventListener('click', function() {
+  if (menu.style.display === 'none') {
+    menu.style.display = 'block';
+  } else {
+    menu.style.display = 'none';
+  }
+});
+</script>
         <div class="titulo-pagina">
             <h1>Bem-Estar da Minha Comunidade</h1>
             <p>União, acolhimento e cuidado para todos — seja bem-vindo(a)!</p>
