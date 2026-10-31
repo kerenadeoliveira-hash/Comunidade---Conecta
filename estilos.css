@@ -1,11 +1,11 @@
-nav {
+0nav {
   display: flex;
   gap: 22px;
   padding: 12px;
   background-color: #0D2C54;
 }
 
-nav a {
+nav a {000000
   color: white;
   text-decoration: none;
   font-size: 17px;
@@ -2437,4 +2437,8 @@ nav a:hover, nav .menu-item:hover {
 }
 .cabecalho-topo {
   background: #003366;
+}
+.area-botoes {
+  margin-left: auto;
+  margin-right: 12px;
 }
