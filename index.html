@@ -518,3 +518,26 @@
                 
                 for(let i = 1; i < linhas.length; i++){
                     if (!linhas
+<script>
+// Abre e fecha o submenu ao clicar
+document.querySelectorAll('.botao-nav').forEach(botao => {
+    botao.addEventListener('click', function(e) {
+        e.stopPropagation();
+        // Fecha todos os outros
+        document.querySelectorAll('.submenu').forEach(menu => {
+            if (menu !== this.nextElementSibling) {
+                menu.classList.remove('aberto');
+            }
+        });
+        // Abre/fecha o clicado
+        this.nextElementSibling.classList.toggle('aberto');
+    });
+});
+
+// Clica fora para fechar
+document.addEventListener('click', function() {
+    document.querySelectorAll('.submenu').forEach(menu => {
+        menu.classList.remove('aberto');
+    });
+});
+</script>
