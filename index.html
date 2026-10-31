@@ -514,16 +514,22 @@ document.addEventListener('click', function() {
     });
 });
 </script>
-    <script>
+  <script>
 let slideIndex = 0;
 const slides = document.querySelectorAll('.slide');
 
+// Mostra só a primeira no início
+slides[slideIndex].style.display = 'block';
+
 function showSlides() {
-  slides.forEach(slide => slide.style.display = 'block');
-  slides.forEach((slide, i) => slide.style.display = i === 0 ? 'block' : 'none');
+  // Esconde todas
+  slides.forEach(slide => slide.style.display = 'none');
+  // Avança
   slideIndex++;
-  if (slideIndex > slides.length) slideIndex = 1;
-  slides[slideIndex - 1].style.display = 'block';
+  if (slideIndex > slides.length - 1) slideIndex = 0;
+  // Mostra a próxima
+  slides[slideIndex].style.display = 'block';
+  // Repete a cada 4 segundos
   setTimeout(showSlides, 4000);
 }
 
