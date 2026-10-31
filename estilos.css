@@ -2410,3 +2410,12 @@ nav a:hover, nav .menu-item:hover {
 .submenu a:hover {
     background: #f5f5f5;
 }
+.menu-central {
+    display: flex;
+    align-items: center;
+    gap: 20px;  /* ← controla o ESPAÇO entre os botões. Quanto menor, mais juntos */
+}
+.item-nav, .botao-nav {
+    font-size: 16px;   /* ← tamanho do texto: 14px menor, 18px maior */
+    padding: 8px 12px; /* ← espaço interno dos botões */
+}
