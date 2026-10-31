@@ -2415,6 +2415,18 @@ nav a:hover, nav .menu-item:hover {
     align-items: center;
     gap: 20px;  /* ← controla o ESPAÇO entre os botões. Quanto menor, mais juntos */
 }
+.item-nav {
+  background: white;
+  color: #0d47a1;
+  padding: 8px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+}
+.menu-central {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
 .item-nav, .botao-nav {
     font-size: 16px;   /* ← tamanho do texto: 14px menor, 18px maior */
     padding: 8px 12px; /* ← espaço interno dos botões */
