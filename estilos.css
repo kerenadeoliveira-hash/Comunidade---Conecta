@@ -2306,40 +2306,6 @@ nav a:hover, nav .menu-item:hover {
     display: block !important;
 }
 
-.menu-dropdown a {
-    display: block !important;
-    padding: 14px 20px !important;
-    color: #000000 !important;
-    text-decoration: none !important;
-    font-size: 15px !important;
-}
-
-.menu-dropdown a:hover {
-    background: #f5f5f5 !important;
-    color: #000000 !important;
-}
-/* ===== ESCONDER E MOSTRAR O MENU SUSPENSO ===== */
-
-/* Esconde a caixinha por padrão */
-.menu-dropdown {
-    display: none !important;
-    position: absolute !important;
-    top: 100% !important;
-    left: 0 !important;
-    background: #ffffff !important;
-    min-width: 280px !important;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15) !important;
-    border-radius: 8px !important;
-    padding: 10px 0 !important;
-    z-index: 999 !important;
-    margin-top: 5px !important;
-}
-
-/* Mostra a caixinha só quando o mouse está em cima */
-.menu-item:hover > .menu-dropdown {
-    display: block !important;
-}
-
 /* Cada item da lista — texto preto, fundo branco */
 .menu-dropdown a {
     display: block !important;
@@ -2394,77 +2360,53 @@ nav a:hover, nav .menu-item:hover {
     z-index: 9999 !important;
     margin-top: 5px !important;
 }
-
-.menu-item:hover > .menu-dropdown {
-    display: block !important;
+/* === BARRA DE NAVEGAÇÃO — SEM FLECHA, ABRE AO CLICAR === */
+.menu-central {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    position: relative;
 }
 
-.menu-dropdown a {
-    display: block !important;
-    padding: 12px 20px !important;
-    color: #000000 !important;
-    text-decoration: none !important;
-    font-size: 15px !important;
-}
-
-.menu-dropdown a:hover {
-    background: #f5f5f5 !important;
-}
-
-.menu-item {
-    position: relative !important;
-    display: inline-block !important;
-}
-/* === BARRA DE NAVEGAÇÃO — TUDO NA MESMA LINHA === */
-.menu-principal {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 30px;
-}
-
-/* Cada item que tem submenu */
 .item-com-submenu {
-  position: relative;
+    position: relative;
 }
 
-/* Botões da barra principal */
 .item-nav, .botao-nav {
-  background: transparent;
-  border: none;
-  color: white;
-  font-size: 16px;
-  padding: 10px 0;
-  cursor: pointer;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px 0;
+    cursor: pointer;
 }
 
-/* Caixinha que abre embaixo */
 .submenu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: white;
-  min-width: 220px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  border-radius: 8px;
-  padding: 10px 0;
-  z-index: 999;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    min-width: 220px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 10px 0;
+    z-index: 999;
+    margin-top: 5px;
 }
 
-/* Mostra a caixinha quando passa o mouse */
-.item-com-submenu:hover .submenu {
-  display: block;
+.submenu.aberto {
+    display: block;
 }
 
-/* Links dentro da caixinha */
 .submenu a {
-  display: block;
-  padding: 12px 20px;
-  color: #333;
-  text-decoration: none;
+    display: block;
+    padding: 12px 20px;
+    color: #333;
+    text-decoration: none;
 }
 
 .submenu a:hover {
-  background: #f5f5f5;
+    background: #f5f5f5;
 }
