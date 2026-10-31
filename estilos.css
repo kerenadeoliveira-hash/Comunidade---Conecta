@@ -110,7 +110,7 @@ footer {
   gap: 16px;
 }
 .botao-acesso {
-  padding: 9px 18px;
+  padding: 6px 14px;
   border-radius: 22px;
   text-decoration: none;
 }
@@ -118,6 +118,8 @@ footer {
   border: 1px solid #224499;
   background-color: #0D2C54;
   color: #ffffff;
+  padding: 6px 14px;
+  font-size:14px;
 }
 
 .botao-entrar:hover {
@@ -127,6 +129,8 @@ footer {
 .botao-cadastrar {
   background-color: #1a2c42;
   color: #ffffff;
+  padding: 6px 14px;
+  font-size: 14px;
 }
 .botao-sair {
   background-color: #d94848;
