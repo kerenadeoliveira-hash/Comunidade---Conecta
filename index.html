@@ -359,21 +359,21 @@
         <section class="carrossel">
             <div class="slides">
                 <div class="slide">
-                    <img src="banner.png" alt="Bem-Estar da Minha Comunidade" style="width: 100%; height: auto; display: block;">
+                   <img src="banner.png" alt="Bem-Estar da Minha Comunidade" style="width: 100%; height: auto; max-height: 350px; object-fit: cover;">
                     <div class="texto-slide">
                         <h2>Bem-Estar da Minha Comunidade</h2>
                         <p>Espaço de união e bem-estar para todos</p>
                     </div>
                 </div>
                 <div class="slide">
-                    <img src="banner-2.png" alt="Comunidade style="width:100%;height:auto;max-height:500px;object-fit:cover;">
+                    <img src="banner-2.png" alt="Comunidade"style="width: 100%; height: auto; max-height: 350px; object-fit: cover;">
                     <div class="texto-slide">
                         <h2>Atividades Comunitárias</h2>
                         <p>Feiras, oficinas, eventos e momentos juntos</p>
                     </div>
                 </div>
                 <div class="slide">
-                    <img src="banner-3.png" alt="Ajuda Mútua "style="width:100%;height:auto;max-height:500px;object-fit:cover;">
+                    <img src="banner-3.png" alt="Ajuda Mútua "style="width: 100%; height: auto; max-height: 350px; object-fit: cover;">
                     <div class="texto-slide">
                         <h2>Ajuda entre Nós</h2>
                         <p>Juntos construímos uma comunidade melhor</p>
@@ -513,4 +513,19 @@ document.addEventListener('click', function() {
         menu.classList.remove('aberto');
     });
 });
+</script>
+    <script>
+let slideIndex = 0;
+const slides = document.querySelectorAll('.slide');
+
+function showSlides() {
+  slides.forEach(slide => slide.style.display = 'block');
+  slides.forEach((slide, i) => slide.style.display = i === 0 ? 'block' : 'none');
+  slideIndex++;
+  if (slideIndex > slides.length) slideIndex = 1;
+  slides[slideIndex - 1].style.display = 'block';
+  setTimeout(showSlides, 4000);
+}
+
+showSlides();
 </script>
