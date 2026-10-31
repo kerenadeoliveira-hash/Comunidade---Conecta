@@ -2435,3 +2435,6 @@ nav a:hover, nav .menu-item:hover {
     font-size: 16px;   /* ← tamanho do texto: 14px menor, 18px maior */
     padding: 8px 12px; /* ← espaço interno dos botões */
 }
+.cabecalho-topo {
+  background: #003366;
+}
