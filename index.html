@@ -435,35 +435,73 @@ botao.addEventListener('click', function() {
         <h2 class="secao-titulo">📢 Próximos Eventos</h2>
         <div id="lista-eventos"></div>
 
-        <!-- 📌 O QUE VOCÊ PROCURA? -->
-        <h2 class="secao-titulo">📌 O que você procura?</h2>
-        <section class="grade">
-            <a href="servicos.html" class="caixa">
-                <h3>🛠️ Serviços</h3>
-                <p>Encontre o que precisa no bairro</p>
-            </a>
-            <a href="eventos.html" class="caixa">
-                <h3>📢 Eventos</h3>
-                <p>Veja o que vai acontecer</p>
-            </a>
-            <a href="ajuda.html" class="caixa">
-                <h3>🤝 Solicitar Ajuda</h3>
-                <p>Peça apoio da comunidade</p>
-            </a>
-            <a href="oferecer-ajuda.html" class="caixa">
-                <h3>💛 Oferecer Ajuda</h3>
-                <p>Compartilhe suas habilidades</p>
-            </a>
-        </section>
+     <!-- SEÇÃO: Nossos Serviços por Categoria -->
+<section style="padding: 50px 20px; max-width: 1200px; margin: 0 auto;">
 
-        <!-- 🔔 AVISO -->
-        <div class="aviso">
-            <h3>🔔 Fique de olho!</h3>
-            <p>Sempre que tiver festa, reunião ou evento novo, colocamos aqui primeiro!</p>
-            <p style="margin-top: 8px;">👉 Vá em <a href="eventos.html" style="color: #0b3d91; font-weight: bold;">Eventos</a> para ver tudo que vai acontecer!</p>
-        </div>
-    </main>
+  <h2 style="font-size: 24px; color: #0D2C54; margin-bottom: 5px;">Serviços por Categoria</h2>
+  <p style="color: #666; margin-bottom: 30px;">Aqui você encontra tudo o que precisa no nosso bairro.</p>
 
+  <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+
+    <!-- 1 -->
+    <a href="eventos.html" style="text-decoration: none;">
+      <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 4px; padding: 30px 15px; text-align: center; transition: 0.2s;">
+        <img src="img/eventos-lazer.jpg" alt="Eventos e Lazer" style="width: 60px; height: 60px; object-fit: cover; margin-bottom: 15px;">
+        <div style="color: #333; font-size: 16px; line-height: 1.4;">Eventos e Lazer</div>
+      </div>
+    </a>
+
+    <!-- 2 -->
+    <a href="cultura.html" style="text-decoration: none;">
+      <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 4px; padding: 30px 15px; text-align: center; transition: 0.2s;">
+        <img src="img/cultura-shows.jpg" alt="Cultura e Shows" style="width: 60px; height: 60px; object-fit: cover; margin-bottom: 15px;">
+        <div style="color: #333; font-size: 16px; line-height: 1.4;">Cultura e Shows</div>
+      </div>
+    </a>
+
+    <!-- 3 -->
+    <a href="familia.html" style="text-decoration: none;">
+      <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 4px; padding: 30px 15px; text-align: center; transition: 0.2s;">
+        <img src="img/familia-comunidade.jpg" alt="Família e Comunidade" style="width: 60px; height: 60px; object-fit: cover; margin-bottom: 15px;">
+        <div style="color: #333; font-size: 16px; line-height: 1.4;">Família e Comunidade</div>
+      </div>
+    </a>
+
+    <!-- 4 -->
+    <a href="esportes.html" style="text-decoration: none;">
+      <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 4px; padding: 30px 15px; text-align: center; transition: 0.2s;">
+        <img src="img/esportes-atividade.jpg" alt="Esportes e Atividade Física" style="width: 60px; height: 60px; object-fit: cover; margin-bottom: 15px;">
+        <div style="color: #333; font-size: 16px; line-height: 1.4;">Esportes e Atividade Física</div>
+      </div>
+    </a>
+
+    <!-- 5 -->
+    <a href="cursos.html" style="text-decoration: none;">
+      <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 4px; padding: 30px 15px; text-align: center; transition: 0.2s;">
+        <img src="img/cursos-capacitacao.jpg" alt="Cursos e Capacitação" style="width: 60px; height: 60px; object-fit: cover; margin-bottom: 15px;">
+        <div style="color: #333; font-size: 16px; line-height: 1.4;">Cursos e Capacitação</div>
+      </div>
+    </a>
+
+    <!-- 6 -->
+    <a href="saude.html" style="text-decoration: none;">
+      <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 4px; padding: 30px 15px; text-align: center; transition: 0.2s;">
+        <img src="img/saude-bemestar.jpg" alt="Saúde e Bem-Estar" style="width: 60px; height: 60px; object-fit: cover; margin-bottom: 15px;">
+        <div style="color: #333; font-size: 16px; line-height: 1.4;">Saúde e Bem-Estar</div>
+      </div>
+    </a>
+
+    <!-- 7 -->
+    <a href="criancas.html" style="text-decoration: none;">
+      <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 4px; padding: 30px 15px; text-align: center; transition: 0.2s;">
+        <img src="img/criancas-adolescentes.jpg" alt="Crianças e Adolescentes" style="width: 60px; height: 60px; object-fit: cover; margin-bottom: 15px;">
+        <div style="color: #333; font-size: 16px; line-height: 1.4;">Crianças e Adolescentes</div>
+      </div>
+    </a>
+
+    <!-- 8 -->
+    <a href="avisos.html" style="text-decoration: none;">
+      <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 4px; padding: 30px 15px; text-align: center; transition: 0.2s;">...
     <!-- RODAPÉ -->
     <footer>
         <p><strong>Bem-Estar da Minha Comunidade</strong> © 2026 — Todos os direitos reservados</p>
