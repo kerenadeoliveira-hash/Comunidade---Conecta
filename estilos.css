@@ -2360,6 +2360,56 @@ nav a:hover, nav .menu-item:hover {
     display: block !important;
     margin: 8px 0 !important;
 }
+.menu-central {
+    display: flex !important;
+    align-items: center !important;
+    gap: 30px !important;
+    position: relative !important;
+}
+
+.menu-item {
+    position: relative !important;
+    display: inline-block !important;
+}
+
+.item-menu-principal {
+    padding: 10px 15px !important;
+    cursor: pointer !important;
+    background: transparent !important;
+    border: none !important;
+    color: white !important;
+    font-size: 16px !important;
+}
+
+.menu-dropdown {
+    display: none !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    background: #ffffff !important;
+    min-width: 250px !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15) !important;
+    border-radius: 8px !important;
+    padding: 10px 0 !important;
+    z-index: 9999 !important;
+    margin-top: 5px !important;
+}
+
+.menu-item:hover > .menu-dropdown {
+    display: block !important;
+}
+
+.menu-dropdown a {
+    display: block !important;
+    padding: 12px 20px !important;
+    color: #000000 !important;
+    text-decoration: none !important;
+    font-size: 15px !important;
+}
+
+.menu-dropdown a:hover {
+    background: #f5f5f5 !important;
+}
 
 .menu-item {
     position: relative !important;
