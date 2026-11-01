@@ -1,4 +1,4 @@
-0nav {
+nav {
   display: flex;
   gap: 22px;
   padding: 12px;
@@ -2441,6 +2441,53 @@ nav a:hover, nav .menu-item:hover {
 }
 .cabecalho-topo {
   background: #003366;
+}
+/* Serviços por Categoria — 2 por linha, maiores */
+.servicos-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  padding: 20px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.servicos-container a {
+  text-decoration: none;
+}
+
+.servicos-container > div {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 40px 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.servicos-container > div:hover {
+  transform: translateY(-5px);
+}
+
+.servicos-container img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.servicos-container div div:last-child {
+  color: #333;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Responsivo — em celular volta para 1 por linha */
+@media (max-width: 600px) {
+  .servicos-container {
+    grid-template-columns: 1fr;
+  }
 }
 .area-botoes {
   margin-left: auto;
