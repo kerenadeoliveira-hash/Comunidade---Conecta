@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quem Somos Nós — BMC</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <!-- CABEÇALHO — IGUAL ÀS DEMAIS PÁGINAS -->
+  <header class="cabecalho-topo">
+    <div class="logo-area">
+      <a href="index.html" class="logo-bmc">
+        <img src="logo-bmc.png" alt="Logo BMC" style="height: 58px;">
+      </a>
+    </div>
+
+    <!-- MENU — IGUAL ÀS DEMAIS PÁGINAS -->
+    <nav class="menu-central" style="display: flex; background: #ffffff;">
+      <a href="index.html" style="padding: 12px 24px; font-size: 16px; color: #081835; text-decoration: none; border-right: 1px solid #cccccc;">Início</a>
+      <a href="guia.html" style="padding: 12px 24px; font-size: 16px; color: #081835; text-decoration: none; border-right: 1px solid #cccccc;">Guia</a>
+      <a href="quem-somos.html" style="padding: 12px 24px; font-size: 16px; color: #081835; text-decoration: none; border-right: 1px solid #cccccc;">Quem Somos Nós</a>
+      <a href="servicos.html" style="padding: 12px 24px; font-size: 16px; color: #081835; text-decoration: none; border-right: 1px solid #cccccc;">Nossos Serviços</a>
+      <a href="eventos.html" style="padding: 12px 24px; font-size: 16px; color: #081835; text-decoration: none; border-right: 1px solid #cccccc;">Eventos da Comunidade</a>
+      <a href="contato.html" style="padding: 12px 24px; font-size: 16px; color: #081835; text-decoration: none;">Fale Conosco</a>
+    </nav>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL DA PÁGINA -->
+  <section style="max-width: 900px; margin: 60px auto; padding: 0 20px;">
+
+    <h1 style="font-size: 36px; color: #081835; text-align: center; margin-bottom: 50px;">Quem Somos Nós</h1>
+
+    <!-- NOSSA HISTÓRIA -->
+    <div style="margin-bottom: 50px;">
+      <h2 style="font-size: 26px; color: #081835; margin-bottom: 20px;">Nossa História</h2>
+      <p style="font-size: 18px; line-height: 1.8; color: #333;">
+        O BMC nasceu do coração da nossa comunidade. Começou como uma ideia simples: pessoas que queriam fazer o bem, se unindo para apoiar quem mais precisa. Com o tempo, essa pequena iniciativa cresceu e se tornou um espaço de acolhimento, união e cuidado para todos do nosso bairro.
+      </p>
+    </div>
+
+    <!-- NOSSA MISSÃO -->
+    <div style="margin-bottom: 50px; background: #f4f6fa; padding: 30px; border-radius: 10px;">
+      <h2 style="font-size: 26px; color: #081835; margin-bottom: 20px;">Nossa Missão</h2>
+      <p style="font-size: 18px; line-height: 1.8; color: #333;">
+        Promover o bem-estar, a união e o cuidado com cada pessoa da nossa comunidade. Estamos aqui para acolher, apoiar e caminhar junto com você — porque juntos somos mais fortes.
+      </p>
+    </div>
+
+    <!-- NOSSOS VALORES -->
+    <div style="margin-bottom: 50px;">
+      <h2 style="font-size: 26px; color: #081835; margin-bottom: 25px; text-align: center;">Nossos Valores</h2>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+        <div style="background: #ffffff; border: 2px solid #081835; padding: 20px 30px; border-radius: 8px; text-align: center; min-width: 140px;">
+          <span style="font-size: 18px; color: #081835; font-weight: bold;">Acolhimento</span>
+        </div>
+        <div style="background: #ffffff; border: 2px solid #081835; padding: 20px 30px; border-radius: 8px; text-align: center; min-width: 140px;">
+          <span style="font-size: 18px; color: #081835; font-weight: bold;">Respeito</span>
+        </div>
+        <div style="background: #ffffff; border: 2px solid #081835; padding: 20px 30px; border-radius: 8px; text-align: center; min-width: 140px;">
+          <span style="font-size: 18px; color: #081835; font-weight: bold;">União</span>
+        </div>
+        <div style="background: #ffffff; border: 2px solid #081835; padding: 20px 30px; border-radius: 8px; text-align: center; min-width: 140px;">
+          <span style="font-size: 18px; color: #081835; font-weight: bold;">Solidariedade</span>
+        </div>
+        <div style="background: #ffffff; border: 2px solid #081835; padding: 20px 30px; border-radius: 8px; text-align: center; min-width: 140px;">
+          <span style="font-size: 18px; color: #081835; font-weight: bold;">Esperança</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- NOSSA EQUIPE -->
+    <div style="margin-bottom: 50px;">
+      <h2 style="font-size: 26px; color: #081835; margin-bottom: 20px;">Quem Faz Acontecer</h2>
+      <p style="font-size: 18px; line-height: 1.8; color: #333;">
+        Somos moradores, voluntários, famílias e amigos do bairro que acreditam que juntos podemos construir uma comunidade melhor. Cada pessoa que participa é parte importante dessa história. Você também é bem-vindo para fazer parte conosco!
+      </p>
+    </div>
+
+    <!-- ONDE ESTAMOS -->
+    <div style="background: #f4f6fa; padding: 30px; border-radius: 10px; text-align: center;">
+      <h2 style="font-size: 26px; color: #081835; margin-bottom: 20px;">Onde Estamos</h2>
+      <p style="font-size: 18px; line-height: 1.8; color: #333; margin-bottom: 10px;">
+        📍 Nosso bairro — São Paulo<br>
+        🕒 Atendimento: Segunda a Sexta, das 8h às 17h
+      </p>
+      <p style="font-size: 16px; color: #555; font-style: italic;">
+        "Seja bem-vindo. Aqui você tem um lugar."
+      </p>
+    </div>
+
+  </section>
+
+  <!-- RODAPÉ — IGUAL ÀS DEMAIS PÁGINAS -->
+  <footer style="background: #081835; color: #ffffff; padding: 40px 20px; text-align: center; margin-top: 60px;">
+    <p style="font-size: 16px; margin-bottom: 10px;">Bem-Estar da Minha Comunidade — BMC</p>
+    <p style="font-size: 14px; opacity: 0.8;">União, Acolhimento e Cuidado para Todos</p>
+  </footer>
+
+</body>
+</html>
