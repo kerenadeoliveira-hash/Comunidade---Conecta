@@ -2382,12 +2382,14 @@ nav a:hover, nav .menu-item:hover {
 }
 
 .item-nav, .botao-nav {
-    background: transparent;
-    border: none;
-    color: 081835;
-    font-size: 16px;
-    padding: 10px 0;
-    cursor: pointer;
+  background: transparent;
+  border: none;
+  color: #081835 !important;
+  font-family: "Georgia", "Times New Roman", serif;  /* ← letras refinadas */
+  font-size: 16px;
+  letter-spacing: 0.5px;  /* ← espaçamento leve entre as letras */
+  padding: 10px 0;
+  cursor: pointer;
 }
 
 .submenu {
