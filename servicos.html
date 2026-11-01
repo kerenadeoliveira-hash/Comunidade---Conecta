@@ -1,232 +1,230 @@
 <!DOCTYPE html>
-<html lang="pt‑BR">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF‑8">
-<meta name="viewport" content="width=device‑width, initial‑scale=1.0">
-<title>Serviços da Comunidade</title>
-<link rel="stylesheet" href="estilos.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nossos Serviços — BMC</title>
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    .servico-item {
+      border-bottom: 1px solid #ccc;
+      cursor: pointer;
+    }
+    .servico-titulo {
+      padding: 18px 15px;
+      font-size: 20px;
+      color: #081835;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .seta {
+      transition: transform 0.3s ease;
+    }
+    .seta-girada {
+      transform: rotate(180deg);
+    }
+    .servico-conteudo {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding: 0 15px;
+    }
+    .servico-conteudo.aberto {
+      max-height: 600px;
+      padding-bottom: 20px;
+    }
+    .servico-conteudo p {
+      font-size: 17px;
+      color: #444;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+    .servico-conteudo a {
+      display: inline-block;
+      margin: 5px 0;
+      padding: 6px 0;
+      color: #081835;
+      font-weight: bold;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+    }
+    .servico-conteudo a:hover {
+      border-bottom-color: #081835;
+    }
+  </style>
 </head>
 <body>
-<!-- Cabeçalho -->
-<header>
-  <div class="logo-bmc">
-    <img src="logo-bmc.png" alt="Logomarca BMC" class="logo">
-    <span>BMC</span>
-  </div>
-  <nav class="navegacao-principal">
-    <a href="index.html">Início</a>
-    <a href="perfil.html">Meu Perfil</a>
-    <a href="servicos.html">Serviços</a>
-    <a href="eventos.html">Eventos</a>
-    <a href="avisos.html">Avisos</a>
-    <a href="ajuda.html">Solicitar Ajuda</a>
-    <div class="links-acesso">
-  <a href="login.html" class="botao-acesso botao-entrar" id="botaoEntrar">Entrar</a>
-  <a href="cadastro.html" class="botao-acesso botao-cadastrar" id="botaoCadastrar">Cadastrar‑se</a>
-  <a href="#" class="botao-acesso botao-sair" id="botaoSair" style="display: none;">Sair</a>
-</div>
-  </nav>
-</header>
-<a href="index.html">Início</a>
-<a id="linkPerfil" href="perfil.html">Meu Perfil</a>
-<a href="servicos.html">Serviços</a>
-<a href="eventos.html">Eventos</a>
-<a href="avisos.html">Avisos</a>
-<a href="ajuda.html">Solicitar Ajuda</a>
-<a id="linkSair" href="#">Sair</a>
-<a id="linkEntrar" href="login.html">Entrar</a>
-<a id="linkCadastrar" href="Cadastro.html">Cadastrar‑se</a>
-</nav>
-<!-- ============================================== -->
-<!-- 🏥 SEÇÃO 1 — SAÚDE E CUIDADOS -->
-<!-- ============================================== -->
-<section>
-  <div id="saude">
-  <h2>🏥 Saúde e Cuidados</h2>
-  
-  <h3>Postos de Saúde e Vacinação</h3>
-  <p>Encontre o posto mais perto, horários e campanhas de vacinação.</p>
-  <a href="https://www.google.com/maps/search/postos+de+saude+perto+de+mim" target="_blank">
-    📍 Ver no mapa
+
+  <!-- CABEÇALHO IGUAL ÀS OUTRAS PÁGINAS -->
+  <header class="cabecalho-topo">
+    <div class="logo-area">
+      <a href="index.html"><img src="logo-bmc.png" alt="Logo BMC" style="height: 58px;"></a>
+    </div>
+    <nav class="menu-central" style="display: flex; background: #ffffff;">
+      <a href="index.html" style="padding: 12px 24px; font-size: 16px; color: #081835; text-decoration: none; border-right: 1px solid #ccc;">Início</a>
+      <a href="guia.html" style="padding: 12px 24px; font-size: 16px; color: #081835; text-decoration: none; border-right: 1px solid #ccc;">Guia</a>
+      <a href="quem-somos.html" style="padding: 12px 24px; font-size: 16px; color: #081835; text-decoration: none; border-right: 1px solid #ccc;">Quem Somos Nós</a>
+      <a href="servicos.html" style="padding: 12px 24px; font-size: 16px; color: #081835; text-decoration: none; border-right: 1px solid #ccc;">Nossos Serviços</a>
+      <a href="eventos.html" style="padding: 12px 24px; font-size: 16px; color: #081835; text-decoration: none; border-right: 1px solid #ccc;">Eventos da Comunidade</a>
+      <a href="contato.html" style="padding: 12px 24px; font-size: 16px; color: #081835; text-decoration: none;">Fale Conosco</a>
+    </nav>
+  </header>
+  <!-- MAPA ABERTO DE PESQUISA -->
+<div style="margin: 40px 0; padding: 25px; background: #f4f6fa; border-radius: 12px; text-align: center;">
+  <h2 style="font-size: 24px; color: #081835; margin-bottom: 10px;">🗺️ Pesquise qualquer local</h2>
+  <p style="font-size: 16px; color: #555; margin-bottom: 15px;">Encontre postos, farmácias, mercados, pontos de ônibus e muito mais</p>
+  <a href="https://www.google.com/maps" target="_blank" style="display: inline-block; padding: 12px 30px; background: #081835; color: #fff; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 8px;">
+    🔍 Abrir mapa para pesquisar
   </a>
-
-  <h3>💊 Remédios Gratuitos</h3>
-  <p>Saiba onde conseguir remédios de graça, quais documentos levar.</p>
-  <a href="https://www.saude.sp.gov.br/" target="_blank">Ver lista de postos</a>
-
-  <h3>🚑 Emergência</h3>
-  <p>Para onde ir: Posto, UPA ou Hospital?</p>
-  <ul>
-    <li>✅ Posto de saúde → consultas, vacinas, cuidados gerais</li>
-    <li>✅ UPA → febre, dor forte, ferimento</li>
-    <li>✅ Hospital → gravidade, risco de vida → ligue 192</li>
-  </ul>
-(<hr>)
-<hr>
-  </div>
-<!-- ============================================== -->
-<!-- 🍽️ ALIMENTAÇÃO E ABRIGO -->
-<!-- ============================================== -->
-<div id="alimentacao">
-<h2>🍽️ Alimentação e Abrigo</h2>
-<h3>Comida Gratuita e Distribuição de Alimentos</h3>
-<p>Locais onde é possível conseguir refeições, cestas básicas e alimentos sem custo:</p>
-<ul>
-  <li>✅ <strong>Restaurante Popular</strong> — refeições a preço baixo ou gratuito</li>
-  <li>✅ <strong>Comunidades e Igrejas</strong> — distribuição de alimentos nas datas marcadas</li>
-  <li>✅ <strong>CRAS do bairro</strong> — cadastro para receber cestas básicas</li>
-  <li>✅ <strong>Associações locais</strong> — feiras e doações de alimentos</li>
-</ul>
-<a href="https://www.google.com/maps/search/restaurante+popular+Sao+Paulo" target="_blank">📍 Ver locais no mapa</a>
-
-<h3>🏠 Abrigo e Acolhimento</h3>
-<p>Locais de apoio para quem precisa de lugar seguro:</p>
-<ul>
-  <li>✅ <strong>Abrigo Municipal</strong> — acolhimento 24 horas</li>
-  <li>✅ <strong>Assistência Social / CRAS</strong> — orientação e encaminhamento</li>
-  <li>✅ <strong>Telefone de apoio:</strong> ligue para a prefeitura — 156</li>
-</ul>
-<a href="https://www.google.com/maps/search/abrigo+proximo+de+mim+Sao+Paulo" target="_blank">📍 Encontrar abrigo perto</a>
-
-<hr>
-<hr>
 </div>
-<!-- ============================================== -->
-<!-- 🚌 TRANSPORTE E MOBILIDADE -->
-<!-- ============================================== -->
-<div id="transporte">
-<h2>🚌 Transporte e Mobilidade</h2>
 
-<h3>Filas de Ônibus e Pontos de Parada</h3>
-<p>Muitas pessoas esperando, longas filas e horários incertos? Veja como o projeto pode ajudar:</p>
-<ul>
-  <li>✅ 📋 <strong>Informar horários reais</strong> — horários oficiais e previsão de chegada nos pontos principais</li>
-  <li>✅ 📍 <strong>Mostrar pontos próximos</strong> — distribuir as pessoas entre pontos diferentes para não lotar só um</li>
-  <li>✅ 📢 <strong>Comunicar atrasos</strong> — avisar logo quando houver problema, para ninguém esperar à toa</li>
-  <li>✅ 📝 <strong>Ouvir a comunidade</strong> — registrar onde as filas são maiores para reivindicar melhorias</li>
-</ul>
-<a href="https://www.sptrans.com.br/" target="_blank">🔗 Ver horários oficiais — SPTrans</a>
-</div>
-  <hr>
+  <section style="max-width: 900px; margin: 60px auto; padding: 0 20px;">
+    <h1 style="font-size: 36px; color: #081835; text-align: center; margin-bottom: 50px;">Nossos Serviços</h1>
 
-<!-- ============================================== -->
-<!-- 🏥 ATENDIMENTO E FILAS NA SAÚDE -->
-<!-- ============================================== -->
-<h2>🏥 Atendimento e Filas na Saúde</h2>
+    <!-- 1 — SAÚDE -->
+    <div class="servico-item" onclick="abrirFechar(this)">
+      <div class="servico-titulo">
+        <span>🏥 Saúde</span>
+        <span class="seta">▼</span>
+      </div>
+      <div class="servico-conteudo">
+        <p><strong>Postos de Saúde e Vacinação</strong><br>Encontre o posto mais perto, horários e campanhas de vacinação.</p>
+        <a href="https://www.google.com/maps/search/postos+de+sa%C3%BAde+S%C3%A3o+Paulo" target="_blank">📍 Ver no mapa</a><br>
+        <a href="https://www.saude.sp.gov.br/" target="_blank">🌐 Site da Secretaria de Saúde</a>
 
-<h3>Reduzir a espera no Posto de Saúde</h3>
-<p>Filas grandes desde cedo, demora para ser atendido? O que podemos fazer:</p>
-<ul>
-  <li>✅ 📅 <strong>Divulgar horários de menor movimento</strong> — ir nos horários mais calmos evita aglomeração</li>
-  <li>✅ 📋 <strong>Orientar sobre agendamento</strong> — como marcar consulta sem precisar chegar de madrugada</li>
-  <li>✅ 📄 <strong>Lista de documentos necessários</strong> — ter tudo pronto acelera o atendimento</li>
-  <li>✅ 📢 <strong>Comunicar vagas e campanhas</strong> — avisa antes quando tem vacinação ou atendimento especial</li>
-  <li>✅ 🤝 <strong>Ajuda entre vizinhos</strong> — quem pode ajudar a levar quem tem prioridade (idosos, gestantes)</li>
-</ul>
+        <p style="margin-top: 15px;"><strong>Remédios Gratuitos</strong><br>Saiba onde conseguir remédios de graça e quais documentos levar.</p>
+        <a href="https://www.saude.sp.gov.br/" target="_blank">📋 Ver lista de postos</a>
 
-<hr>
+        <p style="margin-top: 15px;"><strong>Emergência</strong><br>✅ Posto de Saúde → consultas e vacinas<br>✅ UPA → febre, dor forte, ferimentos<br>✅ Hospital → risco de vida → <strong>Ligue 192</strong></p>
+      </div>
+    </div>
 
-<!-- ============================================== -->
-<!-- 🧹 LIMPEZA E CUIDADO COM O BAIRRO -->
-<!-- ============================================== -->
-<h2>🧹 Limpeza e Cuidado com Nosso Bairro</h2>
+    <!-- 2 — DOCUMENTOS -->
+    <div class="servico-item" onclick="abrirFechar(this)">
+      <div class="servico-titulo">
+        <span>📄 Documentos</span>
+        <span class="seta">▼</span>
+      </div>
+      <div class="servico-conteudo">
+        <p>Informações sobre como tirar e renovar seus documentos: RG, CPF, Carteira de Trabalho, Certidões e mais.</p>
+        <a href="https://www.sp.gov.br/" target="_blank">🔎 Onde tirar seus documentos</a>
+      </div>
+    </div>
 
-<h3>Manter tudo limpo e organizado</h3>
-<p>Ruas sujas, lixo acumulado, falta de coleta? Juntos podemos resolver:</p>
-<ul>
-  <li>✅ 🗑️ <strong>Divulgar dias de coleta</strong> — saber exatamente quando passar o caminhão evita deixar lixo na rua</li>
-  <li>✅ 📍 <strong>Indicar pontos de descarte</strong> — onde levar materiais recicláveis, entulho e coisas grandes</li>
-  <li>✅ 🤝 <strong>Grupo de voluntários</strong> — organizar mutirões de limpeza nas praças e ruas principais</li>
-  <li>✅ 📢 <strong>Conscientização</strong> — pequenos avisos: "Cuidar do nosso bairro é cuidar de nós mesmos"</li>
-  <li>✅ 📞 <strong>Canais de reclamação</strong> — onde ligar ou avisar quando a coleta não passar</li>
-</ul>
-<a href="https://www.prefeitura.sp.gov.br/" target="_blank">🔗 Falar com a Prefeitura — 156</a>
+    <!-- 3 — EDUCAÇÃO E CURSOS -->
+    <div class="servico-item" onclick="abrirFechar(this)">
+      <div class="servico-titulo">
+        <span>🎓 Educação e Cursos</span>
+        <span class="seta">▼</span>
+      </div>
+      <div class="servico-conteudo">
+        <p>Matrícula escolar, cursos gratuitos, vagas em creches e escolas de tempo integral.</p>
+        <a href="https://www.educacao.sp.gov.br/" target="_blank">📚 Cursos e vagas disponíveis</a>
+      </div>
+    </div>
 
-<hr>
-</section>
+    <!-- 4 — ALIMENTAÇÃO -->
+    <div class="servico-item" onclick="abrirFechar(this)">
+      <div class="servico-titulo">
+        <span>🍎 Alimentação</span>
+        <span class="seta">▼</span>
+      </div>
+      <div class="servico-conteudo">
+        <p>Distribuição de cestas básicas, restaurantes populares, bancos de alimentos e inscrição nos programas de alimentação.</p>
+        <a href="https://www.google.com/maps/search/restaurante+popular+S%C3%A3o+Paulo" target="_blank">📍 Encontrar pontos de alimentação</a>
+      </div>
+    </div>
 
-<hr>
+    <!-- 5 — MORADIA E ABRIGO -->
+    <div class="servico-item" onclick="abrirFechar(this)">
+      <div class="servico-titulo">
+        <span>🏠 Moradia e Abrigo</span>
+        <span class="seta">▼</span>
+      </div>
+      <div class="servico-conteudo">
+        <p>Abrigos temporários, programas habitacionais, auxílio moradia e orientação sobre seus direitos.</p>
+        <a href="https://www.habitacao.sp.gov.br/" target="_blank">🏡 Programas de moradia</a>
+      </div>
+    </div>
 
-<!-- ============================================== -->
-<!-- ⚠️ SEÇÃO 2 — ALERTAS E PROTEÇÃO -->
-<!-- ============================================== -->
-<section>
-  <h2>⚠️ Alertas e Proteção</h2>
-  
-  <h3>Alertas do Bairro</h3>
-  <p>Chuva forte, vento, calor,Patologia , vicio — fique avisado!</p>
-  <p>🔔 <strong>Quando avisamos:</strong> você recebe mensagem com o que fazer.</p>
+    <!-- 6 — TRABALHO E RENDA -->
+    <div class="servico-item" onclick="abrirFechar(this)">
+      <div class="servico-titulo">
+        <span>💼 Trabalho e Renda</span>
+        <span class="seta">▼</span>
+      </div>
+      <div class="servico-conteudo">
+        <p>Vagas de emprego, cursos de qualificação, apoio ao empreendedorismo e geração de renda.</p>
+        <a href="https://www.empregabrasil.mte.gov.br/" target="_blank">🔍 Vagas de emprego</a>
+      </div>
+    </div>
 
-  <h3>📞 Telefones Importantes</h3>
-  <ul>
-    <li>🚑 SAMU → <strong>192</strong></li>
-    <li>🚒 Bombeiros → <strong>193</strong></li>
-    <li>🚔 Polícia → <strong>190</strong></li>
-    <li>🏛️ Assistência Social → procure o CRAS do bairro</li>
-  </ul>
-</section>
+    <!-- 7 — DENÚNCIA E RECLAMAÇÃO -->
+    <div class="servico-item" onclick="abrirFechar(this)">
+      <div class="servico-titulo">
+        <span>📢 Denúncia e Reclamação</span>
+        <span class="seta">▼</span>
+      </div>
+      <div class="servico-conteudo">
+        <p>Canais para registrar denúncias, reclamações, sugestões e ouvidoria.</p>
+        <a href="https://www.saopaulo.sp.gov.br/ouvidoria/" target="_blank">📞 Falar com a Ouvidoria</a>
+      </div>
+    </div>
 
-<hr>
+    <!-- 8 — CONSULTAS E INFORMAÇÕES -->
+    <div class="servico-item" onclick="abrirFechar(this)">
+      <div class="servico-titulo">
+        <span>ℹ️ Consultas e Informações</span>
+        <span class="seta">▼</span>
+      </div>
+      <div class="servico-conteudo">
+        <p>Agendamentos, consulta de benefícios, pontos de atendimento e informações gerais do governo.</p>
+        <a href="https://www.sp.gov.br/" target="_blank">🔍 Consultar serviços online</a>
+      </div>
+    </div>
 
-<!-- ============================================== -->
-<!-- 🤝 SEÇÃO 3 — AJUDA MÚTUA -->
-<!-- ============================================== -->
-<section>
-  <h2>🤝 Ajuda Mútua</h2>
-  
-  <h3>Quem pode ajudar</h3>
-  <ul>
-    <li>✅ Levar alguém ao médico</li>
-    <li>✅ Buscar remédio</li>
-    <li>✅ Fazer compras para quem não pode sair</li>
-    <li>✅ Cuidar de criança ou idoso</li>
-  </ul>
+    <!-- 9 — TRANSPORTE -->
+    <div class="servico-item" onclick="abrirFechar(this)">
+      <div class="servico-titulo">
+        <span>🚌 Transporte</span>
+        <span class="seta">▼</span>
+      </div>
+      <div class="servico-conteudo">
+        <p>Cartão cidadão, passe livre, pontos de ônibus, horários e linhas.</p>
+        <a href="https://www.sptrans.com.br/" target="_blank">🚌 Linhas e horários</a>
+      </div>
+    </div>
 
-  <h3>Precisa de ajuda?</h3>
-  <p>Deixe sua mensagem que alguém do bairro entra em contato!</p>
-  <a href="ajuda.html">👉 Pedir ajuda</a>
-</section>
+    <!-- 10 — ASSISTÊNCIA SOCIAL -->
+    <div class="servico-item" onclick="abrirFechar(this)">
+      <div class="servico-titulo">
+        <span>👨‍👩‍👧‍👦 Assistência Social</span>
+        <span class="seta">▼</span>
+      </div>
+      <div class="servico-conteudo">
+        <p>CRAS, Bolsa Família, BPC, auxílios governamentais e atendimento social.</p>
+        <a href="https://www.gov.br/cidadania/pt-br" target="_blank">📋 Benefícios sociais</a>
+        <a href="https://www.google.com/maps/search/CRAS+S%C3%A3o+Paulo" target="_blank">📍 Encontrar um CRAS</a>
+      </div>
+    </div>
 
-<hr>
+  </section>
 
-<!-- ============================================== -->
-<!-- ℹ️ SEÇÃO 4 — INFORMAÇÕES ÚTEIS -->
-<!-- ============================================== -->
-<section>
-  <h2>ℹ️ Para Todos</h2>
-  
-  <h3>Acabou de chegar no bairro?</h3>
-  <p>Guia rápido: onde é tudo, como funciona, quem procurar.</p>
+  <!-- RODAPÉ -->
+  <footer style="background: #081835; color: #fff; padding: 40px 20px; text-align: center; margin-top: 60px;">
+    <p style="font-size: 16px; margin-bottom: 8px;">Bem-Estar da Minha Comunidade — BMC</p>
+    <p style="font-size: 14px; opacity: 0.8;">União, Acolhimento e Cuidado para Todos</p>
+  </footer>
 
-  <h3>Cartão SUS e Consultas</h3>
-  <p>Documentos necessários: RG, CPF, comprovante de residência.</p>
-</section>
-  </main>
-
-<footer>
-  <p>Comunidade Conecta — Bem‑Estar da Minha Comunidade © 2026</p>
-  <p>Feito com 💛 para o nosso bairro</p>
-</footer>
   <script>
-const usuarioLogado = localStorage.getItem("usuarioLogado");
-    if (!localStorage.getItem("usuarioLogado")) {
-  window.location.href = "login.html";
-}
-const botaoEntrar = document.getElementById("botaoEntrar");
-const botaoCadastrar = document.getElementById("botaoCadastrar");
-const botaoSair = document.getElementById("botaoSair");
-
-if (usuarioLogado) {
-  botaoEntrar.style.display = "none";
-  botaoCadastrar.style.display = "none";
-  botaoSair.style.display = "block";
-}
-
-botaoSair.addEventListener("click", function() {
-  localStorage.removeItem("usuarioLogado");
-  window.location.href = "index.html";
-});
-</script>
+    function abrirFechar(elemento) {
+      const conteudo = elemento.querySelector('.servico-conteudo');
+      const seta = elemento.querySelector('.seta');
+      conteudo.classList.toggle('aberto');
+      seta.classList.toggle('seta-girada');
+    }
+  </script>
 
 </body>
 </html>
