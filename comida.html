@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comida Gratuita e Barata — BMC</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9fafb;
+      line-height: 1.6;
+    }
+
+    .voltar {
+      padding: 20px;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+    }
+
+    .voltar a {
+      color: #081835;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .voltar a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      color: #081835;
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 28px;
+    }
+
+    .local {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    /* IMAGEM GRANDE — DE PONTA A PONTA */
+    .local-img {
+      width: 100%;
+      height: 260px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: #e0e5ed;
+    }
+
+    .local-conteudo {
+      padding: 25px;
+    }
+
+    .local h3 {
+      color: #081835;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .local p {
+      color: #555;
+      margin: 6px 0;
+      font-size: 16px;
+    }
+
+    .etiqueta {
+      display: inline-block;
+      background: #e8f0ff;
+      color: #081835;
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .botao-mapa {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 22px;
+      background: #081835;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 15px;
+      transition: background 0.3s ease;
+    }
+
+    .botao-mapa:hover {
+      background: #002250;
+    }
+
+    .mais-opcoes {
+      text-align: center;
+      margin-top: 50px;
+      padding: 35px 25px;
+      background: #f4f6fa;
+      border-radius: 12px;
+    }
+
+    .mais-opcoes h3 {
+      color: #081835;
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+    .mais-opcoes p {
+      color: #555;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .botao-grande {
+      display: inline-block;
+      padding: 14px 32px;
+      background: #081835;
+      color: #fff;
+      font-size: 17px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+
+    .botao-grande:hover {
+      background: #002250;
+    }
+
+    .dica {
+      font-size: 14px;
+      color: #888;
+      margin-top: 15px;
+    }
+
+    footer {
+      background: #081835;
+      color: #fff;
+      padding: 30px 20px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    footer p {
+      font-size: 16px;
+      margin: 5px 0;
+    }
+
+    footer p:last-child {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="voltar">
+    <a href="servicos.html">← Voltar para Serviços</a>
+  </div>
+
+  <div class="container">
+    <h1>🍽️ Comida Gratuita e Barata</h1>
+
+    <!-- LOCAL 1 -->
+    <div class="local">
+      <div class="local-img" style="background-image: url('imagens/restaurante-popular-1.jpg');"></div>
+      <div class="local-conteudo">
+        <h3>Restaurante Popular — Centro</h3>
+        <span class="etiqueta">Refeição: R$ 1,00</span>
+        <p><strong>📍 Endereço:</strong> Rua das Flores, 123 — Centro, São Paulo</p>
+        <p><strong>🕒 Horário:</strong> Segunda a Sexta, 11h às 13h</p>
+        <p><strong>ℹ️ Informação:</strong> Refeição completa com arroz, feijão, carne, salada e suco. Entregas também disponíveis.</p>
+        <a href="https://www.google.com/maps/search/Restaurante+Popular+Sao+Paulo+Centro" target="_blank" class="botao-mapa">📍 Ver no mapa</a>
+      </div>
+    </div>
+
+    <!-- LOCAL 2 -->
+    <div class="local">
+      <div class="local-img" style="background-image: url('imagens/refeicao-solidaria-1.jpg');"></div>
+      <div class="local-conteudo">
+        <h3>Refeição Solidária — Igreja do Bairro</h3>
+        <span class="etiqueta">Gratuito</span>
+        <p><strong>📍 Endereço:</strong> Av. Principal, 500 — Bairro Jardim</p>
+        <p><strong>🕒 Horário:</strong> Terça e Quinta, 12h às 13h30</p>
+        <p><strong>ℹ️ Informação:</strong> Distribuição de refeições gratuitas para quem precisa. Não precisa de cadastro.</p>
+        <a href="https://www.google.com/maps/search/Refeicao+Solidaria+Sao+Paulo" target="_blank" class="botao-mapa">📍 Ver no mapa</a>
+      </div>
+    </div>
+
+    <!-- LOCAL 3 -->
+    <div class="local">
+      <div class="local-img" style="background-image: url('imagens/banco-alimentos-1.jpg');"></div>
+      <div class="local-conteudo">
+        <h3>Banco de Alimentos — CRAS do Bairro</h3>
+        <span class="etiqueta">Cestas Básicas</span>
+        <p><strong>📍 Endereço:</strong> Rua da Comunidade, 88 — Bairro Novo</p>
+        <p><strong>🕒 Horário:</strong> Quarta-feira, 9h às 15h</p>
+        <p><strong>ℹ️ Informação:</strong> Distribuição de cestas básicas. É preciso levar RG e comprovante de residência.</p>
+        <a href="https://www.google.com/maps/search/CRAS+Banco+de+Alimentos+Sao+Paulo" target="_blank" class="botao-mapa">📍 Ver no mapa</a>
+      </div>
+    </div>
+
+    <!-- MAIS OPÇÕES -->
+    <div class="mais-opcoes">
+      <h3>🔍 Precisa de mais opções?</h3>
+      <p>Veja todos os restaurantes populares, pontos de alimentação e locais próximos atualizados no mapa:</p>
+      <a href="https://www.google.com/maps/search/restaurante+popular+comida+gratuita+refeicoes+baratas+Sao+Paulo" target="_blank" class="botao-grande">🔎 Ver mais opções no mapa</a>
+      <p class="dica">💡 Sempre atualizado — fornecido pelo Google Maps</p>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>Bem-Estar da Minha Comunidade — BMC</p>
+    <p>União, Acolhimento e Cuidado para Todos</p>
+  </footer>
+
+</body>
+</html>
