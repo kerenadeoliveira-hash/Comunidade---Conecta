@@ -297,6 +297,98 @@
   </div>
 
 </section>
+  <!-- SEÇÃO TUDO O QUE VOCÊ PRECISA -->
+<section style="padding: 70px 50px; margin: 0; max-width: 100%; background-color: #ffffff;">
+  <div style="display: flex; align-items: center; gap: 60px; max-width: 1400px; margin: 0 auto; flex-wrap: wrap;">
+    
+    <!-- 📍 Lado ESQUERDO = Texto -->
+    <div style="flex: 1; min-width: 350px;">
+      <h2 style="font-size: 34px; color: #081835; margin-bottom: 25px; line-height: 1.3;">Tudo que você precisa, num só lugar</h2>
+      <p style="font-size: 18px; line-height: 1.8; color: #555555; margin-bottom: 20px;">
+        Não perca mais nenhuma programação! Aqui você encontra a agenda completa de eventos do bairro — shows, apresentações, palestras e atividades comunitárias — sempre com data, horário e local confirmados.
+      </p>
+      <p style="font-size: 18px; line-height: 1.8; color: #555555; margin-bottom: 20px;">
+        Espaços com alimentação acessível, orientação para regularizar seus documentos, serviços de saúde e assistência. Tudo organizado, claro e sempre atualizado para você.
+      </p>
+      <p style="font-size: 18px; line-height: 1.8; color: #555555; font-weight: 500;">
+        Aqui a informação chega até você, de forma simples e confiável.
+      </p>
+    </div>
+
+    <!-- 📍 Lado DIREITO = Área de imagens com navegação -->
+    <div style="flex: 1; min-width: 350px; position: relative;">
+      
+      <!-- 🖼️ Área da imagem visível -->
+      <div style="width: 100%; height: 320px; border-radius: 12px; overflow: hidden; background-color: #f5f5f5; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
+        <img id="imgAtual" src="evento-1.jpg" alt="Imagem ilustrativa" style="width: 100%; height: 100%; object-fit: cover;">
+        <p id="tituloImagem" style="position: absolute; bottom: 0; left: 0; right: 0; margin: 0; padding: 18px 24px; background: linear-gradient(to top, rgba(0,0,0,0.75), transparent); color: white; font-size: 16px; font-weight: 500;">🎤 Shows e apresentações culturais</p>
+      </div>
+
+      <!-- ⬅️ Botão voltar -->
+      <button onclick="mudarImagem(-1)" style="position: absolute; left: -25px; top: 50%; transform: translateY(-50%); width: 52px; height: 52px; border-radius: 50%; border: none; background-color: #081835; color: white; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 10px rgba(0,0,0,0.12); z-index: 10; transition: background-color 0.2s;">
+        ←
+      </button>
+
+      <!-- ➡️ Botão avançar -->
+      <button onclick="mudarImagem(1)" style="position: absolute; right: -25px; top: 50%; transform: translateY(-50%); width: 52px; height: 52px; border-radius: 50%; border: none; background-color: #f5c800; color: #081835; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 10px rgba(0,0,0,0.12); z-index: 10; font-weight: bold; transition: background-color 0.2s;">
+        →
+      </button>
+
+      <!-- ⚫ Pontinhos indicadores -->
+      <div style="display: flex; justify-content: center; gap: 10px; margin-top: 24px;">
+        <span id="ponto0" onclick="irParaImagem(0)" style="width: 12px; height: 12px; border-radius: 50%; background-color: #081835; cursor: pointer; transition: background-color 0.2s;"></span>
+        <span id="ponto1" onclick="irParaImagem(1)" style="width: 12px; height: 12px; border-radius: 50%; background-color: #ddd; cursor: pointer; transition: background-color 0.2s;"></span>
+        <span id="ponto2" onclick="irParaImagem(2)" style="width: 12px; height: 12px; border-radius: 50%; background-color: #ddd; cursor: pointer; transition: background-color 0.2s;"></span>
+        <span id="ponto3" onclick="irParaImagem(3)" style="width: 12px; height: 12px; border-radius: 50%; background-color: #ddd; cursor: pointer; transition: background-color 0.2s;"></span>
+        <span id="ponto4" onclick="irParaImagem(4)" style="width: 12px; height: 12px; border-radius: 50%; background-color: #ddd; cursor: pointer; transition: background-color 0.2s;"></span>
+        <span id="ponto5" onclick="irParaImagem(5)" style="width: 12px; height: 12px; border-radius: 50%; background-color: #ddd; cursor: pointer; transition: background-color 0.2s;"></span>
+        <span id="ponto6" onclick="irParaImagem(6)" style="width: 12px; height: 12px; border-radius: 50%; background-color: #ddd; cursor: pointer; transition: background-color 0.2s;"></span>
+        <span id="ponto7" onclick="irParaImagem(7)" style="width: 12px; height: 12px; border-radius: 50%; background-color: #ddd; cursor: pointer; transition: background-color 0.2s;"></span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ⚡ Script -->
+<script>
+const imagens = [
+  { src: 'show-1.jpg', titulo: '🎤 Shows e apresentações — confira datas, locais e artistas do nosso bairro' },
+  { src: 'show-2.jpg', titulo: '🎶 Programação cultural — descubra eventos perto de você' },
+  { src: 'evento-1.jpg', titulo: '🎉 Eventos comunitários — participe e conheça seus vizinhos' },
+  { src: 'evento-2.jpg', titulo: '📋 Palestras e encontros — aprenda e se atualize' },
+  { src: 'infantil-1.jpg', titulo: '🎈 Eventos infantis — diversão garantida para as crianças' },
+  { src: 'infantil-2.jpg', titulo: '🧸 Atividades para crianças — tudo perto de você' },
+  { src: 'restaurante.jpg', titulo: '🍽️ Alimentação acessível — encontre opções de qualidade perto de casa' },
+  { src: 'documentos.jpg', titulo: '📄 Orientação com documentos — saiba onde ir e o que fazer' }
+];
+
+let indiceAtual = 0;
+
+function atualizarExibicao() {
+  document.getElementById('imgAtual').src = imagens[indiceAtual].src;
+  document.getElementById('tituloImagem').textContent = imagens[indiceAtual].titulo;
+  
+  for (let i = 0; i < 8; i++) {
+    const ponto = document.getElementById('ponto' + i);
+    if (ponto) {
+      ponto.style.backgroundColor = i === indiceAtual ? '#081835' : '#ddd';
+    }
+  }
+}
+
+function mudarImagem(direcao) {
+  indiceAtual += direcao;
+  if (indiceAtual < 0) indiceAtual = imagens.length - 1;
+  if (indiceAtual >= imagens.length) indiceAtual = 0;
+  atualizarExibicao();
+}
+
+function irParaImagem(n) {
+  indiceAtual = n;
+  atualizarExibicao();
+}
+</script>
 </main>
 
 <!-- RODAPÉ -->
