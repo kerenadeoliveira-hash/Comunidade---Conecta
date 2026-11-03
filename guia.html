@@ -110,10 +110,10 @@
 
   function passarProximaImagem() {
     imagemAtual++;
-    if (imagemAtual > 2) {
+    if (imagemAtual > 9) {
       imagemAtual = 0;
     }
-    carrossel.style.transform = `translateX(-${imagemAtual * 33.333}%)`;
+    carrossel.style.transform = `translateX(-${imagemAtual * 9.09}%)`;
   }
 
   setInterval(passarProximaImagem, 4000);
@@ -213,11 +213,11 @@
   <!-- JAVASCRIPT DO CARROSSEL -->
   <script>
     let slideAtual = 0;
-    const totalSlides = 5;
+    const totalSlides = 10;
 
     function atualizarSlide() {
       const carrossel = document.getElementById('carrossel-guia');
-      carrossel.style.transform = 'translateX(-' + (slideAtual * 20) + '%)';
+      carrossel.style.transform = 'translateX(-' + (slideAtual * 10) + '%)';
       
       const bolinhas = document.querySelectorAll('.bolinha');
       bolinhas.forEach((b, i) => {
