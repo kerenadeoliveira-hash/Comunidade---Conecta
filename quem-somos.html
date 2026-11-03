@@ -284,7 +284,7 @@
 <section style="display: flex; align-items: stretch; padding: 0; margin: 0; max-width: 100%;">
 
   <!-- 📍 Lado ESQUERDO = Texto -->
-  <div style="flex: 1; padding: 60px 50px; margin: 0; display: flex; flex-direction: column; justify-content: center; background-color: #ffffff;">
+  <div style="flex: 1; padding: 60px 50px; margin: 0; display: flex; flex-direction: column; justify-content: center; background-color: #f5f5f5;">
     <h2 style="font-size: 32px; color: #081835; margin-bottom: 25px;">Nosso Propósito</h2>
     <p style="font-size: 18px; line-height: 1.8; color: #333333; margin: 0;">
       Existem muitos sites e aplicativos por aí, mas nenhum traz tudo que acontece no seu bairro, num só lugar. Muitas vezes perdemos eventos, shows, festas infantis e atividades simplesmente porque não sabíamos que existiam. Foi para mudar isso que criamos o BMC: um espaço único, onde você encontra tudo o que acontece por perto — serviços, notícias, avisos, eventos e oportunidades — sempre atualizado e sempre acessível. Aqui, a informação chega até você, sem precisar procurar em vários lugares.
@@ -353,22 +353,25 @@
 <!-- ⚡ Script -->
 <script>
 const imagens = [
-  { src: 'foto-evento-1.jpg', titulo: '🎤 Shows e apresentações — confira datas, locais e artistas do nosso bairro' },
-  { src: 'foto-evento-2.jpg', titulo: '🎶 Programação cultural — descubra eventos perto de você' },
-  { src: 'foto-evento-3.jpg', titulo: '🎉 Eventos comunitários — participe e conheça seus vizinhos' },
-  { src: 'eventos.jpg', titulo: '📋 Palestras e encontros — aprenda e se atualize' },
-  { src: 'evento-criancas.jpg', titulo: '🎈 Eventos infantis — diversão garantida para a criançada'e descubrir progamação:datas,locais das atividades },
-  { src: 'eventos-lazer.jpg', titulo: '🧸 Encontre Atividades,encontros e momentos de dirversão para toda a família ' },
-  { src: 'show-comunidade.jpg', titulo: '🍽️ confira a progamação:datas,locais e artistas que vão se apresentar' },
-  { src: 'documentos.jpg', titulo: '📄 Orientação com documentos — saiba onde ir e o que fazer' }
+  { src: 'foto-evento-1.jpg', titulo: '🎤 Shows e Apresentações — confira datas, locais e artistas do nosso bairro' },
+  { src: 'foto-evento-2.jpg', titulo: '🎶 Eventos e Lazer — atividades e diversão perto de você' },
+  { src: 'foto-evento-3.jpg', titulo: '🎉 Eventos Comunitários — participe e conheça seus vizinhos' },
+  { src: 'eventos.jpg', titulo: '📋 Palestras e Encontros — aprenda e se atualize' },
+  { src: 'evento-criancas.jpg', titulo: '🎈 Eventos Infantis — diversão garantida para a criançada' },
+  { src: 'eventos-lazer.jpg', titulo: '🧸 Lazer e entretenimento para todos' },
+  { src: 'feira-comunitaria.jpg', titulo: '🍽️ Alimentação Acessível — opções perto de você' },
+  { src: 'documentos.jpg', titulo: '📄 Orientação com Documentos — saiba onde ir' }
 ];
 
 let indiceAtual = 0;
 
 function atualizarExibicao() {
-  document.getElementById('imgAtual').src = imagens[indiceAtual].src;
-  document.getElementById('tituloImagem').textContent = imagens[indiceAtual].titulo;
-  
+  const img = document.getElementById('imgAtual');
+  const titulo = document.getElementById('tituloImagem');
+  if (img && titulo) {
+    img.src = imagens[indiceAtual].src;
+    titulo.textContent = imagens[indiceAtual].titulo;
+  }
   for (let i = 0; i < 8; i++) {
     const ponto = document.getElementById('ponto' + i);
     if (ponto) {
@@ -388,7 +391,6 @@ function irParaImagem(n) {
   indiceAtual = n;
   atualizarExibicao();
 }
-</script>
 </main>
 
 <!-- RODAPÉ -->
