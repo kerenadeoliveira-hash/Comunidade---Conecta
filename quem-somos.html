@@ -203,10 +203,11 @@
 <!-- CONTEÚDO DA PÁGINA -->
 <main style="background-color:#ffffff; color: #081835; padding:40px 50px; max-width: 100%; margin: 40px 0; borer-radius: 0;">
  <!-- SEÇÃO PRINCIPAL -->
-<section style="display: flex; align-items: center; justify-content: space-between; padding: 60px 50px; max-width: 1200px; margin: 0 auto; gap: 50px; flex-wrap: wrap;">
+<!-- SEÇÃO PRINCIPAL -->
+<section style="display: flex; align-items: stretch; padding: 0; margin: 0; max-width: 100%;">
   
-  <!-- 📍 Lado ESQUERDO = Frase principal -->
-  <div style="flex: 1; min-width: 300px;">
+  <!-- 📍 Lado ESQUERDO = Texto — encostado no canto esquerdo -->
+  <div style="flex: 1; padding: 60px 50px; margin: 0; display: flex; flex-direction: column; justify-content: center;">
     <h1 style="font-size: 42px; line-height: 1.3; color: #081835; font-weight: bold; margin: 0;">
       Juntos fazendo do nosso bairro<br>
       <span style="border-bottom: 5px solid #f5c800; padding-bottom: 5px;">um lugar melhor</span>
@@ -216,9 +217,9 @@
     </p>
   </div>
 
-  <!-- 📍 Lado DIREITO = Imagem -->
-  <div style="flex: 1; min-width: 300px; display: flex; justify-content: center;">
-    <img src="inicio-bairro.jpg" alt="Nossa Comunidade" style="width: 100%; max-width: 600px; height: auto; border-radius: 12px;">
+  <!-- 📍 Lado DIREITO = Imagem — encostada no canto direito -->
+  <div style="flex: 1; margin: 0; padding: 0;">
+    <img src="inicio-bairro.jpg" alt="Nossa Comunidade" style="width: 100%; height: 350px; object-fit: cover; display: block; margin: 0; padding: 0;">
   </div>
 
 </section>
