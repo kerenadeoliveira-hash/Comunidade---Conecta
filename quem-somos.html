@@ -3,139 +3,291 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quem Somos Nós — BMC</title>
-  <link rel="stylesheet" href="estilos.css">
+  <title>Quem Somos Nós | BMC — Bem-Estar da Minha Comunidade</title>
   <style>
-    body {
-      background-color: #ffffff;
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #081835;
       font-family: Arial, sans-serif;
+      color: #333333;
+      line-height: 1.6;
+    }
+    .cabecalho-topo {
+      background-color: #081835;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 40px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .logo-area img {
+      height: 65px;
+      width: auto;
+      background: transparent;
+      object-fit: contain;
+    }
+    .menu-central {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+    .menu-central > div {
+      background: #ffffff;
+      border-radius: 6px;
+      padding: 0;
+      display: inline-flex;
+      align-items: center;
+    }
+    .menu-central a {
+      color: #081835;
+      font-weight: bold;
+      padding: 12px 16px;
+      text-decoration: none;
+      font-size: 15px;
+      transition: background-color 0.2s;
+    }
+    .menu-central a:hover {
+      background-color: rgba(8, 24, 53, 0.05);
+    }
+    .menu-central a.ativo {
+      border-bottom: 2px solid #081835;
+    }
+    main {
+      background-color: transparent;
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 40px;
+      color: #ffffff;
+    }
+    main h2 {
+      color: #8fa4c2;
+      font-size: 22px;
+      margin-bottom: 20px;
+      margin-top: 40px;
+    }
+    main p {
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    footer {
+      background-color: #081835;
+      color: #ffffff;
+      padding: 50px 40px 25px 40px;
+      margin-top: 60px;
+    }
+    footer .conteudo-rodape {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+    }
+    footer .coluna {
+      flex: 0 0 auto;
+      min-width: 220px;
+      text-align: left;
+    }
+    footer .coluna img {
+      height: 65px;
+      margin-bottom: 12px;
+      display: block;
+    }
+    footer .coluna p.destaque {
+      font-size: 15px;
+      color: #ffffff;
+      margin: 0 0 6px 0;
+      font-weight: 500;
+    }
+    footer .coluna p.texto {
+      font-size: 13px;
+      color: #b8c7e0;
+      margin: 0 0 15px 0;
+    }
+    footer h4 {
+      font-size: 15px;
+      font-weight: bold;
+      margin: 0 0 12px 0;
+      color: #ffffff;
+      text-decoration: underline;
+      text-underline-offset: 5px;
+    }
+    footer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    footer ul li {
+      margin-bottom: 7px;
+    }
+    footer ul li a {
+      color: #b8c7e0;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    footer ul li a:hover {
+      color: #ffffff;
+    }
+    .redes-sociais {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .redes-sociais a {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    .botao-fala {
+      display: inline-block;
+      background-color: #ffffff;
+      color: #081835;
+      padding: 10px 18px;
+      border-radius: 4px;
+      font-weight: bold;
+      text-decoration: none;
+      margin-bottom: 20px;
+    }
+    .linha-divisoria {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: 35px;
+      padding-top: 20px;
+    }
+    .copyright {
+      margin-top: 10px;
+      font-size: 13px;
+      color: #8fa4c2;
+    }
+    .copyright img {
+      height: 14px;
+      vertical-align: middle;
+      border: none;
+      margin: 0 5px;
     }
   </style>
 </head>
 <body>
+
+<!-- CABEÇALHO COM LOGO E MENU CENTRALIZADO -->
 <header class="cabecalho-topo">
-  <!-- Logo -->
   <div class="logo-area">
-    <a href="index.html" class="logo-bmc">
-      <img src="logo-bmc.png" alt="Logo BMC" style="height: 65px; width: auto; background: transparent; object-fit: contain;">
+    <a href="index.html">
+      <img src="logo-bmc.png" alt="Logo BMC">
     </a>
   </div>
 
-  <!-- Menu Central -->
   <nav class="menu-central">
-    <div style="background: #ffffff; border-radius: 6px; padding: 0; display: inline-flex; align-items: center;">
-      <a href="index.html" style="color: #081835; font-weight: bold; padding: 9px 14px; text-decoration: none;">Início</a>
-      <a href="guia.html" style="color: #081835; font-weight: bold; padding: 9px 14px; text-decoration: none; border-bottom: 2px solid #081835;">Guia</a>
-      <a href="quem-somos.html" style="color: #081835; font-weight: bold; padding: 9px 14px; text-decoration: none;">Quem Somos</a>
-      <a href="servicos.html" style="color: #081835; font-weight: bold; padding: 9px 14px; text-decoration: none;">Nossos Serviços</a>
-      <a href="eventos.html" style="color: #081835; font-weight: bold; padding: 9px 14px; text-decoration: none;">Eventos da Comunidade</a>
-      <a href="fala-conosco.html" style="color: #081835; font-weight: bold; padding: 9px 14px; text-decoration: none;">Fale Conosco</a>
+    <div>
+      <a href="index.html">Início</a>
+      <a href="guia.html">Guia</a>
+      <a href="quem-somos.html" class="ativo">Quem Somos</a>
+      <a href="servicos.html">Nossos Serviços</a>
+      <a href="eventos.html">Eventos da Comunidade</a>
+      <a href="fala-conosco.html">Fale Conosco</a>
     </div>
   </nav>
 </header>
 
-<!-- CONTEÚDO DA PÁGINA: Quem Somos Nós -->
-<main style="max-width: 900px; margin: 60px auto; padding: 0 40px; background-color: transparent;">
-    <h1 style="text-align: center; font-size: 32px; color: #081835; margin-bottom: 60px;">Quem Somos Nós</h1>
+<!-- CONTEÚDO DA PÁGINA -->
+<main>
+  <h1 style="text-align: center; color: #ffffff; font-size: 28px; margin-bottom: 50px;">Quem Somos Nós</h1>
 
-    <section style="margin-bottom: 50px;">
-      <h2 style="font-size: 22px; color: #081835; margin-bottom: 20px;">Nossa História</h2>
-      <p style="font-size: 16px; line-height: 1.8; color: #333333;">
-        O BMC nasceu do coração da nossa comunidade. Começou como uma ideia simples: pessoas que queriam fazer o bem, se unindo para apoiar quem mais precisa. Com o tempo, essa pequena iniciativa cresceu e se tornou um espaço de acolhimento, união e cuidado para todos do nosso bairro.
-      </p>
-    </section>
+  <section>
+    <h2>Nossa História</h2>
+    <p>O BMC nasceu do coração da nossa comunidade. Começou como uma ideia simples: pessoas que queriam fazer o bem, se unindo para apoiar quem mais precisa. Com o tempo, essa pequena iniciativa cresceu e se tornou um espaço de acolhimento, união e cuidado para todos do nosso bairro.</p>
+  </section>
 
-    <section style="margin-bottom: 50px;">
-      <h2 style="font-size: 22px; color: #081835; margin-bottom: 20px;">Nossa Missão</h2>
-      <p style="font-size: 16px; line-height: 1.8; color: #333333;">
-        Promover o bem-estar, a união e o cuidado com cada pessoa da nossa comunidade. Estamos aqui para acolher, apoiar e caminhar junto com você — porque juntos somos mais fortes.
-      </p>
-    </section>
+  <section>
+    <h2>Nossa Missão</h2>
+    <p>Promover o bem-estar, a união e o cuidado com cada pessoa da nossa comunidade. Estamos aqui para acolher, apoiar e caminhar junto com você — porque somos mais fortes juntos.</p>
+  </section>
 
-    <section style="margin-bottom: 50px;">
-      <h2 style="font-size: 22px; color: #081835; margin-bottom: 20px;">Nossos Valores</h2>
-      <p style="font-size: 16px; line-height: 1.8; color: #333333;">
-        🤝 <strong>União</strong> — ninguém fica para trás<br>
-        ❤️ <strong>Acolhimento</strong> — aqui você tem um lugar<br>
-        🤲 <strong>Respeito</strong> — todos têm o mesmo valor<br>
-        ✨ <strong>Esperança</strong> — construindo um bairro melhor juntos
-      </p>
-    </section>
-  </main>
+  <section style="margin-bottom: 50px;">
+    <h2>Nossos Valores</h2>
+    <p style="font-size: 16px; line-height: 1.8;">
+      💛 <strong>União</strong> — ninguém fica para trás<br>
+      ❤️ <strong>Acolhimento</strong> — aqui você tem um lugar<br>
+      💛 <strong>Respeito</strong> — todos têm o mesmo valor<br>
+      ✨ <strong>Esperança</strong> — construindo um bairro melhor juntos
+    </p>
+  </section>
+</main>
 
-  <!-- RODAPÉ -->
-  <footer style="background-color: #081835; color: #ffffff; padding: 50px 40px 25px 40px; margin-top: 100px;">
-      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 20px;">
+<!-- RODAPÉ -->
+<footer>
+  <div class="conteudo-rodape">
+    <div class="coluna">
+      <img src="logo-bmc.png" alt="BMC">
+      <p class="destaque">Bem-Estar da Minha Comunidade</p>
+      <p class="texto">União, Acolhimento e Cuidado para Todos.</p>
+      <p class="texto">Siga a BMC nas redes sociais</p>
 
-        <div style="flex: 0 0 auto; min-width: 220px; text-align: left;">
-          <img src="logo-bmc.png" alt="BMC" style="height: 65px; margin-bottom: 12px; display: block;">
-          <p style="font-size: 15px; color: #ffffff; margin: 0 0 6px 0; font-weight: 500;">
-            Bem-Estar da Minha Comunidade
-          </p>
-          <p style="font-size: 13px; color: #b8c7e0; margin: 0 0 15px 0;">
-            União, Acolhimento e Cuidado para Todos.
-          </p>
-          <p style="font-size: 12px; color: #b8c7e0; margin: 0 0 8px 0;">
-            Siga a BMC nas redes sociais
-          </p>
-          <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 20px;">
-            <a href="#" style="background: #1877F2; color: #fff; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: bold; text-decoration: none;">F</a>
-            <a href="#" style="background: #FF0000; color: #fff; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: bold; text-decoration: none;">▶</a>
-            <a href="#" style="background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: #fff; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: bold; text-decoration: none;">IG</a>
-            <a href="#" style="background: #0A66C2; color: #fff; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: bold; text-decoration: none;">in</a>
-            <a href="#" style="background: #25D366; color: #fff; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: bold; text-decoration: none;">W</a>
-          </div>
-          <a href="fala-conosco.html" style="display: inline-block; background-color: #ffffff; color: #081835; padding: 10px 18px; border-radius: 6px; font-size: 13px; font-weight: bold; text-decoration: none;">
-            📞 Fala Conosco
-          </a>
-        </div>
-
-        <div style="flex: 0 0 auto; min-width: 130px; text-align: left;">
-          <h4 style="font-size: 15px; font-weight: bold; margin: 0 0 12px 0; color: #ffffff; text-decoration: underline; text-underline-offset: 5px;">Categorias</h4>
-          <ul style="list-style: none; padding: 0; margin: 0;">
-            <li style="margin-bottom: 7px;"><a href="servicos.html" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Serviços</a></li>
-            <li style="margin-bottom: 7px;"><a href="eventos.html" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Eventos</a></li>
-            <li style="margin-bottom: 7px;"><a href="noticias.html" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Notícias</a></li>
-            <li style="margin-bottom: 7px;"><a href="guia.html" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Guia do Bairro</a></li>
-            <li style="margin-bottom: 7px;"><a href="#" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Galeria</a></li>
-          </ul>
-        </div>
-
-        <div style="flex: 0 0 auto; min-width: 160px; text-align: left;">
-          <h4 style="font-size: 15px; font-weight: bold; margin: 0 0 12px 0; color: #ffffff; text-decoration: underline; text-underline-offset: 5px;">Soluções</h4>
-          <ul style="list-style: none; padding: 0; margin: 0;">
-            <li style="margin-bottom: 7px;"><a href="#" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Solicitar Ajuda</a></li>
-            <li style="margin-bottom: 7px;"><a href="#" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Oferecer Ajuda</a></li>
-            <li style="margin-bottom: 7px;"><a href="#" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Centro de Acolhimento</a></li>
-            <li style="margin-bottom: 7px;"><a href="#" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Documentos e Regularização</a></li>
-            <li style="margin-bottom: 7px;"><a href="#" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Shows e Eventos</a></li>
-            <li style="margin-bottom: 7px;"><a href="#" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Atividades Infantis</a></li>
-            <li style="margin-bottom: 7px;"><a href="#" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Comida Grátis e Barata</a></li>
-            <li style="margin-bottom: 7px;"><a href="#" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Avisos Importantes</a></li>
-          </ul>
-        </div>
-
-        <div style="flex: 0 0 auto; min-width: 120px; text-align: left;">
-          <h4 style="font-size: 15px; font-weight: bold; margin: 0 0 12px 0; color: #ffffff; text-decoration: underline; text-underline-offset: 5px;">Sobre</h4>
-          <ul style="list-style: none; padding: 0; margin: 0;">
-            <li style="margin-bottom: 7px;"><a href="quem-somos.html" style="color: #b8c7e0; text-decoration: none; font-size: 14px; font-weight: bold;">Quem Somos</a></li>
-            <li style="margin-bottom: 7px;"><a href="fala-conosco.html" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Fala Conosco</a></li>
-            <li style="margin-bottom: 7px;"><a href="#" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Termos de Uso</a></li>
-          </ul>
-        </div>
+      <div class="redes-sociais">
+        <a href="#" style="background: #1877F2;">f</a>
+        <a href="#" style="background: #FF0000;">▶</a>
+        <a href="#" style="background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);">in</a>
+        <a href="#" style="background: #0A66C2;">in</a>
+        <a href="#" style="background: #25D366;">w</a>
       </div>
 
-      <div style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 35px; padding-top: 15px;"></div>
+      <a href="fala-conosco.html" class="botao-fala">📞 Fala Conosco</a>
+    </div>
 
-      <div style="margin-top: 10px;">
-        <p style="font-size: 13px; color: #8fa4c2; margin: 0;">
-          © 2026 BMC — Bem-Estar da Minha Comunidade • 
-          <img src="https://flagcdn.com/w20/br.png" alt="Brasil" style="height: 14px; vertical-align: middle; border: none;"> Brasil • 
-          Todos os direitos reservados • Projeto Comunitário
-        </p>
-  </footer>
+    <div class="coluna">
+      <h4>Categorias</h4>
+      <ul>
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="eventos.html">Eventos</a></li>
+        <li><a href="noticias.html">Notícias</a></li>
+        <li><a href="guia.html">Guia do Bairro</a></li>
+        <li><a href="galeria.html">Galeria</a></li>
+      </ul>
+    </div>
+
+    <div class="coluna">
+      <h4>Soluções</h4>
+      <ul>
+        <li><a href="#">Solicitar Ajuda</a></li>
+        <li><a href="#">Oferecer Ajuda</a></li>
+        <li><a href="#">Centro de Acolhimento</a></li>
+        <li><a href="#">Documentos e Regularização</a></li>
+        <li><a href="#">Shows e Eventos</a></li>
+        <li><a href="#">Atividades Infantis</a></li>
+        <li><a href="#">Comida Grátis e Barata</a></li>
+        <li><a href="#">Avisos Importantes</a></li>
+      </ul>
+    </div>
+
+    <div class="coluna">
+      <h4>Saiba Mais</h4>
+      <ul>
+        <li><a href="quem-somos.html">Quem Somos</a></li>
+        <li><a href="#">Fale Conosco</a></li>
+        <li><a href="#">Termos de Uso</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="linha-divisoria"></div>
+
+  <div class="copyright">
+    <p>© 2026 BMC — Bem-Estar da Minha Comunidade • 
+    <img src="https://flagcdn.com/w20/br.png" alt="Brasil"> Brasil •<br>
+    Todos os direitos reservados • Projeto Comunitário</p>
+  </div>
+</footer>
 
 </body>
 </html>
