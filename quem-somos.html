@@ -351,6 +351,7 @@
 </section>
 
 <!-- ⚡ Script -->
+<!-- ⚡ Carrossel automático -->
 <script>
 const imagens = [
   { src: 'foto-evento-1.jpg', titulo: '🎤 Shows e Apresentações — confira datas, locais e artistas do nosso bairro' },
@@ -358,9 +359,9 @@ const imagens = [
   { src: 'foto-evento-3.jpg', titulo: '🎉 Eventos Comunitários — participe e conheça seus vizinhos' },
   { src: 'eventos.jpg', titulo: '📋 Palestras e Encontros — aprenda e se atualize' },
   { src: 'evento-criancas.jpg', titulo: '🎈 Eventos Infantis — diversão garantida para a criançada' },
-  { src: 'eventos-lazer.jpg', titulo: '🧸 Lazer e entretenimento para todos' },
-  { src: 'feira-comunitaria.jpg', titulo: '🍽️ Alimentação Acessível — opções perto de você' },
-  { src: 'documentos.jpg', titulo: '📄 Orientação com Documentos — saiba onde ir' }
+  { src: 'eventos-lazer.jpg', titulo: '🧸 Mais Lazer e Atividades — tudo perto de casa' },
+  { src: 'feira-comunitaria.jpg', titulo: '🍽️ Alimentação Acessível — encontre opções de qualidade' },
+  { src: 'documentos.jpg', titulo: '📄 Orientação com Documentos — saiba onde ir e o que fazer' }
 ];
 
 let indiceAtual = 0;
@@ -380,17 +381,15 @@ function atualizarExibicao() {
   }
 }
 
-function mudarImagem(direcao) {
-  indiceAtual += direcao;
-  if (indiceAtual < 0) indiceAtual = imagens.length - 1;
+function proximaImagem() {
+  indiceAtual++;
   if (indiceAtual >= imagens.length) indiceAtual = 0;
   atualizarExibicao();
 }
 
-function irParaImagem(n) {
-  indiceAtual = n;
-  atualizarExibicao();
-}
+// ⏰ Muda a imagem a cada 5 segundos automaticamente
+setInterval(proximaImagem, 5000);
+</script>
 </main>
 
 <!-- RODAPÉ -->
