@@ -62,7 +62,7 @@ nav a:hover {
   object‑fit: contain;
 }
 header nav {
-  background-color: 3transparent;
+  background-color: transparent;
 }
 
 header nav a {
@@ -71,8 +71,16 @@ header nav a {
 footer {
   background-color: #081835;
   color: #ffffff;
-  padding: 16px;
-  text-align: center;
+  padding: 50px 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+footer a{
+  color: #ffffff !important;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
 }
 .navegacao-principal {
   display: flex;
