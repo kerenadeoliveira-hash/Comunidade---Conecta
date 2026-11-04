@@ -3,26 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shows e Apresentações — BMC</title>
+  <title>Shows e Eventos — BMC</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
     body { line-height: 1.6; color: #333; background-color: #f8f9fa; }
     a { text-decoration: none; }
     
-    .rodape { background-color: #081835; color: #ffffff; padding: 40px 20px; text-align: center; margin-top: 60px; }
-    .rodape p { margin: 8px 0; font-size: 15px; }
-    .rodape a { color: #7ec8e3; }
-    
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
+      .shows-grid { grid-template-columns: 1fr !important; }
+      .rodape-grid { grid-template-columns: 1fr !important; gap: 30px !important; }
       header div { flex-direction: column; gap: 15px; }
       nav a { margin: 5px; }
-      .shows-grid { grid-template-columns: 1fr !important; }
     }
   </style>
 </head>
 <body>
 
-<!-- ✅ CABEÇALHO IDÊNTICO -->
+<!-- ✅ CABEÇALHO -->
 <header style="position: relative; background-color: #081835; padding: 10px 30px; width: 100%; box-sizing: border-box;">
   <div style="max-width: 1400px; margin: 0 auto; display: flex; align-items: center; gap: 90px; flex-wrap: wrap;">
     <a href="index.html" style="text-decoration: none; display: flex; align-items: center;">
@@ -34,7 +31,7 @@
       <a href="#" style="color: #ffffff; font-size: 16px; padding: 8px 0;">Solicitar Ajuda</a>
       <a href="#" style="color: #ffffff; font-size: 16px; padding: 8px 0;">Oferecer Ajuda</a>
       <a href="eventos.html" style="color: #ffffff; font-size: 16px; padding: 8px 0;">Eventos</a>
-      <a href="shows.html" style="color: #ffffff; font-size: 16px; padding: 8px 0; font-weight: bold; border-bottom: 2px solid #fff;">Shows</a>
+      <a href="shows.html" style="color: #ffffff; font-size: 16px; padding: 8px 0; font-weight: bold; border-bottom: 2px solid #fff;">Shows e Eventos</a>
       <a href="atividades-infantis.html" style="color: #ffffff; font-size: 16px; padding: 8px 0;">Infantil</a>
       <a href="noticias.html" style="color: #ffffff; font-size: 16px; padding: 8px 0;">Notícias</a>
       <a href="avisos.html" style="color: #ffffff; font-size: 16px; padding: 8px 0;">Avisos Importantes</a>
@@ -53,12 +50,12 @@
   ">✕</a>
 </header>
 
-<!-- 📰 CABEÇALHO DA PÁGINA — ESTILO JORNALÍSTICO -->
+<!-- 📰 CABEÇALHO DA PÁGINA -->
 <section style="background: linear-gradient(180deg, #081835 0%, #1a3a6e 100%); padding: 70px 20px 50px; text-align: center; color: #ffffff;">
   <div style="max-width: 800px; margin: 0 auto;">
     <p style="font-size: 16px; letter-spacing: 3px; text-transform: uppercase; opacity: 0.8; margin-bottom: 15px;">Comunidade BMC Apresenta</p>
-    <h1 style="font-size: 42px; font-weight: bold; margin-bottom: 20px; line-height: 1.2;">🎤 Shows &<br>Apresentações Culturais</h1>
-    <p style="font-size: 18px; max-width: 600px; margin: 0 auto; opacity: 0.95;">A programação oficial dos eventos artísticos e musicais do nosso bairro. Informações, datas e locais confirmados para você não perder nenhuma apresentação.</p>
+    <h1 style="font-size: 42px; font-weight: bold; margin-bottom: 20px; line-height: 1.2;">🎤 Shows & Eventos<br>Culturais do Bairro</h1>
+    <p style="font-size: 18px; max-width: 600px; margin: 0 auto; opacity: 0.95;">Toda a programação de shows, apresentações e eventos do nosso bairro. Datas, locais e horários confirmados para você não perder nada!</p>
     <div style="width: 80px; height: 4px; background: #fff; margin: 25px auto; border-radius: 2px;"></div>
   </div>
 </section>
@@ -66,8 +63,8 @@
 <!-- 🎥 CANAL DO YOUTUBE -->
 <section style="max-width: 1000px; margin: 50px auto; padding: 0 20px;">
   <div style="background: #ffffff; border: 2px solid #e5e5e5; border-radius: 8px; padding: 35px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-    <h2 style="color: #081835; font-size: 26px; margin-bottom: 12px;">📺 Transmissões ao Vivo</h2>
-    <p style="font-size: 16px; color: #555; margin-bottom: 25px;">Assista também pelo nosso canal oficial no YouTube</p>
+    <h2 style="color: #081835; font-size: 26px; margin-bottom: 12px;">📺 Assista ao vivo pelo YouTube</h2>
+    <p style="font-size: 16px; color: #555; margin-bottom: 25px;">Não pode comparecer? Acompanhe a transmissão dos eventos pelo nosso canal!</p>
     <a href="https://www.youtube.com/" target="_blank" style="
       display: inline-flex;
       align-items: center;
@@ -78,119 +75,164 @@
       font-weight: bold;
       padding: 14px 35px;
       border-radius: 6px;
-      transition: 0.3s;
     ">▶ Acessar Canal no YouTube</a>
   </div>
 </section>
 
-<!-- 🟦🟦🟦 GRADE DE SHOWS — EM BLOCOS QUADRADOS, ESTILO PROFISSIONAL -->
-<section style="max-width: 1100px; margin: 0 auto 70px; padding: 0 20px;">
-  <h2 style="color: #081835; font-size: 28px; margin-bottom: 35px; text-align: center; padding-bottom: 15px; border-bottom: 3px solid #081835;">📅 Programação de Shows</h2>
+<!-- 🟦 GRADE DE EVENTOS - 12 EVENTOS -->
+<section style="max-width: 1100px; margin: 0 auto 80px; padding: 0 20px;">
+  <h2 style="color: #081835; font-size: 28px; margin-bottom: 35px; text-align: center; padding-bottom: 15px; border-bottom: 3px solid #081835;">📅 Programação Completa</h2>
   
   <div class="shows-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px;">
 
-    <!-- 🎤 1. SHOW DA MARIA MARISA -->
-    <div style="background: #fff; border: 1px solid #d0d7e0; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(8,24,53,0.06); transition: transform 0.2s ease;">
-      <div style="position: relative; height: 220px; background: linear-gradient(135deg, #081835 0%, #1e4075 100%); display: flex; align-items: center; justify-content: center; overflow: hidden;">
-        <div style="position: absolute; top: 15px; left: 15px; width: 80px; height: 80px; background: rgba(255,255,255,0.08); border-radius: 4px;"></div>
-        <div style="position: absolute; bottom: 15px; right: 15px; width: 60px; height: 60px; background: rgba(255,255,255,0.1); border-radius: 4px;"></div>
-        <div style="position: absolute; top: 30px; right: 40px; width: 40px; height: 40px; border: 2px solid rgba(255,255,255,0.15); border-radius: 4px;"></div>
-        <span style="font-size: 72px; z-index: 1;">🎤</span>
+    <!-- 🎤 1. Show da Maria Marisa -->
+    <div style="background: #fff; border: 1px solid #d0d7e0; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(8,24,53,0.06);">
+      <div style="position: relative; height: 200px; background: linear-gradient(135deg, #081835 0%, #1e4075 100%); display: flex; align-items: center; justify-content: center;">
+        <span style="font-size: 64px;">🎤</span>
       </div>
-      <div style="padding: 25px;">
-        <span style="display: inline-block; background: #081835; color: #fff; font-size: 13px; padding: 4px 12px; border-radius: 3px; margin-bottom: 12px;">Show Musical</span>
-        <h3 style="color: #081835; font-size: 22px; font-weight: bold; margin-bottom: 15px;">Show da Maria Marisa</h3>
-        <p style="color: #555; font-size: 15px; margin-bottom: 18px; line-height: 1.7;">Apresentação de música popular brasileira e canções que fazem parte da nossa história. Uma noite de emoção e boa música para toda a família.</p>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px;">
-          <div>
-            <p style="font-size: 14px; color: #888; margin-bottom: 3px;">📆 Data</p>
-            <p style="font-weight: bold; color: #333;">15 de Novembro</p>
-          </div>
-          <div>
-            <p style="font-size: 14px; color: #888; margin-bottom: 3px;">⏰ Horário</p>
-            <p style="font-weight: bold; color: #333;">18h às 21h</p>
-          </div>
-          <div style="grid-column: span 2;">
-            <p style="font-size: 14px; color: #888; margin-bottom: 3px;">📍 Local</p>
-            <p style="font-weight: bold; color: #333;">Praça Principal do BMC</p>
-          </div>
-        </div>
-        <a href="#" style="display: block; text-align: center; background: #081835; color: #fff; padding: 10px; border-radius: 4px; font-weight: bold; font-size: 15px;">Ver Detalhes →</a>
+      <div style="padding: 22px;">
+        <span style="display: inline-block; background: #081835; color: #fff; font-size: 12px; padding: 3px 10px; border-radius: 3px; margin-bottom: 10px;">Show Musical</span>
+        <h3 style="color: #081835; font-size: 19px; font-weight: bold; margin-bottom: 12px;">Show da Maria Marisa</h3>
+        <p style="color: #555; font-size: 14px; margin-bottom: 15px;">Música popular brasileira e canções que fazem parte da nossa história.</p>
+        <p style="font-size: 14px; color: #666;"><strong>📆</strong> 15 de Novembro • 18h às 21h</p>
+        <p style="font-size: 14px; color: #666;"><strong>📍</strong> Praça Principal do BMC</p>
       </div>
     </div>
 
-    <!-- 🎤 2. SHOW DA MARY PERRY -->
-    <div style="background: #fff; border: 1px solid #d0d7e0; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(8,24,53,0.06); transition: transform 0.2s ease;">
-      <div style="position: relative; height: 220px; background: linear-gradient(135deg, #2c1a47 0%, #4a2f70 100%); display: flex; align-items: center; justify-content: center; overflow: hidden;">
-        <div style="position: absolute; top: 20px; right: 20px; width: 90px; height: 90px; background: rgba(255,255,255,0.06); border-radius: 4px;"></div>
-        <div style="position: absolute; bottom: 20px; left: 20px; width: 50px; height: 50px; border: 2px solid rgba(255,255,255,0.12); border-radius: 4px;"></div>
-        <div style="position: absolute; top: 50%; left: 30px; width: 35px; height: 35px; background: rgba(255,255,255,0.08); border-radius: 4px;"></div>
-        <span style="font-size: 72px; z-index: 1;">🎤</span>
+    <!-- 🎤 2. Show da Mary Perry -->
+    <div style="background: #fff; border: 1px solid #d0d7e0; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(8,24,53,0.06);">
+      <div style="position: relative; height: 200px; background: linear-gradient(135deg, #2c1a47 0%, #4a2f70 100%); display: flex; align-items: center; justify-content: center;">
+        <span style="font-size: 64px;">🎤</span>
       </div>
-      <div style="padding: 25px;">
-        <span style="display: inline-block; background: #4a2f70; color: #fff; font-size: 13px; padding: 4px 12px; border-radius: 3px; margin-bottom: 12px;">Show ao Vivo</span>
-        <h3 style="color: #081835; font-size: 22px; font-weight: bold; margin-bottom: 15px;">Show da Mary Perry</h3>
-        <p style="color: #555; font-size: 15px; margin-bottom: 18px; line-height: 1.7;">Música ao vivo com grandes sucessos, animação e alegria para toda a comunidade. Uma apresentação especial preparada com muito carinho para o nosso bairro.</p>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px;">
-          <div>
-            <p style="font-size: 14px; color: #888; margin-bottom: 3px;">📆 Data</p>
-            <p style="font-weight: bold; color: #333;">22 de Novembro</p>
-          </div>
-          <div>
-            <p style="font-size: 14px; color: #888; margin-bottom: 3px;">⏰ Horário</p>
-            <p style="font-weight: bold; color: #333;">19h às 22h</p>
-          </div>
-          <div style="grid-column: span 2;">
-            <p style="font-size: 14px; color: #888; margin-bottom: 3px;">📍 Local</p>
-            <p style="font-weight: bold; color: #333;">Centro Comunitário do BMC</p>
-          </div>
-        </div>
-        <a href="#" style="display: block; text-align: center; background: #4a2f70; color: #fff; padding: 10px; border-radius: 4px; font-weight: bold; font-size: 15px;">Ver Detalhes →</a>
+      <div style="padding: 22px;">
+        <span style="display: inline-block; background: #4a2f70; color: #fff; font-size: 12px; padding: 3px 10px; border-radius: 3px; margin-bottom: 10px;">Show ao Vivo</span>
+        <h3 style="color: #081835; font-size: 19px; font-weight: bold; margin-bottom: 12px;">Show da Mary Perry</h3>
+        <p style="color: #555; font-size: 14px; margin-bottom: 15px;">Grandes sucessos, animação e alegria para toda a comunidade.</p>
+        <p style="font-size: 14px; color: #666;"><strong>📆</strong> 22 de Novembro • 19h às 22h</p>
+        <p style="font-size: 14px; color: #666;"><strong>📍</strong> Centro Comunitário do BMC</p>
       </div>
     </div>
 
-    <!-- 🎭 3. APRESENTAÇÃO CULTURAL DA COMUNIDADE -->
-    <div style="background: #fff; border: 1px solid #d0d7e0; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(8,24,53,0.06); transition: transform 0.2s ease;">
-      <div style="position: relative; height: 220px; background: linear-gradient(135deg, #0f4d38 0%, #1e8567 100%); display: flex; align-items: center; justify-content: center; overflow: hidden;">
-        <div style="position: absolute; top: 10px; left: 10px; width: 55px; height: 55px; border: 2px solid rgba(255,255,255,0.1); border-radius: 4px;"></div>
-        <div style="position: absolute; bottom: 10px; right: 10px; width: 75px; height: 75px; background: rgba(255,255,255,0.06); border-radius: 4px;"></div>
-        <div style="position: absolute; top: 40px; right: 60px; width: 30px; height: 30px; background: rgba(255,255,255,0.1); border-radius: 4px;"></div>
-        <span style="font-size: 72px; z-index: 1;">🎭</span>
+    <!-- 🎭 3. Apresentação Cultural -->
+    <div style="background: #fff; border: 1px solid #d0d7e0; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(8,24,53,0.06);">
+      <div style="position: relative; height: 200px; background: linear-gradient(135deg, #0f4d38 0%, #1e8567 100%); display: flex; align-items: center; justify-content: center;">
+        <span style="font-size: 64px;">🎭</span>
       </div>
-      <div style="padding: 25px;">
-        <span style="display: inline-block; background: #0f4d38; color: #fff; font-size: 13px; padding: 4px 12px; border-radius: 3px; margin-bottom: 12px;">Cultura & Arte</span>
-        <h3 style="color: #081835; font-size: 22px; font-weight: bold; margin-bottom: 15px;">Apresentação Cultural da Comunidade</h3>
-        <p style="color: #555; font-size: 15px; margin-bottom: 18px; line-height: 1.7;">Dança, teatro, poesia e manifestações artísticas produzidas pelos moradores do nosso bairro. Um momento de celebração da nossa cultura e do nosso talento.</p>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px;">
-          <div>
-            <p style="font-size: 14px; color: #888; margin-bottom: 3px;">📆 Data</p>
-            <p style="font-weight: bold; color: #333;">30 de Novembro</p>
-          </div>
-          <div>
-            <p style="font-size: 14px; color: #888; margin-bottom: 3px;">⏰ Horário</p>
-            <p style="font-weight: bold; color: #333;">14h às 18h</p>
-          </div>
-          <div style="grid-column: span 2;">
-            <p style="font-size: 14px; color: #888; margin-bottom: 3px;">📍 Local</p>
-            <p style="font-weight: bold; color: #333;">Centro Comunitário do BMC</p>
-          </div>
-        </div>
-        <a href="#" style="display: block; text-align: center; background: #0f4d38; color: #fff; padding: 10px; border-radius: 4px; font-weight: bold; font-size: 15px;">Ver Detalhes →</a>
+      <div style="padding: 22px;">
+        <span style="display: inline-block; background: #0f4d38; color: #fff; font-size: 12px; padding: 3px 10px; border-radius: 3px; margin-bottom: 10px;">Cultura & Arte</span>
+        <h3 style="color: #081835; font-size: 19px; font-weight: bold; margin-bottom: 12px;">Apresentação Cultural da Comunidade</h3>
+        <p style="color: #555; font-size: 14px; margin-bottom: 15px;">Dança, teatro e poesia produzidos pelos moradores do nosso bairro.</p>
+        <p style="font-size: 14px; color: #666;"><strong>📆</strong> 30 de Novembro • 14h às 18h</p>
+        <p style="font-size: 14px; color: #666;"><strong>📍</strong> Centro Comunitário do BMC</p>
       </div>
     </div>
 
-    <!-- 🎶 4. SHOW DE TALENTOS LOCAIS -->
-    <div style="background: #fff; border: 1px solid #d0d7e0; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(8,24,53,0.06); transition: transform 0.2s ease;">
-      <div style="position: relative; height: 220px; background: linear-gradient(135deg, #704214 0%, #b86f24 100%); display: flex; align-items: center; justify-content: center; overflow: hidden;">
-        <div style="position: absolute; top: 15px; right: 15px; width: 65px; height: 65px; background: rgba(255,255,255,0.08); border-radius: 4px;"></div>
-        <div style="position: absolute; bottom: 15px; left: 15px; width: 45px; height: 45px; border: 2px solid rgba(255,255,255,0.12); border-radius: 4px;"></div>
-        <div style="position: absolute; top: 60px; left: 40px; width: 25px; height: 25px; background: rgba(255,255,255,0.1); border-radius: 4px;"></div>
-        <span style="font-size: 72px; z-index: 1;">🎶</span>
+    <!-- 🎶 4. Show de Talentos Locais -->
+    <div style="background: #fff; border: 1px solid #d0d7e0; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(8,24,53,0.06);">
+      <div style="position: relative; height: 200px; background: linear-gradient(135deg, #704214 0%, #b86f24 100%); display: flex; align-items: center; justify-content: center;">
+        <span style="font-size: 64px;">🎶</span>
       </div>
-      <div style="padding: 25px;">
-        <span style="display: inline-block; background: #704214; color: #fff; font-size: 13px; padding: 4px 12px; border-radius: 3px; margin-bottom: 12px;">Talentos Locais</span>
-        <h3 style="color: #081835; font-size: 22px; font-weight: bold; margin-bottom: 15px;">Show de Talentos Locais</h3>
-        <p style="color: #555; font-size: 15px; margin-bottom: 18px; line-height: 1.7;">Os moradores do nosso bairro mostram seus dons e talentos! Música, canto, dança e muito mais. Venha aplaudir os artistas que moram pertinho de você!</p>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px;">
-          <div>
-            <p style="font-size: 14px; color: #88
+      <div style="padding: 22px;">
+        <span style="display: inline-block; background: #704214; color: #fff; font-size: 12px; padding: 3px 10px; border-radius: 3px; margin-bottom: 10px;">Talentos Locais</span>
+        <h3 style="color: #081835; font-size: 19px; font-weight: bold; margin-bottom: 12px;">Show de Talentos Locais</h3>
+        <p style="color: #555; font-size: 14px; margin-bottom: 15px;">Os vizinhos mostram seus dons! Música, canto e muito mais.</p>
+        <p style="font-size: 14px; color: #666;"><strong>📆</strong> 13 de Dezembro • 15h às 20h</p>
+        <p style="font-size: 14px; color: #666;"><strong>📍</strong> Quadra Esportiva do BMC</p>
+      </div>
+    </div>
+
+    <!-- 🎵 5. Festa Comunitária de Música -->
+    <div style="background: #fff; border: 1px solid #d0d7e0; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(8,24,53,0.06);">
+      <div style="position: relative; height: 200px; background: linear-gradient(135deg, #6b1a47 0%, #a82f65 100%); display: flex; align-items: center; justify-content: center;">
+        <span style="font-size: 64px;">🎵</span>
+      </div>
+      <div style="padding: 22px;">
+        <span style="display: inline-block; background: #6b1a47; color: #fff; font-size: 12px; padding: 3px 10px; border-radius: 3px; margin-bottom: 10px;">Festa Comunitária</span>
+        <h3 style="color: #081835; font-size: 19px; font-weight: bold; margin-bottom: 12px;">Festa Comunitária de Música</h3>
+        <p style="color: #555; font-size: 14px; margin-bottom: 15px;">Uma tarde inteira de música, comida e alegria para todos!</p>
+        <p style="font-size: 14px; color: #666;"><strong>📆</strong> 20 de Dezembro • 16h às 22h</p>
+        <p style="font-size: 14px; color: #666;"><strong>📍</strong> Praça Principal do BMC</p>
+      </div>
+    </div>
+
+    <!-- 🎉 6. Festa de Confraternização -->
+    <div style="background: #fff; border: 1px solid #d0d7e0; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(8,24,53,0.06);">
+      <div style="position: relative; height: 200px; background: linear-gradient(135deg, #1a5c3a 0%, #2eb872 100%); display: flex; align-items: center; justify-content: center;">
+        <span style="font-size: 64px;">🎉</span>
+      </div>
+      <div style="padding: 22px;">
+        <span style="display: inline-block; background: #1a5c3a; color: #fff; font-size: 12px; padding: 3px 10px; border-radius: 3px; margin-bottom: 10px;">Festa do Bairro</span>
+        <h3 style="color: #081835; font-size: 19px; font-weight: bold; margin-bottom: 12px;">Festa de Confraternização do Bairro</h3>
+        <p style="color: #555; font-size: 14px; margin-bottom: 15px;">Celebrando juntos mais um ano de união e conquistas!</p>
+        <p style="font-size: 14px; color: #666;"><strong>📆</strong> 27 de Dezembro • 17h às 23h</p>
+        <p style="font-size: 14px; color: #666;"><strong>📍</strong> Praça Principal do BMC</p>
+      </div>
+    </div>
+
+    <!-- 💃 7. Noite de Dança Popular -->
+    <div style="background: #fff; border: 1px solid #d0d7e0; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(8,24,53,0.06);">
+      <div style="position: relative; height: 200px; background: linear-gradient(135deg, #5c1a6e 0%, #9332b0 100%); display: flex; align-items: center; justify-content: center;">
+        <span style="font-size: 64px;">💃</span>
+      </div>
+      <div style="padding: 22px;">
+        <span style="display: inline-block; background: #5c1a6e; color: #fff; font-size: 12px; padding: 3px 10px; border-radius: 3px; margin-bottom: 10px;">Dança</span>
+        <h3 style="color: #081835; font-size: 19px; font-weight: bold; margin-bottom: 12px;">Noite de Dança Popular</h3>
+        <p style="color: #555; font-size: 14px; margin-bottom: 15px;">Samba, forró e ritmos que fazem o nosso povo dançar!</p>
+        <p style="font-size: 14px; color: #666;"><strong>📆</strong> 10 de Janeiro • 19h às 23h</p>
+        <p style="font-size: 14px; color: #666;"><strong>📍</strong> Centro Comunitário do BMC</p>
+      </div>
+    </div>
+
+    <!-- 🎵 8. Tarde de Seresta -->
+    <div style="background: #fff; border: 1px solid #d0d7e0; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(8,24,53,0.06);">
+      <div style="position: relative; height: 200px; background: linear-gradient(135deg, #473514 0%, #8c6a28 100%); display: flex; align-items: center; justify-content: center;">
+        <span style="font-size: 64px;">🎵</span>
+      </div>
+      <div style="padding: 22px;">
+        <span style="display: inline-block; background: #473514; color: #fff; font-size: 12px; padding: 3px 10px; border-radius: 3px; margin-bottom: 10px;">Música Tradicional</span>
+        <h3 style="color: #081835; font-size: 19px; font-weight: bold; margin-bottom: 12px;">Tarde de Seresta</h3>
+        <p style="color: #555; font-size: 14px; margin-bottom: 15px;">Músicas românticas e canções que marcaram época.</p>
+        <p style="font-size: 14px; color: #666;"><strong>📆</strong> 17 de Janeiro • 15h às 18h</p>
+        <p style="font-size: 14px; color: #666;"><strong>📍</strong> Praça Principal do BMC</p>
+      </div>
+    </div>
+
+    <!-- 🎸 9. Encontro de Músicos da Terra -->
+    <div style="background: #fff; border: 1px solid #d0d7e0; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(8,24,53,0.06);">
+      <div style="position: relative; height: 200px; background: linear-gradient(135deg, #1a472c 0%, #3d855c 100%); display: flex; align-items: center; justify-content: center;">
+        <span style="font-size: 64px;">🎸</span>
+      </div>
+      <div style="padding: 22px;">
+        <span style="display: inline-block; background: #1a472c; color: #fff; font-size: 12px; padding: 3px 10px; border-radius: 3px; margin-bottom: 10px;">Música Regional</span>
+        <h3 style="color: #081835; font-size: 19px; font-weight: bold; margin-bottom: 12px;">Encontro de Músicos da Terra</h3>
+        <p style="color: #555; font-size: 14px; margin-bottom: 15px;">Instrumentos, melodias e talentos da nossa terra reunidos num só lugar.</p>
+        <p style="font-size: 14px; color: #666;"><strong>📆</strong> 24 de Janeiro • 16h às 20h</p>
+        <p style="font-size: 14px; color: #666;"><strong>📍</strong> Praça Principal do BMC</p>
+      </div>
+    </div>
+
+    <!-- 🎊 10. Festival de Cultura Popular -->
+    <div style="background: #fff; border: 1px solid #d0d7e0; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(8,24,53,0.06);">
+      <div style="position: relative; height: 200px; background: linear-gradient(135deg, #6e541a 100%);">
+<span style="font-size: 64px;">🎊</span>
+      </div>
+      <div style="padding: 22px;">
+        <span style="display: inline-block; background: #6e541a; color: #fff; font-size: 12px; padding: 3px 10px; border-radius: 3px; margin-bottom: 10px;">Cultura</span>
+        <h3 style="color: #081835; font-size: 19px; font-weight: bold; margin-bottom: 12px;">Festival de Cultura Popular</h3>
+        <p style="color: #555; font-size: 14px; margin-bottom: 15px;">Danças, artesanato, comidas típicas e tradições do nosso povo.</p>
+        <p style="font-size: 14px; color: #666;"><strong>📅</strong> 28 de Janeiro • 10h às 22h</p>
+        <p style="font-size: 14px; color: #666;"><strong>📍</strong> Praça Principal do BMC</p>
+      </div>
+    </div>
+
+  </div> <!-- Fecha o grid dos eventos -->
+</section> <!-- Fecha a seção -->
+
+<!-- ✅ AQUI COLA O RODAPÉ! 👇 -->
+
+</body>
+</html>
+
+
+
+        
