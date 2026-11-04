@@ -1,88 +1,423 @@
 <!DOCTYPE html>
-<html lang="pt‑BR">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF‑8">
-<meta name="viewport" content="width=device‑width, initial‑scale=1.0">
-<title>Avisos da Comunidade — Comunidade Conecta</title>
-<link rel="stylesheet" href="estilos.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avisos Importantes — BMC Conecta</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: 'Segoe UI', Arial, sans-serif; 
+      color: #333; 
+      background-color: #f0f2f5;
+    }
+
+    /* CABEÇALHO */
+    header {
+      background-color: #081835;
+      color: #ffffff;
+      padding: 14px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+    }
+    .logo img { height: 58px; }
+    .menu-bar {
+      background-color: #ffffff;
+      padding: 6px 0;
+      border-radius: 6px;
+      flex: 1;
+      margin: 0 25px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .menu-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-wrap: nowrap;
+      padding: 0 12px;
+    }
+    .menu-nav a {
+      padding: 8px 12px;
+      font-size: 14px;
+      color: #081835;
+      text-decoration: none;
+      white-space: nowrap;
+      font-weight: 500;
+      border-radius: 4px;
+      transition: background-color 0.2s ease;
+    }
+    .menu-nav a:hover { background-color: rgba(8,24,53,0.08); }
+    .menu-nav a.ativo {
+      font-weight: bold;
+      border-bottom: 2px solid #081835;
+    }
+
+    /* BOTÃO SAIR ✕ */
+    .botao-sair {
+      width: 36px;
+      height: 36px;
+      background: rgba(255,255,255,0.15);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.2s ease;
+      flex-shrink: 0;
+    }
+    .botao-sair:hover {
+      background: rgba(255,255,255,0.25);
+    }
+
+    /* CABEÇALHO DA PÁGINA */
+    .cabecalho-pagina {
+      background: linear-gradient(135deg, #081835 0%, #1a365d 100%);
+      color: white;
+      padding: 60px 20px 50px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cabecalho-pagina::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at top right, rgba(220,38,38,0.1), transparent 60%);
+      pointer-events: none;
+    }
+    .cabecalho-pagina::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 40px;
+      background: linear-gradient(to top, #f0f2f5, transparent);
+    }
+    .cabecalho-pagina h1 {
+      font-size: clamp(28px, 6vw, 42px);
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+    .cabecalho-pagina h1 span {
+      color: #fca5a5;
+    }
+    .cabecalho-pagina p {
+      font-size: 17px;
+      opacity: 0.85;
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* CONTEÚDO PRINCIPAL */
+    .container {
+      max-width: 750px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    .aviso {
+      border-radius: 16px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      overflow: hidden;
+      position: relative;
+      animation: deslizar 0.5s ease-out forwards;
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    .aviso:nth-child(2) { animation-delay: 0.1s; }
+    .aviso:nth-child(3) { animation-delay: 0.2s; }
+    .aviso:nth-child(4) { animation-delay: 0.3s; }
+    @keyframes deslizar {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* TIPOS DE AVISO */
+    .aviso.emergencia {
+      background: linear-gradient(to right, #fef2f2, #ffffff);
+      border: 1px solid #fecaca;
+    }
+    .aviso.emergencia::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 6px;
+      background: linear-gradient(to bottom, #dc2626, #b91c1c);
+    }
+
+    .aviso.importante {
+      background: linear-gradient(to right, #fffbeb, #ffffff);
+      border: 1px solid #fde68a;
+    }
+    .aviso.importante::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 6px;
+      background: linear-gradient(to bottom, #d97706, #b45309);
+    }
+
+    .aviso.informacao {
+      background: linear-gradient(to right, #f0fdf4, #ffffff);
+      border: 1px solid #bbf7d0;
+    }
+    .aviso.informacao::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 6px;
+      background: linear-gradient(to bottom, #059669, #047857);
+    }
+
+    .aviso-cabecalho {
+      padding: 16px 20px 10px 26px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .aviso-tipo {
+      font-weight: bold;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .emergencia .aviso-tipo { color: #dc2626; }
+    .importante .aviso-tipo { color: #d97706; }
+    .informacao .aviso-tipo { color: #059669; }
+
+    .aviso-data {
+      font-size: 13px;
+      color: #888;
+      background: rgba(0,0,0,0.04);
+      padding: 3px 10px;
+      border-radius: 12px;
+    }
+
+    .aviso-conteudo {
+      padding: 0 20px 20px 26px;
+    }
+    .aviso-conteudo h3 {
+      font-size: 18px;
+      color: #222;
+      margin-bottom: 8px;
+    }
+    .aviso-conteudo p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #444;
+    }
+
+    /* RODAPÉ */
+    footer {
+      background-color: #081835;
+      color: #ffffff;
+      padding: 50px 30px;
+    }
+    .footer-conteudo {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+    }
+    .footer-logo { font-size: 22px; font-weight: bold; margin-bottom: 10px; }
+    .footer-desc { font-size: 14px; opacity: 0.8; line-height: 1.6; margin-bottom: 20px; }
+    .footer-redes { display: flex; gap: 12px; margin: 15px 0; }
+    .footer-redes a {
+      width: 36px; height: 36px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: white; text-decoration: none; font-size: 18px;
+    }
+    footer h4 { font-size: 16px; margin-bottom: 18px; text-transform: uppercase; }
+    footer ul { list-style: none; padding: 0; margin: 0; }
+    footer li { margin-bottom: 10px; }
+    footer a { color: #b8c7e0; text-decoration: none; font-size: 14px; }
+    footer a:hover { color: #ffffff; text-decoration: underline; }
+    .footer-fala-btn {
+      display: inline-block;
+      background: #ffffff;
+      color: #081835 !important;
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-weight: bold;
+      margin-top: 10px;
+      text-decoration: none;
+    }
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      margin-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 13px;
+      opacity: 0.7;
+    }
+    @media(max-width: 900px) {
+      .footer-conteudo { grid-template-columns: 1fr 1fr; }
+    }
+    @media(max-width: 580px) {
+      .footer-conteudo { grid-template-columns: 1fr; }
+      header { padding: 14px 15px; }
+      .botao-sair { width: 32px; height: 32px; font-size: 18px; }
+    }
+  </style>
 </head>
 <body>
-<!-- Cabeçalho -->
+
+<!-- ==========================================
+     CABEÇALHO COMPLETO COM LOGO + MENU + ✕
+     ========================================== -->
 <header>
-  <div class="logo-bmc">
-    <img src="logo-bmc.png" alt="Logomarca BMC" class="logo">
-    <span>BMC</span>
+  <!-- LOGO — CANTO ESQUERDO -->
+  <a href="index.html" style="text-decoration: none; display: flex; align-items: center;">
+    <img src="logo-bmc.png" alt="Logo BMC" style="height: 58px;">
+  </a>
+
+  <!-- MENU NO MEIO -->
+  <div class="menu-bar">
+    <nav class="menu-nav">
+      <a href="index.html">Início</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="#">Solicitar Ajuda</a>
+      <a href="#">Oferecer Ajuda</a>
+      <a href="eventos.html">Eventos</a>
+      <a href="shows.html">Shows</a>
+      <a href="atividades-infantis.html">Infantil</a>
+      <a href="noticias.html">Notícias</a>
+      <a href="avisos.html" class="ativo">Avisos</a>
+      <a href="galeria.html">Galeria</a>
+    </nav>
   </div>
-  <nav class="navegacao-principal">
-    <a href="index.html">Início</a>
-    <a href="perfil.html">Meu Perfil</a>
-    <a href="servicos.html">Serviços</a>
-    <a href="eventos.html">Eventos</a>
-    <a href="avisos.html">Avisos</a>
-    <a href="ajuda.html">Solicitar Ajuda</a>
-  <div class="links-acesso">
-  <a href="login.html" class="botao-acesso botao-entrar" id="botaoEntrar">Entrar</a>
-  <a href="cadastro.html" class="botao-acesso botao-cadastrar" id="botaoCadastrar">Cadastrar‑se</a>
-  <a href="#" class="botao-acesso botao-sair" id="botaoSair" style="display: none;">Sair</a>
-</div>
-  </nav>
+
+  <!-- BOTÃO SAIR ✕ — CANTO DIREITO -->
+  <a href="index.html" class="botao-sair">✕</a>
 </header>
-<main>
-<h2>📢 Avisos da Comunidade</h2>
-<section class="aviso">
-<h3>Coleta seletiva no bairro</h3>
-<p>Próxima coleta: quinta‑feira, às 8 horas. Deixe os materiais separados na porta.</p>
+
+<!-- CABEÇALHO DA PÁGINA -->
+<section class="cabecalho-pagina">
+  <h1>⚠️ <span>Avisos Importantes</span></h1>
+  <p>Fique sempre informado. Alertas, comunicados e informações urgentes da nossa comunidade.</p>
 </section>
-<section class="aviso">
-<h3>Reunião de moradores</h3>
-<p>Sábado, às 14 horas, na praça principal. Vamos conversar sobre segurança e limpeza.</p>
-</section>
+
+<!-- CONTEÚDO PRINCIPAL — AVISOS -->
+<main class="container">
+
+  <!-- 🔴 AVISO DE EMERGÊNCIA -->
+  <div class="aviso emergencia">
+    <div class="aviso-cabecalho">
+      <span class="aviso-tipo">🚨 ALERTA DE EMERGÊNCIA</span>
+      <span class="aviso-data">Hoje — 14h30</span>
+    </div>
+    <div class="aviso-conteudo">
+      <h3>Previsão de chuva forte e ventos intensos</h3>
+      <p>Atenção moradores: está prevista chuva forte a partir das 18h desta noite. Evite áreas de risco, não deixe crianças brincando nas ruas e mantenha-se em local seguro. Em caso de emergência, ligue 199 (Defesa Civil) ou 193 (Bombeiros).</p>
+    </div>
+  </div>
+
+  <!-- 🟡 AVISO IMPORTANTE -->
+  <div class="aviso importante">
+    <div class="aviso-cabecalho">
+      <span class="aviso-tipo">📢 COMUNICADO IMPORTANTE</span>
+      <span class="aviso-data">Ontem — 09h15</span>
+    </div>
+    <div class="aviso-conteudo">
+      <h3>Mudança de horário na coleta de lixo</h3>
+      <p>A partir de amanhã, a coleta de lixo passará pelas ruas do bairro a partir das 7h da manhã. Por favor, deixe os sacos na calçada antes desse horário para não atrasar o serviço. Agradecemos a sua colaboração!</p>
+    </div>
+  </div>
+
+  <!-- 🟢 INFORMAÇÃO -->
+  <div class="aviso informacao">
+    <div class="aviso-cabecalho">
+      <span class="aviso-tipo">ℹ️ INFORMAÇÃO</span>
+      <span class="aviso-data">2 dias atrás</span>
+    </div>
+    <div class="aviso-conteudo">
+      <h3>Posto de saúde terá horário estendido nesta semana</h3>
+      <p>O posto de saúde do bairro funcionará até às 19h de terça a quinta-feira para vacinação contra a gripe. Traga seu cartão SUS e mantenha sua vacinação em dia! 💙</p>
+    </div>
+  </div>
+
+  <!-- 💡 COMO ADICIONAR UM NOVO AVISO:
+       1. Copie um dos blocos acima inteiro
+       2. Cole embaixo do último aviso
+       3. Mude a cor: emergencia / importante / informacao
+       4. Atualize a data, o título e o texto
+       5. Salve e pronto! ✅
+  -->
+
 </main>
 
+<!-- RODAPÉ — IGUAL NAS OUTRAS PÁGINAS -->
 <footer>
-<p>Comunidade Conecta – Bem‑Estar da Minha Comunidade © 2026</p>
-<p>Feito com 💛 para o nosso bairro</p>
+  <div class="footer-conteudo">
+    <div>
+      <div class="footer-logo">BMC</div>
+      <div><strong>Bem-Estar da Minha Comunidade</strong></div>
+      <p class="footer-desc">União, Acolhimento e Cuidado para Todos.</p>
+      <p class="footer-desc">Siga a BMC nas redes sociais</p>
+      <div class="footer-redes">
+        <a href="#" title="Facebook">f</a>
+        <a href="#" title="YouTube">▶</a>
+        <a href="#" title="Instagram">IG</a>
+        <a href="#" title="WhatsApp">W</a>
+      </div>
+      <a href="fale-conosco.html" class="footer-fala-btn">📞 Fala Conosco</a>
+    </div>
+    <div>
+      <h4>Categorias</h4>
+      <ul>
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="eventos.html">Eventos</a></li>
+        <li><a href="noticias.html">Notícias</a></li>
+        <li><a href="avisos.html">Avisos Importantes</a></li>
+        <li><a href="galeria.html">Galeria</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Soluções</h4>
+      <ul>
+        <li><a href="#">Solicitar Ajuda</a></li>
+        <li><a href="#">Oferecer Ajuda</a></li>
+        <li><a href="documentos.html">Documentos</a></li>
+        <li><a href="shows.html">Shows e Eventos</a></li>
+        <li><a href="comida-gratis.html">Comida Grátis</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Sobre</h4>
+      <ul>
+        <li><a href="quem-somos.html">Quem Somos</a></li>
+        <li><a href="fale-conosco.html">Fala Conosco</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 — BMC — Bem-Estar da Minha Comunidade 🇧🇷 Brasil • Todos os direitos reservados
+  </div>
 </footer>
 
-<script>
-const usuario = localStorage.getItem("usuarioLogado");
-const linkPerfil = document.getElementById("linkPerfil");
-const linkSair = document.getElementById("linkSair");
-const linkEntrar = document.getElementById("linkEntrar");
-const linkCadastrar = document.getElementById("linkCadastrar");
-
-if (!usuario) {
-  linkPerfil.style.display = "none";
-  linkSair.style.display = "none";
-} else {
-  linkEntrar.style.display = "none";
-  linkCadastrar.style.display = "none";
-}
-
-linkSair.onclick = function() {
-  localStorage.removeItem("usuarioLogado");
-  alert("Você saiu da conta!");
-  window.location.href = "index.html";
-};
-</script>
-  <footer>
-</footer>
-  <script>
-const usuarioLogado = localStorage.getItem("usuarioLogado");
-const botaoEntrar = document.getElementById("botaoEntrar");
-const botaoCadastrar = document.getElementById("botaoCadastrar");
-const botaoSair = document.getElementById("botaoSair");
-
-if (usuarioLogado) {
-  botaoEntrar.style.display = "none";
-  botaoCadastrar.style.display = "none";
-  botaoSair.style.display = "block";
-}
-
-botaoSair.addEventListener("click", function() {
-  localStorage.removeItem("usuarioLogado");
-  window.location.href = "index.html";
-});
-</script>
 </body>
 </html>
