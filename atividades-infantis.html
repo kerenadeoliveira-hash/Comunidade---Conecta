@@ -10,161 +10,310 @@
     footer { margin-top: 0 !important; border-top: none !important; }
     footer h4, footer p, footer a, footer li { color: #ffffff !important; }
     
-    .programa-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-    .programa-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
+    .programa-card { 
+      transition: transform 0.4s ease, box-shadow 0.4s ease; 
+      position: relative;
+      overflow: hidden;
+    }
+    .programa-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--cor1), var(--cor2));
+    }
+    .programa-card:hover { 
+      transform: translateY(-8px) scale(1.02); 
+      box-shadow: 0 12px 30px rgba(8, 24, 53, 0.15); 
+    }
+    .icone-fundo {
+      position: absolute;
+      font-size: 90px;
+      opacity: 0.04;
+      right: -10px;
+      bottom: -10px;
+      line-height: 1;
+      pointer-events: none;
+    }
   </style>
 </head>
 <body>
 
   <!-- ✅ CABEÇALHO -->
-  <header style="background-color: #081835; padding: 15px 15px; display: flex; align-items: center; justify-content: space-between; width: 100%; box-sizing: border-box;">
-    <div><img src="logo-bmc.png" alt="BMC" style="height: 50px; width: auto;"></div>
+  <header style="background-color: #081835; padding: 12px 25px; display: flex; align-items: center; justify-content: space-between; width: 100%; box-sizing: border-box;">
+    <div style="display: flex; align-items: center;">
+      <img src="logo-bmc.png" alt="BMC" style="height: 45px; width: auto;">
+    </div>
     <nav>
       <ul style="list-style: none; padding: 0; margin: 0; display: flex; gap: 0;">
-        <li><a href="index.html" style="display: block; padding: 12px 15px; background-color: #ffffff; color: #081835; text-decoration: none; font-weight: 500;">Início</a></li>
-        <li><a href="servicos.html" style="display: block; padding: 12px 15px; background-color: #ffffff; color: #081835; text-decoration: none; font-weight: 500;">Serviços</a></li>
-        <li><a href="eventos.html" style="display: block; padding: 12px 15px; background-color: #ffffff; color: #081835; text-decoration: none; font-weight: 500;">Eventos</a></li>
-        <li><a href="atividades-infantis.html" style="display: block; padding: 12px 15px; background-color: #081835; color: #ffffff; text-decoration: none; font-weight: bold;">Crianças</a></li>
+        <li><a href="index.html" style="display: block; padding: 10px 18px; background-color: #ffffff; color: #081835; text-decoration: none; font-weight: 500; font-size: 15px; border-radius: 4px 4px 0 0;">Início</a></li>
+        <li><a href="servicos.html" style="display: block; padding: 10px 18px; background-color: #ffffff; color: #081835; text-decoration: none; font-weight: 500; font-size: 15px; border-radius: 4px 4px 0 0;">Serviços</a></li>
+        <li><a href="eventos.html" style="display: block; padding: 10px 18px; background-color: #ffffff; color: #081835; text-decoration: none; font-weight: 500; font-size: 15px; border-radius: 4px 4px 0 0;">Eventos</a></li>
+        <li><a href="atividades-infantis.html" style="display: block; padding: 10px 18px; background-color: #ffffff; color: #081835; text-decoration: none; font-weight: bold; font-size: 15px; border-radius: 4px 4px 0 0; border-bottom: 3px solid #081835;">Crianças</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- ✅ TÍTULO MAIS TRABALHADO -->
-  <div style="background: linear-gradient(135deg, #e0edfb 0%, #fde8f0 100%); padding: 60px 20px; text-align: center; position: relative; overflow: hidden;">
-    <!-- Elementos decorativos -->
-    <div style="position: absolute; top: 25px; left: 6%; font-size: 32px; opacity: 0.2;">⭐</div>
-    <div style="position: absolute; top: 50px; right: 10%; font-size: 28px; opacity: 0.2;">🌸</div>
-    <div style="position: absolute; bottom: 25px; left: 12%; font-size: 26px; opacity: 0.2;">🎈</div>
-    <div style="position: absolute; bottom: 35px; right: 6%; font-size: 30px; opacity: 0.2;">✨</div>
+  <!-- ✅ FAIXA DE TÍTULO TRABALHADA -->
+  <div style="background: linear-gradient(135deg, #e0edfb 0%, #fde8f0 50%, #fce4ec 100%); padding: 65px 20px; text-align: center; position: relative; overflow: hidden;">
+    <!-- Elementos decorativos de fundo -->
+    <div style="position: absolute; top: 20px; left: 5%; font-size: 38px; opacity: 0.08;">⭐</div>
+    <div style="position: absolute; top: 50px; right: 8%; font-size: 32px; opacity: 0.08;">🌸</div>
+    <div style="position: absolute; bottom: 25px; left: 10%; font-size: 35px; opacity: 0.08;">🎈</div>
+    <div style="position: absolute; bottom: 35px; right: 5%; font-size: 40px; opacity: 0.08;">✨</div>
+    <div style="position: absolute; top: 30%; left: 15%; font-size: 28px; opacity: 0.06;">🎀</div>
+    <div style="position: absolute; bottom: 30%; right: 15%; font-size: 30px; opacity: 0.06;">🌈</div>
     
-    <div style="max-width: 800px; margin: 0 auto; position: relative; z-index: 1;">
-      <span style="display: inline-block; font-size: 18px; color: #e91e63; font-weight: 600; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 15px;">✨ Espaço dedicado aos nossos pequenos ✨</span>
-      <h1 style="font-size: 52px; color: #081835; margin: 0 0 15px 0; line-height: 1.2;">🎈 Atividades Infantis</h1>
-      <div style="width: 80px; height: 4px; background: linear-gradient(90deg, #4a90e2, #e91e63); margin: 0 auto 25px;"></div>
-      <p style="font-size: 20px; color: #555; line-height: 1.7; max-width: 650px; margin: 0 auto;">Um lugar especial para brincar, criar, aprender e crescer juntos!<br><strong style="color: #081835;">💛 Todas as atividades são gratuitas e abertas a todas as crianças do nosso bairro!</strong></p>
+    <div style="max-width: 850px; margin: 0 auto; position: relative; z-index: 1;">
+      <span style="display: inline-block; font-size: 15px; color: #e91e63; font-weight: 700; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 18px;">✨ Um mundo de alegria e aprendizado ✨</span>
+      <h1 style="font-size: 48px; color: #081835; margin: 0 0 15px 0; line-height: 1.2; font-weight: 700;">🎈 Atividades Infantis</h1>
+      <div style="width: 100px; height: 4px; background: linear-gradient(90deg, #4a90e2, #e91e63); margin: 0 auto 22px; border-radius: 2px;"></div>
+      <p style="font-size: 18px; color: #555; line-height: 1.7; max-width: 680px; margin: 0 auto;">Um espaço dedicado ao crescimento, à criatividade e à felicidade dos nossos pequenos.<br><strong style="color: #081835; font-size: 19px;">💛 Todas as atividades são gratuitas e abertas à comunidade!</strong></p>
     </div>
   </div>
 
-  <!-- ✅ DUAS FOTES GRANDES — LADO A LADO -->
-  <section style="max-width: 1200px; margin: 60px auto; padding: 0 20px;">
-    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px;">
+  <!-- ✅ DUAS FOTOS GRANDES — LADO A LADO, BEM TRABALHADAS -->
+  <section style="max-width: 1240px; margin: 60px auto; padding: 0 20px;">
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px;">
       
-      <div style="border-radius: 20px; overflow: hidden; box-shadow: 0 8px 25px rgba(74, 144, 226, 0.18); border: 4px solid #ffffff;">
-        <img src="evento-criancas.jpg" alt="Evento para Crianças" style="width: 100%; height: 350px; object-fit: cover; display: block;">
+      <!-- 📸 Foto Esquerda -->
+      <div style="position: relative; border-radius: 24px; overflow: hidden; box-shadow: 0 10px 30px rgba(74, 144, 226, 0.2); border: 5px solid #ffffff;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, transparent 60%, rgba(8, 24, 53, 0.08) 100%); z-index: 1; pointer-events: none;"></div>
+        <img src="evento-criancas.jpg" alt="Evento para Crianças" style="width: 100%; height: 360px; object-fit: cover; display: block;">
+        <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 20px; background: linear-gradient(to top, rgba(8, 24, 53, 0.65), transparent); z-index: 2;">
+          <span style="color: #ffffff; font-size: 18px; font-weight: 600;">🎉 Momentos Especiais</span>
+        </div>
       </div>
       
-      <div style="border-radius: 20px; overflow: hidden; box-shadow: 0 8px 25px rgba(233, 30, 99, 0.18); border: 4px solid #ffffff;">
-        <img src="infantil.jpg" alt="Atividades Infantis" style="width: 100%; height: 350px; object-fit: cover; display: block;">
+      <!-- 📸 Foto Direita -->
+      <div style="position: relative; border-radius: 24px; overflow: hidden; box-shadow: 0 10px 30px rgba(233, 30, 99, 0.2); border: 5px solid #ffffff;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, transparent 60%, rgba(233, 30, 99, 0.08) 100%); z-index: 1; pointer-events: none;"></div>
+        <img src="infantil.jpg" alt="Atividades Infantis" style="width: 100%; height: 360px; object-fit: cover; display: block;">
+        <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 20px; background: linear-gradient(to top, rgba(233, 30, 99, 0.65), transparent); z-index: 2;">
+          <span style="color: #ffffff; font-size: 18px; font-weight: 600;">🎈 Aprender Brincando</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ✅ NOSSOS PROGRAMAS — QUADRADINHOS COLORIDOS -->
-  <section style="background: linear-gradient(180deg, #fafcff 0%, #fffafc 100%); padding: 70px 20px;">
-    <div style="max-width: 1200px; margin: 0 auto;">
+  <!-- ✅ NOSSOS PROGRAMAS — VERSÃO TRABALHADA E CHEIA! -->
+  <section style="background: linear-gradient(180deg, #fafcff 0%, #fefafc 100%); padding: 70px 20px 80px;">
+    <div style="max-width: 1240px; margin: 0 auto;">
       
       <div style="text-align: center; margin-bottom: 55px;">
-        <span style="display: inline-block; font-size: 16px; color: #4a90e2; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">O que oferecemos</span>
-        <h2 style="font-size: 36px; color: #081835; margin: 0 0 15px 0;">🌟 Nossos Programas</h2>
-        <p style="font-size: 18px; color: #777; max-width: 600px; margin: 0 auto;">Cada atividade foi pensada com muito carinho para o desenvolvimento e alegria dos nossos pequenos!</p>
+        <span style="display: inline-block; font-size: 15px; color: #4a90e2; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 12px;">O que oferecemos com carinho</span>
+        <h2 style="font-size: 34px; color: #081835; margin: 0 0 15px 0; font-weight: 700;">🌟 Nossos Programas</h2>
+        <div style="width: 80px; height: 4px; background: linear-gradient(90deg, #4a90e2, #e91e63); margin: 0 auto 20px; border-radius: 2px;"></div>
+        <p style="font-size: 17px; color: #777; max-width: 650px; margin: 0 auto; line-height: 1.6;">Cada atividade foi planejada com muito amor para desenvolver habilidades, amizades e sorrisos! 💛</p>
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 28px;">
         
-        <!-- 🎨 Programa 1 -->
-        <div class="programa-card" style="background: #ffffff; border-radius: 20px; padding: 35px 25px; text-align: center; border-top: 5px solid #4a90e2; box-shadow: 0 4px 15px rgba(74, 144, 226, 0.12);">
-          <div style="font-size: 52px; margin-bottom: 18px;">🖍️</div>
-          <h3 style="font-size: 21px; color: #081835; margin: 0 0 12px 0; font-weight: 600;">Oficina de Artes</h3>
-          <p style="font-size: 15px; color: #4a90e2; font-weight: 600; margin: 0 0 15px 0;">📅 Terças-feiras<br><strong>14h às 16h</strong></p>
-          <p style="font-size: 15px; color: #777; line-height: 1.6;">Pintura, desenho, reciclagem e muita criatividade! Todo o material é fornecido gratuitamente.</p>
+        <!-- 🎨 LINHA 1 — AZUL E ROSA -->
+        <div class="programa-card" style="--cor1: #4a90e2; --cor2: #64b5f6; background: #ffffff; border-radius: 20px; padding: 35px 25px; text-align: center; box-shadow: 0 4px 18px rgba(74, 144, 226, 0.1); position: relative;">
+          <span class="icone-fundo">🖍️</span>
+          <div style="font-size: 54px; margin-bottom: 15px; position: relative; z-index: 1;">🖍️</div>
+          <h3 style="font-size: 20px; color: #081835; margin: 0 0 10px 0; font-weight: 600; position: relative; z-index: 1;">Oficina de Artes</h3>
+          <p style="font-size: 14px; color: #4a90e2; font-weight: 700; margin: 0 0 12px 0;">📅 Terças-feiras • 14h às 16h</p>
+          <p style="font-size: 14px; color: #777; line-height: 1.6; position: relative; z-index: 1;">Pintura, desenho, reciclagem e criatividade! Todo o material é fornecido gratuitamente.</p>
         </div>
 
-        <!-- ⚽ Programa 2 -->
-        <div class="programa-card" style="background: #ffffff; border-radius: 20px; padding: 35px 25px; text-align: center; border-top: 5px solid #e91e63; box-shadow: 0 4px 15px rgba(233, 30, 99, 0.12);">
-          <div style="font-size: 52px; margin-bottom: 18px;">⚽</div>
-          <h3 style="font-size: 21px; color: #081835; margin: 0 0 12px 0; font-weight: 600;">Brincadeiras ao Ar Livre</h3>
-          <p style="font-size: 15px; color: #e91e63; font-weight: 600; margin: 0 0 15px 0;">📅 Quintas-feiras<br><strong>15h às 17h</strong></p>
-          <p style="font-size: 15px; color: #777; line-height: 1.6;">Jogos, brincadeiras em grupo, esporte e diversão na Praça Principal!</p>
+        <div class="programa-card" style="--cor1: #e91e63; --cor2: #f48fb1; background: #ffffff; border-radius: 20px; padding: 35px 25px; text-align: center; box-shadow: 0 4px 18px rgba(233, 30, 99, 0.1); position: relative;">
+          <span class="icone-fundo">⚽</span>
+          <div style="font-size: 54px; margin-bottom: 15px; position: relative; z-index: 1;">⚽</div>
+          <h3 style="font-size: 20px; color: #081835; margin: 0 0 10px 0; font-weight: 600; position: relative; z-index: 1;">Brincadeiras ao Ar Livre</h3>
+          <p style="font-size: 14px; color: #e91e63; font-weight: 700; margin: 0 0 12px 0;">📅 Quintas-feiras • 15h às 17h</p>
+          <p style="font-size: 14px; color: #777; line-height: 1.6; position: relative; z-index: 1;">Jogos, brincadeiras em grupo e muita diversão na Praça Principal!</p>
         </div>
 
-        <!-- 📚 Programa 3 -->
-        <div class="programa-card" style="background: #ffffff; border-radius: 20px; padding: 35px 25px; text-align: center; border-top: 5px solid #7b68ee; box-shadow: 0 4px 15px rgba(123, 104, 238, 0.12);">
-          <div style="font-size: 52px; margin-bottom: 18px;">📖</div>
-          <h3 style="font-size: 21px; color: #081835; margin: 0 0 12px 0; font-weight: 600;">Hora da História</h3>
-          <p style="font-size: 15px; color: #7b68ee; font-weight: 600; margin: 0 0 15px 0;">📅 Sábados<br><strong>9h às 10h</strong></p>
-          <p style="font-size: 15px; color: #777; line-height: 1.6;">Contação de histórias que encantam a imaginação e estimulam a leitura!</p>
+        <div class="programa-card" style="--cor1: #7b68ee; --cor2: #b39ddb; background: #ffffff; border-radius: 20px; padding: 35px 25px; text-align: center; box-shadow: 0 4px 18px rgba(123, 104, 238, 0.1); position: relative;">
+          <span class="icone-fundo">📖</span>
+          <div style="font-size: 54px; margin-bottom: 15px; position: relative; z-index: 1;">📖</div>
+          <h3 style="font-size: 20px; color: #081835; margin: 0 0 10px 0; font-weight: 600; position: relative; z-index: 1;">Hora da História</h3>
+          <p style="font-size: 14px; color: #7b68ee; font-weight: 700; margin: 0 0 12px 0;">📅 Sábados • 9h às 10h</p>
+          <p style="font-size: 14px; color: #777; line-height: 1.6; position: relative; z-index: 1;">Contação de histórias que encantam a imaginação e estimulam a leitura!</p>
         </div>
 
-        <!-- 🎶 Programa 4 -->
-        <div class="programa-card" style="background: #ffffff; border-radius: 20px; padding: 35px 25px; text-align: center; border-top: 5px solid #ff9800; box-shadow: 0 4px 15px rgba(255, 152, 0, 0.12);">
-          <div style="font-size: 52px; margin-bottom: 18px;">🎵</div>
-          <h3 style="font-size: 21px; color: #081835; margin: 0 0 12px 0; font-weight: 600;">Música e Movimento</h3>
-          <p style="font-size: 15px; color: #ff9800; font-weight: 600; margin: 0 0 15px 0;">📅 Sextas-feiras<br><strong>14h às 15h</strong></p>
-          <p style="font-size: 15px; color: #777; line-height: 1.6;">Cantar, dançar, brincar com ritmos e expressar-se através da música!</p>
+        <div class="programa-card" style="--cor1: #ff9800; --cor2: #ffcc80; background: #ffffff; border-radius: 20px; padding: 35px 25px; text-align: center; box-shadow: 0 4px 18px rgba(255, 152, 0, 0.1); position: relative;">
+          <span class="icone-fundo">🎵</span>
+          <div style="font-size: 54px; margin-bottom: 15px; position: relative; z-index: 1;">🎵</div>
+          <h3 style="font-size: 20px; color: #081835; margin: 0 0 10px 0; font-weight: 600; position: relative; z-index: 1;">Música e Movimento</h3>
+          <p style="font-size: 14px; color: #ff9800; font-weight: 700; margin: 0 0 12px 0;">📅 Sextas-feiras • 14h às 15h</p>
+          <p style="font-size: 14px; color: #777; line-height: 1.6; position: relative; z-index: 1;">Cantar, dançar e expressar-se através da música e do ritmo!</p>
         </div>
 
-        <!-- 🔢 Programa 5 -->
-        <div class="programa-card" style="background: #ffffff; border-radius: 20px; padding: 35px 25px; text-align: center; border-top: 5px solid #00bcd4; box-shadow: 0 4px 15px rgba(0, 188, 212, 0.12);">
-          <div style="font-size: 52px; margin-bottom: 18px;">🔢</div>
-          <h3 style="font-size: 21px; color: #081835; margin: 0 0 12px 0; font-weight: 600;">Apoio Escolar</h3>
-          <p style="font-size: 15px; color: #00bcd4; font-weight: 600; margin: 0 0 15px 0;">📅 Seg a Sex<br><strong>8h às 11h</strong></p>
-          <p style="font-size: 15px; color: #777; line-height: 1.6;">Ajuda com as tarefas, reforço escolar e acompanhamento educacional.</p>
+        <!-- 🎨 LINHA 2 -- AZUL E ROSA -->
+        <div class="programa-card" style="--cor1: #00bcd4; --cor2: #80deea; background: #ffffff; border-radius: 20px; padding: 35px 25px; text-align: center; box-shadow: 0 4px 18px rgba(0, 188, 212, 0.1); position: relative;">
+          <span class="icone-fundo">🔢</span>
+          <div style="font-size: 54px; margin-bottom: 15px; position: relative; z-index: 1;">🔢</div>
+          <h3 style="font-size: 20px; color: #081835; margin: 0 0 10px 0; font-weight: 600; position: relative; z-index: 1;">Apoio Escolar</h3>
+          <p style="font-size: 14px; color: #00bcd4; font-weight: 700; margin: 0 0 12px 0;">📅 Seg a Sex • 8h às 11h</p>
+          <p style="font-size: 14px; color: #777; line-height: 1.6; position: relative; z-index: 1;">Ajuda com tarefas, reforço escolar e acompanhamento educacional.</p>
         </div>
 
-        <!-- 🎮 Programa 6 -->
-        <div class="programa-card" style="background: #ffffff; border-radius: 20px; padding: 35px 25px; text-align: center; border-top: 5px solid #9c27b0; box-shadow: 0 4px 15px rgba(156, 39, 176, 0.12);">
-          <div style="font-size: 52px; margin-bottom: 18px;">🎲</div>
-          <h3 style="font-size: 21px; color: #081835; margin: 0 0 12px 0; font-weight: 600;">Jogos e Brincadeiras</h3>
-          <p style="font-size: 15px; color: #9c27b0; font-weight: 600; margin: 0 0 15px 0;">📅 Sábados<br><strong>14h às 16h</strong></p>
-          <p style="font-size: 15px; color: #777; line-height: 1.6;">Jogos educativos, brincadeiras cooperativas e muita diversão!</p>
+        <div class="programa-card" style="--cor1: #9c27b0; --cor2: #ce93d8; background: #ffffff; border-radius: 20px; padding: 35px 25px; text-align: center; box-shadow: 0 4px 18px rgba(156, 39, 176, 0.1); position: relative;">
+          <span class="icone-fundo">🎲</span>
+          <div style="font-size: 54px; margin-bottom: 15px; position: relative; z-index: 1;">🎲</div>
+          <h3 style="font-size: 20px; color: #081835; margin: 0 0 10px 0; font-weight: 600; position: relative; z-index: 1;">Jogos e Brincadeiras</h3>
+          <p style="font-size: 14px; color: #9c27b0; font-weight: 700; margin: 0 0 12px 0;">📅 Sábados • 14h às 16h</p>
+          <p style="font-size: 14px; color: #777; line-height: 1.6; position: relative; z-index: 1;">Jogos educativos, brincadeiras cooperativas e muita diversão!</p>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ✅ MENSAGEM FINAL -->
-  <section style="background: linear-gradient(135deg, #e8f0fb 0%, #fef0f4 100%); padding: 50px 20px; text-align: center;">
-    <div style="max-width: 700px; margin: 0 auto;">
-      <h3 style="font-size: 26px; color: #081835; margin-bottom: 15px;">💛 Importante</h3>
-      <p style="font-size: 17px; color: #555; line-height: 1.7;">Não precisa de inscrição prévia! É só aparecer com a criança e participar.<br>Qualquer dúvida, procure nosso atendimento na comunidade.<br><br><strong style="font-size: 19px; color: #081835;">✨ Um espaço feito com muito carinho para os nossos pequenos! ✨</strong></p>
-    </div>
-  </section>
+        <div class="programa-card" style="--cor1: #3f51b5; --cor2: #9fa8da; background: #ffffff; border-radius: 20px; padding: 35px 25px; text-align: center; box-shadow: 0 4px 18px rgba(63, 81, 181, 0.1); position: relative;">
+          <span class="icone-fundo">🌱</span>
+          <div style="font-size: 54px; margin-bottom: 15px; position: relative; z-index: 1;">🌱</div>
+          <h3 style="font-size: 20px; color: #081835; margin: 0 0 10px 0; font-weight: 600; position: relative; z-index: 1;">Jardim das Crianças</h3>
+          <p style="font-size: 14px; color: #3f51b5; font-weight: 700; margin: 0 0 12px 0;">📅 Quartas • 15h às 16h</p>
+          <p style="font-size: 14px; color: #777; line-height: 1.6; position: relative; z-index: 1;">Plantar, cuidar e aprender sobre a natureza de forma divertida!</p>
+        </div>
 
-  <!-- ✅ RODAPÉ -->
-  <footer style="
-    background-color: #081835;
-    width: 100vw;
-    margin-left: calc((100% - 100vw) / 2);
-    margin-right: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding: 40px 25px 30px;
-    box-sizing: border-box;
-  ">
-    <div style="max-width: 1400px; margin: 0 auto; display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 30px;">
-      
-      <div>
-        <img src="logo-bmc.png" alt="BMC" style="height: 60px; margin-bottom: 10px;">
-        <p style="font-size: 15px; line-height: 1.5; color: #ffffff; margin-bottom: 20px;">
-          Bem-Estar da Minha Comunidade<br>
+        <div class="programa-card" style="--cor1: #f44336; --cor2: #ef9a9a; background: #ffffff; border-radius: 20px; padding: 35px 25px; text-align: center; box-shadow: 0 4px 18px rgba(244, 67, 54, 0.1); position: relative;">
+          <span class="icone-fundo">🍳</span>
+          <div style="font-size: 54px; margin-bottom: 15px; position: relative; z-index: 1;">🍳</div>
+          <h3 style="font-size: 20px; color: #081835; margin: 0 0 10px 0; font-weight: 600; position: relative; z-index: 1;">Cozinha Divertida</h3>
+          <p style="font-size: 14px; color: #f44336; font-weight: 700; margin: 0 0 12px 0;">📅 1º Sábado • 10h às 11h30</p>
+          <p style="font-size: 14px; color: #777; line-height: 1.6; position: relative; z-index: 1;">Preparar lanches saudáveis e descobrir os sabores com alegria!</p>
+        </div>
+
+        <!-- 🎨 LINHA 3 -- AZUL E ROSA -->
+        <div class="programa-card" style="--cor1: #009688; --cor2: #80cbc4; background: #ffffff; border-radius: 20px; padding: 35px 25px; text-align: center; box-shadow: 0 4px 18px rgba(0, 150, 136, 0.1); position: relative;">
+          <span class="icone-fundo">🔬</span>
+          <div style="font-size: 54px; margin-bottom: 15px; position: relative; z-index: 1;">🔬</div>
+          <h3 style="font-size: 20px; color: #081835; margin: 0 0 10px 0; font-weight: 600; position: relative; z-index: 1;">Cientistas do Futuro</h3>
+         <p style="font-size: 14px; color: #f44336; font-weight: 700; margin: 0 0 12px 0;">📅 2º Sábado • 14h às 15h30</p>
+          <p style="font-size: 14px; color: #777; line-height: 1.6; position: relative; z-index: 1;">Preparar lanches saudáveis e descobrir os sabores com alegria!</p>
+        </div>
+  <!-- RODAPÉ -->
+<footer style="background-color: #081835; color: #ffffff; padding: 50px 40px 25px 40px; margin-top: 60px;">
+
+  <div style="max-width: 1200px; margin: 0 auto;">
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 20px;">
+
+      <!-- 📍 ESQUERDA: Logo e informações -->
+      <div style="flex: 0 0 auto; min-width: 220px; text-align: left;">
+        <img src="logo-bmc.png" alt="BMC" style="height: 65px; margin-bottom: 12px; display: block;">
+        
+        <p style="font-size: 15px; color: #ffffff; margin: 0 0 6px 0; font-weight: 500;">
+          Bem-Estar da Minha Comunidade
+        </p>
+        <p style="font-size: 13px; color: #b8c7e0; margin: 0 0 15px 0;">
           União, Acolhimento e Cuidado para Todos.
         </p>
+
+        <p style="font-size: 12px; color: #b8c7e0; margin: 0 0 8px 0;">
+          Siga a BMC nas redes sociais
+        </p>
+
+        <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 20px;">
+          <a href="#" style="background: #1877F2; color: #fff; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: bold; text-decoration: none;">F</a>
+          <a href="#" style="background: #FF0000; color: #fff; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: bold; text-decoration: none;">▶</a>
+          <a href="#" style="background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: #fff; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: bold; text-decoration: none;">IG</a>
+          <a href="#" style="background: #0A66C2; color: #fff; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: bold; text-decoration: none;">in</a>
+          <a href="#" style="background: #25D366; color: #fff; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: bold; text-decoration: none;">W</a>
+        </div>
+
+        <a href="fala-conosco.html" style="display: inline-block; background-color: #ffffff; color: #081835; padding: 10px 18px; border-radius: 6px; font-size: 13px; font-weight: bold; text-decoration: none;">
+          📞 Fala Conosco
+        </a>
       </div>
 
-      <div>
-        <h4 style="font-size: 16px; font-weight: bold; color: #ffffff; margin-bottom: 15px; text-decoration: underline;">Links Rápidos</h4>
+      <!-- 📂 CATEGORIAS -- no seu espaço -->
+      <div style="flex: 0 0 auto; min-width: 130px; text-align: left;">
+        <h4 style="font-size: 15px; font-weight: bold; margin: 0 0 12px 0; color: #ffffff; text-decoration: underline; text-underline-offset: 5px;">Categorias</h4>
         <ul style="list-style: none; padding: 0; margin: 0;">
-          <li style="margin-bottom: 10px;"><a href="index.html" style="color: #ffffff; text-decoration: none;">Início</a></li>
-          <li style="margin-bottom: 10px;"><a href="eventos.html" style="color: #ffffff; text-decoration: none;">Eventos</a></li>
-          <li style="margin-bottom: 10px;"><a href="fale-conosco.html" style="color: #ffffff; text-decoration: none;">Fale Conosco</a></li>
+          <li style="margin-bottom: 7px;"><a href="servicos.html" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Serviços</a></li>
+          <li style="margin-bottom: 7px;"><a href="eventos.html" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Eventos</a></li>
+          <li style="margin-bottom: 7px;"><a href="noticias.html" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Notícias</a></li>
+          <li style="margin-bottom: 7px;"><a href="guia.html" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Guia do Bairro</a></li>
+          <li style="margin-bottom: 7px;"><a href="galeria.html" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Galeria</a></li>
         </ul>
       </div>
+
+      <!-- 💡 SOLUÇÕES -- no seu espaço -->
+      <div style="flex: 0 0 auto; min-width: 160px; text-align: left;">
+        <h4 style="font-size: 15px; font-weight: bold; margin: 0 0 12px 0; color: #ffffff; text-decoration: underline; text-underline-offset: 5px;">Soluções</h4>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="margin-bottom: 7px;"><a href="#" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Solicitar Ajuda</a></li>
+          <li style="margin-bottom: 7px;"><a href="#" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Oferecer Ajuda</a></li>
+          <li style="margin-bottom: 7px;"><a href="centro-acolhimento.html" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Centro de Acolhimento</a></li>
+          <li style="margin-bottom: 7px;"><a href="documentos.html" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Documentos e Regularização</a></li>
+          <li style="margin-bottom: 7px;"><a href="shows.html" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Shows e Eventos</a></li>
+          <li style="margin-bottom: 7px;"><a href="atividades-infantis.html" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Eventos Infantis</a></li>
+          <li style="margin-bottom: 7px;"><a href="comida-gratis.html" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Comida Grátis e Barata</a></li>
+          <li style="margin-bottom: 7px;"><a href="#" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Avisos Importantes</a></li>
+        </ul>
+      </div>
+
+      <!-- ℹ️ SOBRE -- no canto direito -->
+      <div style="flex: 0 0 auto; min-width: 120px; text-align: left;">
+        <h4 style="font-size: 15px; font-weight: bold; margin: 0 0 12px 0; color: #ffffff; text-decoration: underline; text-underline-offset: 5px;">Sobre</h4>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="margin-bottom: 7px;"><a href="quem-somos.html" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Quem Somos</a></li>
+          <li style="margin-bottom: 7px;"><a href="fala-conosco.html" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Fala Conosco</a></li>
+          <li style="margin-bottom: 7px;"><a href="#" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Termos de Uso</a></li>
+        </ul>
+      </div>
+
     </div>
 
-    <div style="max-width: 1400px; margin: 30px auto 0; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.2); font-size: 13px; color: #ffffff; text-align: center;">
-      © 2026 BMC — Bem-Estar da Minha Comunidade • 🇧🇷 Brasil • Todos os direitos reservados
+    <div style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 35px; padding-top: 15px;"></div>
+
+    <div style="margin-top: 10px;">
+      <p style="font-size: 13px; color: #8fa4c2; margin: 0;">
+        © 2026 BMC — Bem-Estar da Minha Comunidade • 
+        <img src="https://flagcdn.com/w20/br.png" alt="Brasil" style="height: 14px; vertical-align: middle; border: none;"> Brasil • 
+        Todos os direitos reservados • Projeto Comunitário
+      </p>
     </div>
-  </footer>
+
+  </div>
+
+</footer>
+  <!-- JAVASCRIPT DO CARROSSEL — só esse pedacinho, não é outra linguagem, é só para funcionar -->
+  <script>
+    let slideAtual = 0;
+    const totalSlides = 10;
+    const slides = document.getElementById('slides');
+    const bolinhas = document.querySelectorAll('.bolinha');
+
+    function atualizarSlide() {
+      slides.style.transform = `translateX(-${slideAtual * 100}%)`;
+      bolinhas.forEach((bolinha, index) => {
+        bolinha.classList.toggle('ativa', index === slideAtual);
+      });
+    }
+
+    function mudarSlide(direcao) {
+      slideAtual += direcao;
+      if (slideAtual < 0) slideAtual = totalSlides - 1;
+      if (slideAtual >= totalSlides) slideAtual = 0;
+      atualizarSlide();
+    }
+
+    function irParaSlide(index) {
+      slideAtual = index;
+      atualizarSlide();
+    }
+
+    // Passa sozinho a cada 6 segundos
+    setInterval(() => {
+      mudarSlide(1);
+    }, 6000);
+
+    // Busca no mapa
+    function buscarBairro() {
+      const bairro = document.getElementById('bairroInput').value.trim();
+      if (!bairro) {
+        alert('Por favor, digite o nome do seu bairro.');
+        return;
+      }
+      const url = `https://www.google.com/maps/search/serviços+em+${encodeURIComponent(bairro)}`;
+      window.open(url, '_blank');
+    }
+  </script>
 
 </body>
 </html>
