@@ -3,208 +3,331 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fale Conosco</title>
-  <link rel="stylesheet" href="estilos.css">
-  
+  <title>Fale Conosco — BMC</title>
   <style>
-    footer,
-    footer * {
-      background-color: #081835 !important;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
     }
+
+    body {
+      background-color: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* CABEÇALHO */
+    header {
+      background-color: #081835;
+      padding: 12px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo img {
+      height: 55px;
+      width: auto;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 8px;
+    }
+
+    nav a {
+      display: block;
+      padding: 12px 20px;
+      background-color: #ffffff;
+      color: #081835;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 15px;
+      border-radius: 6px 6px 0 0;
+      transition: background-color 0.2s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background-color: #e8edf5;
+    }
+
+    /* CONTEÚDO PRINCIPAL */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 50px 20px;
+    }
+
+    .pagina-titulo {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .pagina-titulo h1 {
+      font-size: 36px;
+      color: #081835;
+      margin-bottom: 10px;
+    }
+
+    .pagina-titulo p {
+      font-size: 18px;
+      color: #666;
+    }
+
+    .conteudo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    /* INFORMAÇÕES DE CONTATO */
+    .info-bloco {
+      background: #ffffff;
+      padding: 35px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(8, 24, 53, 0.06);
+    }
+
+    .info-bloco h2 {
+      font-size: 22px;
+      color: #081835;
+      margin-bottom: 25px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #e8edf5;
+    }
+
+    .item-contato {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 22px;
+    }
+
+    .icone {
+      font-size: 24px;
+      margin-right: 15px;
+      color: #081835;
+      min-width: 30px;
+    }
+
+    .item-contato h3 {
+      font-size: 16px;
+      color: #081835;
+      margin-bottom: 4px;
+    }
+
+    .item-contato p,
+    .item-contato a {
+      font-size: 15px;
+      color: #555;
+      text-decoration: none;
+    }
+
+    .item-contato a:hover {
+      color: #081835;
+      text-decoration: underline;
+    }
+
+    /* FORMULÁRIO */
+    .form-bloco {
+      background: #ffffff;
+      padding: 35px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(8, 24, 53, 0.06);
+    }
+
+    .form-bloco h2 {
+      font-size: 22px;
+      color: #081835;
+      margin-bottom: 25px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #e8edf5;
+    }
+
+    .grupo-form {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-size: 15px;
+      font-weight: 600;
+      color: #081835;
+      margin-bottom: 8px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid #e0e5eb;
+      border-radius: 8px;
+      font-size: 15px;
+      transition: border-color 0.3s;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #081835;
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    button {
+      background: linear-gradient(90deg, #081835, #1a3566);
+      color: #ffffff;
+      border: none;
+      padding: 15px 40px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      width: 100%;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(8, 24, 53, 0.25);
+    }
+
+    /* RODAPÉ */
     footer {
-      margin-top: 0 !important;
-      border-top: none !important;
+      background-color: #081835;
+      color: #ffffff;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 60px;
     }
-    footer h4,
-    footer p,
-    footer a,
-    footer li {
-      color: #ffffff !important;
+
+    footer p {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    /* RESPONSIVO — celular vira uma coluna só */
+    @media (max-width: 768px) {
+      .conteudo-grid {
+        grid-template-columns: 1fr;
+      }
+      header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+      }
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
     }
   </style>
 </head>
 <body>
 
   <!-- ✅ CABEÇALHO -->
-  <header style="background-color: #081835; padding: 15px 15px; display: flex; align-items: center; justify-content: space-between; width: 100%; box-sizing: border-box;">
-    <!-- Logomarca -->
-    <div style="margin-right: 0;">
-      <img src="logo-bmc.png" alt="BMC" style="height: 50px; width: auto;">
+  <header>
+    <div class="logo">
+      <img src="logo-bmc.png" alt="BMC">
     </div>
-
-    <!-- Menu de Navegação -->
     <nav>
-      <ul style="list-style: none; padding: 0; margin: 0; display: flex; gap: 0;">
-        <li><a href="index.html" style="display: block; padding: 12px 15px; background-color: #ffffff; color: #081835; text-decoration: none; font-weight: 500;">Início</a></li>
-        <li><a href="servicos.html" style="display: block; padding: 12px 15px; background-color: #ffffff; color: #081835; text-decoration: none; font-weight: 500;">Serviços</a></li>
-        <li><a href="eventos.html" style="display: block; padding: 12px 15px; background-color: #ffffff; color: #081835; text-decoration: none; font-weight: 500;">Eventos</a></li>
-        <li><a href="fale-Conosco.html" style="display: block; padding: 12px 15px; background-color: #081835; color: #ffffff; text-decoration: none; font-weight: bold;">Fale Conosco</a></li>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="eventos.html">Eventos</a></li>
+        <li><a href="atividades-infantis.html">Crianças</a></li>
+        <li><a href="fale-conosco.html" class="active">Fale Conosco</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- ✅ CONTEÚDO DA PÁGINA -->
-  <main style="max-width: 800px; margin: 60px auto; padding: 0 30px;">
-    
-    <div style="text-align: center; margin-bottom: 50px;">
-      <h1 style="font-size: 36px; color: #081835; margin-bottom: 15px;">📞 Fale Conosco</h1>
-      <p style="font-size: 18px; color: #555;">Tem alguma dúvida, sugestão ou quer colaborar com o nosso projeto? Estamos aqui para ouvir você!</p>
+  <!-- ✅ CONTEÚDO PRINCIPAL -->
+  <main>
+    <div class="pagina-titulo">
+      <h1>📩 Fale Conosco</h1>
+      <p>Tem alguma dúvida, sugestão ou quer colaborar com a gente? Estamos aqui para ouvir você!</p>
     </div>
 
-    <!-- 📬 Formulário de Contato -->
-    <div style="background-color: #ffffff; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); margin-bottom: 50px;">
+    <div class="conteudo-grid">
       
-      <h2 style="font-size: 22px; color: #081835; margin-bottom: 25px;">Envie sua mensagem</h2>
-      
-      <form style="display: flex; flex-direction: column; gap: 18px;">
-        
-        <div>
-          <label style="display: block; font-weight: bold; color: #081835; margin-bottom: 8px;">Seu nome:</label>
-          <input type="text" placeholder="Digite seu nome completo" style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px; box-sizing: border-box;">
-        </div>
+      <!-- 📍 INFORMAÇÕES DE CONTATO -->
+      <div class="info-bloco">
+        <h2>Informações de Contato</h2>
 
-        <div>
-          <label style="display: block; font-weight: bold; color: #081835; margin-bottom: 8px;">Seu e-mail ou telefone:</label>
-          <input type="text" placeholder="Seu e-mail ou WhatsApp" style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px; box-sizing: border-box;">
-        </div>
-
-        <div>
-          <label style="display: block; font-weight: bold; color: #081835; margin-bottom: 8px;">Assunto:</label>
-          <select style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px; background: white;">
-            <option>Dúvida sobre os serviços</option>
-            <option>Sugestão ou elogio</option>
-            <option>Quero ajudar / ser voluntário</option>
-            <option>Reportar um problema</option>
-            <option>Outro assunto</option>
-          </select>
-        </div>
-
-        <div>
-          <label style="display: block; font-weight: bold; color: #081835; margin-bottom: 8px;">Sua mensagem:</label>
-          <textarea rows="5" placeholder="Escreva aqui o que você precisa nos dizer..." style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px; box-sizing: border-box; resize: vertical;"></textarea>
-        </div>
-
-        <button type="button" style="background-color: #081835; color: #ffffff; border: none; padding: 14px 30px; font-size: 17px; font-weight: bold; border-radius: 4px; cursor: pointer; margin-top: 10px; align-self: flex-start;">✉️ Enviar mensagem</button>
-      </form>
-    </div>
-
-    <!-- 📋 Outras formas de contato -->
-    <div style="background-color: #f0f4f9; padding: 35px; border-radius: 8px; margin-bottom: 50px;">
-      <h2 style="font-size: 22px; color: #081835; margin-bottom: 25px;">Outras formas de nos encontrar</h2>
-      
-      <div style="display: flex; flex-direction: column; gap: 20px;">
-        <div style="display: flex; align-items: flex-start; gap: 15px;">
-          <span style="font-size: 24px;">📍</span>
+        <div class="item-contato">
+          <span class="icone">📍</span>
           <div>
-            <strong style="color: #081835;">Endereço</strong>
-            <p style="margin: 5px 0 0; color: #555;">Praça Principal do Bairro — Ferraz de Vasconcelos, SP</p>
+            <h3>Endereço</h3>
+            <p>Rua da Comunidade, 123 — Centro<br>Ferraz de Vasconcelos — SP</p>
           </div>
         </div>
 
-        <div style="display: flex; align-items: flex-start; gap: 15px;">
-          <span style="font-size: 24px;">📞</span>
+        <div class="item-contato">
+          <span class="icone">📞</span>
           <div>
-            <strong style="color: #081835;">Telefone / WhatsApp</strong>
-            <p style="margin: 5px 0 0; color: #555;">(11) 9XXXX-XXXX — Atendimento: Segunda a Sexta, das 8h às 17h</p>
+            <h3>Telefone</h3>
+            <p>(11) 99999-1234</p>
           </div>
         </div>
 
-        <div style="display: flex; align-items: flex-start; gap: 15px;">
-          <span style="font-size: 24px;">✉️</span>
+        <div class="item-contato">
+          <span class="icone">✉️</span>
           <div>
-            <strong style="color: #081835;">E-mail</strong>
-            <p style="margin: 5px 0 0; color: #555;">contato@bmc-comunidade.org.br</p>
+            <h3>E-mail</h3>
+            <a href="mailto:contato@bmc.org.br">contato@bmc.org.br</a>
           </div>
         </div>
 
-        <div style="display: flex; align-items: flex-start; gap: 15px;">
-          <span style="font-size: 24px;">🕒</span>
+        <div class="item-contato">
+          <span class="icone">🕐</span>
           <div>
-            <strong style="color: #081835;">Horário de Atendimento</strong>
-            <p style="margin: 5px 0 0; color: #555;">Segunda a Sexta: 8h às 17h • Sábados: 9h às 13h</p>
+            <h3>Horário de Atendimento</h3>
+            <p>Segunda a Sexta: 8h às 17h<br>Sábados: 9h às 13h</p>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- 💬 Mensagem de Encerramento -->
-    <div style="text-align: center; padding: 30px; border-top: 1px solid #eee;">
-      <p style="font-size: 16px; color: #555;">💛 <strong>Estamos sempre aqui por você e pela nossa comunidade.</strong><br>Sua voz importa para nós!</p>
-    </div>
+      <!-- ✉️ FORMULÁRIO -->
+      <div class="form-bloco">
+        <h2>Envie sua Mensagem</h2>
+        
+        <form action="https://formspree.io/f/seu-codigo-aqui" method="POST">
+          <div class="grupo-form">
+            <label for="nome">Seu Nome *</label>
+            <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo">
+          </div>
 
+          <div class="grupo-form">
+            <label for="email">Seu E-mail *</label>
+            <input type="email" id="email" name="email" required placeholder="seuemail@exemplo.com">
+          </div>
+
+          <div class="grupo-form">
+            <label for="assunto">Assunto</label>
+            <input type="text" id="assunto" name="assunto" placeholder="Sobre o que quer falar?">
+          </div>
+
+          <div class="grupo-form">
+            <label for="mensagem">Sua Mensagem *</label>
+            <textarea id="mensagem" name="mensagem" required placeholder="Escreva aqui sua mensagem..."></textarea>
+          </div>
+
+          <button type="submit">📤 Enviar Mensagem</button>
+        </form>
+      </div>
+    </div>
   </main>
 
   <!-- ✅ RODAPÉ -->
-  <footer style="
-    background-color: #081835;
-    width: 100vw;
-    margin-left: calc((100% - 100vw) / 2);
-    margin-right: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding: 40px 25px 30px;
-    box-sizing: border-box;
-  ">
-    <div style="max-width: 1400px; margin: 0 auto; display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 30px;">
-      
-      <!-- Logomarca -->
-      <div>
-        <img src="logo-bmc.png" alt="BMC" style="height: 60px; margin-bottom: 10px;">
-        <p style="font-size: 15px; line-height: 1.5; color: #ffffff; margin-bottom: 20px;">
-          Bem-Estar da Minha Comunidade<br>
-          União, Acolhimento e Cuidado para Todos.
-        </p>
-        <p style="font-size: 14px; color: #ffffff; margin-bottom: 12px;">Siga a BMC nas redes sociais</p>
-        <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-          <a href="#" style="width: 36px; height: 36px; background-color: #1877F2; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; font-weight: bold; font-size: 18px; text-decoration: none;">f</a>
-          <a href="#" style="width: 36px; height: 36px; background-color: #FF0000; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; font-weight: bold; font-size: 16px; text-decoration: none;">▶</a>
-          <a href="#" style="width: 36px; height: 36px; background-color: #E4405F; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; font-weight: bold; font-size: 14px; text-decoration: none;">IG</a>
-          <a href="#" style="width: 36px; height: 36px; background-color: #0A66C2; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; font-weight: bold; font-size: 14px; text-decoration: none;">in</a>
-          <a href="#" style="width: 36px; height: 36px; background-color: #25D365; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; font-weight: bold; font-size: 16px; text-decoration: none;">W</a>
-        </div>
-      </div>
-
-      <!-- Categorias -->
-      <div>
-        <h4 style="font-size: 16px; font-weight: bold; color: #ffffff; margin-bottom: 15px; text-decoration: underline;">Categorias</h4>
-        <ul style="list-style: none; padding: 0; margin: 0;">
-          <li style="margin-bottom: 10px;"><a href="servicos.html" style="color: #ffffff; text-decoration: none;">Serviços</a></li>
-          <li style="margin-bottom: 10px;"><a href="eventos.html" style="color: #ffffff; text-decoration: none;">Eventos</a></li>
-          <li style="margin-bottom: 10px;"><a href="noticias.html" style="color: #ffffff; text-decoration: none;">Notícias</a></li>
-          <li style="margin-bottom: 10px;"><a href="guia.html" style="color: #ffffff; text-decoration: none;">Guia do Bairro</a></li>
-          <li style="margin-bottom: 10px;"><a href="galeria.html" style="color: #ffffff; text-decoration: none;">Galeria</a></li>
-        </ul>
-      </div>
-
-      <!-- Soluções -->
-      <div>
-        <h4 style="font-size: 16px; font-weight: bold; color: #ffffff; margin-bottom: 15px; text-decoration: underline;">Soluções</h4>
-        <ul style="list-style: none; padding: 0; margin: 0;">
-          <li style="margin-bottom: 10px;"><a href="#" style="color: #ffffff; text-decoration: none;">Solicitar Ajuda</a></li>
-          <li style="margin-bottom: 10px;"><a href="#" style="color: #ffffff; text-decoration: none;">Oferecer Ajuda</a></li>
-          <li style="margin-bottom: 10px;"><a href="#" style="color: #ffffff; text-decoration: none;">Centro de Acolhimento</a></li>
-          <li style="margin-bottom: 10px;"><a href="#" style="color: #ffffff; text-decoration: none;">Documentos e Regularização</a></li>
-          <li style="margin-bottom: 10px;"><a href="shows.html" style="color: #ffffff; text-decoration: none;">Shows e Eventos</a></li>
-          <li style="margin-bottom: 10px;"><a href="atividades-infantis.html" style="color: #ffffff; text-decoration: none;">Atividades Infantis</a></li>
-          <li style="margin-bottom: 10px;"><a href="#" style="color: #ffffff; text-decoration: none;">Comida Grátis e Barata</a></li>
-          <li style="margin-bottom: 10px;"><a href="avisos.html" style="color: #ffffff; text-decoration: none;">Avisos Importantes</a></li>
-        </ul>
-      </div>
-
-      <!-- Sobre -->
-      <div>
-        <h4 style="font-size: 16px; font-weight: bold; color: #ffffff; margin-bottom: 15px; text-decoration: underline;">Sobre</h4>
-        <ul style="list-style: none; padding: 0; margin: 0;">
-          <li style="margin-bottom: 10px;"><a href="quem-somos.html" style="color: #ffffff; text-decoration: none;">Quem Somos Nós</a></li>
-          <li style="margin-bottom: 10px;"><a href="fale-conosco.html" style="color: #ffffff; text-decoration: none; font-weight: bold;">Fale Conosco</a></li>
-          <li style="margin-bottom: 10px;"><a href="#" style="color: #ffffff; text-decoration: none;">Termos de Uso</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div style="max-width: 1400px; margin: 30px auto 0; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.2); font-size: 13px; color: #ffffff; text-align: center;">
-      © 2026 BMC — Bem-Estar da Minha Comunidade • 🇧🇷 Brasil • Todos os direitos reservados • Projeto Comunitário
-    </div>
+  <footer>
+    <p><strong>BMC — Comunidade Conecta</strong></p>
+    <p>&copy; 2025 Todos os direitos reservados. | Ferraz de Vasconcelos — SP</p>
   </footer>
 
 </body>
