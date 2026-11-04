@@ -3,124 +3,209 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fale Conosco</title>
+  <title>Fale Conosco — BMC</title>
+  <link rel="stylesheet" href="estilos.css">
+  
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
-    body { line-height: 1.6; color: #333; background-color: #ffffff; }
-    a { text-decoration: none; }
+    footer,
+    footer * {
+      background-color: #081835 !important;
+    }
+    footer {
+      margin-top: 0 !important;
+      border-top: none !important;
+    }
+    footer h4,
+    footer p,
+    footer a,
+    footer li {
+      color: #ffffff !important;
+    }
   </style>
 </head>
 <body>
 
-<!-- 🧭 CABEÇALHO IGUAL AO SEU SITE -->
-<header style="background-color: #081835; padding: 15px 20px; width: 100%; box-sizing: border-box;">
-  <div style="max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: flex-start; gap: 40px; flex-wrap: wrap;">
-    
-    <!-- Logo -->
-    <img src="logo-bmc.png" alt="Logo BMC" style="height: 55px; width: auto;">
-    
+  <!-- ✅ CABEÇALHO -->
+  <header style="background-color: #081835; padding: 15px 15px; display: flex; align-items: center; justify-content: space-between; width: 100%; box-sizing: border-box;">
+    <!-- Logomarca -->
+    <div style="margin-right: 0;">
+      <img src="logo-bmc.png" alt="BMC" style="height: 50px; width: auto;">
+    </div>
+
     <!-- Menu de Navegação -->
-    <nav style="display: flex; gap: 30px; flex-wrap: wrap;">
-      <a href="index.html" style="color: #ffffff; font-size: 16px; padding: 8px 0;">Início</a>
-      <a href="servicos.html" style="color: #ffffff; font-size: 16px; padding: 8px 0;">Serviços</a>
-      <a href="#" style="color: #ffffff; font-size: 16px; padding: 8px 0;">Solicitar Ajuda</a>
-      <a href="#" style="color: #ffffff; font-size: 16px; padding: 8px 0;">Oferecer Ajuda</a>
-      <a href="eventos.html" style="color: #ffffff; font-size: 16px; padding: 8px 0;">Eventos</a>
-      <a href="#" style="color: #ffffff; font-size: 16px; padding: 8px 0;">Shows</a>
-      <a href="#" style="color: #ffffff; font-size: 16px; padding: 8px 0;">Atividades Infantis</a>
-      <a href="#" style="color: #ffffff; font-size: 16px; padding: 8px 0;">Notícias</a>
-      <a href="#" style="color: #ffffff; font-size: 16px; padding: 8px 0;">Avisos Importantes</a>
+    <nav>
+      <ul style="list-style: none; padding: 0; margin: 0; display: flex; gap: 0;">
+        <li><a href="index.html" style="display: block; padding: 12px 15px; background-color: #ffffff; color: #081835; text-decoration: none; font-weight: 500;">Início</a></li>
+        <li><a href="servicos.html" style="display: block; padding: 12px 15px; background-color: #ffffff; color: #081835; text-decoration: none; font-weight: 500;">Serviços</a></li>
+        <li><a href="eventos.html" style="display: block; padding: 12px 15px; background-color: #ffffff; color: #081835; text-decoration: none; font-weight: 500;">Eventos</a></li>
+        <li><a href="fale-conosco.html" style="display: block; padding: 12px 15px; background-color: #081835; color: #ffffff; text-decoration: none; font-weight: bold;">Fale Conosco</a></li>
+      </ul>
     </nav>
-  </div>
-</header>
+  </header>
 
-<!-- 📄 CONTEÚDO PRINCIPAL -->
-<main style="max-width: 800px; margin: 60px auto; padding: 0 20px;">
-  
-  <h1 style="color: #081835; font-size: 28px; text-align: center; margin-bottom: 10px;">📞 Fala Conosco</h1>
-  <p style="text-align: center; color: #666; font-size: 16px; margin-bottom: 40px;">Tem alguma dúvida, sugestão ou quer nos ajudar? É só preencher!</p>
-
-  <!-- Formulário -->
-  <form style="background: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); border: 1px solid #eee;">
+  <!-- ✅ CONTEÚDO DA PÁGINA -->
+  <main style="max-width: 800px; margin: 60px auto; padding: 0 30px;">
     
-    <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #081835;">Seu nome:</label>
-    <input type="text" placeholder="Digite seu nome" style="width: 100%; padding: 12px; margin-bottom: 25px; border: 1px solid #ddd; border-radius: 4px; font-size: 15px;">
+    <div style="text-align: center; margin-bottom: 50px;">
+      <h1 style="font-size: 36px; color: #081835; margin-bottom: 15px;">📞 Fale Conosco</h1>
+      <p style="font-size: 18px; color: #555;">Tem alguma dúvida, sugestão ou quer colaborar com o nosso projeto? Estamos aqui para ouvir você!</p>
+    </div>
 
-    <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #081835;">Seu bairro / comunidade:</label>
-    <input type="text" placeholder="Ex: Ferraz de Vasconcelos" style="width: 100%; padding: 12px; margin-bottom: 25px; border: 1px solid #ddd; border-radius: 4px; font-size: 15px;">
-
-    <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #081835;">Seu e-mail ou telefone:</label>
-    <input type="text" placeholder="Para podermos te responder" style="width: 100%; padding: 12px; margin-bottom: 25px; border: 1px solid #ddd; border-radius: 4px; font-size: 15px;">
-
-    <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #081835;">Sua mensagem:</label>
-    <textarea rows="6" placeholder="Escreva aqui o que você quer nos dizer..." style="width: 100%; padding: 12px; margin-bottom: 25px; border: 1px solid #ddd; border-radius: 4px; font-size: 15px; resize: vertical;"></textarea>
-
-    <button type="button" style="background-color: #081835; color: #ffffff; border: none; padding: 14px 30px; font-size: 16px; border-radius: 4px; cursor: pointer; width: 100%; font-weight: bold;">Enviar mensagem ✅</button>
-  </form>
-
-</main>
-
-<div style="height: 60px;"></div>
-
-<!-- 🦶 RODAPÉ EXATAMENTE IGUAL AO SEU SITE -->
-<footer style="background-color: #081835; color: #ffffff; padding: 50px 20px; width: 100%; box-sizing: border-box;">
-  <div style="max-width: 1400px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px;">
-    
-    <!-- Coluna 1: Logo e redes sociais -->
-    <div style="min-width: 220px;">
-      <img src="logo-bmc.png" alt="Logo BMC" style="height: 70px; margin-bottom: 15px;">
-      <p style="color: #ffffff; font-size: 16px; margin: 0 0 8px 0;">Bem-Estar da Minha Comunidade</p>
-      <p style="color: #b8b8b8; font-size: 14px; margin: 0 0 20px 0;">União, Acolhimento e Cuidado para Todos.</p>
-      <p style="color: #999999; font-size: 13px; margin: 0 0 15px 0;">Siga a BMC nas redes sociais</p>
+    <!-- 📬 Formulário de Contato -->
+    <div style="background-color: #ffffff; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); margin-bottom: 50px;">
       
-      <div style="display: flex; gap: 10px; margin-bottom: 25px;">
-        <span style="background: #1877F2; color: white; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: bold;">F</span>
-        <span style="background: #FF0000; color: white; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: bold;">▶</span>
-        <span style="background: #E4405F; color: white; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: bold;">IG</span>
-        <span style="background: #0A66C2; color: white; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: bold;">in</span>
-        <span style="background: #25D366; color: white; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: bold;">W</span>
+      <h2 style="font-size: 22px; color: #081835; margin-bottom: 25px;">Envie sua mensagem</h2>
+      
+      <form style="display: flex; flex-direction: column; gap: 18px;">
+        
+        <div>
+          <label style="display: block; font-weight: bold; color: #081835; margin-bottom: 8px;">Seu nome:</label>
+          <input type="text" placeholder="Digite seu nome completo" style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px; box-sizing: border-box;">
+        </div>
+
+        <div>
+          <label style="display: block; font-weight: bold; color: #081835; margin-bottom: 8px;">Seu e-mail ou telefone:</label>
+          <input type="text" placeholder="Seu e-mail ou WhatsApp" style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px; box-sizing: border-box;">
+        </div>
+
+        <div>
+          <label style="display: block; font-weight: bold; color: #081835; margin-bottom: 8px;">Assunto:</label>
+          <select style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px; background: white;">
+            <option>Dúvida sobre os serviços</option>
+            <option>Sugestão ou elogio</option>
+            <option>Quero ajudar / ser voluntário</option>
+            <option>Reportar um problema</option>
+            <option>Outro assunto</option>
+          </select>
+        </div>
+
+        <div>
+          <label style="display: block; font-weight: bold; color: #081835; margin-bottom: 8px;">Sua mensagem:</label>
+          <textarea rows="5" placeholder="Escreva aqui o que você precisa nos dizer..." style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px; box-sizing: border-box; resize: vertical;"></textarea>
+        </div>
+
+        <button type="button" style="background-color: #081835; color: #ffffff; border: none; padding: 14px 30px; font-size: 17px; font-weight: bold; border-radius: 4px; cursor: pointer; margin-top: 10px; align-self: flex-start;">✉️ Enviar mensagem</button>
+      </form>
+    </div>
+
+    <!-- 📋 Outras formas de contato -->
+    <div style="background-color: #f0f4f9; padding: 35px; border-radius: 8px; margin-bottom: 50px;">
+      <h2 style="font-size: 22px; color: #081835; margin-bottom: 25px;">Outras formas de nos encontrar</h2>
+      
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div style="display: flex; align-items: flex-start; gap: 15px;">
+          <span style="font-size: 24px;">📍</span>
+          <div>
+            <strong style="color: #081835;">Endereço</strong>
+            <p style="margin: 5px 0 0; color: #555;">Praça Principal do Bairro — Ferraz de Vasconcelos, SP</p>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: flex-start; gap: 15px;">
+          <span style="font-size: 24px;">📞</span>
+          <div>
+            <strong style="color: #081835;">Telefone / WhatsApp</strong>
+            <p style="margin: 5px 0 0; color: #555;">(11) 9XXXX-XXXX — Atendimento: Segunda a Sexta, das 8h às 17h</p>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: flex-start; gap: 15px;">
+          <span style="font-size: 24px;">✉️</span>
+          <div>
+            <strong style="color: #081835;">E-mail</strong>
+            <p style="margin: 5px 0 0; color: #555;">contato@bmc-comunidade.org.br</p>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: flex-start; gap: 15px;">
+          <span style="font-size: 24px;">🕒</span>
+          <div>
+            <strong style="color: #081835;">Horário de Atendimento</strong>
+            <p style="margin: 5px 0 0; color: #555;">Segunda a Sexta: 8h às 17h • Sábados: 9h às 13h</p>
+          </div>
+        </div>
       </div>
+    </div>
+
+    <!-- 💬 Mensagem de Encerramento -->
+    <div style="text-align: center; padding: 30px; border-top: 1px solid #eee;">
+      <p style="font-size: 16px; color: #555;">💛 <strong>Estamos sempre aqui por você e pela nossa comunidade.</strong><br>Sua voz importa para nós!</p>
+    </div>
+
+  </main>
+
+  <!-- ✅ RODAPÉ -->
+  <footer style="
+    background-color: #081835;
+    width: 100vw;
+    margin-left: calc((100% - 100vw) / 2);
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 40px 25px 30px;
+    box-sizing: border-box;
+  ">
+    <div style="max-width: 1400px; margin: 0 auto; display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 30px;">
       
-      <a href="fala-conosco.html" style="display: inline-block; background: #ffffff; color: #081835; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 15px;">📞 Fala Conosco</a>
+      <!-- Logomarca -->
+      <div>
+        <img src="logo-bmc.png" alt="BMC" style="height: 60px; margin-bottom: 10px;">
+        <p style="font-size: 15px; line-height: 1.5; color: #ffffff; margin-bottom: 20px;">
+          Bem-Estar da Minha Comunidade<br>
+          União, Acolhimento e Cuidado para Todos.
+        </p>
+        <p style="font-size: 14px; color: #ffffff; margin-bottom: 12px;">Siga a BMC nas redes sociais</p>
+        <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+          <a href="#" style="width: 36px; height: 36px; background-color: #1877F2; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; font-weight: bold; font-size: 18px; text-decoration: none;">f</a>
+          <a href="#" style="width: 36px; height: 36px; background-color: #FF0000; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; font-weight: bold; font-size: 16px; text-decoration: none;">▶</a>
+          <a href="#" style="width: 36px; height: 36px; background-color: #E4405F; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; font-weight: bold; font-size: 14px; text-decoration: none;">IG</a>
+          <a href="#" style="width: 36px; height: 36px; background-color: #0A66C2; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; font-weight: bold; font-size: 14px; text-decoration: none;">in</a>
+          <a href="#" style="width: 36px; height: 36px; background-color: #25D365; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; font-weight: bold; font-size: 16px; text-decoration: none;">W</a>
+        </div>
+      </div>
+
+      <!-- Categorias -->
+      <div>
+        <h4 style="font-size: 16px; font-weight: bold; color: #ffffff; margin-bottom: 15px; text-decoration: underline;">Categorias</h4>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="margin-bottom: 10px;"><a href="servicos.html" style="color: #ffffff; text-decoration: none;">Serviços</a></li>
+          <li style="margin-bottom: 10px;"><a href="eventos.html" style="color: #ffffff; text-decoration: none;">Eventos</a></li>
+          <li style="margin-bottom: 10px;"><a href="noticias.html" style="color: #ffffff; text-decoration: none;">Notícias</a></li>
+          <li style="margin-bottom: 10px;"><a href="guia.html" style="color: #ffffff; text-decoration: none;">Guia do Bairro</a></li>
+          <li style="margin-bottom: 10px;"><a href="galeria.html" style="color: #ffffff; text-decoration: none;">Galeria</a></li>
+        </ul>
+      </div>
+
+      <!-- Soluções -->
+      <div>
+        <h4 style="font-size: 16px; font-weight: bold; color: #ffffff; margin-bottom: 15px; text-decoration: underline;">Soluções</h4>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="margin-bottom: 10px;"><a href="#" style="color: #ffffff; text-decoration: none;">Solicitar Ajuda</a></li>
+          <li style="margin-bottom: 10px;"><a href="#" style="color: #ffffff; text-decoration: none;">Oferecer Ajuda</a></li>
+          <li style="margin-bottom: 10px;"><a href="#" style="color: #ffffff; text-decoration: none;">Centro de Acolhimento</a></li>
+          <li style="margin-bottom: 10px;"><a href="#" style="color: #ffffff; text-decoration: none;">Documentos e Regularização</a></li>
+          <li style="margin-bottom: 10px;"><a href="shows.html" style="color: #ffffff; text-decoration: none;">Shows e Eventos</a></li>
+          <li style="margin-bottom: 10px;"><a href="atividades-infantis.html" style="color: #ffffff; text-decoration: none;">Atividades Infantis</a></li>
+          <li style="margin-bottom: 10px;"><a href="#" style="color: #ffffff; text-decoration: none;">Comida Grátis e Barata</a></li>
+          <li style="margin-bottom: 10px;"><a href="avisos.html" style="color: #ffffff; text-decoration: none;">Avisos Importantes</a></li>
+        </ul>
+      </div>
+
+      <!-- Sobre -->
+      <div>
+        <h4 style="font-size: 16px; font-weight: bold; color: #ffffff; margin-bottom: 15px; text-decoration: underline;">Sobre</h4>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="margin-bottom: 10px;"><a href="quem-somos.html" style="color: #ffffff; text-decoration: none;">Quem Somos Nós</a></li>
+          <li style="margin-bottom: 10px;"><a href="fale-conosco.html" style="color: #ffffff; text-decoration: none; font-weight: bold;">Fale Conosco</a></li>
+          <li style="margin-bottom: 10px;"><a href="#" style="color: #ffffff; text-decoration: none;">Termos de Uso</a></li>
+        </ul>
+      </div>
     </div>
-    
-    <!-- Coluna 2: Categorias -->
-    <div style="min-width: 140px;">
-      <h4 style="color: #ffffff; font-size: 16px; text-decoration: underline; margin: 0 0 15px 0;">Categorias</h4>
-      <p style="margin: 8px 0;"><a href="servicos.html" style="color: #b0b0b0; text-decoration: none;">Serviços</a></p>
-      <p style="margin: 8px 0;"><a href="eventos.html" style="color: #b0b0b0; text-decoration: none;">Eventos</a></p>
-      <p style="margin: 8px 0;"><a href="#" style="color: #b0b0b0; text-decoration: none;">Notícias</a></p>
-      <p style="margin: 8px 0;"><a href="guia.html" style="color: #b0b0b0; text-decoration: none;">Guia do Bairro</a></p>
-      <p style="margin: 8px 0;"><a href="#" style="color: #b0b0b0; text-decoration: none;">Galeria</a></p>
+
+    <div style="max-width: 1400px; margin: 30px auto 0; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.2); font-size: 13px; color: #ffffff; text-align: center;">
+      © 2026 BMC — Bem-Estar da Minha Comunidade • 🇧🇷 Brasil • Todos os direitos reservados • Projeto Comunitário
     </div>
-    
-    <!-- Coluna 3: Soluções -->
-    <div style="min-width: 180px;">
-      <h4 style="color: #ffffff; font-size: 16px; text-decoration: underline; margin: 0 0 15px 0;">Soluções</h4>
-      <p style="margin: 8px 0;"><a href="#" style="color: #b0b0b0; text-decoration: none;">Solicitar Ajuda</a></p>
-      <p style="margin: 8px 0;"><a href="#" style="color: #b0b0b0; text-decoration: none;">Oferecer Ajuda</a></p>
-      <p style="margin: 8px 0;"><a href="#" style="color: #b0b0b0; text-decoration: none;">Centro de Acolhimento</a></p>
-      <p style="margin: 8px 0;"><a href="#" style="color: #b0b0b0; text-decoration: none;">Documentos e Regularização</a></p>
-      <p style="margin: 8px 0;"><a href="#" style="color: #b0b0b0; text-decoration: none;">Shows e Eventos</a></p>
-      <p style="margin: 8px 0;"><a href="#" style="color: #b0b0b0; text-decoration: none;">Atividades Infantis</a></p>
-      <p style="margin: 8px 0;"><a href="#" style="color: #b0b0b0; text-decoration: none;">Comida Grátis e Barata</a></p>
-      <p style="margin: 8px 0;"><a href="#" style="color: #b0b0b0; text-decoration: none;">Avisos Importantes</a></p>
-    </div>
-    
-    <!-- Coluna 4: Sobre -->
-    <div style="min-width: 130px;">
-      <h4 style="color: #ffffff; font-size: 16px; text-decoration: underline; margin: 0 0 15px 0;">Sobre</h4>
-      <p style="margin: 8px 0;"><a href="quem-somos.html" style="color: #b0b0b0; text-decoration: none;">Quem Somos</a></p>
-      <p style="margin: 8px 0;"><a href="fala-conosco.html" style="color: #b0b0b0; text-decoration: none;">Fala Conosco</a></p>
-      <p style="margin: 8px 0;"><a href="#" style="color: #b0b0b0; text-decoration: none;">Termos de Uso</a></p>
-    </div>
-  </div>
-  
-  <!-- Linha de copyright -->
-  <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.15);">
-    <p style="color: #888888; font-size: 14px; margin: 0;">© 2026 BMC — Bem-Estar da Minha Comunidade • 🇧🇷 Brasil • Todos os direitos reservados • Projeto Comunitário</p>
-  </div>
-</footer>
+  </footer>
 
 </body>
 </html>
