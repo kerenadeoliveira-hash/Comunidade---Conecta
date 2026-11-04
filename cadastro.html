@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Entrar / Cadastrar — BMC Comunidade Conecta</title>
+  <title>Acessar — BMC Comunidade Conecta</title>
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Arial', sans-serif;
+      font-family: 'Segoe UI', 'Arial', sans-serif;
     }
 
     body {
-      background-color: #f8f9fa;
+      background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -21,20 +21,20 @@
 
     /* ===== CABEÇALHO ===== */
     header {
-      background-color: #081835;
-      padding: 12px 40px;
+      background: #ffffff;
+      padding: 15px 40px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      box-shadow: 0 2px 10px rgba(8, 24, 53, 0.06);
       position: relative;
     }
 
     .logo img {
-      height: 55px;
+      height: 50px;
       width: auto;
     }
 
-    /* Botão X de fechar/sair */
     .btn-fechar {
       position: absolute;
       right: 25px;
@@ -42,11 +42,11 @@
       transform: translateY(-50%);
       background: #ffffff;
       color: #081835;
-      border: none;
+      border: 1.5px solid #cbd5e1;
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      font-size: 22px;
+      font-size: 20px;
       font-weight: bold;
       cursor: pointer;
       display: flex;
@@ -59,6 +59,7 @@
     .btn-fechar:hover {
       background: #e74c3c;
       color: #ffffff;
+      border-color: #e74c3c;
     }
 
     /* ===== CONTEÚDO PRINCIPAL ===== */
@@ -72,51 +73,48 @@
 
     .container {
       width: 100%;
-      max-width: 440px;
+      max-width: 420px;
     }
 
     .bloco {
       background: #ffffff;
-      padding: 40px 35px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(8, 24, 53, 0.12);
-      position: relative;
+      padding: 35px 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(8, 24, 53, 0.08);
+      display: none;
     }
 
-    .abas {
-      display: flex;
-      margin-bottom: 30px;
-      border-bottom: 2px solid #e8edf5;
+    .bloco.ativo {
+      display: block;
+      animation: aparecer 0.3s ease;
     }
 
-    .aba {
-      flex: 1;
-      padding: 12px;
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .bloco h1 {
+      font-size: 24px;
+      color: #081835;
       text-align: center;
-      font-size: 17px;
-      font-weight: 600;
-      color: #888;
-      cursor: pointer;
-      transition: all 0.2s;
-      border-bottom: 3px solid transparent;
+      margin-bottom: 8px;
     }
 
-    .aba.ativa {
-      color: #081835;
-      border-bottom-color: #081835;
-    }
-
-    .aba:hover {
-      color: #081835;
+    .subtitulo {
+      text-align: center;
+      color: #64748b;
+      font-size: 14px;
+      margin-bottom: 25px;
     }
 
     .form-grupo {
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     label {
       display: block;
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 600;
       color: #081835;
       margin-bottom: 8px;
@@ -127,33 +125,28 @@
     }
 
     .input-senha input {
-      padding-right: 50px;
+      padding-right: 45px;
     }
 
     .btn-olho {
       position: absolute;
-      right: 14px;
+      right: 12px;
       top: 50%;
       transform: translateY(-50%);
       background: none;
       border: none;
-      font-size: 20px;
+      font-size: 18px;
       cursor: pointer;
-      color: #666;
-      transition: color 0.2s;
-    }
-
-    .btn-olho:hover {
-      color: #081835;
+      color: #64748b;
     }
 
     input {
       width: 100%;
-      padding: 14px 16px;
-      border: 2px solid #e0e5eb;
+      padding: 12px 15px;
+      border: 2px solid #e2e8f0;
       border-radius: 8px;
       font-size: 15px;
-      transition: border-color 0.3s;
+      transition: border-color 0.2s;
     }
 
     input:focus {
@@ -166,30 +159,23 @@
       background: #fef2f2;
     }
 
-    .mensagem-erro {
-      color: #e74c3c;
-      font-size: 13px;
-      margin-top: 6px;
-      display: none;
-    }
-
     .btn-principal {
       width: 100%;
       background: linear-gradient(90deg, #081835, #1a3566);
       color: #ffffff;
       border: none;
-      padding: 15px;
-      font-size: 16px;
+      padding: 13px;
+      font-size: 15px;
       font-weight: 600;
       border-radius: 8px;
       cursor: pointer;
-      transition: all 0.3s;
-      margin-top: 10px;
+      transition: all 0.25s;
+      margin-top: 8px;
     }
 
     .btn-principal:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(8, 24, 53, 0.25);
+      box-shadow: 0 6px 16px rgba(8, 24, 53, 0.2);
     }
 
     .btn-principal:disabled {
@@ -198,13 +184,34 @@
       transform: none;
     }
 
+    .link {
+      text-align: center;
+      margin-top: 16px;
+      font-size: 14px;
+    }
+
+    .link a {
+      color: #081835;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .link a:hover {
+      text-decoration: underline;
+    }
+
+    .link-menor {
+      font-size: 13px;
+      color: #64748b;
+    }
+
     .aviso-erro {
       background: #fef2f2;
       border-left: 4px solid #e74c3c;
       color: #c0392b;
       padding: 12px 15px;
       border-radius: 6px;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       font-size: 14px;
       display: none;
     }
@@ -215,25 +222,26 @@
       color: #1e8449;
       padding: 12px 15px;
       border-radius: 6px;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       font-size: 14px;
       display: none;
+    }
+
+    .bloqueado {
+      background: #f4f4f4;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      color: #555;
+      display: none;
+      margin-bottom: 18px;
     }
 
     .tentativas {
       font-size: 13px;
       color: #888;
-      margin-top: 12px;
+      margin-top: 10px;
       text-align: center;
-    }
-
-    .bloqueado {
-      background: #f4f4f4;
-      padding: 25px;
-      border-radius: 8px;
-      text-align: center;
-      color: #555;
-      display: none;
     }
 
     /* ===== RODAPÉ ===== */
@@ -256,7 +264,7 @@
         padding: 12px 15px;
       }
       .bloco {
-        padding: 30px 20px;
+        padding: 25px 20px;
       }
     }
   </style>
@@ -271,48 +279,19 @@
     <a href="index.html" class="btn-fechar" title="Voltar para a página inicial">×</a>
   </header>
 
-  <!-- ✅ ÁREA DE LOGIN / CADASTRO -->
+  <!-- ✅ ÁREA PRINCIPAL -->
   <main>
     <div class="container">
-      <div class="bloco">
 
-        <!-- Avisos -->
-        <div class="aviso-erro" id="avisoErro"></div>
-        <div class="aviso-sucesso" id="avisoSucesso"></div>
-        <div class="bloqueado" id="blocoBloqueado">
-          <strong>🔒 Muitas tentativas falhas!</strong><br>
-          Aguarde <span id="tempoEspera">60</span> segundos antes de tentar novamente.
-        </div>
+      <!-- ✅ PÁGINA DE CADASTRO — APARECE PRIMEIRO -->
+      <div class="bloco ativo" id="paginaCadastro">
+        <h1>🌟 Crie sua conta</h1>
+        <p class="subtitulo">Faça parte da nossa comunidade. É rápido e gratuito!</p>
 
-        <!-- Abas -->
-        <div class="abas">
-          <div class="aba ativa" id="abaEntrar" onclick="mostrarFormulario('entrar')">Entrar</div>
-          <div class="aba" id="abaCadastro" onclick="mostrarFormulario('cadastro')">Não tenho conta</div>
-        </div>
+        <div class="aviso-erro" id="avisoErroCad"></div>
+        <div class="aviso-sucesso" id="avisoSucessoCad"></div>
 
-        <!-- FORMULÁRIO DE ENTRAR -->
-        <form id="formEntrar" onsubmit="fazerLogin(event)">
-          <div class="form-grupo">
-            <label for="login-email">Seu E-mail</label>
-            <input type="email" id="login-email" placeholder="seuemail@exemplo.com" required>
-          </div>
-
-          <div class="form-grupo">
-            <label for="login-senha">Sua Senha</label>
-            <div class="input-senha">
-              <input type="password" id="login-senha" placeholder="Digite sua senha" required>
-              <button type="button" class="btn-olho" onclick="mostrarSenha('login-senha', 'olho-login')">
-                <span id="olho-login">👁️</span>
-              </button>
-            </div>
-            <div class="tentativas" id="contadorTentativas">Tentativas restantes: <strong>5</strong></div>
-          </div>
-
-          <button type="submit" class="btn-principal" id="btnEntrar">🔑 Entrar na conta</button>
-        </form>
-
-        <!-- FORMULÁRIO DE CADASTRO -->
-        <form id="formCadastro" style="display: none;" onsubmit="fazerCadastro(event)">
+        <form onsubmit="fazerCadastro(event)">
           <div class="form-grupo">
             <label for="cad-nome">Nome Completo</label>
             <input type="text" id="cad-nome" placeholder="Digite seu nome completo" required>
@@ -321,6 +300,11 @@
           <div class="form-grupo">
             <label for="cad-email">Seu E-mail</label>
             <input type="email" id="cad-email" placeholder="seuemail@exemplo.com" required>
+          </div>
+
+          <div class="form-grupo">
+            <label for="cad-whatsapp">Seu WhatsApp (opcional)</label>
+            <input type="tel" id="cad-whatsapp" placeholder="(11) 9XXXX-XXXX">
           </div>
 
           <div class="form-grupo">
@@ -346,7 +330,73 @@
           <button type="submit" class="btn-principal">✅ Criar minha conta</button>
         </form>
 
+        <div class="link">
+          Já tem conta? <a href="#" onclick="mostrarLogin(event)">Fazer login →</a>
+        </div>
       </div>
+
+      <!-- ✅ PÁGINA DE LOGIN -->
+      <div class="bloco" id="paginaLogin">
+        <h1>🔑 Bem-vindo de volta!</h1>
+        <p class="subtitulo">Entre com seus dados para acessar sua conta</p>
+
+        <div class="aviso-erro" id="avisoErroLogin"></div>
+        <div class="aviso-sucesso" id="avisoSucessoLogin"></div>
+        <div class="bloqueado" id="blocoBloqueado">
+          <strong>🔒 Muitas tentativas falhas!</strong><br>
+          Aguarde <span id="tempoEspera">60</span> segundos antes de tentar novamente.
+        </div>
+
+        <form onsubmit="fazerLogin(event)">
+          <div class="form-grupo">
+            <label for="login-email">Seu E-mail</label>
+            <input type="email" id="login-email" placeholder="seuemail@exemplo.com" required>
+          </div>
+
+          <div class="form-grupo">
+            <label for="login-senha">Sua Senha</label>
+            <div class="input-senha">
+              <input type="password" id="login-senha" placeholder="Digite sua senha" required>
+              <button type="button" class="btn-olho" onclick="mostrarSenha('login-senha', 'olho-login')">
+                <span id="olho-login">👁️</span>
+              </button>
+            </div>
+            <div class="link link-menor" style="margin-top: 8px;">
+              <a href="#" onclick="mostrarEsqueciSenha(event)">Esqueci minha senha</a>
+            </div>
+            <div class="tentativas" id="contadorTentativas">Tentativas restantes: <strong>5</strong></div>
+          </div>
+
+          <button type="submit" class="btn-principal" id="btnEntrar">🔑 Entrar na conta</button>
+        </form>
+
+        <div class="link">
+          Ainda não tem conta? <a href="#" onclick="mostrarCadastro(event)">Criar cadastro →</a>
+        </div>
+      </div>
+
+      <!-- ✅ PÁGINA — ESQUECI MINHA SENHA -->
+      <div class="bloco" id="paginaEsqueci">
+        <h1>🔓 Recuperar senha</h1>
+        <p class="subtitulo">Digite seu e-mail cadastrado para ver sua senha</p>
+
+        <div class="aviso-erro" id="avisoErroEsqueci"></div>
+        <div class="aviso-sucesso" id="avisoSucessoEsqueci"></div>
+
+        <form onsubmit="recuperarSenha(event)">
+          <div class="form-grupo">
+            <label for="esqueci-email">Seu E-mail cadastrado</label>
+            <input type="email" id="esqueci-email" placeholder="seuemail@exemplo.com" required>
+          </div>
+
+          <button type="submit" class="btn-principal">📩 Recuperar minha senha</button>
+        </form>
+
+        <div class="link">
+          <a href="#" onclick="mostrarLogin(event)">← Voltar para o login</a>
+        </div>
+      </div>
+
     </div>
   </main>
 
@@ -356,31 +406,66 @@
     <p>&copy; 2025 Todos os direitos reservados. | Ferraz de Vasconcelos — SP</p>
   </footer>
 
-  <!-- ✅ JAVASCRIPT: SEGURANÇA E FUNCIONALIDADES -->
+  <!-- ✅ JAVASCRIPT — TUDO AQUI JUNTO! -->
   <script>
+    // ==========================================
+    // 💾 LOCALSTORAGE — SALVA DADOS PERMANENTEMENTE
+    // ==========================================
+    
+    // Salvar usuário no localStorage
+    function salvarUsuarioLocal(usuario) {
+      localStorage.setItem('usuarioCadastrado', JSON.stringify(usuario));
+    }
+
+    // Carregar dados salvos ao abrir a página
+    function carregarUsuarioLocal() {
+      const salvo = localStorage.getItem('usuarioCadastrado');
+      if (salvo) {
+        return JSON.parse(salvo);
+      }
+      return null;
+    }
+
+    // Carrega os dados salvos assim que a página abre
+    let usuarioCadastrado = carregarUsuarioLocal();
+    
     // Variáveis de segurança
     let tentativasRestantes = 5;
     let bloqueado = false;
 
-    // Alternar entre Entrar e Cadastro
-    function mostrarFormulario(tipo) {
-      document.getElementById('avisoErro').style.display = 'none';
-      document.getElementById('avisoSucesso').style.display = 'none';
-      
-      if (tipo === 'entrar') {
-        document.getElementById('formEntrar').style.display = 'block';
-        document.getElementById('formCadastro').style.display = 'none';
-        document.getElementById('abaEntrar').classList.add('ativa');
-        document.getElementById('abaCadastro').classList.remove('ativa');
-      } else {
-        document.getElementById('formEntrar').style.display = 'none';
-        document.getElementById('formCadastro').style.display = 'block';
-        document.getElementById('abaEntrar').classList.remove('ativa');
-        document.getElementById('abaCadastro').classList.add('ativa');
-      }
+    // ==========================================
+    // 🔄 TROCAR DE TELAS
+    // ==========================================
+    
+    function mostrarLogin(event) {
+      event.preventDefault();
+      limparMensagens();
+      document.getElementById('paginaCadastro').classList.remove('ativo');
+      document.getElementById('paginaEsqueci').classList.remove('ativo');
+      document.getElementById('paginaLogin').classList.add('ativo');
     }
 
-    // Mostrar / Esconder senha (botão do olho)
+    function mostrarCadastro(event) {
+      event.preventDefault();
+      limparMensagens();
+      document.getElementById('paginaLogin').classList.remove('ativo');
+      document.getElementById('paginaEsqueci').classList.remove('ativo');
+      document.getElementById('paginaCadastro').classList.add('ativo');
+    }
+
+    function mostrarEsqueciSenha(event) {
+      event.preventDefault();
+      limparMensagens();
+      document.getElementById('paginaLogin').classList.remove('ativo');
+      document.getElementById('paginaCadastro').classList.remove('ativo');
+      document.getElementById('paginaEsqueci').classList.add('ativo');
+      document.getElementById('avisoSucessoEsqueci').style.display = 'none';
+    }
+
+    // ==========================================
+    // 👁️ MOSTRAR / ESCONDER SENHA
+    // ==========================================
+    
     function mostrarSenha(idCampo, idIcone) {
       const campo = document.getElementById(idCampo);
       const icone = document.getElementById(idIcone);
@@ -394,120 +479,50 @@
       }
     }
 
-    // Mostrar mensagem de erro
-    function mostrarErro(mensagem) {
-      const aviso = document.getElementById('avisoErro');
+    // ==========================================
+    // 🧹 LIMPAR MENSAGENS
+    // ==========================================
+    
+    function limparMensagens() {
+      document.getElementById('avisoErroCad').style.display = 'none';
+      document.getElementById('avisoSucessoCad').style.display = 'none';
+      document.getElementById('avisoErroLogin').style.display = 'none';
+      document.getElementById('avisoSucessoLogin').style.display = 'none';
+      document.getElementById('avisoErroEsqueci').style.display = 'none';
+      document.getElementById('avisoSucessoEsqueci').style.display = 'none';
+    }
+
+    function mostrarErro(elemento, mensagem) {
+      const aviso = document.getElementById(elemento);
       aviso.textContent = mensagem;
       aviso.style.display = 'block';
-      document.getElementById('avisoSucesso').style.display = 'none';
     }
 
-    // Mostrar mensagem de sucesso
-    function mostrarSucesso(mensagem) {
-      const aviso = document.getElementById('avisoSucesso');
+    function mostrarSucesso(elemento, mensagem) {
+      const aviso = document.getElementById(elemento);
       aviso.textContent = mensagem;
       aviso.style.display = 'block';
-      document.getElementById('avisoErro').style.display = 'none';
     }
 
-    // Função de LOGIN com proteção de tentativas
-    function fazerLogin(event) {
-      event.preventDefault();
-      
-      if (bloqueado) return;
-      
-      const email = document.getElementById('login-email').value;
-      const senha = document.getElementById('login-senha').value;
-      
-      // Validação simples
-      if (!email || !senha) {
-        mostrarErro('⚠️ Preencha seu e-mail e senha, por favor.');
-        return;
-      }
-      
-      // SIMULAÇÃO de verificação — em um site real, isso é feito no servidor
-      // Por enquanto: apenas demonstração de segurança
-      tentativasRestantes--;
-      
-      if (tentativasRestantes > 0) {
-        document.querySelector('#contadorTentativas strong').textContent = tentativasRestantes;
-        mostrarErro(`❌ E-mail ou senha incorretos. Tentativas restantes: ${tentativasRestantes}`);
-        
-        // Limpa o campo de senha
-        document.getElementById('login-senha').value = '';
-        document.getElementById('login-senha').classList.add('erro');
-        setTimeout(() => {
-          document.getElementById('login-senha').classList.remove('erro');
-        }, 2000);
-      } else {
-        // BLOQUEIA por 60 segundos
-        bloquearAcesso();
-      }
-    }
-
-    // Bloqueio temporário após muitas tentativas
-    function bloquearAcesso() {
-      bloqueado = true;
-      document.getElementById('formEntrar').style.opacity = '0.4';
-      document.getElementById('btnEntrar').disabled = true;
-      document.getElementById('blocoBloqueado').style.display = 'block';
-      document.getElementById('avisoErro').style.display = 'none';
-      
-      let tempo = 60;
-      const contador = document.getElementById('tempoEspera');
-      
-      const cronometro = setInterval(() => {
-        tempo--;
-        contador.textContent = tempo;
-        
-        if (tempo <= 0) {
-          clearInterval(cronometro);
-          bloqueado = false;
-          tentativasRestantes = 5;
-          document.querySelector('#contadorTentativas strong').textContent = tentativasRestantes;
-          document.getElementById('formEntrar').style.opacity = '1';
-          document.getElementById('btnEntrar').disabled = false;
-          document.getElementById('blocoBloqueado').style.display = 'none';
-        }
-      }, 1000);
-    }
-
-    // Função de CADASTRO
+    // ==========================================
+    // ✅ CADASTRO
+    // ==========================================
+    
     function fazerCadastro(event) {
       event.preventDefault();
+      limparMensagens();
       
       const nome = document.getElementById('cad-nome').value;
       const email = document.getElementById('cad-email').value;
+      const whatsapp = document.getElementById('cad-whatsapp').value;
       const senha = document.getElementById('cad-senha').value;
       const confirma = document.getElementById('cad-confirma').value;
       
+      // Validações
       if (!nome || !email || !senha || !confirma) {
-        mostrarErro('⚠️ Preencha todos os campos, por favor.');
+        mostrarErro('avisoErroCad', '⚠️ Preencha todos os campos, por favor.');
         return;
       }
       
       if (senha.length < 6) {
-        mostrarErro('⚠️ A senha deve ter pelo menos 6 caracteres.');
-        return;
-      }
-      
-      if (senha !== confirma) {
-        mostrarErro('⚠️ As senhas não coincidem. Digite iguais nos dois campos.');
-        document.getElementById('cad-confirma').value = '';
-        return;
-      }
-      
-      // SIMULAÇÃO de cadastro bem-sucedido
-      mostrarSucesso('✅ Conta criada com sucesso! Você já pode entrar.');
-      
-      // Limpa o formulário
-      setTimeout(() => {
-        document.getElementById('formCadastro').reset();
-        mostrarFormulario('entrar');
-        mostrarSucesso('');
-      }, 2000);
-    }
-  </script>
-
-</body>
-</html>
+        mostrarErro('avisoErroCad', '⚠️ A senha deve ter pelo menos
