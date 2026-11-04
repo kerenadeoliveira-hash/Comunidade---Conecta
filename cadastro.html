@@ -1,92 +1,513 @@
 <!DOCTYPE html>
-<html lang="pt‑BR">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF‑8">
-  <meta name="viewport" content="width=device‑width, initial‑scale=1.0">
-  <title>Cadastrar‑se — Comunidade Conecta</title>
-  <link rel="stylesheet" href="estilos.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrar / Cadastrar — BMC Comunidade Conecta</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-color: #f8f9fa;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ===== CABEÇALHO ===== */
+    header {
+      background-color: #081835;
+      padding: 12px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .logo img {
+      height: 55px;
+      width: auto;
+    }
+
+    /* Botão X de fechar/sair */
+    .btn-fechar {
+      position: absolute;
+      right: 25px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #ffffff;
+      color: #081835;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 22px;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-fechar:hover {
+      background: #e74c3c;
+      color: #ffffff;
+    }
+
+    /* ===== CONTEÚDO PRINCIPAL ===== */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 440px;
+    }
+
+    .bloco {
+      background: #ffffff;
+      padding: 40px 35px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(8, 24, 53, 0.12);
+      position: relative;
+    }
+
+    .abas {
+      display: flex;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #e8edf5;
+    }
+
+    .aba {
+      flex: 1;
+      padding: 12px;
+      text-align: center;
+      font-size: 17px;
+      font-weight: 600;
+      color: #888;
+      cursor: pointer;
+      transition: all 0.2s;
+      border-bottom: 3px solid transparent;
+    }
+
+    .aba.ativa {
+      color: #081835;
+      border-bottom-color: #081835;
+    }
+
+    .aba:hover {
+      color: #081835;
+    }
+
+    .form-grupo {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-size: 15px;
+      font-weight: 600;
+      color: #081835;
+      margin-bottom: 8px;
+    }
+
+    .input-senha {
+      position: relative;
+    }
+
+    .input-senha input {
+      padding-right: 50px;
+    }
+
+    .btn-olho {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: #666;
+      transition: color 0.2s;
+    }
+
+    .btn-olho:hover {
+      color: #081835;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid #e0e5eb;
+      border-radius: 8px;
+      font-size: 15px;
+      transition: border-color 0.3s;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #081835;
+    }
+
+    input.erro {
+      border-color: #e74c3c;
+      background: #fef2f2;
+    }
+
+    .mensagem-erro {
+      color: #e74c3c;
+      font-size: 13px;
+      margin-top: 6px;
+      display: none;
+    }
+
+    .btn-principal {
+      width: 100%;
+      background: linear-gradient(90deg, #081835, #1a3566);
+      color: #ffffff;
+      border: none;
+      padding: 15px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-top: 10px;
+    }
+
+    .btn-principal:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(8, 24, 53, 0.25);
+    }
+
+    .btn-principal:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .aviso-erro {
+      background: #fef2f2;
+      border-left: 4px solid #e74c3c;
+      color: #c0392b;
+      padding: 12px 15px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      display: none;
+    }
+
+    .aviso-sucesso {
+      background: #f0f9f4;
+      border-left: 4px solid #27ae60;
+      color: #1e8449;
+      padding: 12px 15px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      display: none;
+    }
+
+    .tentativas {
+      font-size: 13px;
+      color: #888;
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    .bloqueado {
+      background: #f4f4f4;
+      padding: 25px;
+      border-radius: 8px;
+      text-align: center;
+      color: #555;
+      display: none;
+    }
+
+    /* ===== RODAPÉ ===== */
+    footer {
+      background-color: #081835;
+      color: #ffffff;
+      text-align: center;
+      padding: 25px 20px;
+      margin-top: auto;
+    }
+
+    footer p {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    /* ===== RESPONSIVO ===== */
+    @media (max-width: 480px) {
+      header {
+        padding: 12px 15px;
+      }
+      .bloco {
+        padding: 30px 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="cabecalho‑titulo">
-    <h2>Associação Comunidade Conecta — Projeto Bem‑Estar da Minha Comunidade © 2027</h2>
-    <p>Feito para o nosso bairro</p>
-  </div>
 
-  <!-- Cabeçalho -->
-    <header>
-<div class="logo‑bmc">
-  <img src="logo-bmc.png" alt="Logomarca BMC"class="logo">
-  <span>BMC</span>
-</div>
-<nav class="navegacao-principal">
-  <div class="links-menu">
-    <a href="index.html">Início</a>
-    <a href="perfil.html">Meu Perfil</a>
-    <a href="servicos.html">Serviços</a>
-    <a href="eventos.html">Eventos</a>
-    <a href="avisos.html">Avisos</a>
-    <a href="ajuda.html">Solicitar Ajuda</a>
-  </div>
-  <div class="links-acesso">
-  <a href="login.html" class="botao-acesso botao-entrar" id="botaoEntrar">Entrar</a>
-  <a href="cadastro.html" class="botao-acesso botao-cadastrar" id="botaoCadastrar">Cadastrar‑se</a>
-  <a href="#" class="botao-acesso botao-sair" id="botaoSair" style="display: none;">Sair</a>
-  </div>
-</nav>
-    </header>
- <!-- Conteúdo -->
+  <!-- ✅ CABEÇALHO COM LOGO E BOTÃO X -->
+  <header>
+    <div class="logo">
+      <img src="logo-bmc.png" alt="BMC Comunidade Conecta">
+    </div>
+    <a href="index.html" class="btn-fechar" title="Voltar para a página inicial">×</a>
+  </header>
+
+  <!-- ✅ ÁREA DE LOGIN / CADASTRO -->
   <main>
-    <div class="caixa login‑centro">
-      <h2>📝 Cadastrar‑se</h2>
-      <div>
-        <label>Nome completo</label>
-        <input type="text" id="nomeCadastro">
+    <div class="container">
+      <div class="bloco">
+
+        <!-- Avisos -->
+        <div class="aviso-erro" id="avisoErro"></div>
+        <div class="aviso-sucesso" id="avisoSucesso"></div>
+        <div class="bloqueado" id="blocoBloqueado">
+          <strong>🔒 Muitas tentativas falhas!</strong><br>
+          Aguarde <span id="tempoEspera">60</span> segundos antes de tentar novamente.
+        </div>
+
+        <!-- Abas -->
+        <div class="abas">
+          <div class="aba ativa" id="abaEntrar" onclick="mostrarFormulario('entrar')">Entrar</div>
+          <div class="aba" id="abaCadastro" onclick="mostrarFormulario('cadastro')">Não tenho conta</div>
+        </div>
+
+        <!-- FORMULÁRIO DE ENTRAR -->
+        <form id="formEntrar" onsubmit="fazerLogin(event)">
+          <div class="form-grupo">
+            <label for="login-email">Seu E-mail</label>
+            <input type="email" id="login-email" placeholder="seuemail@exemplo.com" required>
+          </div>
+
+          <div class="form-grupo">
+            <label for="login-senha">Sua Senha</label>
+            <div class="input-senha">
+              <input type="password" id="login-senha" placeholder="Digite sua senha" required>
+              <button type="button" class="btn-olho" onclick="mostrarSenha('login-senha', 'olho-login')">
+                <span id="olho-login">👁️</span>
+              </button>
+            </div>
+            <div class="tentativas" id="contadorTentativas">Tentativas restantes: <strong>5</strong></div>
+          </div>
+
+          <button type="submit" class="btn-principal" id="btnEntrar">🔑 Entrar na conta</button>
+        </form>
+
+        <!-- FORMULÁRIO DE CADASTRO -->
+        <form id="formCadastro" style="display: none;" onsubmit="fazerCadastro(event)">
+          <div class="form-grupo">
+            <label for="cad-nome">Nome Completo</label>
+            <input type="text" id="cad-nome" placeholder="Digite seu nome completo" required>
+          </div>
+
+          <div class="form-grupo">
+            <label for="cad-email">Seu E-mail</label>
+            <input type="email" id="cad-email" placeholder="seuemail@exemplo.com" required>
+          </div>
+
+          <div class="form-grupo">
+            <label for="cad-senha">Crie uma Senha</label>
+            <div class="input-senha">
+              <input type="password" id="cad-senha" placeholder="Mínimo 6 caracteres" required>
+              <button type="button" class="btn-olho" onclick="mostrarSenha('cad-senha', 'olho-cad')">
+                <span id="olho-cad">👁️</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="form-grupo">
+            <label for="cad-confirma">Repita a Senha</label>
+            <div class="input-senha">
+              <input type="password" id="cad-confirma" placeholder="Digite a senha novamente" required>
+              <button type="button" class="btn-olho" onclick="mostrarSenha('cad-confirma', 'olho-conf')">
+                <span id="olho-conf">👁️</span>
+              </button>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-principal">✅ Criar minha conta</button>
+        </form>
+
       </div>
-      <div>
-        <label>Nome:</label>label>
-        <input type="text"
-          Id="nomeCadastro">
-      </div>
-      <label>E‑mail</label>
-        <input type="email" id="emailCadastro">
-      </div>
-      <div>
-    <div class="senha-container">
-  <label>Senha:</label>
-  <input type="password" id="senhaCadastro" placeholder="Crie sua senha">
-  <span id="icone-olho" onclick="mostrarSenhaCadastro()">👁️</span>
-</div>
-      <button onclick="fazerCadastro()">CADASTRAR‑SE ✔</button>
-      <p>Já tem conta? <a href="login.html">Entre aqui</a></p>
     </div>
   </main>
 
-<script>
-function fazerCadastro(){
-  
-  const email = document.getElementById("emailCadastro").value;
-  const senha = document.getElementById("senhaCadastro").value;
-  const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+  <!-- ✅ RODAPÉ -->
+  <footer>
+    <p><strong>BMC — Comunidade Conecta</strong></p>
+    <p>&copy; 2025 Todos os direitos reservados. | Ferraz de Vasconcelos — SP</p>
+  </footer>
 
-  if (!email || !senha) {
-    alert("Preencha todos os campos");
-    return;
-  }
-  const jaExiste = usuarios.find(u => u.email === email);
-  if (jaExiste) {
-    alert("Esse e‑mail já está cadastrado");
-    return;
-  }
-  const novoUsuario = {.mn email, senha };
-  usuarios.push(novoUsuario);
-  localStorage.setItem("usuarios", JSON.stringify(usuarios));
-  localStorage.setItem("usuarioLogado", JSON.stringify(novoUsuario));
-  window.location.href = "perfil.html";
-}
-function mostrarSenhaCadastro() {
-  const campo = document.getElementById('senhaCadastro');
-  campo.type = campo.type === 'password' ? 'text' : 'password';
-}
-</script>
+  <!-- ✅ JAVASCRIPT: SEGURANÇA E FUNCIONALIDADES -->
+  <script>
+    // Variáveis de segurança
+    let tentativasRestantes = 5;
+    let bloqueado = false;
+
+    // Alternar entre Entrar e Cadastro
+    function mostrarFormulario(tipo) {
+      document.getElementById('avisoErro').style.display = 'none';
+      document.getElementById('avisoSucesso').style.display = 'none';
+      
+      if (tipo === 'entrar') {
+        document.getElementById('formEntrar').style.display = 'block';
+        document.getElementById('formCadastro').style.display = 'none';
+        document.getElementById('abaEntrar').classList.add('ativa');
+        document.getElementById('abaCadastro').classList.remove('ativa');
+      } else {
+        document.getElementById('formEntrar').style.display = 'none';
+        document.getElementById('formCadastro').style.display = 'block';
+        document.getElementById('abaEntrar').classList.remove('ativa');
+        document.getElementById('abaCadastro').classList.add('ativa');
+      }
+    }
+
+    // Mostrar / Esconder senha (botão do olho)
+    function mostrarSenha(idCampo, idIcone) {
+      const campo = document.getElementById(idCampo);
+      const icone = document.getElementById(idIcone);
+      
+      if (campo.type === 'password') {
+        campo.type = 'text';
+        icone.textContent = '🙈';
+      } else {
+        campo.type = 'password';
+        icone.textContent = '👁️';
+      }
+    }
+
+    // Mostrar mensagem de erro
+    function mostrarErro(mensagem) {
+      const aviso = document.getElementById('avisoErro');
+      aviso.textContent = mensagem;
+      aviso.style.display = 'block';
+      document.getElementById('avisoSucesso').style.display = 'none';
+    }
+
+    // Mostrar mensagem de sucesso
+    function mostrarSucesso(mensagem) {
+      const aviso = document.getElementById('avisoSucesso');
+      aviso.textContent = mensagem;
+      aviso.style.display = 'block';
+      document.getElementById('avisoErro').style.display = 'none';
+    }
+
+    // Função de LOGIN com proteção de tentativas
+    function fazerLogin(event) {
+      event.preventDefault();
+      
+      if (bloqueado) return;
+      
+      const email = document.getElementById('login-email').value;
+      const senha = document.getElementById('login-senha').value;
+      
+      // Validação simples
+      if (!email || !senha) {
+        mostrarErro('⚠️ Preencha seu e-mail e senha, por favor.');
+        return;
+      }
+      
+      // SIMULAÇÃO de verificação — em um site real, isso é feito no servidor
+      // Por enquanto: apenas demonstração de segurança
+      tentativasRestantes--;
+      
+      if (tentativasRestantes > 0) {
+        document.querySelector('#contadorTentativas strong').textContent = tentativasRestantes;
+        mostrarErro(`❌ E-mail ou senha incorretos. Tentativas restantes: ${tentativasRestantes}`);
+        
+        // Limpa o campo de senha
+        document.getElementById('login-senha').value = '';
+        document.getElementById('login-senha').classList.add('erro');
+        setTimeout(() => {
+          document.getElementById('login-senha').classList.remove('erro');
+        }, 2000);
+      } else {
+        // BLOQUEIA por 60 segundos
+        bloquearAcesso();
+      }
+    }
+
+    // Bloqueio temporário após muitas tentativas
+    function bloquearAcesso() {
+      bloqueado = true;
+      document.getElementById('formEntrar').style.opacity = '0.4';
+      document.getElementById('btnEntrar').disabled = true;
+      document.getElementById('blocoBloqueado').style.display = 'block';
+      document.getElementById('avisoErro').style.display = 'none';
+      
+      let tempo = 60;
+      const contador = document.getElementById('tempoEspera');
+      
+      const cronometro = setInterval(() => {
+        tempo--;
+        contador.textContent = tempo;
+        
+        if (tempo <= 0) {
+          clearInterval(cronometro);
+          bloqueado = false;
+          tentativasRestantes = 5;
+          document.querySelector('#contadorTentativas strong').textContent = tentativasRestantes;
+          document.getElementById('formEntrar').style.opacity = '1';
+          document.getElementById('btnEntrar').disabled = false;
+          document.getElementById('blocoBloqueado').style.display = 'none';
+        }
+      }, 1000);
+    }
+
+    // Função de CADASTRO
+    function fazerCadastro(event) {
+      event.preventDefault();
+      
+      const nome = document.getElementById('cad-nome').value;
+      const email = document.getElementById('cad-email').value;
+      const senha = document.getElementById('cad-senha').value;
+      const confirma = document.getElementById('cad-confirma').value;
+      
+      if (!nome || !email || !senha || !confirma) {
+        mostrarErro('⚠️ Preencha todos os campos, por favor.');
+        return;
+      }
+      
+      if (senha.length < 6) {
+        mostrarErro('⚠️ A senha deve ter pelo menos 6 caracteres.');
+        return;
+      }
+      
+      if (senha !== confirma) {
+        mostrarErro('⚠️ As senhas não coincidem. Digite iguais nos dois campos.');
+        document.getElementById('cad-confirma').value = '';
+        return;
+      }
+      
+      // SIMULAÇÃO de cadastro bem-sucedido
+      mostrarSucesso('✅ Conta criada com sucesso! Você já pode entrar.');
+      
+      // Limpa o formulário
+      setTimeout(() => {
+        document.getElementById('formCadastro').reset();
+        mostrarFormulario('entrar');
+        mostrarSucesso('');
+      }, 2000);
+    }
+  </script>
+
 </body>
 </html>
