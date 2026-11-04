@@ -368,13 +368,13 @@
         return;
       }
 
-      preview.innerHTML = `
-        <p><strong>👤 Nome:</strong> ${nome || '— não informado —'}</p>
-        <p><strong>✉️ E-mail:</strong> ${email || '— não informado —'}</p>
-        <p><strong>📞 Telefone:</strong> ${telefone || '— não informado —'}</p>
-        <p><strong>📍 Bairro:</strong> ${bairro || '— selecione um bairro —'}</p>
-        <p style="margin-top: 12px;"><strong>💬 Preciso de ajuda com:</strong></p>
-        <p style="background: #f1f3f5; padding: 10px; border-radius: 6px; margin-top: 5px;">${assunto || '— descreva sua necessidade —'}</p>
+        preview.innerHTML =
+  '<p><strong>👤 Nome:</strong> ' + (nome ? nome.value : '— não informado —') + '</p>' +
+  '<p><strong>✉️ E-mail:</strong> ' + (email ? email.value : '— não informado —') + '</p>' +
+  '<p><strong>📞 Telefone:</strong> ' + (telefone ? telefone.value : '— não informado —') + '</p>' +
+  '<p><strong>📍 Bairro:</strong> ' + (bairro ? bairro.value : '— selecione um bairro —') + '</p>' +
+  '<p style="margin-top: 12px;"><strong>💬 Preciso de ajuda com:</strong></p>' +
+  '<p style="background: #f1f3f5; padding: 10px; border-radius: 6px; margin-top: 5px;">' + (assunto ? assunto.value : '— descreva sua necessidade —') + '</p>';
       `;
     }
 
