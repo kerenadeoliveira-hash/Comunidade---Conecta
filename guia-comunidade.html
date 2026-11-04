@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia da Comunidade — BMC</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-color: #f8f9fa;
+      color: #333;
+      line-height: 1.7;
+    }
+
+    /* CABEÇALHO */
+    header {
+      background-color: #081835;
+      padding: 12px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo img {
+      height: 55px;
+      width: auto;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      display: block;
+      padding: 12px 20px;
+      background-color: #ffffff;
+      color: #081835;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 15px;
+      border-radius: 6px 6px 0 0;
+      transition: background-color 0.2s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background-color: #e8edf5;
+    }
+
+    /* CONTEÚDO PRINCIPAL */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 50px 20px;
+    }
+
+    .pagina-titulo {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .pagina-titulo h1 {
+      font-size: 36px;
+      color: #081835;
+      margin-bottom: 10px;
+    }
+
+    .pagina-titulo p {
+      font-size: 18px;
+      color: #666;
+    }
+
+    /* GRID DE QUADROS */
+    .quadros-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    /* ESTILO DE CADA QUADRO */
+    .quadro {
+      background-color: #e9ecef; /* cinza claro */
+      padding: 30px;
+      border-radius: 12px;
+      border-left: 4px solid #081835;
+    }
+
+    .quadro h2 {
+      font-size: 20px;
+      color: #081835;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #ced4da;
+    }
+
+    .quadro p {
+      font-size: 15px;
+      color: #444;
+      margin-bottom: 12px;
+    }
+
+    .quadro ul {
+      margin-left: 20px;
+      margin-bottom: 12px;
+    }
+
+    .quadro li {
+      font-size: 15px;
+      color: #444;
+      margin-bottom: 8px;
+    }
+
+    /* RODAPÉ */
+    footer {
+      background-color: #081835;
+      color: #ffffff;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 60px;
+    }
+
+    footer p {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    /* RESPONSIVO — vira 1 coluna no celular */
+    @media (max-width: 768px) {
+      .quadros-grid {
+        grid-template-columns: 1fr;
+      }
+      header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+      }
+      nav ul {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ CABEÇALHO -->
+  <header>
+    <div class="logo">
+      <img src="logo-bmc.png" alt="BMC">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="eventos.html">Eventos</a></li>
+        <li><a href="atividades-infantis.html">Crianças</a></li>
+        <li><a href="fale-conosco.html">Fale Conosco</a></li>
+        <li><a href="guia-comunidade.html" class="active">Guia da Comunidade</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ✅ CONTEÚDO PRINCIPAL -->
+  <main>
+    <div class="pagina-titulo">
+      <h1>📖 Guia da Comunidade</h1>
+      <p>Tudo o que você precisa saber para participar e fazer parte da nossa comunidade!</p>
+    </div>
+
+    <div class="quadros-grid">
+
+      <!-- 🟦 QUADRO 1 — Bem-vindo -->
+      <div class="quadro">
+        <h2>👋 Bem-vindo à Nossa Comunidade</h2>
+        <p>Este é o espaço de todos nós. Aqui, ninguém fica de fora. Nosso objetivo é criar um lugar acolhedor, onde cada pessoa é importante e pode contribuir para um bairro melhor para todos.</p>
+        <p>Seja você novo ou já daqui, este guia foi feito para te ajudar a conhecer tudo o que oferecemos e como você pode participar. A comunidade é feita por você e para você!</p>
+      </div>
+
+      <!-- 🟦 QUADRO 2 — Quem Somos -->
+      <div class="quadro">
+        <h2>🏛️ Quem Somos</h2>
+        <p>Somos uma iniciativa comunitária que conecta pessoas, famílias e organizações locais. Trabalhamos juntos para promover o bem-estar, a união e o desenvolvimento de todos que vivem aqui.</p>
+        <p><strong>Nossa Missão:</strong> Conectar pessoas, fortalecer laços e construir uma comunidade mais unida, justa e acolhedora.</p>
+        <p><strong>Nossa Visão:</strong> Um bairro onde todos têm oportunidades e ninguém fica para trás.</p>
+      </div>
+
+      <!-- 🟦 QUADRO 3 — O Que Fazemos -->
+      <div class="quadro">
+        <h2>📋 O Que Fazemos</h2>
+        <p>Oferecemos uma variedade de atividades e serviços para todas as idades:</p>
+        <ul>
+          <li>🎈 Eventos comunitários e festas</li>
+          <li>👨‍👩‍👧‍👦 Atividades para crianças e adolescentes</li>
+          <li>📚 Cursos e capacitações</li>
+          <li>🤝 Apoio e orientação familiar</li>
+          <li>📢 Informações e avisos importantes</li>
+          <li>💬 Espaço para diálogo e convivência</li>
+        </ul>
+      </div>
+
+      <!-- 🟦 QUADRO 4 — Como Participar -->
+      <div class="quadro">
+        <h2>🤝 Como Participar</h2>
+        <p>Participar é fácil e todos são bem-vindos!</p>
+        <ul>
+          <li><strong>📌 Compareça aos eventos:</strong> Confira a página de eventos e venha participar!</li>
+          <li><strong>📌 Seja voluntário:</strong> Tem um tempinho para ajudar? Entre em contato conosco!</li>
+          <li><strong>📌 Sugira ideias:</strong> Tem uma sugestão? Fale conosco — sua opinião importa!</li>
+          <li><strong>📌 Divulgue:</strong> Compartilhe nosso site e nossas iniciativas com seus vizinhos!</li>
+          <li><strong>📌 Participe das reuniões:</strong> Fique atento às datas e venha opinar.</li>
+        </ul>
+      </div>
+
+      <!-- 🟦 QUADRO 5 — Informações Úteis -->
+      <div class="quadro">
+        <h2>📍 Informações Úteis</h2>
+        <p><strong>Endereço:</strong><br>
+        Rua da Comunidade, 123 — Centro<br>
+        Ferraz de Vasconcelos — SP</p>
+        <br>
+        <p><strong>Horário de Atendimento:</strong><br>
+        Segunda a Sexta: 8h às 17h<br>
+        Sábados: 9h às 13h<br>
+        Domingos e feriados: fechado</p>
+        <br>
+        <p><strong>Contato:</strong><br>
+        Telefone: (11) 99999-1234<br>
+        E-mail: contato@bmc.org.br</p>
+      </div>
+
+      <!-- 🟦 QUADRO 6 — Perguntas Frequentes -->
+      <div class="quadro">
+        <h2>❓ Perguntas Frequentes</h2>
+        <p><strong>❔ Quem pode participar?</strong><br>
+        Todos! Não há restrição. É para toda a comunidade.</p>
+        <p><strong>❔ Tem custo para participar?</strong><br>
+        A maioria das atividades é gratuita. Quando houver custo, será informado com antecedência.</p>
+        <p><strong>❔ Como inscrever meu filho nas atividades?</strong><br>
+        Basta comparecer ao nosso espaço durante o horário de atendimento ou enviar uma mensagem pelo Fale Conosco.</p>
+        <p><strong>❔ Posso pedir ajuda?</strong><br>
+        Sim! Estamos aqui para ouvir e orientar. Entre em contato conosco.</p>
+      </div>
+
+      <!-- 🟦 QUADRO 7 — Regras de Convivência -->
+      <div class="quadro">
+        <h2>🤲 Regras de Convivência</h2>
+        <p>Para um ambiente harmonioso e acolhedor para todos:</p>
+        <ul>
+          <li>💛 Respeite a todos, independente de diferenças</li>
+          <li>🤝 Seja acolhedor e gentil com os outros</li>
+          <li>🗣️ Ouça com atenção e fale com respeito</li>
+          <li>🧹 Cuide dos espaços e materiais comuns</li>
+          <li>🛡️ Proteja a segurança das crianças e de todos</li>
+          <li>✨ Valorize a diversidade — ela é nossa riqueza!</li>
+        </ul>
+      </div>
+
+      <!-- 🟦 QUADRO 8 — Fale Conosco -->
+      <div class="quadro">
+        <h2>📬 Tem Mais Dúvidas?</h2>
+        <p>Ficou com alguma pergunta ou quer mais informações sobre algum assunto?</p>
+        <p>Não hesite em nos contatar! Estamos aqui para ajudar e ouvir você. Sua participação é o que faz nossa comunidade crescer.</p>
+        <p><strong>Acesse nossa página de Fale Conosco</strong> ou visite-nos pessoalmente durante o horário de atendimento.</p>
+        <p>Juntos somos mais fortes! 💪</p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ✅ RODAPÉ -->
+  <footer>
+    <p><strong>BMC — Comunidade Conecta</strong></p>
+    <p>&copy; 2025 Todos os direitos reservados. | Ferraz de Vasconcelos — SP</p>
+  </footer>
+
+</body>
+</html>
