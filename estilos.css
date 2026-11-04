@@ -17,7 +17,8 @@ header img {
 }
 /* Cabeçalho escuro‑azulado estilo profissional */
 header {
-  background‑color: #0D2C54;;
+  background‑color: #081835;
+  color: #ffffff;
   padding: 14px 22px;
   display: flex;
   align‑items: center;
@@ -100,12 +101,14 @@ footer a:hover {
 .navegacao-principal a {
   padding: 8px 10px;
   text-decoration: none;
+  color: #081835;
 }
 .navegacao-principal {
   display: flex;
   align-items: center;
   justify-content:space-between;
   padding: 12px 20px;
+  background-color: #ffffff;
 }
 .links-menu {
   flex: 1;
