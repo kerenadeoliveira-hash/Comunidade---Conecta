@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notícias — BMC Conecta</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: 'Segoe UI', Arial, sans-serif; 
+      color: #333; 
+      background-color: #f0f2f5; /* fundo cinza claro */
+    }
+
+    /* CABEÇALHO — IGUAL EM TODAS AS PÁGINAS */
+    header {
+      background-color: #081835;
+      color: #ffffff;
+      padding: 14px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo img { height: 58px; }
+    .menu-bar {
+      background-color: #ffffff;
+      padding: 6px 0;
+      border-radius: 6px;
+      flex: 1;
+      margin-left: 25px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .menu-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-wrap: nowrap;
+      padding: 0 12px;
+    }
+    .menu-nav a {
+      padding: 8px 12px;
+      font-size: 14px;
+      color: #081835;
+      text-decoration: none;
+      white-space: nowrap;
+      font-weight: 500;
+      border-radius: 4px;
+      transition: background-color 0.2s ease;
+    }
+    .menu-nav a:hover { background-color: rgba(8,24,53,0.08); }
+    .menu-nav a.ativo {
+      font-weight: bold;
+      border-bottom: 2px solid #081835;
+    }
+
+    /* DESTAQUE INICIAL DA PÁGINA */
+    .cabecalho-pagina {
+      background: linear-gradient(135deg, #081835 0%, #1a365d 100%);
+      color: white;
+      padding: 60px 20px 50px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cabecalho-pagina::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 40px;
+      background: linear-gradient(to top, #f0f2f5, transparent);
+    }
+    .cabecalho-pagina h1 {
+      font-size: clamp(28px, 6vw, 42px);
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+    .cabecalho-pagina h1 span {
+      color: #93c5fd;
+    }
+    .cabecalho-pagina p {
+      font-size: 17px;
+      opacity: 0.85;
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* CONTEÚDO PRINCIPAL */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    .destaque-principal {
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border-left: 5px solid #081835;
+    }
+    .destaque-principal .data {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+    .destaque-principal h2 {
+      font-size: 24px;
+      color: #081835;
+      margin-bottom: 15px;
+    }
+    .destaque-principal p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #444;
+    }
+
+    .grade-noticias {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .card-noticia {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-noticia:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    }
+    .card-imagem {
+      height: 140px;
+      background: linear-gradient(135deg, #081835, #1a365d);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+    }
+    .card-conteudo {
+      padding: 20px;
+    }
+    .card-data {
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 8px;
+    }
+    .card-conteudo h3 {
+      font-size: 17px;
+      color: #081835;
+      margin-bottom: 10px;
+    }
+    .card-conteudo p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #555;
+    }
+    .botao-leia {
+      display: inline-block;
+      margin-top: 12px;
+      color: #081835;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 2px solid #93c5fd;
+      padding-bottom: 2px;
+      transition: all 0.2s ease;
+    }
+    .botao-leia:hover {
+      border-bottom-color: #081835;
+    }
+
+    /* RODAPÉ — IGUAL EM TODAS AS PÁGINAS */
+    footer {
+      background-color: #081835;
+      color: #ffffff;
+      padding: 50px 30px;
+    }
+    .footer-conteudo {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+    }
+    .footer-logo { font-size: 22px; font-weight: bold; margin-bottom: 10px; }
+    .footer-desc { font-size: 14px; opacity: 0.8; line-height: 1.6; margin-bottom: 20px; }
+    .footer-redes { display: flex; gap: 12px; margin: 15px 0; }
+    .footer-redes a {
+      width: 36px; height: 36px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: white; text-decoration: none; font-size: 18px;
+    }
+    footer h4 { font-size: 16px; margin-bottom: 18px; text-transform: uppercase; }
+    footer ul { list-style: none; padding: 0; margin: 0; }
+    footer li { margin-bottom: 10px; }
+    footer a { color: #b8c7e0; text-decoration: none; font-size: 14px; }
+    footer a:hover { color: #ffffff; text-decoration: underline; }
+    .footer-fala-btn {
+      display: inline-block;
+      background: #ffffff;
+      color: #081835 !important;
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-weight: bold;
+      margin-top: 10px;
+      text-decoration: none;
+    }
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      margin-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 13px;
+      opacity: 0.7;
+    }
+    @media(max-width: 900px) {
+      .footer-conteudo { grid-template-columns: 1fr 1fr; }
+      .grade-noticias { grid-template-columns: 1fr; }
+    }
+    @media(max-width: 580px) {
+      .footer-conteudo { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- CABEÇALHO E LOGO -->
+<header>
+  <a href="index.html" style="text-decoration: none; display: flex; align-items: center;">
+    <img src="logo-bmc.png" alt="Logo BMC" style="height: 58px;">
+  </a>
+  <div class="menu-bar">
+    <nav class="menu-nav">
+      <a href="index.html">Início</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="#">Solicitar Ajuda</a>
+      <a href="#">Oferecer Ajuda</a>
+      <a href="eventos.html">Eventos</a>
+      <a href="shows.html">Shows</a>
+      <a href="atividades-infantis.html">Infantil</a>
+      <a href="noticias.html" class="ativo">Notícias</a>
+      <a href="avisos.html">Avisos</a>
+      <a href="galeria.html">Galeria</a>
+    </nav>
+  </div>
+</header>
+
+<!-- CABEÇALHO DA PÁGINA -->
+<section class="cabecalho-pagina">
+  <h1>📰 <span>Notícias</span> da Comunidade</h1>
+  <p>Fique por dentro de tudo que acontece no nosso bairro. Novidades, eventos e atualizações sempre aqui para você.</p>
+</section>
+
+<!-- CONTEÚDO PRINCIPAL -->
+<main class="container">
+
+  <!-- DESTAQUE PRINCIPAL -->
+  <div class="destaque-principal">
+    <div class="data">📅 04 de Novembro de 2026</div>
+    <h2>🎊 BMC: Um espaço que é nosso, feito por nós e para nós!</h2>
+    <p>É com muita alegria que abrimos este espaço para todos os moradores do nosso bairro. Aqui você encontra serviços locais, acompanha eventos, fica por dentro das notícias e pode contar com o apoio de quem mora pertinho. Juntos somos mais fortes! 💙</p>
+  </div>
+
+  <!-- TÍTULO DA GRADE -->
+  <h2 style="font-size: 22px; color: #081835; margin-bottom: 25px;">📢 Novidades Recentes</h2>
+
+  <!-- GRADE DE NOTÍCIAS -->
+  <div class="grade-noticias">
+    
+    <div class="card-noticia">
+      <div class="card-imagem">🏫</div>
+      <div class="card-conteudo">
+        <div class="card-data">03 de Novembro — 10h30</div>
+        <h3>Posto de Saúde com horário estendido</h3>
+        <p>A partir desta semana, o posto de saúde funcionará até às 19h nas terças e quintas-feiras.</p>
+        <a href="#" class="botao-leia">Leia mais →</a>
+      </div>
+    </div>
+
+    <div class="card-noticia">
+      <div class="card-imagem">🎤</div>
+      <div class="card-conteudo">
+        <div class="card-data">02 de Novembro — 14h00</div>
+        <h3>Festa do bairro: confirme a data!</h3>
+        <p>Estamos preparando uma grande festa para todos os moradores. Anote na sua agenda!</p>
+        <a href="#" class="botao-leia">Leia mais →</a>
+      </div>
+    </div>
+
+    <div class="card-noticia">
+      <div class="card-imagem">🚌</div>
+      <div class="card-conteudo">
+        <div class="card-data">01 de Novembro — 08h15</div>
+        <h3>Linha de ônibus ganha novo horário</h3>
+        <p>A linha que passa pela nossa rua terá horários ajustados a partir de segunda-feira.</p>
+        <a href="#" class="botao-leia">Leia mais →</a>
+      </div>
+    </div>
+
+    <div class="card-noticia">
+      <div class="card-imagem">📚</div>
+      <div class="card-conteudo">
+        <div class="card-data">31 de Outubro — 16h45</div>
+        <h3>Campanha de arrecadação de livros</h3>
+        <p>Estamos juntando livros para criar uma pequena biblioteca comunitária no bairro.</p>
+        <a href="#" class="botao-leia">Leia mais →</a>
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+<!-- RODAPÉ -->
+<footer>
+  <div class="footer-conteudo">
+    <div>
+      <div class="footer-logo">BMC</div>
+      <div><strong>Bem-Estar da Minha Comunidade</strong></div>
+      <p class="footer-desc">União, Acolhimento e Cuidado para Todos.</p>
+      <p class="footer-desc">Siga a BMC nas redes sociais</p>
+      <div class="footer-redes">
+        <a href="#" title="Facebook">f</a>
+        <a href="#" title="YouTube">▶</a>
+        <a href="#" title="Instagram">IG</a>
+        <a href="#" title="WhatsApp">W</a>
+      </div>
+      <a href="fale-conosco.html" class="footer-fala-btn">📞 Fala Conosco</a>
+    </div>
+    <div>
+      <h4>Categorias</h4>
+      <ul>
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="eventos.html">Eventos</a></li>
+        <li><a href="noticias.html">Notícias</a></li>
+        <li><a href="avisos.html">Avisos Importantes</a></li>
+        <li><a href="galeria.html">Galeria</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Soluções</h4>
+      <ul>
+        <li><a href="#">Solicitar Ajuda</a></li>
+        <li><a href="#">Oferecer Ajuda</a></li>
+        <li><a href="documentos.html">Documentos</a></li>
+        <li><a href="shows.html">Shows e Eventos</a></li>
+        <li><a href="comida-gratis.html">Comida Grátis</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Sobre</h4>
+      <ul>
+        <li><a href="quem-somos.html">Quem Somos</a></li>
+        <li><a href="fale-conosco.html">Fala Conosco</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 — BMC — Bem-Estar da Minha Comunidade 🇧🇷 Brasil • Todos os direitos reservados
+  </div>
+</footer>
+
+</body>
+</html>
