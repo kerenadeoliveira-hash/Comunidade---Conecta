@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitar Ajuda — BMC Comunidade Conecta</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-color: #f8f9fa;
+      color: #333;
+      line-height: 1.7;
+    }
+
+    /* CABEÇALHO */
+    header {
+      background-color: #081835;
+      padding: 12px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo img {
+      height: 55px;
+      width: auto;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      display: block;
+      padding: 12px 20px;
+      background-color: #ffffff;
+      color: #081835;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 15px;
+      border-radius: 6px 6px 0 0;
+      transition: background-color 0.2s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background-color: #e8edf5;
+    }
+
+    /* CONTEÚDO PRINCIPAL */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 50px 20px;
+    }
+
+    .pagina-titulo {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .pagina-titulo h1 {
+      font-size: 32px;
+      color: #081835;
+      margin-bottom: 10px;
+    }
+
+    .pagina-titulo p {
+      font-size: 17px;
+      color: #666;
+    }
+
+    .conteudo-grid {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 30px;
+    }
+
+    /* FORMULÁRIO */
+    .form-bloco {
+      background: #ffffff;
+      padding: 35px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(8, 24, 53, 0.08);
+    }
+
+    .form-bloco h2 {
+      font-size: 22px;
+      color: #081835;
+      margin-bottom: 25px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #e8edf5;
+    }
+
+    .grupo-form {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-size: 15px;
+      font-weight: 600;
+      color: #081835;
+      margin-bottom: 8px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid #e0e5eb;
+      border-radius: 8px;
+      font-size: 15px;
+      transition: border-color 0.3s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #081835;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    button {
+      background: linear-gradient(90deg, #081835, #1a3566);
+      color: #ffffff;
+      border: none;
+      padding: 15px 40px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      width: 100%;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(8, 24, 53, 0.25);
+    }
+
+    /* 👁️ ÁREA DE PRÉ-VISÃO — LADO DIREITO */
+    .preview-bloco {
+      background-color: #e9ecef;
+      padding: 25px;
+      border-radius: 12px;
+      border-left: 4px solid #081835;
+      height: fit-content;
+      position: sticky;
+      top: 30px;
+    }
+
+    .preview-bloco h3 {
+      font-size: 18px;
+      color: #081835;
+      margin-bottom: 15px;
+    }
+
+    .preview-caixa {
+      background: #ffffff;
+      padding: 18px;
+      border-radius: 8px;
+      min-height: 200px;
+      font-size: 14px;
+      color: #444;
+    }
+
+    .preview-vazio {
+      color: #999;
+      font-style: italic;
+    }
+
+    /* 💡 SUGESTÕES RÁPIDAS */
+    .sugestoes-bloco {
+      margin-top: 25px;
+    }
+
+    .sugestoes-bloco h3 {
+      font-size: 17px;
+      color: #081835;
+      margin-bottom: 12px;
+    }
+
+    .sugestao-btn {
+      display: inline-block;
+      background: #ffffff;
+      border: 1px solid #ced4da;
+      color: #081835;
+      padding: 8px 14px;
+      margin: 5px;
+      border-radius: 20px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .sugestao-btn:hover {
+      background: #081835;
+      color: #ffffff;
+      border-color: #081835;
+    }
+
+    /* RODAPÉ */
+    footer {
+      background-color: #081835;
+      color: #ffffff;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 60px;
+    }
+
+    footer p {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 900px) {
+      .conteudo-grid {
+        grid-template-columns: 1fr;
+      }
+      .preview-bloco {
+        position: static;
+      }
+      header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+      }
+      nav ul {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ CABEÇALHO -->
+  <header>
+    <div class="logo">
+      <img src="logo-bmc.png" alt="BMC Comunidade Conecta">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="eventos.html">Eventos</a></li>
+        <li><a href="atividades-infantis.html">Crianças</a></li>
+        <li><a href="guia-comunidade.html">Guia da Comunidade</a></li>
+        <li><a href="solicitar-ajuda.html" class="active">Solicitar Ajuda</a></li>
+        <li><a href="fale-conosco.html">Fale Conosco</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ✅ CONTEÚDO PRINCIPAL -->
+  <main>
+    <div class="pagina-titulo">
+      <h1>🤝 Solicitar Ajuda</h1>
+      <p>Precisa de apoio? Preencha o formulário abaixo. Estamos aqui para ouvir você e ajudar da melhor forma possível.</p>
+    </div>
+
+    <div class="conteudo-grid">
+      
+      <!-- 📝 FORMULÁRIO -->
+      <div class="form-bloco">
+        <h2>Preencha seus Dados</h2>
+        
+        <form action="https://formspree.io/f/seu-codigo-aqui" method="POST" id="formAjuda">
+          
+          <div class="grupo-form">
+            <label for="nome">Seu Nome Completo *</label>
+            <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo" oninput="atualizarPreview()">
+          </div>
+
+          <div class="grupo-form">
+            <label for="email">Seu E-mail</label>
+            <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" oninput="atualizarPreview()">
+          </div>
+
+          <div class="grupo-form">
+            <label for="telefone">Seu WhatsApp / Telefone *</label>
+            <input type="tel" id="telefone" name="telefone" required placeholder="(11) 9XXXX-XXXX" oninput="atualizarPreview()">
+          </div>
+
+          <div class="grupo-form">
+            <label for="bairro">Seu Bairro *</label>
+            <select id="bairro" name="bairro" required onchange="atualizarPreview()">
+              <option value="">Selecione seu bairro...</option>
+              <option value="Centro">Centro</option>
+              <option value="Vila Nossa Senhora da Conceição">Vila Nossa Senhora da Conceição</option>
+              <option value="Vila São José">Vila São José</option>
+              <option value="Vila Santa Terezinha">Vila Santa Terezinha</option>
+              <option value="Parque São Paulo">Parque São Paulo</option>
+              <option value="Jardim Imperador">Jardim Imperador</option>
+              <option value="Jardim Santa Bárbara">Jardim Santa Bárbara</option>
+              <option value="Vila Paraíso">Vila Paraíso</option>
+              <option value="Outro">Outro bairro</option>
+            </select>
+          </div>
+
+          <div class="grupo-form">
+            <label for="assunto">Em que podemos ajudar? *</label>
+            <textarea id="assunto" name="assunto" required placeholder="Descreva brevemente o que você precisa..." oninput="atualizarPreview()"></textarea>
+          </div>
+
+          <!-- 💡 SUGESTÕES RÁPIDAS -->
+          <div class="sugestoes-bloco">
+            <h3>💡 Clique para preencher rapidamente:</h3>
+            <span class="sugestao-btn" onclick="adicionarTexto('Preciso de orientação sobre benefícios sociais')">Benefícios Sociais</span>
+            <span class="sugestao-btn" onclick="adicionarTexto('Preciso de ajuda com alimentos ou cestas básicas')">Cesta Básica</span>
+            <span class="sugestao-btn" onclick="adicionarTexto('Preciso de vaga em creche ou escola')">Vaga na Escola/Creche</span>
+            <span class="sugestao-btn" onclick="adicionarTexto('Preciso de atendimento médico ou orientação de saúde')">Saúde</span>
+            <span class="sugestao-btn" onclick="adicionarTexto('Preciso de indicação de cursos ou capacitação')">Cursos e Emprego</span>
+            <span class="sugestao-btn" onclick="adicionarTexto('Tenho uma emergência e preciso de orientação urgente')">Emergência</span>
+            <span class="sugestao-btn" onclick="adicionarTexto('Outra necessidade — preciso conversar com alguém')">Outro assunto</span>
+          </div>
+
+          <br>
+          <button type="submit">📤 Enviar Solicitação de Ajuda</button>
+        </form>
+      </div>
+
+      <!-- 👁️ ÁREA DE PRÉ-VISÃO DO LADO -->
+      <div class="preview-bloco">
+        <h3>👁️ Como sua solicitação vai aparecer</h3>
+        <div class="preview-caixa" id="previewCaixa">
+          <span class="preview-vazio">Comece a preencher o formulário ao lado para ver aqui como ficará sua solicitação...</span>
+        </div>
+
+        <div style="margin-top: 20px; padding: 15px; background: #fff3cd; border-radius: 8px; font-size: 13px;">
+          <strong>📌 Importante:</strong><br>
+          Suas informações serão mantidas em sigilo. Entraremos em contato com você em até 48 horas úteis. Se for uma emergência, ligue para: <strong>(11) 99999-1234</strong>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ✅ RODAPÉ -->
+  <footer>
+    <p><strong>BMC — Comunidade Conecta</strong></p>
+    <p>&copy; 2025 Todos os direitos reservados. | Ferraz de Vasconcelos — SP</p>
+  </footer>
+
+  <!-- ✅ JAVASCRIPT — Pré-visualização e Sugestões -->
+  <script>
+    // 👁️ Atualiza a pré-visualização conforme digita
+    function atualizarPreview() {
+      const nome = document.getElementById('nome').value;
+      const email = document.getElementById('email').value;
+      const telefone = document.getElementById('telefone').value;
+      const bairro = document.getElementById('bairro').value;
+      const assunto = document.getElementById('assunto').value;
+      const preview = document.getElementById('previewCaixa');
+
+      if (!nome && !telefone && !assunto) {
+        preview.innerHTML = '<span class="preview-vazio">Comece a preencher o formulário ao lado para ver aqui como ficará sua solicitação...</span>';
+        return;
+      }
+
+      preview.innerHTML = `
+        <p><strong>👤 Nome:</strong> ${nome || '— não informado —'}</p>
+        <p><strong>✉️ E-mail:</strong> ${email || '— não informado —'}</p>
+        <p><strong>📞 Telefone:</strong> ${telefone || '— não informado —'}</p>
+        <p><strong>📍 Bairro:</strong> ${bairro || '— selecione um bairro —'}</p>
+        <p style="margin-top: 12px;"><strong>💬 Preciso de ajuda com:</strong></p>
+        <p style="background: #f1f3f5; padding: 10px; border-radius: 6px; margin-top: 5px;">${assunto || '— descreva sua necessidade —'}</p>
+      `;
+    }
+
+    // 💡 Adiciona o texto da sugestão clicada
+    function adicionarTexto(texto) {
+      const campo = document.getElementById('assunto');
+      campo.value = texto;
+      atualizarPreview();
+      campo.focus();
+    }
+  </script>
+
+</body>
+</html>
