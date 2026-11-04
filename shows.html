@@ -1,192 +1,196 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shows e Eventos — BMC Conecta</title>
+  <title>Shows e Apresentações — BMC</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Segoe UI', Arial, sans-serif; color: #333; background-color: #fcfcfc; }
-
-    /* CABEÇALHO */
-    header {
-      background-color: #081835;
-      color: #ffffff;
-      padding: 14px 30px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .logo img { height: 58px; }
-    .menu-bar {
-      background-color: #ffffff;
-      padding: 6px 0;
-      border-radius: 6px;
-      flex: 1;
-      margin-left: 25px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-    .menu-nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      flex-wrap: nowrap;
-      padding: 0 12px;
-    }
-    .menu-nav a {
-      padding: 8px 12px;
-      font-size: 14px;
-      color: #081835;
-      text-decoration: none;
-      white-space: nowrap;
-      font-weight: 500;
-      border-radius: 4px;
-      transition: background-color 0.2s ease;
-    }
-    .menu-nav a:hover { background-color: rgba(8,24,53,0.08); }
-    .menu-nav a.ativo {
-      font-weight: bold;
-      border-bottom: 2px solid #081835;
-    }
-
-    /* 🎠 CARROSSEL DE INSPIRAÇÃO */
-    .hero-show {
-      background: linear-gradient(135deg, #081835 0%, #1a365d 50%, #081835 100%);
-      color: #ffffff;
-      padding: 80px 30px 100px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-conteudo { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; min-height: 280px; }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+    body { line-height: 1.6; color: #333; background-color: #f8f9fa; }
+    a { text-decoration: none; }
     
-    .slide {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100%;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-      pointer-events: none;
+    .rodape { background-color: #081835; color: #ffffff; padding: 40px 20px; text-align: center; margin-top: 60px; }
+    .rodape p { margin: 8px 0; font-size: 15px; }
+    .rodape a { color: #7ec8e3; }
+    
+    @media (max-width: 768px) {
+      header div { flex-direction: column; gap: 15px; }
+      nav a { margin: 5px; }
+      .shows-grid { grid-template-columns: 1fr !important; }
     }
-    .slide.ativo {
-      opacity: 1;
-      pointer-events: auto;
-    }
+  </style>
+</head>
+<body>
 
-    .hero-emoji { font-size: 48px; margin-bottom: 20px; }
-    .hero-show h1 {
-      font-size: clamp(28px, 5vw, 42px);
-      line-height: 1.2;
-      margin-bottom: 20px;
-      letter-spacing: 1px;
-    }
-    .hero-show h1 span {
-      background: linear-gradient(90deg, #6ed3ff, #ffffff, #6ed3ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .hero-subtitulo {
-      font-size: 18px;
-      line-height: 1.8;
-      opacity: 0.85;
-      max-width: 700px;
-      margin: 0 auto;
-    }
+<!-- ✅ CABEÇALHO IDÊNTICO -->
+<header style="position: relative; background-color: #081835; padding: 10px 30px; width: 100%; box-sizing: border-box;">
+  <div style="max-width: 1400px; margin: 0 auto; display: flex; align-items: center; gap: 90px; flex-wrap: wrap;">
+    <a href="index.html" style="text-decoration: none; display: flex; align-items: center;">
+      <img src="logo-bmc.png" alt="Logo BMC" style="height: 55px; width: auto;">
+    </a>
+    <nav style="display: flex; gap: 30px; flex-wrap: wrap;">
+      <a href="index.html" style="color: #ffffff; font-size: 16px; padding: 8px 0;">Início</a>
+      <a href="servicos.html" style="color: #ffffff; font-size: 16px; padding: 8px 0;">Serviços</a>
+      <a href="#" style="color: #ffffff; font-size: 16px; padding: 8px 0;">Solicitar Ajuda</a>
+      <a href="#" style="color: #ffffff; font-size: 16px; padding: 8px 0;">Oferecer Ajuda</a>
+      <a href="eventos.html" style="color: #ffffff; font-size: 16px; padding: 8px 0;">Eventos</a>
+      <a href="shows.html" style="color: #ffffff; font-size: 16px; padding: 8px 0; font-weight: bold; border-bottom: 2px solid #fff;">Shows</a>
+      <a href="atividades-infantis.html" style="color: #ffffff; font-size: 16px; padding: 8px 0;">Infantil</a>
+      <a href="noticias.html" style="color: #ffffff; font-size: 16px; padding: 8px 0;">Notícias</a>
+      <a href="avisos.html" style="color: #ffffff; font-size: 16px; padding: 8px 0;">Avisos Importantes</a>
+    </nav>
+  </div>
+  <a href="index.html" style="
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 999;
+  ">✕</a>
+</header>
 
-    /* Pontinhos indicadores */
-    .indicadores {
-      position: absolute;
-      bottom: 50px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 12px;
-      z-index: 3;
-    }
-    .ponto {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.25);
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    .ponto.ativo {
-      background: #ffffff;
-      transform: scale(1.2);
-    }
+<!-- 📰 CABEÇALHO DA PÁGINA — ESTILO JORNALÍSTICO -->
+<section style="background: linear-gradient(180deg, #081835 0%, #1a3a6e 100%); padding: 70px 20px 50px; text-align: center; color: #ffffff;">
+  <div style="max-width: 800px; margin: 0 auto;">
+    <p style="font-size: 16px; letter-spacing: 3px; text-transform: uppercase; opacity: 0.8; margin-bottom: 15px;">Comunidade BMC Apresenta</p>
+    <h1 style="font-size: 42px; font-weight: bold; margin-bottom: 20px; line-height: 1.2;">🎤 Shows &<br>Apresentações Culturais</h1>
+    <p style="font-size: 18px; max-width: 600px; margin: 0 auto; opacity: 0.95;">A programação oficial dos eventos artísticos e musicais do nosso bairro. Informações, datas e locais confirmados para você não perder nenhuma apresentação.</p>
+    <div style="width: 80px; height: 4px; background: #fff; margin: 25px auto; border-radius: 2px;"></div>
+  </div>
+</section>
 
-    .onda {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      line-height: 0;
-    }
-    .onda svg { width: 100%; height: 60px; }
-
-    /* GALERIA */
-    .secao { max-width: 1400px; margin: 60px auto; padding: 0 30px; }
-    .secao-titulo {
-      text-align: center;
-      font-size: 28px;
-      color: #081835;
-      margin-bottom: 10px;
-    }
-    .secao-linha {
-      width: 100px;
-      height: 4px;
-      background: linear-gradient(90deg, #081835, #3469a8);
-      margin: 0 auto 40px;
-      border-radius: 2px;
-    }
-    .galeria {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
-    }
-    .galeria-item {
-      position: relative;
-      overflow: hidden;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(8,24,53,0.12);
-      aspect-ratio: 16/10;
-    }
-    .galeria-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-    }
-    .galeria-item:hover img { transform: scale(1.05); }
-    .galeria-label {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      background: linear-gradient(transparent, rgba(8,24,53,0.85));
-      color: white;
-      padding: 30px 15px 15px;
-      font-size: 15px;
-      font-weight: 500;
-    }
-
-    /* RODAPÉ */
-    footer {
-      background-color: #081835;
+<!-- 🎥 CANAL DO YOUTUBE -->
+<section style="max-width: 1000px; margin: 50px auto; padding: 0 20px;">
+  <div style="background: #ffffff; border: 2px solid #e5e5e5; border-radius: 8px; padding: 35px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+    <h2 style="color: #081835; font-size: 26px; margin-bottom: 12px;">📺 Transmissões ao Vivo</h2>
+    <p style="font-size: 16px; color: #555; margin-bottom: 25px;">Assista também pelo nosso canal oficial no YouTube</p>
+    <a href="https://www.youtube.com/" target="_blank" style="
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background-color: #FF0000;
       color: #ffffff;
-      padding: 50px 30px;
-      margin-top: 80px;
-    }
-    .footer-conteudo {
-      max-width: 1400px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 40px;
-    }
-    .footer-logo { font-size: 22px; font-weight: bold; margin-bottom: 10px; }
-    .footer-desc { font-size: 14px; opacity: 0.8; line-height: 1.6; margin-bottom: 20px; }
-    .footer-redes { display: flex; gap: 12px; margin: 15px 0; }
-    .footer-redes a {
-      width: 36px; height: 36px;
-      background...
+      font-size: 18px;
+      font-weight: bold;
+      padding: 14px 35px;
+      border-radius: 6px;
+      transition: 0.3s;
+    ">▶ Acessar Canal no YouTube</a>
+  </div>
+</section>
+
+<!-- 🟦🟦🟦 GRADE DE SHOWS — EM BLOCOS QUADRADOS, ESTILO PROFISSIONAL -->
+<section style="max-width: 1100px; margin: 0 auto 70px; padding: 0 20px;">
+  <h2 style="color: #081835; font-size: 28px; margin-bottom: 35px; text-align: center; padding-bottom: 15px; border-bottom: 3px solid #081835;">📅 Programação de Shows</h2>
+  
+  <div class="shows-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px;">
+
+    <!-- 🎤 1. SHOW DA MARIA MARISA -->
+    <div style="background: #fff; border: 1px solid #d0d7e0; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(8,24,53,0.06); transition: transform 0.2s ease;">
+      <div style="position: relative; height: 220px; background: linear-gradient(135deg, #081835 0%, #1e4075 100%); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+        <div style="position: absolute; top: 15px; left: 15px; width: 80px; height: 80px; background: rgba(255,255,255,0.08); border-radius: 4px;"></div>
+        <div style="position: absolute; bottom: 15px; right: 15px; width: 60px; height: 60px; background: rgba(255,255,255,0.1); border-radius: 4px;"></div>
+        <div style="position: absolute; top: 30px; right: 40px; width: 40px; height: 40px; border: 2px solid rgba(255,255,255,0.15); border-radius: 4px;"></div>
+        <span style="font-size: 72px; z-index: 1;">🎤</span>
+      </div>
+      <div style="padding: 25px;">
+        <span style="display: inline-block; background: #081835; color: #fff; font-size: 13px; padding: 4px 12px; border-radius: 3px; margin-bottom: 12px;">Show Musical</span>
+        <h3 style="color: #081835; font-size: 22px; font-weight: bold; margin-bottom: 15px;">Show da Maria Marisa</h3>
+        <p style="color: #555; font-size: 15px; margin-bottom: 18px; line-height: 1.7;">Apresentação de música popular brasileira e canções que fazem parte da nossa história. Uma noite de emoção e boa música para toda a família.</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px;">
+          <div>
+            <p style="font-size: 14px; color: #888; margin-bottom: 3px;">📆 Data</p>
+            <p style="font-weight: bold; color: #333;">15 de Novembro</p>
+          </div>
+          <div>
+            <p style="font-size: 14px; color: #888; margin-bottom: 3px;">⏰ Horário</p>
+            <p style="font-weight: bold; color: #333;">18h às 21h</p>
+          </div>
+          <div style="grid-column: span 2;">
+            <p style="font-size: 14px; color: #888; margin-bottom: 3px;">📍 Local</p>
+            <p style="font-weight: bold; color: #333;">Praça Principal do BMC</p>
+          </div>
+        </div>
+        <a href="#" style="display: block; text-align: center; background: #081835; color: #fff; padding: 10px; border-radius: 4px; font-weight: bold; font-size: 15px;">Ver Detalhes →</a>
+      </div>
+    </div>
+
+    <!-- 🎤 2. SHOW DA MARY PERRY -->
+    <div style="background: #fff; border: 1px solid #d0d7e0; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(8,24,53,0.06); transition: transform 0.2s ease;">
+      <div style="position: relative; height: 220px; background: linear-gradient(135deg, #2c1a47 0%, #4a2f70 100%); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+        <div style="position: absolute; top: 20px; right: 20px; width: 90px; height: 90px; background: rgba(255,255,255,0.06); border-radius: 4px;"></div>
+        <div style="position: absolute; bottom: 20px; left: 20px; width: 50px; height: 50px; border: 2px solid rgba(255,255,255,0.12); border-radius: 4px;"></div>
+        <div style="position: absolute; top: 50%; left: 30px; width: 35px; height: 35px; background: rgba(255,255,255,0.08); border-radius: 4px;"></div>
+        <span style="font-size: 72px; z-index: 1;">🎤</span>
+      </div>
+      <div style="padding: 25px;">
+        <span style="display: inline-block; background: #4a2f70; color: #fff; font-size: 13px; padding: 4px 12px; border-radius: 3px; margin-bottom: 12px;">Show ao Vivo</span>
+        <h3 style="color: #081835; font-size: 22px; font-weight: bold; margin-bottom: 15px;">Show da Mary Perry</h3>
+        <p style="color: #555; font-size: 15px; margin-bottom: 18px; line-height: 1.7;">Música ao vivo com grandes sucessos, animação e alegria para toda a comunidade. Uma apresentação especial preparada com muito carinho para o nosso bairro.</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px;">
+          <div>
+            <p style="font-size: 14px; color: #888; margin-bottom: 3px;">📆 Data</p>
+            <p style="font-weight: bold; color: #333;">22 de Novembro</p>
+          </div>
+          <div>
+            <p style="font-size: 14px; color: #888; margin-bottom: 3px;">⏰ Horário</p>
+            <p style="font-weight: bold; color: #333;">19h às 22h</p>
+          </div>
+          <div style="grid-column: span 2;">
+            <p style="font-size: 14px; color: #888; margin-bottom: 3px;">📍 Local</p>
+            <p style="font-weight: bold; color: #333;">Centro Comunitário do BMC</p>
+          </div>
+        </div>
+        <a href="#" style="display: block; text-align: center; background: #4a2f70; color: #fff; padding: 10px; border-radius: 4px; font-weight: bold; font-size: 15px;">Ver Detalhes →</a>
+      </div>
+    </div>
+
+    <!-- 🎭 3. APRESENTAÇÃO CULTURAL DA COMUNIDADE -->
+    <div style="background: #fff; border: 1px solid #d0d7e0; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(8,24,53,0.06); transition: transform 0.2s ease;">
+      <div style="position: relative; height: 220px; background: linear-gradient(135deg, #0f4d38 0%, #1e8567 100%); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+        <div style="position: absolute; top: 10px; left: 10px; width: 55px; height: 55px; border: 2px solid rgba(255,255,255,0.1); border-radius: 4px;"></div>
+        <div style="position: absolute; bottom: 10px; right: 10px; width: 75px; height: 75px; background: rgba(255,255,255,0.06); border-radius: 4px;"></div>
+        <div style="position: absolute; top: 40px; right: 60px; width: 30px; height: 30px; background: rgba(255,255,255,0.1); border-radius: 4px;"></div>
+        <span style="font-size: 72px; z-index: 1;">🎭</span>
+      </div>
+      <div style="padding: 25px;">
+        <span style="display: inline-block; background: #0f4d38; color: #fff; font-size: 13px; padding: 4px 12px; border-radius: 3px; margin-bottom: 12px;">Cultura & Arte</span>
+        <h3 style="color: #081835; font-size: 22px; font-weight: bold; margin-bottom: 15px;">Apresentação Cultural da Comunidade</h3>
+        <p style="color: #555; font-size: 15px; margin-bottom: 18px; line-height: 1.7;">Dança, teatro, poesia e manifestações artísticas produzidas pelos moradores do nosso bairro. Um momento de celebração da nossa cultura e do nosso talento.</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px;">
+          <div>
+            <p style="font-size: 14px; color: #888; margin-bottom: 3px;">📆 Data</p>
+            <p style="font-weight: bold; color: #333;">30 de Novembro</p>
+          </div>
+          <div>
+            <p style="font-size: 14px; color: #888; margin-bottom: 3px;">⏰ Horário</p>
+            <p style="font-weight: bold; color: #333;">14h às 18h</p>
+          </div>
+          <div style="grid-column: span 2;">
+            <p style="font-size: 14px; color: #888; margin-bottom: 3px;">📍 Local</p>
+            <p style="font-weight: bold; color: #333;">Centro Comunitário do BMC</p>
+          </div>
+        </div>
+        <a href="#" style="display: block; text-align: center; background: #0f4d38; color: #fff; padding: 10px; border-radius: 4px; font-weight: bold; font-size: 15px;">Ver Detalhes →</a>
+      </div>
+    </div>
+
+    <!-- 🎶 4. SHOW DE TALENTOS LOCAIS -->
+    <div style="background: #fff; border: 1px solid #d0d7e0; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(8,24,53,0.06); transition: transform 0.2s ease;">
+      <div style="position: relative; height: 220px; background: linear-gradient(135deg, #704214 0%, #b86f24 100%); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+        <div style="position: absolute; top: 15px; right: 15px; width: 65px; height: 65px; background: rgba(255,255,255,0.08); border-radius: 4px;"></div>
+        <div style="position: absolute; bottom: 15px; left: 15px; width: 45px; height: 45px; border: 2px solid rgba(255,255,255,0.12); border-radius: 4px;"></div>
+        <div style="position: absolute; top: 60px; left: 40px; width: 25px; height: 25px; background: rgba(255,255,255,0.1); border-radius: 4px;"></div>
+        <span style="font-size: 72px; z-index: 1;">🎶</span>
+      </div>
+      <div style="padding: 25px;">
+        <span style="display: inline-block; background: #704214; color: #fff; font-size: 13px; padding: 4px 12px; border-radius: 3px; margin-bottom: 12px;">Talentos Locais</span>
+        <h3 style="color: #081835; font-size: 22px; font-weight: bold; margin-bottom: 15px;">Show de Talentos Locais</h3>
+        <p style="color: #555; font-size: 15px; margin-bottom: 18px; line-height: 1.7;">Os moradores do nosso bairro mostram seus dons e talentos! Música, canto, dança e muito mais. Venha aplaudir os artistas que moram pertinho de você!</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px;">
+          <div>
+            <p style="font-size: 14px; color: #88
