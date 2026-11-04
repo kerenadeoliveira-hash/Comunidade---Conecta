@@ -62,24 +62,144 @@
 
   </header>
 
-  <!-- ✅ FAIXA DE TÍTULO TRABALHADA -->
-  <div style="background: linear-gradient(135deg, #e0edfb 0%, #fde8f0 50%, #fce4ec 100%); padding: 100px 100px; text-align: center; position: relative; overflow: hidden;">
-    <!-- Elementos decorativos de fundo -->
-    <div style="position: absolute; top: 20px; left: 5%; font-size: 38px; opacity: 0.08;">⭐</div>
-    <div style="position: absolute; top: 50px; right: 8%; font-size: 32px; opacity: 0.08;">🌸</div>
-    <div style="position: absolute; bottom: 25px; left: 10%; font-size: 35px; opacity: 0.08;">🎈</div>
-    <div style="position: absolute; bottom: 35px; right: 5%; font-size: 40px; opacity: 0.08;">✨</div>
-    <div style="position: absolute; top: 30%; left: 15%; font-size: 28px; opacity: 0.06;">🎀</div>
-    <div style="position: absolute; bottom: 30%; right: 15%; font-size: 30px; opacity: 0.06;">🌈</div>
+  <!-- ✅ FAIXA DE TÍTULO PRINCIPAL -->
+<div style="background: linear-gradient(135deg, #e0edfb 0%, #fde8f0 50%, #fce4ec 100%); padding: 40px 20px; text-align: center; border-radius: 16px; margin: 0 auto 40px auto; max-width: 1200px;">
+  <p style="color: #d4a017; font-size: 16px; margin-bottom: 10px; letter-spacing: 2px;">✨ UM MUNDO DE ALEGRIA E APRENDIZADO ✨</p>
+  <h1 style="font-size: 42px; color: #081835; margin: 0;">🎈 Atividades Infantis</h1>
+</div>
+
+<!-- ✅ CARROSSEL DE FRASES INSPIRADORAS -->
+<div style="background: #ffffff; padding: 40px 30px; text-align: center; position: relative; overflow: hidden; border-radius: 16px; margin: 0 auto 50px auto; max-width: 900px; box-shadow: 0 4px 15px rgba(8, 24, 53, 0.06);">
+  
+  <p style="color: #081835; font-size: 15px; margin-bottom: 25px; letter-spacing: 3px; text-transform: uppercase; font-weight: 600;">💛 NOSSA MISSÃO</p>
+
+  <div style="max-width: 700px; margin: 0 auto; position: relative; min-height: 130px; display: flex; align-items: center; justify-content: center;">
     
-    <div style="max-width: 850px; margin: 0 auto; position: relative; z-index: 1;">
-      <span style="display: inline-block; font-size: 15px; color: #e91e63; font-weight: 700; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 18px;">✨ Um mundo de alegria e aprendizado ✨</span>
-      <h1 style="font-size: 48px; color: #081835; margin: 0 0 15px 0; line-height: 1.2; font-weight: 700;">🎈 Atividades Infantis</h1>
-      <div style="width: 100px; height: 4px; background: linear-gradient(90deg, #4a90e2, #e91e63); margin: 0 auto 22px; border-radius: 2px;"></div>
-      <p style="font-size: 18px; color: #555; line-height: 1.7; max-width: 680px; margin: 0 auto;">Um espaço dedicado ao crescimento, à criatividade e à felicidade dos nossos pequenos.<br><strong style="color: #081835; font-size: 19px;">💛 Todas as atividades são gratuitas e abertas à comunidade!</strong></p>
+    <!-- 📝 Slide 1 -->
+    <div id="slide1" style="animation: fadeIn 0.7s ease; width: 100%;">
+      <p style="font-size: 20px; color: #081835; line-height: 1.8; font-style: italic; margin: 0;">
+        "Cada criança é uma semente de esperança. Nosso papel é regar com amor, respeito e oportunidades."
+      </p>
+    </div>
+
+    <!-- 📝 Slide 2 -->
+    <div id="slide2" style="display: none; animation: fadeIn 0.7s ease; width: 100%;">
+      <p style="font-size: 20px; color: #081835; line-height: 1.8; font-style: italic; margin: 0;">
+        "Um lugar onde sorrisos crescem, sonhos ganham asas e cada pequeno é valorizado exatamente como é."
+      </p>
+    </div>
+
+    <!-- 📝 Slide 3 -->
+    <div id="slide3" style="display: none; animation: fadeIn 0.7s ease; width: 100%;">
+      <p style="font-size: 20px; color: #081835; line-height: 1.8; font-style: italic; margin: 0;">
+        "Brincar é a forma mais bonita de aprender. Aqui, cada momento é uma nova descoberta."
+      </p>
+    </div>
+
+    <!-- 📝 Slide 4 -->
+    <div id="slide4" style="display: none; animation: fadeIn 0.7s ease; width: 100%;">
+      <p style="font-size: 20px; color: #081835; line-height: 1.8; font-style: italic; margin: 0;">
+        "Não estamos apenas cuidando crianças. Estamos construindo o futuro — com elas, hoje."
+      </p>
     </div>
   </div>
 
+  <!-- ⏺️ Bolinhas -->
+  <div style="margin-top: 25px;">
+    <span onclick="mostrarSlide(1)" id="bolinha1" style="cursor: pointer; display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #081835; margin: 0 5px;"></span>
+    <span onclick="mostrarSlide(2)" id="bolinha2" style="cursor: pointer; display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #ccc; margin: 0 5px;"></span>
+    <span onclick="mostrarSlide(3)" id="bolinha3" style="cursor: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #ccc; margin: 0 5px;"></span>
+    <span onclick="mostrarSlide(4)" id="bolinha4" style="cursor: pointer; display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #ccc; margin: 0 5px;"></span>
+  </div>
+</div>
+
+<!-- ✅ EVENTOS & SHOWS INFANTIS — 2 POR LINHA, GRANDES -->
+<div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+  <h2 style="font-size: 26px; color: #081835; margin-bottom: 30px; text-align: center;">📅 Próximos Eventos e Shows Infantis</h2>
+
+  <!-- 📌 LINHA 1 -->
+  <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-bottom: 30px;">
+    
+    <!-- CARD 1 -->
+    <div style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 20px rgba(8, 24, 53, 0.08);">
+      <img src="foto-festa-comunidade.jpg" alt="Festa da Comunidade" style="width: 100%; height: 220px; object-fit: cover;">
+      <div style="padding: 25px;">
+        <h3 style="font-size: 22px; color: #081835; margin: 0 0 10px 0;">🎊 Festa da Comunidade</h3>
+        <p style="font-size: 15px; color: #666; margin: 0 0 8px 0;"><strong>📍 Local:</strong> Praça Central — Bairro Centro</p>
+        <p style="font-size: 15px; color: #666; margin: 0 0 8px 0;"><strong>📆 Data:</strong> 15 de Novembro — 15h00</p>
+        <p style="font-size: 15px; color: #666; margin: 0; line-height: 1.6;">Venha celebrar com a gente! Música, brincadeiras e muita alegria para toda a família.</p>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 20px rgba(8, 24, 53, 0.08);">
+      <img src="foto-show-infantil.jpg" alt="Show Infantil" style="width: 100%; height: 220px; object-fit: cover;">
+      <div style="padding: 25px;">
+        <h3 style="font-size: 22px; color: #081835; margin: 0 0 10px 0;">🎤 Show: Turma da Alegria</h3>
+        <p style="font-size: 15px; color: #666; margin: 0 0 8px 0;"><strong>📍 Local:</strong> Ginásio Municipal</p>
+        <p style="font-size: 15px; color: #666; margin: 0 0 8px 0;"><strong>📆 Data:</strong> 22 de Novembro — 14h00</p>
+        <p style="font-size: 15px; color: #666; margin: 0; line-height: 1.6;">Um espetáculo cheio de música, dança e interação com as crianças!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 📌 LINHA 2 -->
+  <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-bottom: 30px;">
+    
+    <!-- CARD 3 -->
+    <div style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 20px rgba(8, 24, 53, 0.08);">
+      <img src="foto-teatro.jpg" alt="Teatro na Praça" style="width: 100%; height: 220px; object-fit: cover;">
+      <div style="padding: 25px;">
+        <h3 style="font-size: 22px; color: #081835; margin: 0 0 10px 0;">🎭 Teatro na Praça</h3>
+        <p style="font-size: 15px; color: #666; margin: 0 0 8px 0;"><strong>📍 Local:</strong> Praça da Criança</p>
+        <p style="font-size: 15px; color: #666; margin: 0 0 8px 0;"><strong>📆 Data:</strong> 29 de Novembro — 16h00</p>
+        <p style="font-size: 15px; color: #666; margin: 0; line-height: 1.6;">Apresentação: "A Aventura das Cores". Entrada gratuita!</p>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 20px rgba(8, 24, 53, 0.08);">
+      <img src="foto-contacao-historias.jpg" alt="Contação de Histórias" style="width: 100%; height: 220px; object-fit: cover;">
+      <div style="padding: 25px;">
+        <h3 style="font-size: 22px; color: #081835; margin: 0 0 10px 0;">📖 Hora da História</h3>
+        <p style="font-size: 15px; color: #666; margin: 0 0 8px 0;"><strong>📍 Local:</strong> Biblioteca Comunitária</p>
+        <p style="font-size: 15px; color: #666; margin: 0 0 8px 0;"><strong>📆 Data:</strong> Todos os sábados — 10h00</p>
+        <p style="font-size: 15px; color: #666; margin: 0; line-height: 1.6;">Histórias que inspiram e encantam. Toda semana uma nova aventura!</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ✅ JAVASCRIPT DO CARROSSEL — cola antes do </body> -->
+<script>
+let slideAtual = 1;
+const totalSlides = 4;
+
+function mostrarSlide(n) {
+  for (let i = 1; i <= totalSlides; i++) {
+    document.getElementById('slide' + i).style.display = 'none';
+    document.getElementById('bolinha' + i).style.background = '#ccc';
+  }
+  document.getElementById('slide' + n).style.display = 'block';
+  document.getElementById('bolinha' + n).style.background = '#081835';
+  slideAtual = n;
+}
+
+function slideProximo() {
+  slideAtual = slideAtual < totalSlides ? slideAtual + 1 : 1;
+  mostrarSlide(slideAtual);
+}
+
+// ⏰ Troca automaticamente a cada 6 segundos
+setInterval(slideProximo, 6000);
+</script>
+
+<style>
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
   <!-- ✅ DUAS FOTOS GRANDES — LADO A LADO, BEM TRABALHADAS -->
   <section style="max-width: 1240px; margin: 60px auto; padding: 0 20px;">
     <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px;">
@@ -115,7 +235,7 @@
         <p style="font-size: 17px; color: #777; max-width: 650px; margin: 0 auto; line-height: 1.6;">Cada atividade foi planejada com muito amor para desenvolver habilidades, amizades e sorrisos! 💛</p>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 28px;">
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr)); gap: 40px;">
         
         <!-- 🎨 LINHA 1 — AZUL E ROSA -->
         <div class="programa-card" style="--cor1: #4a90e2; --cor2: #64b5f6; background: #ffffff; border-radius: 20px; padding: 35px 25px; text-align: center; box-shadow: 0 4px 18px rgba(74, 144, 226, 0.1); position: relative;">
