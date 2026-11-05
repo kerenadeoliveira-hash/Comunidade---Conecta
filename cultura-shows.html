@@ -144,17 +144,26 @@
 <body>
 
 <!-- ✅ CABEÇALHO -->
-<header>
-    <div class="logo-area">
-        <!-- COLOQUE SUA LOGO BMC AQUI -->
-        <h1>BMC Comunidade</h1>
+<!-- CABEÇALHO CULTURA E SHOWS -- AZUL ESCURO -->
+<header style="background-color: #0c2c5c; padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    
+    <!-- LOGOMARCA + TÍTULO -->
+    <div style="display: flex; align-items: center;">
+        <img src="logo.png" alt="Logo BMC" style="height: 50px; width: auto;">
+        <h1 style="color: white; font-size: 20px; margin-left: 12px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Cultura e Shows</h1>
     </div>
+
+    <!-- MENU DE NAVEGAÇÃO -->
     <nav>
-        <a href="index.html">Início</a>
-        <a href="eventos.html">Eventos</a>
-        <a href="cultura-shows.html">Cultura e Shows</a>
-        <a href="fale-conosco.html">Fale Conosco</a>
+        <a href="index.html" style="color: white; text-decoration: none; margin-left: 22px; font-size: 15px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Início</a>
+        <a href="servicos.html" style="color: white; text-decoration: none; margin-left: 22px; font-size: 15px;">Serviços</a>
+        <a href="eventos.html" style="color: white; text-decoration: none; margin-left: 22px; font-size: 15px;">Eventos</a>
+        <a href="cultura-shows.html" style="color: white; text-decoration: none; margin-left: 22px; font-size: 15px; font-weight: bold;">Shows</a>
+        <a href="fale-conosco.html" style="color: white; text-decoration: none; margin-left: 22px; font-size: 15px;">Fale Conosco</a>
     </nav>
+    <!-- BOTÃO SAIR ✕ — CANTO DIREITO -->
+  <a href="index.html" class="botao-sair"style="color: #ffffff;background: transparent;">✕</a>
+
 </header>
 
 <!-- ✅ CONTEÚDO PRINCIPAL -->
@@ -244,11 +253,134 @@
 </div>
 
 <!-- ✅ RODAPÉ -->
-<footer>
-    <p><strong>BMC Comunidade</strong> — Plataforma de Apoio Comunitário</p>
-    <p>Juntos construindo uma comunidade mais conectada e informada</p>
-    <p style="margin-top: 10px;">📅 Atualizado em Novembro de 2026 | Ribeirão Preto — SP</p>
+<footer style="background-color: #081835; color: #ffffff; padding: 50px 40px 25px 40px; margin-top: 60px;">
+
+  <div style="max-width: 1200px; margin: 0 auto;">
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 20px;">
+
+      <!-- 📍 ESQUERDA: Logo e informações -->
+      <div style="flex: 0 0 auto; min-width: 220px; text-align: left;">
+        <img src="logo-bmc.png" alt="BMC" style="height: 65px; margin-bottom: 12px; display: block;">
+        
+        <p style="font-size: 15px; color: #ffffff; margin: 0 0 6px 0; font-weight: 500;">
+          Bem-Estar da Minha Comunidade
+        </p>
+        <p style="font-size: 13px; color: #b8c7e0; margin: 0 0 15px 0;">
+          União, Acolhimento e Cuidado para Todos.
+        </p>
+
+        <p style="font-size: 12px; color: #b8c7e0; margin: 0 0 8px 0;">
+          Siga a BMC nas redes sociais
+        </p>
+
+        <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 20px;">
+          <a href="#" style="background: #1877F2; color: #fff; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: bold; text-decoration: none;">F</a>
+          <a href="#" style="background: #FF0000; color: #fff; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: bold; text-decoration: none;">▶</a>
+          <a href="#" style="background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: #fff; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: bold; text-decoration: none;">IG</a>
+          <a href="#" style="background: #0A66C2; color: #fff; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: bold; text-decoration: none;">in</a>
+          <a href="#" style="background: #25D366; color: #fff; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: bold; text-decoration: none;">W</a>
+        </div>
+
+        <a href="fala-conosco.html" style="display: inline-block; background-color: #ffffff; color: #081835; padding: 10px 18px; border-radius: 6px; font-size: 13px; font-weight: bold; text-decoration: none;">
+          📞 Fala Conosco
+        </a>
+      </div>
+
+      <!-- 📂 CATEGORIAS -- no seu espaço -->
+      <div style="flex: 0 0 auto; min-width: 130px; text-align: left;">
+        <h4 style="font-size: 15px; font-weight: bold; margin: 0 0 12px 0; color: #ffffff; text-decoration: underline; text-underline-offset: 5px;">Categorias</h4>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="margin-bottom: 7px;"><a href="servicos.html" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Serviços</a></li>
+          <li style="margin-bottom: 7px;"><a href="eventos.html" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Eventos</a></li>
+          <li style="margin-bottom: 7px;"><a href="noticias.html" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Notícias</a></li>
+          <li style="margin-bottom: 7px;"><a href="guia.html" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Guia do Bairro</a></li>
+          <li style="margin-bottom: 7px;"><a href="galeria.html" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Galeria</a></li>
+        </ul>
+      </div>
+
+      <!-- 💡 SOLUÇÕES -- no seu espaço -->
+      <div style="flex: 0 0 auto; min-width: 160px; text-align: left;">
+        <h4 style="font-size: 15px; font-weight: bold; margin: 0 0 12px 0; color: #ffffff; text-decoration: underline; text-underline-offset: 5px;">Soluções</h4>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="margin-bottom: 7px;"><a href="#" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Solicitar Ajuda</a></li>
+          <li style="margin-bottom: 7px;"><a href="#" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Oferecer Ajuda</a></li>
+          <li style="margin-bottom: 7px;"><a href="centro-acolhimento.html" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Centro de Acolhimento</a></li>
+          <li style="margin-bottom: 7px;"><a href="documentos.html" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Documentos e Regularização</a></li>
+          <li style="margin-bottom: 7px;"><a href="shows.html" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Shows e Eventos</a></li>
+          <li style="margin-bottom: 7px;"><a href="atividades-infantis.html" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Eventos Infantis</a></li>
+          <li style="margin-bottom: 7px;"><a href="comida-gratis.html" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Comida Grátis e Barata</a></li>
+          <li style="margin-bottom: 7px;"><a href="#" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Avisos Importantes</a></li>
+        </ul>
+      </div>
+
+      <!-- ℹ️ SOBRE -- no canto direito -->
+      <div style="flex: 0 0 auto; min-width: 120px; text-align: left;">
+        <h4 style="font-size: 15px; font-weight: bold; margin: 0 0 12px 0; color: #ffffff; text-decoration: underline; text-underline-offset: 5px;">Sobre</h4>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="margin-bottom: 7px;"><a href="quem-somos.html" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Quem Somos</a></li>
+          <li style="margin-bottom: 7px;"><a href="fala-conosco.html" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Fala Conosco</a></li>
+          <li style="margin-bottom: 7px;"><a href="#" style="color: #b8c7e0; text-decoration: none; font-size: 14px;">Termos de Uso</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 35px; padding-top: 15px;"></div>
+
+    <div style="margin-top: 10px;">
+      <p style="font-size: 13px; color: #8fa4c2; margin: 0;">
+        © 2026 BMC — Bem-Estar da Minha Comunidade • 
+        <img src="https://flagcdn.com/w20/br.png" alt="Brasil" style="height: 14px; vertical-align: middle; border: none;"> Brasil • 
+        Todos os direitos reservados • Projeto Comunitário
+      </p>
+    </div>
+
+  </div>
+
 </footer>
+  <!-- JAVASCRIPT DO CARROSSEL — só esse pedacinho, não é outra linguagem, é só para funcionar -->
+  <script>
+    let slideAtual = 0;
+    const totalSlides = 10;
+    const slides = document.getElementById('slides');
+    const bolinhas = document.querySelectorAll('.bolinha');
+
+    function atualizarSlide() {
+      slides.style.transform = `translateX(-${slideAtual * 100}%)`;
+      bolinhas.forEach((bolinha, index) => {
+        bolinha.classList.toggle('ativa', index === slideAtual);
+      });
+    }
+
+    function mudarSlide(direcao) {
+      slideAtual += direcao;
+      if (slideAtual < 0) slideAtual = totalSlides - 1;
+      if (slideAtual >= totalSlides) slideAtual = 0;
+      atualizarSlide();
+    }
+
+    function irParaSlide(index) {
+      slideAtual = index;
+      atualizarSlide();
+    }
+
+    // Passa sozinho a cada 6 segundos
+    setInterval(() => {
+      mudarSlide(1);
+    }, 6000);
+
+    // Busca no mapa
+    function buscarBairro() {
+      const bairro = document.getElementById('bairroInput').value.trim();
+      if (!bairro) {
+        alert('Por favor, digite o nome do seu bairro.');
+        return;
+      }
+      const url = `https://www.google.com/maps/search/serviços+em+${encodeURIComponent(bairro)}`;
+      window.open(url, '_blank');
+    }
+  </script>
 
 </body>
 </html>
