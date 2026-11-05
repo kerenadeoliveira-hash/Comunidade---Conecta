@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎭 Cultura e Shows | BMC Comunidade</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f0f4f8;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+        /* ===== CABEÇALHO ===== */
+        header {
+            background: linear-gradient(135deg, #0c2c5c 0%, #1e40af 100%);
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+        }
+        .logo-area img {
+            height: 50px;
+            width: auto;
+        }
+        .logo-area h1 {
+            color: white;
+            font-size: 20px;
+            margin-left: 12px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 22px;
+            font-size: 15px;
+            transition: opacity 0.3s;
+        }
+        nav a:hover {
+            opacity: 0.8;
+        }
+        /* ===== CONTEÚDO ===== */
+        .titulo-pagina {
+            text-align: center;
+            padding: 40px 20px 10px;
+        }
+        .titulo-pagina h2 {
+            font-size: 32px;
+            color: #0c2c5c;
+        }
+        .titulo-pagina p {
+            color: #64748b;
+            margin-top: 8px;
+            font-size: 17px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 30px auto 60px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        .card-grande {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        .card-grande:hover {
+            transform: translateY(-5px);
+        }
+        .card-imagem {
+            width: 100%;
+            height: 240px;
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            padding: 20px;
+        }
+        .card-conteudo {
+            padding: 25px;
+        }
+        .card-conteudo h3 {
+            font-size: 22px;
+            color: #0c2c5c;
+            margin-bottom: 15px;
+        }
+        .card-conteudo p {
+            font-size: 15px;
+            color: #475569;
+            margin-bottom: 10px;
+        }
+        .card-conteudo .destaque {
+            background-color: #eff6ff;
+            border-left: 4px solid #1e40af;
+            padding: 10px 14px;
+            margin: 12px 0;
+            border-radius: 4px;
+        }
+        /* ===== RODAPÉ ===== */
+        footer {
+            background-color: #0c2c5c;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+        footer p {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        /* ===== RESPONSIVO ===== */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                gap: 12px;
+                padding: 15px;
+            }
+            nav a {
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ✅ CABEÇALHO -->
+<header>
+    <div class="logo-area">
+        <!-- COLOQUE SUA LOGO BMC AQUI -->
+        <h1>BMC Comunidade</h1>
+    </div>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="eventos.html">Eventos</a>
+        <a href="cultura-shows.html">Cultura e Shows</a>
+        <a href="fale-conosco.html">Fale Conosco</a>
+    </nav>
+</header>
+
+<!-- ✅ CONTEÚDO PRINCIPAL -->
+<div class="titulo-pagina">
+    <h2>🎭 Cultura e Shows — Brasil 2026</h2>
+    <p>Fique por dentro dos principais eventos culturais, festivais e espetáculos que vão acontecer no Brasil em 2026</p>
+</div>
+
+<div class="container">
+
+    <!-- 📸 CARD ESQUERDA -->
+    <div class="card-grande">
+        <div class="card-imagem">
+            🎪 FESTIVAIS & FOLCLORE
+        </div>
+        <div class="card-conteudo">
+            <h3>🎉 Festivais Tradicionais do Brasil</h3>
+            
+            <div class="destaque">
+                <strong>🏆 Carnaval 2026</strong><br>
+                Fevereiro — nas capitais e cidades históricas<br>
+                Rio de Janeiro, São Paulo, Salvador, Recife e Olinda
+            </div>
+            
+            <div class="destaque">
+                <strong>🌾 Festa Junina 2026</strong><br>
+                Junho — em todo o Brasil<br>
+                Quadrilhas, comidas típicas e festas comunitárias
+            </div>
+            
+            <div class="destaque">
+                <strong>🎭 Festival de Parintins</strong><br>
+                Junho — Parintins, Amazonas<br>
+                Espetáculo do Boi-Bumbá Caprichoso e Garantido
+            </div>
+            
+            <div class="destaque">
+                <strong>🌿 Festa do Divino Espírito Santo</strong><br>
+                Maio/Junho — vários estados do Brasil<br>
+                Tradição religiosa e cultural brasileira
+            </div>
+            
+            <p style="margin-top: 15px; font-size: 14px; color: #64748b;">
+                💡 <em>Confira sempre a programação oficial da sua cidade para datas exatas e locais.</em>
+            </p>
+        </div>
+    </div>
+
+    <!-- 📸 CARD DIREITA -->
+    <div class="card-grande">
+        <div class="card-imagem" style="background: linear-gradient(135deg, #9f1239 0%, #ec4899 100%);">
+            🎤 ARTE, ESPETÁCULOS & CULTURA
+        </div>
+        <div class="card-conteudo">
+            <h3>🎨 Espetáculos e Eventos Culturais</h3>
+            
+            <div class="destaque">
+                <strong>🎬 Mostra de Teatro Nacional</strong><br>
+                Março a Dezembro — capitais e cidades do interior<br>
+                Peças gratuitas e populares em vários estados
+            </div>
+            
+            <div class="destaque">
+                <strong>🎵 Virada Cultural 2026</strong><br>
+                Maio — São Paulo e outras capitais<br>
+                24 horas de música, dança e arte gratuitas
+            </div>
+            
+            <div class="destaque">
+                <strong>📚 Feira Nacional do Livro</strong><br>
+                Várias datas — capitais do Brasil<br>
+                Bienal do Livro, feiras municipais e estaduais
+            </div>
+            
+            <div class="destaque">
+                <strong>💃 Festivais de Dança e Música</strong><br>
+                Ao longo de 2026 — em todo o território nacional<br>
+                Cultura popular, música brasileira e dança tradicional
+            </div>
+            
+            <p style="margin-top: 15px; font-size: 14px; color: #64748b;">
+                💡 <em>Acompanhe as secretarias de cultura do seu município para a programação completa e eventos gratuitos próximos a você.</em>
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<!-- ✅ RODAPÉ -->
+<footer>
+    <p><strong>BMC Comunidade</strong> — Plataforma de Apoio Comunitário</p>
+    <p>Juntos construindo uma comunidade mais conectada e informada</p>
+    <p style="margin-top: 10px;">📅 Atualizado em Novembro de 2026 | Ribeirão Preto — SP</p>
+</footer>
+
+</body>
+</html>
