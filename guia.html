@@ -1,61 +1,114 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guia — Bem-Estar da Minha Comunidade</title>
-<!-- ✅ CORREÇÃO DO RODAPÉ - SÓ PARA ESTA PÁGINA -->
-<style>
-  footer {
-    background-color: #081835 !important;
-    margin-top: 0 !important;
-    border-top: none !important;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia do Bairro — BMC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
-</head> <link rel="stylesheet" href="estilos.css">
-  <style>
-  footer,
-  footer * {
-    background-color: #081835 !important;
-  }
-  footer {
-    margin-top: 0 !important;
-    border-top: none !important;
-  }
-  footer h4,
-  footer p,
-  footer a,
-  footer li {
-    color: #ffffff !important;
-  }
-</style>
+        header {
+            background-color: #0A2342;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 20px;
+            position: relative;
+            min-height: 70px;
+        }
+
+        /* Logomarca — canto esquerdo, sozinha */
+        .logo {
+            flex-shrink: 0;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        /* Menu — bem longe da logo, botões menorzinhos */
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 4px; /* Espaço pequeno entre os botões */
+            margin-left: auto; /* Empurra todo o menu para a direita, longe da logo */
+            margin-right: 35px; /* Espaço entre o último item e o botão X */
+        }
+
+        .nav-menu a {
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 5px 8px; /* Botões bem menorzinhos */
+            background-color: #FFFFFF;
+            color: #0A2342;
+            border-radius: 4px;
+            font-size: 12px; /* Fonte menor para caber tudo */
+            font-weight: 500;
+            transition: background-color 0.2s;
+            white-space: nowrap;
+        }
+
+        .nav-menu a:hover {
+            background-color: #e6e6e6;
+        }
+
+        .nav-menu a.active {
+            background-color: #0A2342;
+            color: #FFFFFF;
+            border: 1px solid #FFFFFF;
+        }
+
+        /* Botão X — bem no canto superior direito */
+        .close-btn {
+            position: absolute;
+            top: 8px;
+            right: 12px;
+            background: none;
+            border: none;
+            color: #FFFFFF;
+            font-size: 22px;
+            cursor: pointer;
+            line-height: 1;
+            z-index: 10;
+        }
+
+        .close-btn:hover {
+            color: #ff6b6b;
+        }
+    </style>
 </head>
 <body>
 
- <!-- ✅ CABEÇALHO - GUIA DO BAIRRO -->
-<header style="background-color: #0c2c5c; padding: 12px 30px; display: flex; justify-content: center; align-items: center;gap: 0;">
-    
-    <!-- Logo -->
-    <div style="display: flex; align-items: center; gap: 50px;">
-        <img src="logo-bmc.png" alt="BMC" style="height: 45px; width: auto; flex-shrink: 0;">
-        <h1 style="color: white; font-size: 18px; margin: 0; display: none;">BMC Comunidade Conecta</h1>
+<header>
+    <!-- Botão X de sair -->
+    <button class="close-btn" onclick="window.close()">&times;</button>
+
+    <!-- Logomarca no canto esquerdo -->
+    <div class="logo">
+        <img src="logo-bmc.png" alt="Logo BMC">
     </div>
 
-    <!-- Navegação -->
-    <nav style="display: flex; gap: 0; flex-wrap: wrap;">
-        <a href="index.html" style="color: white; text-decoration: none; padding: 12px 18px; font-size: 15px; font-weight: 500; border-bottom: 3px solid transparent;">Início</a>
-        <a href="guia.html" style="color: white; text-decoration: none; padding: 12px 18px; font-size: 15px; font-weight: 600; background-color: rgba(255,255,255,0.15); border-bottom: 3px solid #ffcc00;">Guia</a>
-        <a href="quem-somos.html" style="color: white; text-decoration: none; padding: 12px 18px; font-size: 15px; font-weight: 500; border-bottom: 3px solid transparent;">Quem Somos</a>
-        <a href="servicos.html" style="color: white; text-decoration: none; padding: 12px 18px; font-size: 15px; font-weight: 500; border-bottom: 3px solid transparent;">Serviços</a>
-        <a href="eventos.html" style="color: white; text-decoration: none; padding: 12px 18px; font-size: 15px; font-weight: 500; border-bottom: 3px solid transparent;">Eventos</a>
-        <a href="cultura-shows.html" style="color: white; text-decoration: none; padding: 12px 18px; font-size: 15px; font-weight: 500; border-bottom: 3px solid transparent;">Shows</a>
-        <a href="atividades-infantis.html" style="color: white; text-decoration: none; padding: 12px 18px; font-size: 15px; font-weight: 500; border-bottom: 3px solid transparent;">Infantis</a>
-        <a href="noticias.html" style="color: white; text-decoration: none; padding: 12px 18px; font-size: 15px; font-weight: 500; border-bottom: 3px solid transparent;">Notícias</a>
-        <a href="avisos.html" style="color: white; text-decoration: none; padding: 12px 18px; font-size: 15px; font-weight: 500; border-bottom: 3px solid transparent;">Avisos</a>
-        <a href="galeria.html" style="color: white; text-decoration: none; padding: 12px 18px; font-size: 15px; font-weight: 500; border-bottom: 3px solid transparent;">Galeria</a>
-        <a href="fale-conosco.html" style="color: white; text-decoration: none; padding: 12px 18px; font-size: 15px; font-weight: 500; border-bottom: 3px solid transparent;">Fale Conosco</a>
+    <!-- Menu — bem longe da logo, tudo na mesma linha -->
+    <nav class="nav-menu">
+        <a href="index.html">Início</a>
+        <a href="guia.html" class="active">Guia</a>
+        <a href="quem-somos.html">Quem Somos Nós</a>
+        <a href="servicos.html">Serviço</a>
+        <a href="eventos.html">Evento</a>
+        <a href="cultura-show.html">Show</a>
+        <a href="atividades-infantis.html">Atividades Infantis</a>
+        <a href="galeria-fotos.html">Galeria de Fotos</a>
     </nav>
+</header>
+
+</body>
+</html>
 <!-- Botão X de Sair -->
   <button onclick="window.location.href='index.html'" style="margin-left: auto; background: #ffffff; color: #081835; border: none; width: 28px; height: 28px; border-radius: 50%; font-size: 18px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center;">×</button>
 </header>
