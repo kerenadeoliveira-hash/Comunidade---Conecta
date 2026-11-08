@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -17,12 +17,11 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 12px 20px;
+            padding: 12px 25px;
             position: relative;
             min-height: 70px;
         }
 
-        /* Logomarca — canto esquerdo, sozinha */
         .logo {
             flex-shrink: 0;
         }
@@ -32,23 +31,21 @@
             width: auto;
         }
 
-        /* Menu — bem longe da logo, botões menorzinhos */
         .nav-menu {
             display: flex;
             align-items: center;
-            gap: 4px; /* Espaço pequeno entre os botões */
-            margin-left: auto; /* Empurra todo o menu para a direita, longe da logo */
+            gap: 5px; /* Menor espaçamento entre os botões */
             margin-right: 35px; /* Espaço entre o último item e o botão X */
         }
 
         .nav-menu a {
             color: #FFFFFF;
             text-decoration: none;
-            padding: 5px 8px; /* Botões bem menorzinhos */
+            padding: 6px 10px; /* Botões menorzinhos */
             background-color: #FFFFFF;
             color: #0A2342;
             border-radius: 4px;
-            font-size: 12px; /* Fonte menor para caber tudo */
+            font-size: 13px; /* Fonte um pouquinho menor */
             font-weight: 500;
             transition: background-color 0.2s;
             white-space: nowrap;
@@ -64,7 +61,6 @@
             border: 1px solid #FFFFFF;
         }
 
-        /* Botão X — bem no canto superior direito */
         .close-btn {
             position: absolute;
             top: 8px;
@@ -86,15 +82,15 @@
 <body>
 
 <header>
-    <!-- Botão X de sair -->
+    <!-- Botão X — canto superior direito -->
     <button class="close-btn" onclick="window.close()">&times;</button>
 
-    <!-- Logomarca no canto esquerdo -->
+    <!-- Logomarca — canto esquerdo, sozinha -->
     <div class="logo">
         <img src="logo-bmc.png" alt="Logo BMC">
     </div>
 
-    <!-- Menu — bem longe da logo, tudo na mesma linha -->
+    <!-- Menu — 8 itens, menorzinhos, com espaço antes do X -->
     <nav class="nav-menu">
         <a href="index.html">Início</a>
         <a href="guia.html" class="active">Guia</a>
@@ -109,10 +105,6 @@
 
 </body>
 </html>
-<!-- Botão X de Sair -->
-  <button onclick="window.location.href='index.html'" style="margin-left: auto; background: #ffffff; color: #081835; border: none; width: 28px; height: 28px; border-radius: 50%; font-size: 18px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center;">×</button>
-</header>
-
 <!-- BANNER: Título à ESQUERDA | Carrossel à DIREITA -->
 <section style="background: #081835; padding: 50px 20px; color: white; overflow: hidden;">
   <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 40px; flex-wrap: wrap;">
