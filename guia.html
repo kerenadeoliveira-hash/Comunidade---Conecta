@@ -1,107 +1,208 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guia do Bairro — BMC</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        header {
-            background-color: #0A2342;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 12px 25px;
-            position: relative;
-            min-height: 70px;
-        }
-
-        .logo {
-            flex-shrink: 0;
-        }
-
-        .logo img {
-            height: 50px;
-            width: auto;
-        }
-
-        .nav-menu {
-            display: flex;
-            align-items: center;
-            gap: 5px; /* Menor espaçamento entre os botões */
-            margin-right: 35px; /* Espaço entre o último item e o botão X */
-        }
-
-        .nav-menu a {
-            color: #FFFFFF;
-            text-decoration: none;
-            padding: 6px 10px; /* Botões menorzinhos */
-            background-color: #FFFFFF;
-            color: #0A2342;
-            border-radius: 4px;
-            font-size: 13px; /* Fonte um pouquinho menor */
-            font-weight: 500;
-            transition: background-color 0.2s;
-            white-space: nowrap;
-        }
-
-        .nav-menu a:hover {
-            background-color: #e6e6e6;
-        }
-
-        .nav-menu a.active {
-            background-color: #0A2342;
-            color: #FFFFFF;
-            border: 1px solid #FFFFFF;
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 8px;
-            right: 12px;
-            background: none;
-            border: none;
-            color: #FFFFFF;
-            font-size: 22px;
-            cursor: pointer;
-            line-height: 1;
-            z-index: 10;
-        }
-
-        .close-btn:hover {
-            color: #ff6b6b;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia do Bairro - BMC</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #081835;
+      font-family: Arial, sans-serif;
+      color: #333333;
+      line-height: 1.6;
+    }
+    .cabecalho-topo {
+      background-color: #081835;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 40px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .logo-area img {
+      height: 65px;
+      width: auto;
+      background: transparent;
+      object-fit: contain;
+    }
+    .menu-central {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+    .menu-central > div {
+      background: #ffffff;
+      border-radius: 6px;
+      padding: 0;
+      display: inline-flex;
+      align-items: center;
+    }
+    .menu-central a {
+      color: #081835;
+      font-weight: bold;
+      padding: 12px 16px;
+      text-decoration: none;
+      font-size: 15px;
+      transition: background-color 0.2s;
+    }
+    .menu-central a:hover {
+      background-color: rgba(8, 24, 53, 0.05);
+    }
+    .menu-central a.ativo {
+      border-bottom: 2px solid #081835;
+    }
+    main {
+      background-color: transparent;
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 40px;
+      color: #ffffff;
+    }
+    main h2 {
+      color: #8fa4c2;
+      font-size: 22px;
+      margin-bottom: 20px;
+      margin-top: 40px;
+    }
+    main p {
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    footer {
+      background-color: #081835;
+      color: #ffffff;
+      padding: 50px 40px 25px 40px;
+      margin-top: 60px;
+    }
+    footer .conteudo-rodape {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+    }
+    footer .coluna {
+      flex: 0 0 auto;
+      min-width: 220px;
+      text-align: left;
+    }
+    footer .coluna img {
+      height: 65px;
+      margin-bottom: 12px;
+      display: block;
+    }
+    footer .coluna p.destaque {
+      font-size: 15px;
+      color: #ffffff;
+      margin: 0 0 6px 0;
+      font-weight: 500;
+    }
+    footer .coluna p.texto {
+      font-size: 13px;
+      color: #b8c7e0;
+      margin: 0 0 15px 0;
+    }
+    footer h4 {
+      font-size: 15px;
+      font-weight: bold;
+      margin: 0 0 12px 0;
+      color: #ffffff;
+      text-decoration: underline;
+      text-underline-offset: 5px;
+    }
+    footer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    footer ul li {
+      margin-bottom: 7px;
+    }
+    footer ul li a {
+      color: #b8c7e0;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    footer ul li a:hover {
+      color: #ffffff;
+    }
+    .redes-sociais {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .redes-sociais a {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    .botao-fala {
+      display: inline-block;
+      background-color: #ffffff;
+      color: #081835;
+      padding: 10px 18px;
+      border-radius: 4px;
+      font-weight: bold;
+      text-decoration: none;
+      margin-bottom: 20px;
+    }
+    .linha-divisoria {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: 35px;
+      padding-top: 20px;
+    }
+    .copyright {
+      margin-top: 10px;
+      font-size: 13px;
+      color: #8fa4c2;
+    }
+    .copyright img {
+      height: 14px;
+      vertical-align: middle;
+      border: none;
+      margin: 0 5px;
+    }
+  </style>
 </head>
 <body>
 
-<header>
-    <!-- Botão X — canto superior direito -->
-    <button class="close-btn" onclick="window.close()">&times;</button>
+<!-- CABEÇALHO COM LOGO E MENU CENTRALIZADO -->
+<header style="background-color: #081835; display: flex; align-items: center; justify-content: center; gap: 60px; padding: 10px 20px;">
+  <div style="flex-shrink: 0;">
+    <a href="index.html">
+      <img src="logo-bmc.png" alt="Logo BMC" style="height: 65px; width: auto;">
+    </a>
+  </div>
 
-    <!-- Logomarca — canto esquerdo, sozinha -->
-    <div class="logo">
-        <img src="logo-bmc.png" alt="Logo BMC">
+  <nav style="flex: 1; display: flex; justify-content: flex-end; padding-left: 20px;">
+    <div style="background: #ffffff; border-radius: 6px; padding: 0; display: inline-flex; align-items: center;">
+      <a href="index.html" style="color: #081835; font-weight: bold; padding: 12px 26px; text-decoration: none; font-size: 15px;">Início</a>
+     <a href="guia.html" style="color: #081835; font-weight: bold; padding: 12px 26px; text-decoration: none; font-size: 15px; border-bottom: 2px solid #081835;">Guia</a>
+      <a href="quem-somos.html" style="color: #081835; font-weight: bold; padding: 12px 26px; text-decoration: none; font-size: 15px;">Quem Somos</a>
+      <a href="servicos.html" style="color: #081835; font-weight: bold; padding: 12px 26px; text-decoration: none; font-size: 15px;">Nossos Serviços</a>
+      <a href="eventos.html" style="color: #081835; font-weight: bold; padding: 12px 26px; text-decoration: none; font-size: 15px;">Eventos da Comunidade</a>
+       <a href="shows.html" style="color: #081835; font-weight: bold; padding: 12px 26px; text-decoration: none; font-size: 15px;">Show</a>
     </div>
-
-    <!-- Menu — 8 itens, menorzinhos, com espaço antes do X -->
-    <nav class="nav-menu">
-        <a href="index.html">Início</a>
-        <a href="guia.html" class="active">Guia</a>
-        <a href="quem-somos.html">Quem Somos Nós</a>
-        <a href="servicos.html">Serviço</a>
-        <a href="eventos.html">Evento</a>
-        <a href="cultura-show.html">Show</a>
-        <a href="atividades-infantis.html">Atividades Infantis</a>
-        <a href="galeria-fotos.html">Galeria de Fotos</a>
-    </nav>
+  </nav>
+  
+  <!-- BOTÃO SAIR ✕ — CANTO DIREITO -->
+  <a href="index.html" class="botao-sair"style="color: #ffffff;background: transparent;">✕</a>
 </header>
+  
 
 </body>
 </html>
