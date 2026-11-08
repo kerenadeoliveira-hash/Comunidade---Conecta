@@ -156,40 +156,343 @@
 </head>
 <body>
 
-<!-- ✅ CABEÇALHO -->
-<!-- Logo -->
-  <div class="logo-area">
-    <a href="index.html" class="logo-bmc">
-      <img src="logo-bmc.png" alt="Logo BMC" style="height: 58px; width: auto; background: transparent; object-fit: contain;">
-    </a>
-  </div>
+<!-- === CABEÇALHO PROFISSIONAL — CULTURA E SHOWS === -->
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-  <!-- Menu Central -->
-  <nav class="menu-central">
-    <div style="background: #081835; border-radius: 6px; padding: 0; display: inline-flex; align-items: center;">
-      <a href="index.html" style="color: #081835; font-weight: bold; padding: 9px 14px; text-decoration: none;">Início</a>
-      <a href="curos-gratis.html" style="color: #081835; font-weight: bold; padding: 9px 14px; text-decoration: none; border-bottom: 2px solid #081835;">Cursos Grátis</a>
-      <a href="quem-somos.html" style="color: #081835; font-weight: bold; padding: 9px 14px; text-decoration: none;">Quem Somos</a>
-      <a href="servicos.html" style="color: #081835; font-weight: bold; padding: 9px 14px; text-decoration: none;">Nosso Serviços</a>
-      <a href="evento-da-comunidade.html" style="color: #081835; font-weight: bold; padding: 9px 14px; text-decoration: none;">Evento da Comunidade</a>
-      <a href="atividades-infantis.html" style="color: #081835; font-weight: bold; padding: 9px 14px; text-decoration: none;">Atividades Infantis</a>
-      <a href="fala-conosco.html" style="color: #081835; font-weight: bold; padding: 9px 14px; text-decoration: none;">Fala Conosco</a>
-      <a href="galeria.html" style="color: #081835; font-weight: bold; padding: 9px 14px; text-decoration: none;">Galeria de Fotos</a>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    header {
+        background-color: #081835;
+        width: 100%;
+        padding: 15px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        z-index: 2;
+    }
+
+    .logo img {
+        height: 55px;
+        width: auto;
+        display: block;
+    }
+
+    .menu {
+        display: flex;
+        align-items: center;
+        gap: 35px;
+        margin-left: 60px;
+    }
+
+    .menu a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 500;
+        padding: 8px 5px;
+        transition: color 0.3s;
+    }
+
+    .menu a:hover {
+        color: #4da6ff;
+    }
+
+    .fechar {
+        position: absolute;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 26px;
+        color: #ffffff;
+        text-decoration: none;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.1);
+        transition: all 0.3s;
+        font-weight: bold;
+        z-index: 3;
+    }
+
+    .fechar:hover {
+        background: rgba(255,255,255,0.25);
+        color: #ff6b6b;
+    }
+
+    .hero-image {
+        width: 100vw;
+        height: 380px;
+        margin-left: calc(50% - 50vw);
+        overflow: hidden;
+        position: relative;
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+    }
+
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(8,24,53,0.45), rgba(8,24,53,0.75));
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #ffffff;
+    }
+
+    .hero-overlay h1 {
+        font-size: 48px;
+        font-weight: bold;
+        margin-bottom: 12px;
+        letter-spacing: 1px;
+    }
+
+    .hero-overlay p {
+        font-size: 20px;
+        max-width: 700px;
+        opacity: 0.9;
+    }
+
+    .header-wrapper {
+        display: flex;
+        align-items: center;
+        flex: 1;
+    }
+</style>
+
+<!-- === CABEÇALHO === -->
+<header>
+    <div class="header-wrapper">
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+            <img src="logo-bmc.png" alt="Logo BMC">
+        </a>
+
+        <!-- Menu — bem distante da logo -->
+        <nav class="menu">
+            <a href="index.html">Início</a>
+            <a href="guia.html">Guia</a>
+            <a href="quem-somos.html">Quem Somos</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="eventos.html">Eventos</a>
+            <a href="cultura-show.html" style="color: #4da6ff; border-bottom: 2px solid #4da6ff; padding-bottom: 5px;">Cultura & Shows</a>
+            <a href="fale-conosco.html">Fale Conosco</a>
+        </nav>
     </div>
-  </nav>
-    <!-- BOTÃO SAIR ✕ — CANTO DIREITO -->
-  <a href="index.html" class="botao-sair"style="color: #ffffff;background: transparent;">✕</a>
 
+    <!-- Botão de Fechar (X) no canto direito -->
+    <a href="index.html" class="fechar" title="Voltar">&times;</a>
 </header>
 
-<!-- ✅ CONTEÚDO PRINCIPAL -->
-<div class="titulo-pagina">
-    <h2>🎭 Cultura e Shows — Brasil 2026</h2>
-    <p>Fique por dentro dos principais eventos culturais, festivais e espetáculos que vão acontecer no Brasil em 2026</p>
-</div>
-    <div class="imagem-destaque">
-        <img src="cultura-shows.jpg" alt="cultura e shows Brasil 2026">
+<!-- === IMAGEM PRINCIPAL CULTURA E SHOW === -->
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .cultura-show-hero {
+        width: 100vw;
+        max-width: 100%;
+        height: 420px;
+        margin-left: calc(50% - 50vw);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .cultura-show-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('Cultura-Show.jpg');
+        background-size: cover;
+        background-position: center;
+        display: block;
+    }
+
+    .cultura-show-bg-duplicate {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('Cultura-Show.jpg');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.35;
+        transform: scale(1.08) translate(-8px, 12px);
+        filter: blur(18px) brightness(0.85);
+        z-index: 1;
+    }
+
+    .cultura-show-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background:
+            linear-gradient(to bottom,
+                rgba(8, 24, 53, 0.50),
+                rgba(8, 24, 53, 0.78)),
+            radial-gradient(circle at 20% 50%,
+                rgba(77, 166, 255, 0.22),
+                transparent 35%),
+            radial-gradient(circle at 80% 20%,
+                rgba(255, 255, 255, 0.18),
+                transparent 40%);
+        z-index: 2;
+    }
+
+    .cultura-show-lines {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+        pointer-events: none;
+    }
+
+    .cultura-show-lines::before,
+    .cultura-show-lines::after {
+        content: "";
+        position: absolute;
+        width: 120px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #4da6ff, transparent);
+    }
+
+    .cultura-show-lines::before {
+        top: 25%;
+        left: 8%;
+    }
+
+    .cultura-show-lines::after {
+        bottom: 30%;
+        right: 10%;
+    }
+
+    .cultura-show-content {
+        position: relative;
+        z-index: 4;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .cultura-show-content h1 {
+        font-size: 52px;
+        font-weight: 900;
+        color: #ffffff;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        position: relative;
+        display: inline-block;
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+    }
+
+    .cultura-show-content h1::before {
+        content: "Cultura e Show";
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        color: rgba(77, 166, 255, 0.18);
+        z-index: -1;
+        filter: blur(12px);
+        transform: scaleX(1.06);
+    }
+
+    .cultura-show-content h1::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(90deg, #4da6ff, #ff6b6b);
+    }
+
+    .cultura-show-content p {
+        margin-top: 24px;
+        font-size: 20px;
+        color: rgba(255, 255, 255, 0.85);
+        max-width: 720px;
+        line-height: 1.6;
+        letter-spacing: 1px;
+    }
+
+    .cultura-show-glow {
+        position: absolute;
+        width: 260px;
+        height: 260px;
+        background: radial-gradient(circle, rgba(77, 166, 255, 0.18), transparent 70%);
+        z-index: 3;
+    }
+
+    .cultura-show-glow-1 {
+        top: -60px;
+        left: -40px;
+    }
+
+    .cultura-show-glow-2 {
+        bottom: -80px;
+        right: -60px;
+    }
+</style>
+
+<section class="cultura-show-hero">
+    <div class="cultura-show-bg"></div>
+    <div class="cultura-show-bg-duplicate"></div>
+    <div class="cultura-show-overlay"></div>
+    <div class="cultura-show-lines"></div>
+    <div class="cultura-show-glow cultura-show-glow-1"></div>
+    <div class="cultura-show-glow cultura-show-glow-2"></div>
+
+    <div class="cultura-show-content">
+        <h1>Cultura e Show</h1>
+        <p>Arte, entretenimento e cultura para todos os momentos</p>
     </div>
+</section>
+
+</header>
 
 <div class="container">
 
