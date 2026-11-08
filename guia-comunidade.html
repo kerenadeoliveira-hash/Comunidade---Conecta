@@ -275,6 +275,242 @@
 
     </div>
   </main>
+  <!-- === CARROSSEL DE CONTEÚDO BMC — LARGURA TOTAL & FUNDO CINZA === -->
+<style>
+    .carousel-section {
+        width: 100%;
+        margin: 50px 0;
+        background-color: #f0f0f0;
+    }
+
+    .carousel-title {
+        color: #0A2342;
+        font-size: 26px;
+        text-align: center;
+        padding: 25px 0 10px;
+        margin: 0;
+    }
+
+    .carousel-container {
+        position: relative;
+        overflow: hidden;
+        background: #f0f0f0; /* Fundo cinza */
+        width: 100%;
+    }
+
+    .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        width: 100%;
+    }
+
+    .carousel-slide {
+        min-width: 100%;
+        padding: 40px 30px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .slide-icon {
+        font-size: 60px;
+        margin-bottom: 20px;
+    }
+
+    .slide-link {
+        color: #0A2342;
+        font-size: 24px;
+        font-weight: bold;
+        text-decoration: none;
+        display: inline-block;
+        margin-bottom: 15px;
+        border-bottom: 2px solid transparent;
+        transition: border-color 0.3s;
+    }
+
+    .slide-link:hover {
+        border-bottom-color: #0A2342;
+    }
+
+    .slide-text {
+        color: #444444;
+        font-size: 16px;
+        line-height: 1.7;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .carousel-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding-bottom: 30px;
+    }
+
+    .carousel-btn {
+        background: #0A2342;
+        color: #fff;
+        border: none;
+        font-size: 20px;
+        padding: 10px 18px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+
+    .carousel-btn:hover {
+        background: #133863;
+    }
+
+    .carousel-dots {
+        display: flex;
+        gap: 10px;
+    }
+
+    .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #bbb;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .dot.active {
+        background: #0A2342;
+    }
+</style>
+
+<div class="carousel-section">
+    <h2 class="carousel-title">Conheça mais sobre o BMC</h2>
+
+    <div class="carousel-container">
+        <div class="carousel-track" id="carouselTrack">
+
+            <!-- Slide 1 — O que é o BMC -->
+            <div class="carousel-slide">
+                <div class="slide-icon">📌</div>
+                <a href="quem-somos.html" class="slide-link">O que é o BMC?</a>
+                <p class="slide-text">
+                    O BMC é um espaço comunitário criado por moradores, para moradores. Nosso objetivo é unir a comunidade, oferecer apoio, serviços gratuitos, cultura e lazer para todos do bairro. Clique acima para saber mais sobre nossa história e nossa missão.
+                </p>
+            </div>
+
+            <!-- Slide 2 — Quem Somos Nós -->
+            <div class="carousel-slide">
+                <div class="slide-icon">🤝</div>
+                <a href="quem-somos.html" class="slide-link">Quem Somos Nós</a>
+                <p class="slide-text">
+                    Somos moradores, voluntários e parceiros que acreditam que juntos podemos fazer mais. Cada pessoa que participa fortalece ainda mais o nosso bairro e a nossa comunidade. Conheça as pessoas que fazem o BMC acontecer.
+                </p>
+            </div>
+
+            <!-- Slide 3 — Nossos Serviços -->
+            <div class="carousel-slide">
+                <div class="slide-icon">🛠️</div>
+                <a href="servicos.html" class="slide-link">Nossos Serviços</a>
+                <p class="slide-text">
+                    Oferecemos atendimento social, orientação, ajuda com documentos, encaminhamentos e muito mais. Se precisar de apoio, passe no BMC ou entre em contato conosco. Todos os nossos serviços são pensados para apoiar você e sua família.
+                </p>
+            </div>
+
+            <!-- Slide 4 — Eventos -->
+            <div class="carousel-slide">
+                <div class="slide-icon">🎉</div>
+                <a href="eventos.html" class="slide-link">Eventos</a>
+                <p class="slide-text">
+                    Festa da comunidade, encontros culturais, palestras, reuniões e comemorações. Acompanhe nossa agenda e venha participar — todos são sempre bem-vindos aos nossos eventos. Temos programação para todas as idades!
+                </p>
+            </div>
+
+            <!-- Slide 5 — Shows e Cultura -->
+            <div class="carousel-slide">
+                <div class="slide-icon">🎤</div>
+                <a href="cultura-show.html" class="slide-link">Shows e Cultura</a>
+                <p class="slide-text">
+                    Apresentações musicais, artistas locais, cultura e entretenimento no coração do bairro. Valorizamos nossos talentos e trazemos diversão para todas as idades. Venha curtir com a gente!
+                </p>
+            </div>
+
+            <!-- Slide 6 — Atividades Infantis -->
+            <div class="carousel-slide">
+                <div class="slide-icon">👶</div>
+                <a href="atividades-infantis.html" class="slide-link">Atividades Infantis</a>
+                <p class="slide-text">
+                    Brincadeiras, contação de histórias, oficinas de arte, jogos e muito mais para as crianças do bairro. Tudo seguro, divertido e feito com carinho para os pequenos. Confira a programação!
+                </p>
+            </div>
+
+            <!-- Slide 7 — Galeria de Fotos -->
+            <div class="carousel-slide">
+                <div class="slide-icon">📸</div>
+                <a href="galeria-fotos.html" class="slide-link">Galeria de Fotos</a>
+                <p class="slide-text">
+                    Veja como foram nossos últimos encontros! Fotos dos eventos, das crianças, dos shows e de tudo que acontece aqui no BMC. Venha relembrar ou conhecer nosso trabalho através das imagens.
+                </p>
+            </div>
+
+            <!-- Slide 8 — Como nos Encontrar -->
+            <div class="carousel-slide">
+                <div class="slide-icon">📍</div>
+                <a href="fale-conosco.html" class="slide-link">Como nos Encontrar</a>
+                <p class="slide-text">
+                    Estamos no coração do bairro! Venha nos conhecer durante nosso horário de atendimento. Se tiver dúvidas, é só falar conosco — estamos aqui para ouvir e ajudar você. Será um prazer receber sua visita!
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Navegação do Carrossel -->
+    <div class="carousel-nav">
+        <button class="carousel-btn" onclick="prevSlide()">&#10094;</button>
+        <div class="carousel-dots" id="carouselDots"></div>
+        <button class="carousel-btn" onclick="nextSlide()">&#10095;</button>
+    </div>
+</div>
+
+<script>
+    let currentSlide = 0;
+    const totalSlides = 8;
+    const track = document.getElementById('carouselTrack');
+    const dotsContainer = document.getElementById('carouselDots');
+
+    // Criar os pontinhos
+    for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (i === 0) dot.classList.add('active');
+        dot.onclick = () => goToSlide(i);
+        dotsContainer.appendChild(dot);
+    }
+
+    function updateCarousel() {
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        document.querySelectorAll('.dot').forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentSlide);
+        });
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel();
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+    }
+
+    function goToSlide(index) {
+        currentSlide = index;
+        updateCarousel();
+    }
+
+    // Passagem automática a cada 6 segundos
+    setInterval(nextSlide, 6000);
+</script>
+<!-- === FIM DO CARROSSEL === -->
 
   <!-- ✅ RODAPÉ -->
  <footer style="background-color: #081835; color: #ffffff; padding: 50px 40px 25px 40px; margin-top: 60px;">
