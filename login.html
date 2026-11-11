@@ -478,6 +478,19 @@
       window.open(url, '_blank');
     }
   </script>
+<script>
+function fazerLogin(event) {
+  event.preventDefault();
+  let email = document.getElementById("login-email").value;
+  let senha = document.getElementById("login-senha").value;
 
+  // Dados de teste
+  if(email === "teste@comunidade.com" && senha === "123456"){
+    window.location.href = "index.html";
+  }else{
+    document.getElementById("avisoErro").innerText = "E‑mail ou senha incorretos!";
+  }
+}
+</script>
 </body>
 </html>
