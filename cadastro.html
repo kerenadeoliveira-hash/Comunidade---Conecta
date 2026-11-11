@@ -401,128 +401,69 @@
   </main>
 
   <!-- ✅ RODAPÉ -->
-  <footer>
-    <p><strong>BMC — Comunidade Conecta</strong></p>
-    <p>&copy; 2025 Todos os direitos reservados. | Ferraz de Vasconcelos — SP</p>
-  </footer>
+ <!-- RODAPÉ -->
+<footer>
+  <div class="conteudo-rodape">
+    <div class="coluna">
+      <img src="logo-bmc.png" alt="BMC">
+      <p class="destaque">Bem-Estar da Minha Comunidade</p>
+      <p class="texto">União, Acolhimento e Cuidado para Todos.</p>
+      <p class="texto">Siga a BMC nas redes sociais</p>
 
-  <!-- ✅ JAVASCRIPT — TUDO AQUI JUNTO! -->
-  <script>
-    // ==========================================
-    // 💾 LOCALSTORAGE — SALVA DADOS PERMANENTEMENTE
-    // ==========================================
-    
-    // Salvar usuário no localStorage
-    function salvarUsuarioLocal(usuario) {
-      localStorage.setItem('usuarioCadastrado', JSON.stringify(usuario));
-    }
+      <div class="redes-sociais">
+        <a href="#" style="background: #1877F2;">f</a>
+        <a href="#" style="background: #FF0000;">▶</a>
+        <a href="#" style="background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);">in</a>
+        <a href="#" style="background: #0A66C2;">in</a>
+        <a href="#" style="background: #25D366;">w</a>
+      </div>
 
-    // Carregar dados salvos ao abrir a página
-    function carregarUsuarioLocal() {
-      const salvo = localStorage.getItem('usuarioCadastrado');
-      if (salvo) {
-        return JSON.parse(salvo);
-      }
-      return null;
-    }
+      <a href="fala-conosco.html" class="botao-fala">📞 Fala Conosco</a>
+    </div>
 
-    // Carrega os dados salvos assim que a página abre
-    let usuarioCadastrado = carregarUsuarioLocal();
-    
-    // Variáveis de segurança
-    let tentativasRestantes = 5;
-    let bloqueado = false;
+    <div class="coluna">
+      <h4>Categorias</h4>
+      <ul>
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="eventos.html">Eventos</a></li>
+        <li><a href="noticias.html">Notícias</a></li>
+        <li><a href="guia.html">Guia do Bairro</a></li>
+        <li><a href="galeria.html">Galeria</a></li>
+      </ul>
+    </div>
 
-    // ==========================================
-    // 🔄 TROCAR DE TELAS
-    // ==========================================
-    
-    function mostrarLogin(event) {
-      event.preventDefault();
-      limparMensagens();
-      document.getElementById('paginaCadastro').classList.remove('ativo');
-      document.getElementById('paginaEsqueci').classList.remove('ativo');
-      document.getElementById('paginaLogin').classList.add('ativo');
-    }
+    <div class="coluna">
+      <h4>Soluções</h4>
+      <ul>
+        <li><a href="#">Solicitar Ajuda</a></li>
+        <li><a href="#">Oferecer Ajuda</a></li>
+        <li><a href="#">Centro de Acolhimento</a></li>
+        <li><a href="#">Documentos e Regularização</a></li>
+        <li><a href="#">Shows e Eventos</a></li>
+        <li><a href="#">Atividades Infantis</a></li>
+        <li><a href="#">Comida Grátis e Barata</a></li>
+        <li><a href="#">Avisos Importantes</a></li>
+      </ul>
+    </div>
 
-    function mostrarCadastro(event) {
-      event.preventDefault();
-      limparMensagens();
-      document.getElementById('paginaLogin').classList.remove('ativo');
-      document.getElementById('paginaEsqueci').classList.remove('ativo');
-      document.getElementById('paginaCadastro').classList.add('ativo');
-    }
+    <div class="coluna">
+      <h4>Saiba Mais</h4>
+      <ul>
+        <li><a href="quem-somos.html">Quem Somos</a></li>
+        <li><a href="#">Fale Conosco</a></li>
+        <li><a href="#">Termos de Uso</a></li>
+      </ul>
+    </div>
+  </div>
 
-    function mostrarEsqueciSenha(event) {
-      event.preventDefault();
-      limparMensagens();
-      document.getElementById('paginaLogin').classList.remove('ativo');
-      document.getElementById('paginaCadastro').classList.remove('ativo');
-      document.getElementById('paginaEsqueci').classList.add('ativo');
-      document.getElementById('avisoSucessoEsqueci').style.display = 'none';
-    }
+  <div class="linha-divisoria"></div>
 
-    // ==========================================
-    // 👁️ MOSTRAR / ESCONDER SENHA
-    // ==========================================
-    
-    function mostrarSenha(idCampo, idIcone) {
-      const campo = document.getElementById(idCampo);
-      const icone = document.getElementById(idIcone);
-      
-      if (campo.type === 'password') {
-        campo.type = 'text';
-        icone.textContent = '🙈';
-      } else {
-        campo.type = 'password';
-        icone.textContent = '👁️';
-      }
-    }
+  <div class="copyright">
+    <p>© 2026 BMC — Bem-Estar da Minha Comunidade • 
+    <img src="https://flagcdn.com/w20/br.png" alt="Brasil"> Brasil •<br>
+    Todos os direitos reservados • Projeto Comunitário</p>
+  </div>
+</footer>
 
-    // ==========================================
-    // 🧹 LIMPAR MENSAGENS
-    // ==========================================
-    
-    function limparMensagens() {
-      document.getElementById('avisoErroCad').style.display = 'none';
-      document.getElementById('avisoSucessoCad').style.display = 'none';
-      document.getElementById('avisoErroLogin').style.display = 'none';
-      document.getElementById('avisoSucessoLogin').style.display = 'none';
-      document.getElementById('avisoErroEsqueci').style.display = 'none';
-      document.getElementById('avisoSucessoEsqueci').style.display = 'none';
-    }
-
-    function mostrarErro(elemento, mensagem) {
-      const aviso = document.getElementById(elemento);
-      aviso.textContent = mensagem;
-      aviso.style.display = 'block';
-    }
-
-    function mostrarSucesso(elemento, mensagem) {
-      const aviso = document.getElementById(elemento);
-      aviso.textContent = mensagem;
-      aviso.style.display = 'block';
-    }
-
-    // ==========================================
-    // ✅ CADASTRO
-    // ==========================================
-    
-    function fazerCadastro(event) {
-      event.preventDefault();
-      limparMensagens();
-      
-      const nome = document.getElementById('cad-nome').value;
-      const email = document.getElementById('cad-email').value;
-      const whatsapp = document.getElementById('cad-whatsapp').value;
-      const senha = document.getElementById('cad-senha').value;
-      const confirma = document.getElementById('cad-confirma').value;
-      
-      // Validações
-      if (!nome || !email || !senha || !confirma) {
-        mostrarErro('avisoErroCad', '⚠️ Preencha todos os campos, por favor.');
-        return;
-      }
-      
-      if (senha.length < 6) {
-        mostrarErro('avisoErroCad', '⚠️ A senha deve ter pelo menos
+</body>
+</html>
